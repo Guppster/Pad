@@ -1,5 +1,3 @@
-//By Matthew Ufimzeff and Gurpreet Singh
-
 //Import java API packages
 import java.awt.Shape;
 import java.awt.geom.RoundRectangle2D;
