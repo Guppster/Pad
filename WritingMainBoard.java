@@ -1,6 +1,3 @@
-//By Matthew Ufimzeff and Gurpreet Singh
-//May 28
-
 //Import API packages
 import java.awt.*;
 import java.awt.event.*;
