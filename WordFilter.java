@@ -1,11 +1,3 @@
-/**
- * @(#)WordFilter.java
- *
- *
- * @author Gurpreet Singh
- * @version 1.00 2012/5/28
- */
-
 //Import java API packages
 import java.awt.Shape;
 import java.awt.geom.RoundRectangle2D;
