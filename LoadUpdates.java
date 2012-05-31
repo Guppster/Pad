@@ -1,5 +1,3 @@
-//By Matthew Ufimzeff and Gurpreet Singh
-
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
