@@ -1,5 +1,3 @@
-//By Matthew Ufimzeff and Gurpreet Singh
-
 //Import API objects
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
