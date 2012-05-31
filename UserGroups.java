@@ -145,7 +145,7 @@ public class UserGroups extends JFrame implements ActionListener
 	//Test Harness
 	public static void main(String [] args)
 	{
-		UIManager.setLookAndFeel("org.pushingpixels.substance.api.skin.SubstanceGraphiteLookAndFeel");
+		//UIManager.setLookAndFeel("org.pushingpixels.substance.api.skin.SubstanceGraphiteLookAndFeel");
 		new UserGroups();
 	}//End of Test Harness main method
 }//End of class
