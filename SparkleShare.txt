@@ -17,3 +17,7 @@ Alright, so if this test is pass'ed i will continue using sparkleshare... otherw
 k so far iv noticed this program doesnt like changes to textfiles 0.0 idk why
 
 sometimes it syncs perfectly, and other times i dont know what happens
+
+Oh alright i understand now, if its edited from github directly, then the changes arent instant.
+
+either way, this should be useful, aslong as i dont run into too many bugs.
