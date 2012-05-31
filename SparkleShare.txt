@@ -8,16 +8,3 @@ collaborate and share files. If you like what we do, please consider a small
 donation to support the project: http://sparkleshare.org/support-us/
 
 Have fun! :)
-
-is this even working?sfsd d
-gh
-
-Alright, so if this test is pass'ed i will continue using sparkleshare... otherwise, i rage quit
-
-k so far iv noticed this program doesnt like changes to textfiles 0.0 idk why
-
-sometimes it syncs perfectly, and other times i dont know what happens
-
-Oh alright i understand now, if its edited from github directly, then the changes arent instant.
-
-either way, this should be useful, aslong as i dont run into too many bugs.
