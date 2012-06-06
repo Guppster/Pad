@@ -109,6 +109,8 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 		splMain = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
 		connChatClicked = true;
 		adminClicked = true;
+	
+		TextLineNumber tln = new TextLineNumber(taDocument);
 
 		//Call the setMenus method to construct all the menus
     	setMenus();
@@ -202,6 +204,8 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 		this.add(pMain);//Add the main panel to the frame object
 		frameLayout.putConstraint(SpringLayout.WEST, splMain, 0, SpringLayout.WEST, this.getContentPane());
 		frameLayout.putConstraint(SpringLayout.NORTH, splMain, 0, SpringLayout.NORTH, this.getContentPane());
+		
+		spDocument.setRowHeaderView(tln);
 
 		//Sets the properties of the JFrame
         this.setSize(screenSize);
