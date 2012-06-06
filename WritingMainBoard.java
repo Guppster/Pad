@@ -205,7 +205,7 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 		frameLayout.putConstraint(SpringLayout.WEST, splMain, 0, SpringLayout.WEST, this.getContentPane());
 		frameLayout.putConstraint(SpringLayout.NORTH, splMain, 0, SpringLayout.NORTH, this.getContentPane());
 		
-		spDocument.setRowHeaderView(tln);
+		spDocument.setRowHeaderView( tln );
 
 		//Sets the properties of the JFrame
         this.setSize(screenSize);
