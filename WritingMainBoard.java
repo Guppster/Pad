@@ -342,6 +342,11 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 			adminClicked = true;
 		}
 	}//End of hideAdminToolbar method
+	
+	private void toggleLineNumbers()
+	{
+		
+	}
 
 	//Listen for changes of the splitpane, and do some actions accordingly
 	public void propertyChange(PropertyChangeEvent changeEvent)
@@ -498,6 +503,7 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 				public void actionPerformed(ActionEvent e)
 				{
 					System.out.println("Show Line Numbers");
+					toggleLineNumbers();
 				}
 			});
 
