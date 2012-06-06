@@ -357,6 +357,7 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 		else
 		{
 			spDocument.setRowHeader(new JViewport());
+			lineNumberToggle = false;
 		}
 	}//End of toggleLineNumbers
 
