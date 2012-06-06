@@ -364,20 +364,11 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 	//Listen for changes of the splitpane, and do some actions accordingly
 	public void propertyChange(PropertyChangeEvent changeEvent)
 	{
-        JSplitPane sourceSplitPane = (JSplitPane) changeEvent.getSource();
-
         String propertyName = changeEvent.getPropertyName();
 
-        if (propertyName.equals(JSplitPane.LAST_DIVIDER_LOCATION_PROPERTY))
+        if(propertyName.equals(JSplitPane.LAST_DIVIDER_LOCATION_PROPERTY))
         {
-          int current = sourceSplitPane.getDividerLocation();
-          System.out.println("Current: " + current);
-
-          Integer last = (Integer) changeEvent.getNewValue();
-          System.out.println("Last: " + last);
-
-          Integer priorLast = (Integer) changeEvent.getOldValue();
-          System.out.println("Prior last: " + priorLast);
+          spDocument.setPreferredSize(new Dimension(splMain.getDividerLocation() - 30, 550));
         }
 	}
 
