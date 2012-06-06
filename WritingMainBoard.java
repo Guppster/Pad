@@ -65,6 +65,7 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 	private int leftRightSizeY;
 	private boolean connChatClicked;
 	private boolean adminClicked;
+	private boolean lineNumberToggle;
 	private TextLineNumber tln;
 
     public WritingMainBoard()
@@ -345,10 +346,18 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 		}
 	}//End of hideAdminToolbar method
 	
+	//This shows, and hides the line numbers
 	private void toggleLineNumbers()
 	{
-		spDocument.setRowHeaderView(tln);
-	}
+		if(!lineNumberToggle)
+		{
+			spDocument.setRowHeaderView(tln);
+		}
+		else
+		{
+			spDocument.setRowHeaderView(null);
+		}
+	}//End of toggleLineNumbers
 
 	//Listen for changes of the splitpane, and do some actions accordingly
 	public void propertyChange(PropertyChangeEvent changeEvent)
