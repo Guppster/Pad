@@ -65,6 +65,7 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 	private int leftRightSizeY;
 	private boolean connChatClicked;
 	private boolean adminClicked;
+	private TextLineNumber tln;
 
     public WritingMainBoard()
     {
@@ -109,6 +110,7 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 		splMain = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
 		connChatClicked = true;
 		adminClicked = true;
+		tln = new TextLineNumber(taDocument);
 
 		//Call the setMenus method to construct all the menus
     	setMenus();
@@ -345,7 +347,7 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 	
 	private void toggleLineNumbers()
 	{
-		
+		spDocument.setRowHeaderView(tln);
 	}
 
 	//Listen for changes of the splitpane, and do some actions accordingly
