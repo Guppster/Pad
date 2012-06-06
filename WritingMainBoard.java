@@ -1,7 +1,7 @@
 //By Matthew Ufimzeff and Gurpreet Singh
 //June 2
 
-//Import API packages
+//Import API package
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
