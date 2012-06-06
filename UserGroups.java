@@ -1,3 +1,11 @@
+/**
+ * @(#)UserGroups.java
+ *
+ *
+ * @author Gurpreet Singh
+ * @version 1.00 2012/5/27
+ */
+ 
 //Import java API packages
 import java.awt.Shape;
 import java.awt.geom.RoundRectangle2D;
@@ -17,11 +25,11 @@ public class UserGroups extends JFrame implements ActionListener
 	private JTable tGroups;
 	private JScrollPane spGroupsTable;
 	private Dimension frameSize;
-
+	
 	//Setup the layout manager
     SpringLayout layout;//Create a SpringLayout object
-
-    public UserGroups()
+		
+    public UserGroups() 
     {
     	//Initialize values of class objects
 		cmdNew = new JButton("Create new User group");
@@ -31,52 +39,52 @@ public class UserGroups extends JFrame implements ActionListener
 		spGroupsTable = new JScrollPane(tGroups);
 		frameSize = new Dimension(245, 300);
 		layout = new SpringLayout();
-
+		
 		//Constructs the GUI components and displays them on the screen
 		setGUI();
     }//End of constructor
-
+    
     //Construct the GUI components
 	private void setGUI()
-	{
+	{		
 		//Add objects to the GUI frame
 		this.add(cmdNew);
 		this.add(cmdEdit);
 		this.add(cmdRemove);
 		this.add(spGroupsTable);
-
+		
 		tGroups.setTableHeader(null);
 		spGroupsTable.setPreferredSize(new Dimension(200,165));
-
-
+		
+			
 		//Add actionlistener to active objects
 		cmdNew.addActionListener(this);
 		cmdEdit.addActionListener(this);
 		cmdRemove.addActionListener(this);
-
+		
 		//Change the frame color
 		this.getContentPane().setBackground(Color.BLACK);
-
+		
 		//Set the layout for the frame
 		this.getContentPane().setLayout(layout);
-
+		
 		//Set the west and north positions of the objects on the frame
 		//New Button Cordinates
 		layout.putConstraint(SpringLayout.WEST, cmdNew, 20, SpringLayout.WEST, this.getContentPane());
 		layout.putConstraint(SpringLayout.NORTH, cmdNew, 180, SpringLayout.NORTH, this.getContentPane());
-
+		
 		//Edit Button Cordinates
 		layout.putConstraint(SpringLayout.WEST, cmdEdit, 20, SpringLayout.WEST, this.getContentPane());
 		layout.putConstraint(SpringLayout.NORTH, cmdEdit, 210, SpringLayout.NORTH, this.getContentPane());
-
+		
 		//Remove Button Cordinates
 		layout.putConstraint(SpringLayout.WEST, cmdRemove, 20, SpringLayout.WEST, this.getContentPane());
 		layout.putConstraint(SpringLayout.NORTH, cmdRemove, 240, SpringLayout.NORTH, this.getContentPane());
-
+		
 		//Table of Groups Cordinates
 		layout.putConstraint(SpringLayout.WEST, spGroupsTable, 20, SpringLayout.WEST, this.getContentPane());
 		layout.putConstraint(SpringLayout.NORTH, spGroupsTable, 10, SpringLayout.NORTH, this.getContentPane());
-
+		
 		//Call the setting methods for the frame
 		this.setSize(frameSize);
 		this.setLocationRelativeTo(null);
@@ -84,13 +92,13 @@ public class UserGroups extends JFrame implements ActionListener
 		this.setVisible(true);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}//End of setGUI method
-
+	
 	//Updates the GUI frame
 	private void updateGUI()
 	{
-
+		
 	}//End of updateGUI method
-
+	
 	//Perform an action whenever a button is pressed
 	public void actionPerformed(ActionEvent evt)
 	{
@@ -109,7 +117,7 @@ public class UserGroups extends JFrame implements ActionListener
 		}
 		*/
 	}//End of actionPerformed method
-
+	
 	//Opens the New Group frame
 	private void newGroup()
 	{
@@ -117,31 +125,31 @@ public class UserGroups extends JFrame implements ActionListener
 		//new CreateNewGroup();
 
 	}//End of newGroup method
-
+	
 	//Opens the EditGroup frame
 	private void editGroup()
 	{
-
+		
 	}//End of editGroup method
-
+	
 	//Loads the saved user groups from the database
 	private void loadGroups()
 	{
-
+		
 	}//End of loadGroups method
-
+	
 	//Adds a user group to the database
 	private void addGroup()
 	{
 		//new CreateNewGroup();
 	}//End of addGroup method
-
+	
 	//Removes a user group from the database
 	private void removeGroup()
 	{
-
+		
 	}//End of removeGroup method
-
+	
 	//Test Harness
 	public static void main(String [] args)
 	{

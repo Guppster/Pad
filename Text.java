@@ -1,3 +1,6 @@
+//By Matthew Ufimzeff and Gurpreet Singh
+//May 28
+
 //Import API packages
 
 public class Text 
