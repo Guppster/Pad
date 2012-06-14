@@ -1,6 +1,0 @@
-Graphics2D g2 = imgBg.createGraphics();
-g2.setComposite(AlphaComposite.Src);
-g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
-RenderingHints.VALUE_ANTIALIAS_ON);
-g2.setComposite(AlphaComposite.SrcAtop);
-g.drawImage(imgBg, 0, 0, this);
