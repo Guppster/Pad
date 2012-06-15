@@ -194,8 +194,8 @@ public class DocumentBrowser extends JFrame implements ActionListener
 
     		for(int x = 0; x < tDocuments.getRowCount() - 1; x++)
     		{
-    			int obj1 = Integer.intValue(Integer.getInteger((tDocuments.getValueAt(x,1).toString())));
-    			int obj2 = Integer.intValue(Integer.getInteger((tDocuments.getValueAt(x+1, 1).toString())));
+    			int obj1 = Integer.getInteger((tDocuments.getValueAt(x,1).toString()))).intValue();
+    			int obj2 = Integer.getInteger((tDocuments.getValueAt(x+1, 1).toString()))).intValue();
 
 	    		if(obj1 < obj2)
 	    		{
