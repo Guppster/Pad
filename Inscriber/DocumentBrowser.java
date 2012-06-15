@@ -31,7 +31,7 @@ public class DocumentBrowser extends JFrame implements ActionListener
 	private TableHelper tHelper;
 	private Database database;
 	private boolean sorted = false;
-	
+
 	//Default Constructor, Initializes the declared fields
     public DocumentBrowser()
     {
@@ -183,16 +183,16 @@ public class DocumentBrowser extends JFrame implements ActionListener
     private void sortByCharacters()
     {
     	int temp = 0;
-    	
+
     	while(!sorted);
     	{
     		sorted = true;
-    		
+
     		for(int x = 0; x < tDocuments.getRowCount() - 1; x++)
     		{
-    			int obj1 = Integer.getInteger((tDocuments.getValueAt(x,1).toString()));
+    			int obj1 = Integer.getInteger(tDocuments.getValueAt(x,1).toString());
     			int obj2 = Integer.getInteger(tDocuments.getValueAt(x+1, 1).toString());
-    			
+
 	    		if(obj1 < obj2)
 	    		{
 	    			temp = Integer.getInteger(tDocuments.getValueAt(x,1).toString());
