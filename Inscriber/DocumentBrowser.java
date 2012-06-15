@@ -30,7 +30,7 @@ public class DocumentBrowser extends JFrame implements ActionListener
 	private SpringLayout layout;
 	private TableHelper tHelper;
 	private Database database;
-	private boolean sorted = false;
+	private boolean sorted;
 
 	//Default Constructor, Initializes the declared fields
     public DocumentBrowser()
@@ -46,6 +46,7 @@ public class DocumentBrowser extends JFrame implements ActionListener
 		cmdSortByWords = new JButton("Sort by Words");
 		cmdSearch = new JButton("Search for Document");
 		layout = new SpringLayout();
+		sorted = false;
 
 		//Call method to create GUI
 		setGUI();
@@ -175,6 +176,9 @@ public class DocumentBrowser extends JFrame implements ActionListener
     		}
     	}
 
+		//Reset a class field
+		sorted = false;
+
     	//Display a message to the user informing them that the sort has been completed
     	JOptionPane.showMessageDialog(null, "Table sorted by document name.");
     }//End of sortByName method
@@ -184,7 +188,7 @@ public class DocumentBrowser extends JFrame implements ActionListener
     {
     	int temp = 0;
 
-    	while(!sorted);
+    	while(!sorted)
     	{
     		sorted = true;
 
