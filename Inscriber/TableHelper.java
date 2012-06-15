@@ -122,7 +122,7 @@ public class TableHelper
 		}
 	}//End of addRowOfData method
 
-	public void addArrayList(JTable table, DefaultTableModel model, ArrayList<String> data)
+	/*public void addArrayList(JTable table, DefaultTableModel model, ArrayList<String> data)
 	{
 		String[] test;
 
@@ -131,7 +131,7 @@ public class TableHelper
 			test[] = data[x];
 			table.addRowOfData(test, table, model);
 		}
-	}
+	}*/
 
 	/*//A method to fill an array with the data from the JTable so we can send it to the server
 	private void loadArray(JTable table)
