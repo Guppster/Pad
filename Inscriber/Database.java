@@ -2,7 +2,7 @@
  * @(#)Database.java
  *
  *
- * @author Gurpreet Singh, Matt Ufimsef
+ * @author Gurpreet Singh, Matt Ufimzeff
  * @version 1.00 2012/6/15
  *
  * @Latest Updates: Added constant variables for information regarding connection to the database, and converted code from sqlite to MySQL
