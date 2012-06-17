@@ -90,10 +90,15 @@ public class Database
 
     public boolean checkLogin(User user) throws Exception
     {
+    	System.out.println("This works: step 1");
+
         Connection conn = DriverManager.getConnection(url + "accounts", dbUser, dbPass);
+        System.out.println("This works: step 2");
     	Statement stat = conn.createStatement();
+    	System.out.println("This works: step 3");
 
     	ResultSet rs = stat.executeQuery("SELECT * FROM accounts;");
+    	System.out.println("This works: step 4");
 
         while(rs.next())
         {
