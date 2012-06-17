@@ -41,7 +41,8 @@ public class Client
 	        {
 				try
 				{
-					System.out.println(database.checkLogin(tempUser));
+					database.createTable("thisIsATest1234");
+					//System.out.println(database.checkLogin(tempUser));
 				}catch(Exception e){System.out.println("Java sucks");}
 
 				/*if(database.checkLogin(tempUser))
