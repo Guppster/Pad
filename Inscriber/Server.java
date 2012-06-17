@@ -144,7 +144,7 @@ public class Server
 			{
 				if(serverUp)
 				{
-					System.out.println("You must stop the server before you may exit console")
+					System.out.println("You must stop the server before you may exit console");
 				}
 				else
 				{
