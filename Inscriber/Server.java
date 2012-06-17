@@ -42,9 +42,10 @@ public class Server
 		System.out.println("Port was bound sucessfully!");
 	}//End of bindPort method
 
+	//Start the server and start listening for connections
 	private void startServer()
 	{
-
+		statusThread.start();
 	}//End of acceptConnections method
 
 	//Attempt to stop the server
@@ -113,7 +114,7 @@ public class Server
 			{
 				System.out.println("Starting the server...");
 				Thread.sleep(2000);
-				statusThread.start();
+				startServer();
 				serverUp = true;
 				System.out.println("Server started sucessfully!");
 			}
