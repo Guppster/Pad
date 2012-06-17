@@ -90,6 +90,7 @@ public class Database
 
     public boolean checkLogin(User user) throws Exception
     {
+    	System.out.println("Hi this works.");
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
         System.out.println("Hi this works.");
     	Statement stat = conn.createStatement();
