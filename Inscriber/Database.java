@@ -25,7 +25,7 @@ public class Database
 
     private void createDB(String dbName) throws Exception
     {
-        Class.forName("org.sqlite.JDBC");
+        Class.forName(driver);
         Connection conn = DriverManager.getConnection(url, user, pass);
         Statement stat = conn.createStatement();
         stat.executeUpdate("drop table if exists " + dbName + ";");
