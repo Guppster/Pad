@@ -35,12 +35,6 @@ public class Client
 	            sClient = new Socket("localhost", 22222);
 	        }catch(IOException e){eHandler.displayError("CNC"); eHandler.displayError(".");}
 
-			if(sClient != null)
-				System.out.println("lolwhit - What the hell does this indicate, your code in not understandable");
-
-			if(tempUser.getUsername() == null)
-				System.out.println("The tempUser objects username is null");
-
 			//If it connects fine(The socket won't be null), check the users login information
 	        if(sClient != null)
 	        {
