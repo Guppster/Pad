@@ -70,7 +70,7 @@ public class User
 
 	public String getGroup();
 	{
-		return group.getName();;
+		return group.getName();
 	}//End of getGroup method
 
 	//Mutator methods
