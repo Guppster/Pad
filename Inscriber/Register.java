@@ -31,7 +31,6 @@ public class Register extends JFrame implements ActionListener, KeyListener
 	private char[] tempPConfirm;
 	private String pConfirm;
 	private User user;
-	private Server server;
 
 	//Initialize class fields and objects
     public Register()
@@ -276,7 +275,6 @@ public class Register extends JFrame implements ActionListener, KeyListener
 			{
 				if(confirmIndividuality())
 				{
-					//Call the checkInfo method to test the username and password entered against the database
 					database = new Database(user);
 					database.saveUser();
 				}
@@ -305,9 +303,8 @@ public class Register extends JFrame implements ActionListener, KeyListener
 			{
 				if(confirmIndividuality())
 				{
-					//Call the checkInfo method to test the username and password entered against the database
-					database = new Database(user);
-					database.saveUser();
+					database = new Database();
+					database.addUser(user);
 				}
 			}
        	}
