@@ -71,6 +71,18 @@ public class Server
 		}catch(IOException e){System.out.println(e + " - The server dropped the bass... WUB-WUB-WUB-WUB-WUB!");}
 	}//End of stopServer method
 
+	//Get the status of the server(is it up or down)
+	private void getServerStatus()
+	{
+
+	}//End of getServerStatus method
+
+	//Get the connected users(Display the amount of people connected)
+	private void getConnectedUsers()
+	{
+
+	}//End of getConnectedUsers method
+
 	//Start the console and accept commands from the server owner
 	private void startConsole()
 	{
