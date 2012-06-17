@@ -34,8 +34,8 @@ public class Database
         Class.forName(driver);
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
         Statement stat = conn.createStatement();
-        stat.executeUpdate("DROP table if EXISTS " + dbName + ";");
-        stat.executeUpdate("create table " + dbName + ";");
+        stat.executeUpdate("DROP TABLE if EXISTS " + tableName + ";");
+        stat.executeUpdate("CREATE table " + tableName + ";");
 
         conn.close();
     }//End of createDB method
