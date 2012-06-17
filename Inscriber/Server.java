@@ -30,7 +30,7 @@ public class Server
 	}//End of Server constructor method
 
 	//Bind the ServerSocket object to listen to a specified port
-	private static void bindPort(int port)
+	private void bindPort(int port)
 	{
 		try
 		{
@@ -72,7 +72,7 @@ public class Server
 	}//End of stopServer method
 
 	//Start the console and accept commands from the server owner
-	private static void startConsole()
+	private void startConsole()
 	{
 		//Let the user know that they can enter in a command to view all the commands
 		System.out.println("Enter /help to display a list of commands.");
@@ -116,16 +116,19 @@ public class Server
 	//Run the code in this method when the class is run
 	public static void main(String [] args)
 	{
+		//Create a new Server object so we can call methods in the main method
+		Server server = new Server();
+
 		//Inform the server owner of some actions being done
 		System.out.println("Attempting to bind port...");
 
 		//Bind the ServerSocket object to listen to a specified port
-		bindPort(22222);
+		server.bindPort(22222);
 
 		//Inform the server owner of some actions being done
 		System.out.println("Opening console...");
 
 		//Start the console and allow the server owner to enter console commands
-		startConsole();
+		server.startConsole();
 	}//End of Server main method
 }//End of Server class
