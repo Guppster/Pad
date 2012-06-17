@@ -305,7 +305,7 @@ public class Register extends JFrame implements ActionListener, KeyListener
     public void keyPressed(KeyEvent e)
     {
     	//Declare and initialize fields
-     	int key = e.getKeyCode();
+     	//int key = e.getKeyCode();
 
 		//Check if the 'Enter' key was pressed
      	if(key == KeyEvent.VK_ENTER)
