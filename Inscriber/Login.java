@@ -38,7 +38,6 @@ public class Login extends JFrame implements ActionListener, KeyListener
 		lblUser = new JLabel("Username");
 		lblPass = new JLabel("Password:");
 		layout = new SpringLayout();
-		client = new Client();
 		tempUser = new User();
 		database = new Database();
 		tries = 0;
@@ -109,9 +108,10 @@ public class Login extends JFrame implements ActionListener, KeyListener
     //Perform an action whenever a button is pressed
     public void actionPerformed (ActionEvent evt)
     {
-    	//Initialize fields
+    	//Initialize class fields and objects
     	tempUser.setUsername(txtUser.getText());//Get the username typed by the user and put it in a field of user
     	tempUser.setPassword(pfPass.getPassword());//Get the password typed by the user and put it in a field of user
+		client = new Client(tempUser);
 
     	//Check which button was pressed
 		if("login".equals(evt.getActionCommand()))
