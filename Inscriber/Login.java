@@ -102,26 +102,8 @@ public class Login extends JFrame implements ActionListener, KeyListener
 	{
 		//Try a connection with the server
 		client.tryConnect();
-
-		if(tries < 6)
-		{
-			//Check if the connection was successful, if it was, send the login information to be checked in the database
-			if(client.isConnected())
-			{
-				if(database.checkLogin(tempUser))
-				{
-					new Lobby();
-				}
-				else
-				{
-					tries++;
-					//Display "Login attempt failed - Attempt logged
-				}
-			}
-		}
-		else
-			System.out.println("Sometext");
-			//DOSOMESLEEPSHTOOFERNDERSPLAYSERMMERRSAGEBERX
+		Thread.sleep(5000);
+		this.dispose();
 	}//End of login method
 
     //Perform an action whenever a button is pressed
@@ -139,7 +121,7 @@ public class Login extends JFrame implements ActionListener, KeyListener
 		else if ("new".equals(evt.getActionCommand()))
 		{
 			//Create a Register object, thus displaying the Register frame
-			//new Register();
+			new Register();
 
 			//Get rid of the Login frame to conserve resources
 			this.dispose();
