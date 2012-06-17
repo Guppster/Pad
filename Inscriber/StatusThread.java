@@ -50,6 +50,7 @@ public class StatusThread extends Thread
 			{*/
 				try
 				{
+					System.out.println("Socket: " + Server.getServerSocket());
 					sClient = (Server.getServerSocket()).accept();//Accept the connection
 
 					for(int x = 0; x < connections.length; x++)//Go through the connections array and search for an empty connection
