@@ -1,16 +1,16 @@
 /**
  * @(#)ErrorHandler.java
  *
- * @Description 
+ * @Description
  *
  * @author Gurpreet Singh, Matt Ufimsef
  * @version 1.00 2012/6/15
  *
- * @Latest Updates: 
+ * @Latest Updates:
  *
  * @Status: Complete ~ accomodating for currently created classes
  */
- 
+
 //Import API packages
 import javax.swing.*;
 
@@ -63,7 +63,7 @@ public class ErrorHandler
 		// the "." is the flag that triggers the error, this allows to add multiple errors to one message box
 		if(errorCode.equals("."))
 		{
-			JOptionPane.showMessageDialog(null, errorToDisplay);
+			JOptionPane.showMessageDialog(errorToDisplay);
 			errorToDisplay = "";
 		}
 
