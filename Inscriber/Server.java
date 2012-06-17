@@ -68,7 +68,7 @@ public class Server
 	}//End of stopServer method
 
 	//Get the status of the server(is it up or down)
-	private String getServerStatus()
+	public static String getServerStatus()
 	{
 		//Declare a field
 		String status = "";
