@@ -16,6 +16,7 @@ public class Server
 	private Scanner in;
 	private boolean serverUp;
 	private String command;
+	private Thread statusThread;
 
 	//Initializes class fields and objects
 	public Server()
@@ -125,7 +126,7 @@ public class Server
 			{
 				System.out.println("Starting the server...");
 				Thread.sleep(2000);
-				startServer();
+
 				serverUp = true;
 				System.out.println("Server started sucessfully!");
 			}
