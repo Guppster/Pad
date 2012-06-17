@@ -108,17 +108,20 @@ public class Login extends JFrame implements ActionListener, KeyListener
     //Perform an action whenever a button is pressed
     public void actionPerformed (ActionEvent evt)
     {
+    	//Initialize class fields and objects
+    	tempUser.setUsername(txtUser.getText());//Get the username typed by the user and put it in a field of user
+    	tempUser.setPassword(pfPass.getPassword());//Get the password typed by the user and put it in a field of user
+
+    	client = new Client(tempUser);
+
     	//Check which button was pressed
 		if("login".equals(evt.getActionCommand()))
 		{
-			//Initialize class fields and objects
-    		tempUser.setUsername(txtUser.getText());//Get the username typed by the user and put it in a field of user
-    		tempUser.setPassword(pfPass.getPassword());//Get the password typed by the user and put it in a field of user
-
-			client = new Client(tempUser);
-
-			//Try a connection with the server
-			client.tryConnect();
+			try
+			{
+				//Try a connection with the server
+				client.tryConnect();
+			}catch(Exception e){eHandler.displayError("CNC"); eHandler.displayError(".");}
 		}
 		else if ("new".equals(evt.getActionCommand()))
 		{
