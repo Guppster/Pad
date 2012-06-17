@@ -72,13 +72,13 @@ public class Server
 	}//End of stopServer method
 
 	//Get the status of the server(is it up or down)
-	private void getServerStatus()
+	private String getServerStatus()
 	{
 
 	}//End of getServerStatus method
 
 	//Get the connected users(Display the amount of people connected)
-	private void getConnectedUsers()
+	private String getConnectedUsers()
 	{
 
 	}//End of getConnectedUsers method
