@@ -79,7 +79,7 @@ public class Database
 
         	if(user.getEmail().equals(rs.getString("email")))
         	{
-        		System.out.println("Email Already Exists In Database");
+        		//Email already exists in database
         		conditions[1] = true;
         	}
         }
