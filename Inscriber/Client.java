@@ -41,15 +41,17 @@ public class Client
 				try
 				{
 					System.out.println(tempUser.getPassword() + " " + tempUser.getUsername() + "Hmm...");
-					validLogin = database.checkLogin(tempUser);
 					System.out.println(validLogin + " What does this return");
 				}catch(Exception e){eHandler.displayError("CNAD"); eHandler.displayError(".");}
+
+				System.out.println(validLogin + " What does this return");
 
 				if(validLogin)
 					new Lobby();//Open the Lobby screen
 				else
 				{
 					tries++;//Increase their amount of tries left
+					System.out.println("Tries " + tries);
 					eHandler.displayError("WL");//Send an error code to the ErrorHandler class
 					eHandler.displayError(".");//Display the error sent over
 					sClient = null;//Disconnect them
