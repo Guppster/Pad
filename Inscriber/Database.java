@@ -36,7 +36,7 @@ public class Database
 
     public void addUser(User user) throws Exception
     {
-        Connection conn = DriverManager.getConnection(url + "accounts", user, pass);
+        Connection conn = DriverManager.getConnection(url + "accounts", dbUser, dbPass);
 		PreparedStatement prep = conn.prepareStatement(
         	      "INSERT accounts VALUES (?, ?, ?, ?, ?);");
 
