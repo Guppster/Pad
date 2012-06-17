@@ -142,7 +142,7 @@ public class Server
 	}//End of listenForConnection method
 
 	//Return the connection that was just made above
-	public ServerSocket getServerSocket()
+	public static ServerSocket getServerSocket()
 	{
 		return tempServer;
 	}//End of getConnection method
