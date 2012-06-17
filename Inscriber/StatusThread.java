@@ -41,6 +41,7 @@ public class StatusThread extends Thread
 		while(Server.getServerStatus().equals("Server up"))
 		{
 			System.out.println("Server:" + Server.getServerStatus());
+			System.out.println("Whaaaaaaaaaaat");
 			/*while(connectionsAvailable > 0)//Keep accepting connections if there are free connections
 			{*/
 				try
