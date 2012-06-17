@@ -36,7 +36,7 @@ public class Client
 	        }catch(IOException e){eHandler.displayError("CNC"); eHandler.displayError(".");}
 
 			if(sClient != null)
-				System.out.println("lolwhit");
+				System.out.println("lolwhit - What the hell does this indicate, your code in not understandable");
 
 			if(tempUser.getUsername() == null)
 				System.out.println("The tempUser objects username is null");
@@ -45,7 +45,7 @@ public class Client
 	        if(sClient != null)
 	        {
 	        	if(sClient != null)
-				System.out.println("lolwhit");
+				System.out.println("lolwhit -What the hell does this indicate, your code in not understandable");
 
 				try
 				{
