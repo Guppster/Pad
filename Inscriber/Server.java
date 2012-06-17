@@ -127,6 +127,7 @@ public class Server
 				Thread.sleep(2000);
 				startServer();
 				serverUp = true;
+				System.out.println("Server started sucessfully!");
 			}
 			else if(command.equals("/stop"))
 			{
