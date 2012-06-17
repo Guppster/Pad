@@ -112,11 +112,18 @@ public class Server
 			}
 			else if(command.equals("/start"))
 			{
-				System.out.println("Starting the server...");
-				Thread.sleep(2000);
-				startServer();
-				serverUp = true;
-				System.out.println("Server started sucessfully!");
+				if(serverUp)
+				{
+					System.out.println("You dun goofed... The server is already up.");
+				}
+				else
+				{
+					System.out.println("Starting the server...");
+					Thread.sleep(2000);
+					startServer();
+					serverUp = true;
+					System.out.println("Server started sucessfully!");
+				}
 			}
 			else if(command.equals("/stop"))
 			{
