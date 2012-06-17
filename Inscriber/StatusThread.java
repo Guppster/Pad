@@ -36,12 +36,16 @@ public class StatusThread extends Thread
     //When the thread is started(the StatusThread class is called) run this method
     public void run()
     {
+    	StatusThread thread = new StatusThread();
+
     	System.out.println("Server:" + Server.getServerStatus());
 		//Keep looping until the server is stopped by the server owner
 		while(Server.getServerStatus().equals("Server up"))
 		{
 			System.out.println("Server:" + Server.getServerStatus());
 			System.out.println("Whaaaaaaaaaaat");
+			thread.start();
+
 			/*while(connectionsAvailable > 0)//Keep accepting connections if there are free connections
 			{*/
 				try
