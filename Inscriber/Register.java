@@ -161,6 +161,7 @@ public class Register extends JFrame implements ActionListener, KeyListener
 
 		//Set the properties of the frame/pane
     	this.setSize(380,360);
+    	this.setResizable(false);
     	this.setLocationRelativeTo(null);
     	this.setTitle("Inscriber Register: Register a new account, it's FREE!");
     	this.setVisible(true);
