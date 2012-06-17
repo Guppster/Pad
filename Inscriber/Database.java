@@ -56,12 +56,12 @@ public class Database
 
     public boolean [] findUserExists(User user) throws Exception
     {
-    	Connection conn = DriverManager.getConnection("jdbc:sqlite:accounts.db");
+        Connection conn = DriverManager.getConnection(url + "accounts", user, pass);
     	Statement stat = conn.createStatement();
 
     	boolean [] conditions = new boolean[2];
 
-    	ResultSet rs = stat.executeQuery("select * from accounts;");
+    	ResultSet rs = stat.executeQuery("SELECT * FROM accounts;");
         while (rs.next())
         {
 
