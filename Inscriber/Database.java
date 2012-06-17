@@ -51,8 +51,7 @@ public class Database
         prep.addBatch();
 
         conn.commit();
-        int count = prep.executeBatch();
-  		System.out.println(count + "row(s) affected");
+        prep.executeBatch();
 
         conn.close();
     }//End of addUser method
