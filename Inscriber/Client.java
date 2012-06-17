@@ -42,7 +42,7 @@ public class Client
 
 				System.out.println(database.checkLogin(tempUser));
 
-				if(validLogin)
+				if(database.checkLogin(tempUser))
 					new Lobby();//Open the Lobby screen
 				else
 				{
