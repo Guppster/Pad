@@ -170,7 +170,7 @@ public class Database
 
     public String getGroupName(int index) throws Exception
     {
-        Connection conn = DriverManager.getConnection(url + "usergroups", dbUser, dbPass);
+        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
     	Statement stat = conn.createStatement();
 
 	 	ResultSet rs = stat.executeQuery("SELECT * FROM usergroups;");
@@ -194,7 +194,7 @@ public class Database
     public int getNumGroups() throws Exception
     {
     	int numRows = 0;
-        Connection conn = DriverManager.getConnection(url + "usergroups", dbUser, dbPass);
+        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
     	Statement stat = conn.createStatement();
 
      	ResultSet rs = stat.executeQuery("SELECT * FROM usergroups;");
