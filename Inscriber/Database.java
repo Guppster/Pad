@@ -91,10 +91,7 @@ public class Database
 
     public boolean checkLogin(User user) throws Exception
     {
-    	eHandler.displayError("MF");
-    	eHandler.displayError(".");
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
-        System.out.println("Hi this works.");
     	Statement stat = conn.createStatement();
 
 		ResultSet rs = stat.executeQuery("SELECT * FROM accounts;");
