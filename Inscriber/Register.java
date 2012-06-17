@@ -161,7 +161,6 @@ public class Register extends JFrame implements ActionListener, KeyListener
 
 		//Set the properties of the frame/pane
     	this.setSize(380,360);
-    	this.setResizable(false);
     	this.setLocationRelativeTo(null);
     	this.setTitle("Inscriber Register: Register a new account, it's FREE!");
     	this.setVisible(true);
@@ -305,8 +304,7 @@ public class Register extends JFrame implements ActionListener, KeyListener
     public void keyPressed(KeyEvent e)
     {
     	//Declare and initialize fields
-     	//int key = e.getKeyCode();
-     	int key = 0;
+     	int key = e.getKeyCode();
 
 		//Check if the 'Enter' key was pressed
      	if(key == KeyEvent.VK_ENTER)
