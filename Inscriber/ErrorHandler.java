@@ -63,7 +63,7 @@ public class ErrorHandler
 		// the "." is the flag that triggers the error, this allows to add multiple errors to one message box
 		if(errorCode.equals("."))
 		{
-			JOptionPane.showMessageDialog(errorToDisplay);
+			JOptionPane.showMessageDialog(null, errorToDisplay);
 			errorToDisplay = "";
 		}
 
