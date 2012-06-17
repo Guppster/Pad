@@ -35,9 +35,15 @@ public class Client
 	            sClient = new Socket("localhost", 22222);
 	        }catch(IOException e){eHandler.displayError("CNC"); eHandler.displayError(".");}
 
+			if(sClient != null)
+				System.out.println("lolwhit");
+
 			//If it connects fine(The socket won't be null), check the users login information
 	        if(sClient != null)
 	        {
+	        	if(sClient != null)
+				System.out.println("lolwhit");
+
 				try
 				{
 					validLogin = database.checkLogin(tempUser);
