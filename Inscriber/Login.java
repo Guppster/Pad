@@ -112,14 +112,25 @@ public class Login extends JFrame implements ActionListener, KeyListener
 		if("login".equals(evt.getActionCommand()))
 		{
 
+			String username = txtUser.getText();
+			Stirng password = "";
+			char [] tempA = pfPass.getPassword();
+
+			for(int x = 0; x < tempA; x++)
+			{
+				password += tempA[x];
+			}
+
 			//Initialize class fields and objects
-    		tempUser.setUsername(txtUser.getText());//Get the username typed by the user and put it in a field of user
-    		tempUser.setPassword(pfPass.getPassword());//Get the password typed by the user and put it in a field of user
+    		//tempUser.setUsername(txtUser.getText());//Get the username typed by the user and put it in a field of user
+    		//tempUser.setPassword(pfPass.getPassword());//Get the password typed by the user and put it in a field of user
 
-			client = new Client(tempUser);
+			//client = new Client(tempUser);
 
-			//Try a connection with the server
+			client = new Client(username, password);
 			client.tryConnect();
+			//Try a connection with the server
+			//client.tryConnect();
 		}
 		else if ("new".equals(evt.getActionCommand()))
 		{
