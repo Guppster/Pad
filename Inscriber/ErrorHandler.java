@@ -22,41 +22,42 @@ public class ErrorHandler
 	//Initialize class fields and objects
     public ErrorHandler()
     {
+    	errorToDisplay = "";
     }//End of ErrorHandler constructor method
 
     //Displays a error message to the user
 	public void displayError(String errorCode)
 	{
 		if(errorCode.equals("WL"))
-			errorToDisplay += "Wrong username or password.\n";
+			errorToDisplay += "Wrong username or password.";
 		else if(errorCode.equals("MF"))
-			errorToDisplay += "Please enter a first name.\n";
+			errorToDisplay += "Please enter a first name.";
 		else if(errorCode.equals("ML"))
-			errorToDisplay += "Please enter a last name.\n";
+			errorToDisplay += "Please enter a last name.";
 		else if(errorCode.equals("MGN"))
-			errorToDisplay += "Please enter a group name.\n";
+			errorToDisplay += "Please enter a group name.";
 		else if(errorCode.equals("ME"))
-			errorToDisplay += "Please enter a valid email address.\n";
+			errorToDisplay += "Please enter a valid email address.";
 		else if(errorCode.equals("ENM"))
-			errorToDisplay += "Entered email addresses do not match!\n";
+			errorToDisplay += "Entered email addresses do not match!";
 		else if(errorCode.equals("MU"))
-			errorToDisplay += "Please enter a username.\n";
+			errorToDisplay += "Please enter a username.";
 		else if(errorCode.equals("MP"))
-			errorToDisplay += "Please enter a valid password.\n";
+			errorToDisplay += "Please enter a valid password.";
 		else if(errorCode.equals("PNM"))
-			errorToDisplay += "Entered passwords do not match!.\n";
+			errorToDisplay += "Entered passwords do not match!.";
 		else if(errorCode.equals("UE"))
-			errorToDisplay += "The username already exists, choose another.\n";
+			errorToDisplay += "The username already exists, choose another.";
 		else if(errorCode.equals("EE"))
-			errorToDisplay += "The email is already taken, choose another.\n";
+			errorToDisplay += "The email is already taken, choose another.";
 		else if(errorCode.equals("UAEE"))
-			errorToDisplay += "That email and username is already taken, choose another.\n";
+			errorToDisplay += "That email and username is already taken, choose another.";
 		else if(errorCode.equals("CA"))
-			errorToDisplay += "A critical error has occured.\n";
+			errorToDisplay += "A critical error has occured.";
 		else if(errorCode.equals("CNC"))
-			errorToDisplay += "Could not connect to server.\n";
+			errorToDisplay += "Could not connect to server.";
 		else if(errorCode.equals("CNAD"))
-			errorToDisplay += "Could not access database.\n";
+			errorToDisplay += "Could not access database.";
 		else if(errorCode.equals("UNF"))
 			errorToDisplay += "Username does not exist.";
 
