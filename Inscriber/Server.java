@@ -27,7 +27,6 @@ public class Server
 	private String overRide;
 	private StatusThread statusThread;
 
-
 	//Initializes class fields and objects
 	public Server()
 	{
@@ -124,8 +123,8 @@ public class Server
 				{
 					System.out.println("Starting the server...");
 					Thread.sleep(2000);
-					startServer();
 					serverUp = true;
+					startServer();
 					System.out.println("Server started sucessfully!");
 				}
 			}
