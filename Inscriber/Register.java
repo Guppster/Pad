@@ -54,7 +54,6 @@ public class Register extends JFrame implements ActionListener, KeyListener
 		cmdBack = new JButton("Back to login screen");
 		layout = new SpringLayout();
 		user = new User();
-		server = new Server();
 		handler = new ErrorHandler();
 
 		//Call the setGUI method to construct all the GUI components
