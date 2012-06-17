@@ -1,5 +1,15 @@
-//Matthew Ufimzeff and Gurpreet Singh
-//June 17
+/**
+ * @(#)ClientThread.java
+ *
+ * @Description 
+ *
+ * @author Gurpreet Singh, Matt Ufimsef
+ * @version 1.00 2012/6/15
+ *
+ * @Latest Updates: 
+ *
+ * @Status: In Testing
+ */
 
 //Import Java API packages
 import java.net.*;
