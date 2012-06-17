@@ -97,11 +97,16 @@ public class Login extends JFrame implements ActionListener, KeyListener
 	    this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}//End of setGUI method
 
-	public void login() throws InterruptedException
+	public void login()
 	{
 		//Try a connection with the server
 		client.tryConnect();
-		Thread.sleep(5000);
+
+		try
+		{
+			Thread.sleep(5000);
+		}catch(InterruptedException ie){System.out.println(ie + " - Sleeping pills did not work on thread.");}
+
 		this.dispose();
 	}//End of login method
 
