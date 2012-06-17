@@ -19,8 +19,8 @@ public class Database
 {
 	//Constant variables storing database access information
 	private static String url = "jdbc:mysql://localhost:3306/inscriber";
-	private static String dbUser = "test";
-	private static String dbPass = "test";
+	private static String dbUser = "root";
+	private static String dbPass = "root";
 	private static String driver = "com.mysql.jdbc.Driver";
 
 	//Default constructor
