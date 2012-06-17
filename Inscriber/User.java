@@ -1,6 +1,7 @@
 /**
  * @(#)User.java
  *
+ * @Description 
  *
  * @author Gurpreet Singh, Matt Ufimsef
  * @version 1.00 2012/6/15
