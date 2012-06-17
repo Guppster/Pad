@@ -34,8 +34,18 @@ public class Client
         {
 			try
 			{
-				database.checkLogin(tempUser);
+				validLogin = database.checkLogin(tempUser);
 			}catch(Exception e){eHandler.displayError("CNAD") eHandler.displayError(".");}
+
+			if(validLogin)
+				new Lobby();
+			else
+			{
+				tries++;
+				eHandler.displayError("WL");
+				eHandler.displayError(".");
+				sClient = null;
+			}
         }
 	}
 }//End of Client class
