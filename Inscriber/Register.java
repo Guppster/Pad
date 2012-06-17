@@ -1,12 +1,12 @@
 /**
  * @(#)Register.java
  *
- * @Description 
+ * @Description
  *
  * @author Gurpreet Singh, Matt Ufimzeff
  * @version 1.00 2012/6/15
  *
- * @Latest Updates: 
+ * @Latest Updates:
  *
  * @Status: Complete ~ accomodating for currently created classes
  */
@@ -207,7 +207,7 @@ public class Register extends JFrame implements ActionListener, KeyListener
     		handler.displayError("ME");
     	}
 
-    	if(txtEmail.getText() != txtEConfirm.getText())
+    	if(!(txtEmail.getText().equals(txtEConfirm.getText())))
     	{
     		errorThrown = true;
     		handler.displayError("ENM");
@@ -229,7 +229,7 @@ public class Register extends JFrame implements ActionListener, KeyListener
     		handler.displayError("MP");
     	}
 
-    	if(pfNewPass.getPassword() != pfPConfirm.getPassword())
+    	if(!(pfNewPass.getPassword().equals(pfPConfirm.getPassword())))
     	{
     		errorThrown = true;
     		handler.displayError("PNM");
