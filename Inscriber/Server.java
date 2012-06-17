@@ -54,7 +54,7 @@ public class Server
 	//Start the server and start listening for connections
 	private void startServer()
 	{
-		statusThread.run();
+		statusThread.start();
 	}//End of acceptConnections method
 
 	//Attempt to stop the server
