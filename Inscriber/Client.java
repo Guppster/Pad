@@ -41,7 +41,7 @@ public class Client
 	        {
 				try
 				{
-					if(database.checkLogin(tempUser))
+					if(database.checkLogin(tempUser))//Check if the login credentials match
 						new Lobby();//Open the Lobby screen
 					else
 					{
