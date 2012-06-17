@@ -90,7 +90,7 @@ public class Database
 
     public boolean checkLogin(User user) throws Exception
     {
-        Connection conn = DriverManager.getConnection(url + "accounts", dbUser, dbPass);
+        Connection conn = DriverManager.getConnection(url + "inscriber", dbUser, dbPass);
     	Statement stat = conn.createStatement();
 
     	ResultSet rs = stat.executeQuery("SELECT * FROM accounts;");
