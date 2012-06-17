@@ -11,6 +11,7 @@ public class Server
 {
 	//Declare class fields and objects
 	private ServerSocket sServer;
+	private ServerSocket tempServer;
 	private Scanner in;
 	private boolean serverUp;
 	private String command;
@@ -20,7 +21,7 @@ public class Server
 	//Default constructor
 	public Server()
 	{
-
+		tempServer = sServer;
 	}//End of default constructor
 
 	//Initializes class fields and objects
@@ -143,7 +144,7 @@ public class Server
 	//Return the connection that was just made above
 	public ServerSocket getServerSocket()
 	{
-		return sServer;
+		return tempServer;
 	}//End of getConnection method
 
 	//Run the code in this method when the class is run
