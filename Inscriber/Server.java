@@ -144,7 +144,7 @@ public class Server
 	//Return the connection that was just made above
 	public static ServerSocket getServerSocket()
 	{
-		return tempServer;
+		return sServer;
 	}//End of getConnection method
 
 	//Run the code in this method when the class is run
