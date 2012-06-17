@@ -29,7 +29,7 @@ public class Database
 
     }//End of default constructor
 
-    private void createDB(String dbName) throws Exception
+    private void createTable(String tableName) throws Exception
     {
         Class.forName(driver);
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
