@@ -1,11 +1,18 @@
-//By: Matthew Ufimzeff and Gurpreet Singh
-//June 9
-
-/*CLASS IS FINISHED EXCEPT FOR:
- *--------------------
- *1. Create the server class
- *2. Send the data entered into the JTable to the server
- *3. Load the preset data from the server
+/**
+ * @(#)WordFilter.java
+ *
+ * @Description 
+ *
+ * @author Gurpreet Singh, Matt Ufimsef
+ * @version 1.00 2012/6/15
+ *
+ * @Latest Updates: 
+ *
+ * @Status: CLASS IS FINISHED EXCEPT FOR:
+ *			-----------------------------
+ *			1. Create the server class - Done
+ *			2. Send the data entered into the JTable to the server
+ *			3. Load the preset data from the server
  */
 
 //Import API packages
