@@ -1,4 +1,14 @@
-//By Matthew Ufimzeff and Gurpreet Singh
+/**
+ * @(#)Splash.java
+ *
+ *
+ * @author Gurpreet Singh, Matt Ufimsef
+ * @version 1.00 2012/6/15
+ *
+ * @Latest Updates: 
+ *
+ * @Status: Complete ~ accomodating for currently created classes
+ */
 
 //Import java API packages
 import java.awt.Shape;
