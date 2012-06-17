@@ -91,7 +91,7 @@ public class Server
 		//Keep prompting the user owner to enter in a command
 		while(true)
 		{
-			Thread.sleep(1000);
+			Thread.sleep(500);
 			System.out.println();
 			System.out.print("<Command>: ");
 			command = in.next();
