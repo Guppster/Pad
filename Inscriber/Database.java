@@ -18,7 +18,7 @@ import java.io.*;
 public class Database
 {
 	//Constant variables storing database access information
-	private static String url = "jdbc:mysql://localhost:3306/";
+	private static String url = "jdbc:mysql://localhost:3306/inscriber";
 	private static String dbUser = "root";
 	private static String dbPass = "root";
 	private static String driver = "com.mysql.jdbc.Driver";
@@ -42,7 +42,7 @@ public class Database
 
     public void addUser(User user) throws Exception
     {
-        Connection conn = DriverManager.getConnection(url + "inscriber", dbUser, dbPass);
+        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
 		PreparedStatement prep = conn.prepareStatement(
         	      "INSERT accounts VALUES (?, ?, ?, ?, ?);");
 
@@ -62,7 +62,7 @@ public class Database
 
     public boolean [] findUserExists(User user) throws Exception
     {
-        Connection conn = DriverManager.getConnection(url + "inscriber", dbUser, dbPass);
+        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
     	Statement stat = conn.createStatement();
 
     	boolean [] conditions = new boolean[2];
