@@ -55,5 +55,12 @@ public class StatusThread extends Thread
 				}catch(IOException e){System.out.println("Server was stopped."); stop = true; break;}
 			}//End of inner while loop
 		}//End of outer while loop
+
+		//Reset all the fields for server restart
+		connectionsAvailable = 5;
+		full = false;
+		stop = false;
+		connections = new ClientThread[connectionsAvailable];
+		sClient = null;
     }//End of run method
 }//End of StatusThread class
