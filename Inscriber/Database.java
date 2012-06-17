@@ -149,15 +149,18 @@ public class Database
         Connection conn = DriverManager.getConnection(url + "usergroups", user, pass);
 		PreparedStatement prep = conn.prepareStatement(
         	      "INSERT usergroups VALUES (?, ?, ?, ?, ?);");
-
+		
+		conn.setAutoCommit(false);
+		
         prep.setBoolean(1, permissions[0]);
         prep.setBoolean(2, permissions[1]);
         prep.setBoolean(3, permissions[2]);
         prep.setBoolean(4, permissions[3]);
         prep.setBoolean(5, permissions[4]);
         prep.addBatch();
+        
+        conn.commit();
 
-        conn.setAutoCommit(false);
         prep.executeBatch();
         conn.setAutoCommit(true);
 
