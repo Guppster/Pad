@@ -23,10 +23,11 @@ public class Database
 	private static String dbPass = "root";
 	private static String driver = "com.mysql.jdbc.Driver";
 
+	//Default constructor
 	public Database()
     {
 
-    }
+    }//End of default constructor
 
     private void createDB(String dbName) throws Exception
     {
