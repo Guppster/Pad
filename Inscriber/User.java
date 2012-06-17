@@ -52,6 +52,11 @@ public class User
 		return password;
 	}
 	
+	public String getEmail()
+	{
+		return email;
+	}
+	
 	//Mutator methods
 	public void setFirstName(String firstName)
 	{
