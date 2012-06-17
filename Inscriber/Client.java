@@ -38,6 +38,9 @@ public class Client
 			if(sClient != null)
 				System.out.println("lolwhit");
 
+			if(tempUser != null)
+				System.out.println("Someerror");
+
 			//If it connects fine(The socket won't be null), check the users login information
 	        if(sClient != null)
 	        {
