@@ -40,6 +40,7 @@ public class StatusThread extends Thread
 		//Keep looping until the server is stopped by the server owner
 		while(Server.getServerStatus().equals("Server up"))
 		{
+			System.out.println("Server:" + Server.getServerStatus());
 			/*while(connectionsAvailable > 0)//Keep accepting connections if there are free connections
 			{*/
 				try
