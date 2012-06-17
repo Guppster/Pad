@@ -28,6 +28,7 @@ public class Server
 		in = new Scanner(System.in);
 		serverUp = false;
 		command = "";
+		statusThread = new Thread();
 	}//End of Server constructor method
 
 	//Bind the ServerSocket object to listen to a specified port
