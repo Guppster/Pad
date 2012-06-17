@@ -7,7 +7,7 @@ import java.sql.*;
 import java.io.*;
 import java.util.*;
 
-public class Server implements Runnable
+public class Server
 {
 	//Declare class fields and objects
 	private ServerSocket sServer;
@@ -36,7 +36,7 @@ public class Server implements Runnable
 	}//End of Server constructor method
 
 	//Bind the ServerSocket object to listen to a specified port
-	private void bindPort(int port)
+	private ServerSocket bindPort(int port)
 	{
 		try
 		{
@@ -45,6 +45,7 @@ public class Server implements Runnable
 
 		//Output a message informing the server owner that the port was bound sucessfully
 		System.out.println("Port was bound sucessfully!");
+		return sServer;
 	}//End of bindPort method
 
 	private void startServer()
@@ -53,13 +54,13 @@ public class Server implements Runnable
 	}//End of acceptConnections method
 
 	//Attempt to stop the server
-	private void stopServer()
+	/*private void stopServer()
 	{
 		try
 		{
 			sServer.close();
 		}catch(IOException e){System.out.println(e + " - The server dropped the bass... WUB-WUB-WUB-WUB-WUB!");}
-	}//End of stopServer method
+	}//End of stopServer method*/
 
 	//Get the status of the server(is it up or down)
 	private String getServerStatus()
@@ -107,11 +108,15 @@ public class Server implements Runnable
 				System.out.println("/users  -> Shows the users connected to the server.");
 				System.out.println("/help   -> Displays this list of commands.");
 			}
+			else if(command.equals("/test"))
+			{
+				System.out.println("Tester12 " + sServer.toString());
+			}
 			else if(command.equals("/start"))
 			{
 				System.out.println("Starting the server...");
 				Thread.sleep(2000);
-				run();
+				statusThread.start();
 				serverUp = true;
 				System.out.println("Server started sucessfully!");
 			}
@@ -132,11 +137,6 @@ public class Server implements Runnable
 			}
 		}
 	}//End of listenForConnection method
-
-	public void run()
-	{
-
-	}//End of run method
 
 	//Return the connection that was just made above
 	public ServerSocket getServerSocket()
