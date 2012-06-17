@@ -51,7 +51,8 @@ public class Database
         prep.addBatch();
 
         conn.commit();
-        prep.executeBatch();
+        int count = prep.executeBatch();
+  		System.out.println(count + "row(s) affected");
 
         conn.close();
     }//End of addUser method
@@ -223,5 +224,8 @@ public class Database
 				rs.deleteRow();
 			}
 	 	}
+	 	
+	 	rs.close();
+	 	conn.close();
     }//End of removeGroup method
 }//End of class class
