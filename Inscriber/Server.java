@@ -15,6 +15,7 @@ public class Server
 	private Scanner in;
 	private boolean serverUp;
 	private String command;
+	private String overRide;
 	private StatusThread statusThread;
 
 	//Default constructor
@@ -24,7 +25,7 @@ public class Server
 	}//End of default constructor
 
 	//Initializes class fields and objects
-	public Server()
+	public Server(String overRide)
 	{
 		//Initialize class fields and objects
 		sServer = null;
@@ -32,6 +33,7 @@ public class Server
 		in = new Scanner(System.in);
 		serverUp = false;
 		command = "";
+		this.overRide = overRide;
 		statusThread = new StatusThread();
 	}//End of Server constructor method
 
