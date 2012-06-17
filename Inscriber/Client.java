@@ -12,6 +12,7 @@ public class Client
 	private Database database;
 	private User tempUser;
 	private ErrorHandler eHandler;
+	private int tries;
 
 	//Initializes class fields and objects
 	public Client(User tempUser)
@@ -19,6 +20,7 @@ public class Client
 		//Initialize class fields and objects
 		this.tempUser = tempUser;
 		eHandler = new ErrorHandler();
+		tries = 0;
 	}//End of Client constructor method
 
 	//Attempt to connect to the server
