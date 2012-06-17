@@ -89,7 +89,7 @@ public class Database
         return conditions;
     }//End of findUserExists
 
-    public boolean checkLogin(User user)
+    public boolean checkLogin(User user) throws Exception
     {
     	Class.forName(driver);
     	System.out.println("Driver name: " + driver);
