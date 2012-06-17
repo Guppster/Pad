@@ -37,20 +37,17 @@ public class StatusThread
 		{
 			while(connectionsAvailable > 0)//Keep accepting connections if there are free connections
 			{
-				try
-				{
-					server.acceptAConnection();
+				server.acceptAConnection();
 
-					for(int x = 0; x < connections.length; x++)//Go through the connections array and search for an empty connection
+				for(int x = 0; x < connections.length; x++)//Go through the connections array and search for an empty connection
+				{
+					if(connections[x] == null)
 					{
-						if(connections[x] == null)
-						{
-							(connections[x] = new ClientThread(server.getConnection(), connections)).start();
-							connectionsAvailable--;
-					    	break;
-						}
+						(connections[x] = new ClientThread(server.getConnection(), connections)).start();
+						connectionsAvailable--;
+					   	break;
 					}
-				}catch(IOException e){System.out.println(e);}
+				}
 			}//End of inner while loop
 		}//End of outer while loop
     }//End of run method
