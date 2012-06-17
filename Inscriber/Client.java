@@ -39,7 +39,7 @@ public class Client
 			//If it connects fine(The socket won't be null), check the users login information
 	        if(sClient != null)
 	        {
-				System.out.println(database.checkLogin(user, pass));
+				System.out.println(database.checkLogin(tempUser));
 
 
 				/*if(database.checkLogin(tempUser))
