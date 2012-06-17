@@ -89,7 +89,7 @@ public class Database
         return conditions;
     }//End of findUserExists
 
-    public boolean checkLogin(User user) throws Exception
+    public boolean checkLogin(User user)
     {
     	System.out.println("Why won't this work.");
     	//Class.forName(driver);
