@@ -103,13 +103,6 @@ public class Server
 				System.out.println("/users  -> Shows the users connected to the server.");
 				System.out.println("/help   -> Displays this list of commands.");
 			}
-			else if(command.equals("/test"))
-			{
-				if(sServer == null)
-					System.out.println("Tester12 is null");
-				else if(!(sServer == null))
-					System.out.println("Tester12 is not null");
-			}
 			else if(command.equals("/start"))
 			{
 				if(serverUp)
