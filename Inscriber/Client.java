@@ -41,19 +41,17 @@ public class Client
 	        {
 				try
 				{
-					System.out.println(database.checkLogin(tempUser));
-				}catch(Exception e){System.out.println(e + " Java sucks");}
-
-				if(database.checkLogin(tempUser))
-					new Lobby();//Open the Lobby screen
-				else
-				{
-					tries++;//Increase their amount of tries left
-					System.out.println("Tries " + tries);
-					eHandler.displayError("WL");//Send an error code to the ErrorHandler class
-					eHandler.displayError(".");//Display the error sent over
-					sClient = null;//Disconnect them
-				}
+					if(database.checkLogin(tempUser))
+						new Lobby();//Open the Lobby screen
+					else
+					{
+						tries++;//Increase their amount of tries left
+						System.out.println("Tries " + tries);
+						eHandler.displayError("WL");//Send an error code to the ErrorHandler class
+						eHandler.displayError(".");//Display the error sent over
+						sClient = null;//Disconnect them
+					}
+				}catch(Exception e){eHandler.displayError("WL"); eHandler.displayError(".");}
 	        }
 		}
 	}//End of tryConnect method
