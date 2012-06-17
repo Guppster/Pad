@@ -1,5 +1,15 @@
-//By Matthew Ufimzeff and Gurpreet Singh
-//June 16
+/**
+ * @(#)CreateNewGroup.java
+ *
+ * @Description 
+ *
+ * @author Gurpreet Singh, Matt Ufimsef
+ * @version 1.00 2012/6/15
+ *
+ * @Latest Updates: 
+ *
+ * @Status: Complete ~ accomodating for currently created classes
+ */
 
 //Import java API packages
 import javax.swing.*;
