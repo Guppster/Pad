@@ -121,7 +121,7 @@ public class Database
     public boolean [] retrieveDefaultPermissions() throws Exception
     {
     	boolean [] permissions = new boolean[5];
-        Connection conn = DriverManager.getConnection(url + "usergroups", user, pass);
+        Connection conn = DriverManager.getConnection(url + "usergroups", dbUser, dbPass);
     	Statement stat = conn.createStatement();
 
 	 	ResultSet rs = stat.executeQuery("SELECT * FROM usergroups;");
