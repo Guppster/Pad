@@ -31,6 +31,7 @@ public class Register extends JFrame implements ActionListener, KeyListener
 	private char[] tempPConfirm;
 	private String pConfirm;
 	private User user;
+	private Database database;
 
 	//Initialize class fields and objects
     public Register()
@@ -55,6 +56,7 @@ public class Register extends JFrame implements ActionListener, KeyListener
 		layout = new SpringLayout();
 		user = new User();
 		handler = new ErrorHandler();
+		database = new Database();
 
 		//Call the setGUI method to construct all the GUI components
 		setGUI();
