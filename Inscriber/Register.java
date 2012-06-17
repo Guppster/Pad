@@ -229,7 +229,7 @@ public class Register extends JFrame implements ActionListener, KeyListener
     		handler.displayError("MP");
     	}
 
-    	if(!(pfNewPass.getPassword().equals(pfPConfirm.getPassword())))
+    	if(!(pfNewPass.getText().equals(pfPConfirm.getText())))
     	{
     		errorThrown = true;
     		handler.displayError("PNM");
