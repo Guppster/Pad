@@ -207,7 +207,7 @@ public class Database
 	 	return numRows;
     }//End og getNumGroups
 
-    public void removeGroup(String columnLabel) throws Exception
+    public void removeGroup(String groupName) throws Exception
     {
         Connection conn = DriverManager.getConnection(url + "usergroups", user, pass);
     	Statement stat = conn.createStatement();
@@ -216,7 +216,7 @@ public class Database
 
     	while(rs.next())
 	 	{
-			if(columnLabel.equals(rs.getString("name")))
+			if(groupName.equals(rs.getString("name")))
 			{
 				rs.deleteRow();
 			}
