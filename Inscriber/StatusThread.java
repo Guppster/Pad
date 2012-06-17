@@ -5,7 +5,7 @@
 import java.net.*;
 import java.io.*;
 
-public class StatusThread
+public class StatusThread extends Thread
 {
 	//Declare class fields and objects
 	private volatile boolean stop;
