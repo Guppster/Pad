@@ -209,7 +209,7 @@ public class Database
 
     public void removeGroup(String groupName) throws Exception
     {
-        Connection conn = DriverManager.getConnection(url + "usergroups", user, pass);
+        Connection conn = DriverManager.getConnection(url + "usergroups", dbUser, dbPass);
     	Statement stat = conn.createStatement();
 
     	ResultSet rs = stat.executeQuery("SELECT * FROM usergroups;");
