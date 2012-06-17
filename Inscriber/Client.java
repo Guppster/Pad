@@ -24,7 +24,7 @@ public class Client
 	}//End of Client constructor method
 
 	//Attempt to connect to the server
-	public void tryConnect() throws Exception
+	public void tryConnect()
 	{
 		if(tries < 6)
 		{
@@ -40,8 +40,6 @@ public class Client
 				{
 					System.out.println(database.checkLogin(tempUser));
 				}catch(Exception e){e.printStackTrace();}
-
-
 
 				if(database.checkLogin(tempUser))
 					new Lobby();//Open the Lobby screen
