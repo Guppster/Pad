@@ -167,7 +167,7 @@ public class Database
 
     public String getGroupName(int index) throws Exception
     {
-        Connection conn = DriverManager.getConnection(url + "usergroups", user, pass);
+        Connection conn = DriverManager.getConnection(url + "usergroups", dbUser, dbPass);
     	Statement stat = conn.createStatement();
 
 	 	ResultSet rs = stat.executeQuery("SELECT * FROM usergroups;");
