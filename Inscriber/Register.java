@@ -236,36 +236,42 @@ public class Register extends JFrame implements ActionListener, KeyListener
 
 	private boolean confirmIndividuality()
 	{
+		//Declare a field
+		boolean confirmed = false;
+
 		try
 		{
+			//Declare a field and initialize it
 			boolean [] conditionResults = database.findUserExists(user);
 
 			//Query the server to check if there is a username matching the one entered, then check if the password matches
 			//return true means the user field exists, false means it doesnt exist
 		   	if(conditionResults[0] == false && conditionResults[1] == false)
 		    {
-		    	return true;
+		    	confirmed = true;
 			}
 			else if(conditionResults[0] == true && conditionResults[1] == false)
 			{
 				handler.displayError("UE");
-				return false;
+				confirmed = false;
 			}
 			else if(conditionResults[0] == false && conditionResults[1] == true)
 			{
 				handler.displayError("EE");
-				return false;
+				confirmed = false;
 			}
 			else if(conditionResults[0] == true && conditionResults[1] == true)
 			{
 				handler.displayError("UAEE");
-				return false;
+				confirmed = false;
 			}
 			else
 			{
-				return false;
+				confirmed = false;
 			}
 		}catch(Exception ex){System.out.println(ex + " - An error occurred while try to access the database.");}
+
+		return confirmed;
 	}//End of confirmIndivusuality method
 
 	//Perform an action whenever a button is pressed
