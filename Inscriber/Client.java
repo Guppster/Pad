@@ -41,7 +41,10 @@ public class Client
 	        {
 				try
 				{
-					database.createTable("thisIsATest1234");
+					try
+					{
+						database.createTable("thisIsATest1234");
+					}catch(Exception e){System.out.println("Error - " + e);}
 					//System.out.println(database.checkLogin(tempUser));
 				}catch(UnknownHostException e){System.out.println(e + " Java sucks");}
 
