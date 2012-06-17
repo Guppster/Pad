@@ -91,8 +91,10 @@ public class Database
 
     public boolean checkLogin(User user) throws Exception
     {
-    	Class.forName(driver);
     	System.out.println("Driver name: " + driver);
+    	System.out.println("URL name: " + url);
+    	System.out.println("Username: " + dbUser);
+    	System.out.println("Password: " + dbPass);
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
         System.out.println("Connection: " + conn);
     	Statement stat = conn.createStatement();
