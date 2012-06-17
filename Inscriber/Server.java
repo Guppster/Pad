@@ -134,7 +134,7 @@ public class Server
 	}//End of listenForConnection method
 
 	//Return the connection that was just made above
-	public Socket getServerSocket()
+	public ServerSocket getServerSocket()
 	{
 		return sServer;
 	}//End of getConnection method
