@@ -1,12 +1,12 @@
 /**
  * @(#)ClientThread.java
  *
- * @Description 
+ * @Description
  *
  * @author Gurpreet Singh, Matt Ufimsef
  * @version 1.00 2012/6/15
  *
- * @Latest Updates: 
+ * @Latest Updates:
  *
  * @Status: In Testing
  */
@@ -36,91 +36,6 @@ public class ClientThread extends Thread
 	public void run()
 	{
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		//TESTING PURPOSES ONLY
-		String line;
-        String name;
-        boolean flag = true;
-
-		try
-		{
-		    in = new BufferedReader(new InputStreamReader(sClient.getInputStream()));
-            out = new PrintWriter(sClient.getOutputStream(), true);
-
-		    out.println("Enter your name.");
-		    name = in.readLine();
-
-		    out.println("Hello " + name + "! Welcome to Juniors' project test program!\nTo leave enter /quit in a new line.");
-
-		    for(int x = 0; x < 5; x++)
-		    {
-		    	if (connections[x]!= null && connections[x]!= this)
-		    		connections[x].out.println("*** " + name + " connected! ***");
-		    }
-
-		    while(flag = true)
-		    {
-				line = in.readLine();
-	            if(line.startsWith("/quit"))
-	            	 break;
-
-				for(int y = 0; y < 5; y++)
-				{
-					if(connections[y]!= null)
-						connections[y].out.println("<" + name + ">: " + line);
-				}
-		    }
-
-		    for(int z = 0; z < 5; z++)
-		    {
-		    	if(connections[z]!= null && connections[z]!= this)
-			    	connections[z].out.println("*** " + name + " has disconnected! ***" );
-		    }
-
-		    // Clean up:
-		    // Set to null the current thread variable such that other client could
-		    // be accepted by the server
-
-		    for(int l = 0; l < 5; l++)
-		    {
-		    	if(connections[l] == this)
-					connections[l] = null;
-		    }
-		    // close the output stream
-		    // close the input stream
-		    // close the socket
-
-		    in.close();
-		    out.close();
-		    sClient.close();
-		}catch(IOException e){};
+		System.out.println("THE CONNECTION LEADS HERE!");
 	}//End of run method
 }//End of ClientThread class
