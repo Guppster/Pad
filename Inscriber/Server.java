@@ -97,10 +97,10 @@ public class Server
 				stopServer();
 				serverUp = false;
 			}
-			else if(command.equals("/status")()
-				System.out.println("Server Status: " + getServerStatus())
+			else if(command.equals("/status"))
+				System.out.println("Server Status: " + getServerStatus());
 			else if(command.equals("/users"))
-				System.out.println("Connected Users: " + getConnectedUsers();
+				System.out.println("Connected Users: " + getConnectedUsers());
 		}
 	}//End of listenForConnection method
 
