@@ -64,9 +64,9 @@ public class Server
 		String status = "";
 
 		if(serverUp)
-			status = "Up";
+			status = "Server up";
 		else
-			status = "Down";
+			status = "Server down";
 
 		return status;
 	}//End of getServerStatus method
