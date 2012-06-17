@@ -7,6 +7,7 @@ import java.io.*;
 
 public class Client
 {
+	//Declare class fields and objects
 	private Socket sClient;
 	private Database database;
 	private User tempUser;
@@ -24,11 +25,10 @@ public class Client
 		try
 		{
             sClient = new Socket("localhost", 22222);
-        }catch(IOException e){System.out.println(e + " - Could not connect to the server.");}
+        }catch(IOException e){eHandler.displayError("CNC");}
 
         if(sClient != null)
         {
-        	System.out.println("Connected to server.");
 			try
 			{
 				database.checkLogin(tempUser);
