@@ -52,7 +52,7 @@ public class Server
 	//Accept a connection to the server
 	public void acceptAConnection()
 	{
-		while(true)
+		while(sClient == null)
 		{
 			try
 			{
