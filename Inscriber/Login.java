@@ -1,7 +1,15 @@
-//Matthew Ufimzeff and Gurpreet Singh
-//June 16
-
-//FINISHED CLASS
+/**
+ * @(#)Login.java
+ *
+ * @Description 
+ *
+ * @author Gurpreet Singh, Matt Ufimsef
+ * @version 1.00 2012/6/15
+ *
+ * @Latest Updates: 
+ *
+ * @Status: Complete
+ */
 
 //Import Java API packages
 import java.awt.*;

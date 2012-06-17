@@ -1,5 +1,16 @@
-//By Matthew Ufimzeff and Gurpreet Singh
-
+/**
+ * @(#)Image.java
+ *
+ * @Description 
+ *
+ * @author Gurpreet Singh, Matt Ufimsef
+ * @version 1.00 2012/6/15
+ *
+ * @Latest Updates: 
+ *
+ * @Status: Complete ~ accomodating for currently created classes
+ */
+ 
 //Import API objects
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
