@@ -149,7 +149,7 @@ public class Database
     	boolean [] permissions = new boolean[5];
     	permissions = group.getPermissions();
 
-        Connection conn = DriverManager.getConnection(url + "usergroups", dbUser, dbPass);
+        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
 		PreparedStatement prep = conn.prepareStatement(
         	      "INSERT usergroups VALUES (?, ?, ?, ?, ?);");
 
