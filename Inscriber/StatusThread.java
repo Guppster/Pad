@@ -36,12 +36,13 @@ public class StatusThread extends Thread
     //When the thread is started(the StatusThread class is called) run this method
     public void run()
     {
+    	boolean flag = true;
 		//Keep looping until the server is stopped by the server owner
 		while(!stop)
 		{
 			while(connectionsAvailable > 0)//Keep accepting connections if there are free connections
 			{
-				while(true)
+				while(flag == true)
 				{
 					try
 					{
