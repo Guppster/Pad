@@ -276,8 +276,7 @@ public class Register extends JFrame implements ActionListener, KeyListener
 			{
 				if(confirmIndividuality())
 				{
-					database = new Database(user);
-					database.saveUser();
+					database.saveUser(user);
 				}
 			}
 		}
@@ -304,7 +303,6 @@ public class Register extends JFrame implements ActionListener, KeyListener
 			{
 				if(confirmIndividuality())
 				{
-					database = new Database();
 					database.addUser(user);
 				}
 			}
