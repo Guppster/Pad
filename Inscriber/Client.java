@@ -27,7 +27,7 @@ public class Client
 	}//End of Client constructor method
 
 	//Attempt to connect to the server
-	public void tryConnect() throws Exception
+	public void tryConnect()
 	{
 		if(tries < 6)
 		{
