@@ -22,12 +22,10 @@ public class Database
 	private static String dbUser = "root";
 	private static String dbPass = "root";
 	private static String driver = "com.mysql.jdbc.Driver";
-	private ErrorHandler eHandler;
 
 	//Default constructor
 	public Database()
     {
-		eHandler = new ErrorHandler();
     }//End of default constructor
 
     private void createTable(String tableName) throws Exception
