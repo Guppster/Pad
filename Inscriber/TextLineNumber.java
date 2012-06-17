@@ -1,3 +1,22 @@
+/**
+ * @(#)TextLineNumber.java
+ *
+ * @Description This class will display line numbers for a related text component. The text
+ *  			component must use the same line height for each line. TextLineNumber
+ *  			supports wrapped lines and will highlight the line number of the current
+ *  			line in the text component.
+ *
+ *  			This class was designed to be used as a component added to the row header
+ *  			of a JScrollPane.
+ *
+ * @author Gurpreet Singh, Matt Ufimsef
+ * @version 1.00 2012/6/15
+ *
+ * @Latest Updates: 
+ *
+ * @Status: Complete ~ accomodating for currently created classes
+ */
+
 import java.awt.*;
 import java.awt.event.*;
 import java.beans.*;
