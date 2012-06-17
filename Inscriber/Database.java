@@ -118,8 +118,6 @@ public class Database
         }
         rs.close();
         conn.close();
-
-        System.out.println("Username not Found - While Escaped");
         return false;
     }//End of Check login method/
 
