@@ -265,7 +265,7 @@ public class Register extends JFrame implements ActionListener, KeyListener
 			{
 				return false;
 			}
-		}catch(Exception e){System.out.println(e + " - An error occurred while try to access the database.");}
+		}catch(Exception ex){System.out.println(ex + " - An error occurred while try to access the database.");}
 	}//End of confirmIndivusuality method
 
 	//Perform an action whenever a button is pressed
