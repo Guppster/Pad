@@ -97,7 +97,7 @@ public class Database
 
         while(rs.next())
         {
-        	for(int x = 0; x < rs.length; x++)
+        	for(int x = 0; x < rs.length(); x++)
         	{
         		System.out.println(rs.getString(x));
         	}
