@@ -14,6 +14,7 @@ public class Server
 	private Socket sClient;
 	private ClientThread[] connections;
 	private Scanner in;
+	private boolean serverUp;
 	private String command;
 
 	//Initializes class fields and objects
@@ -24,6 +25,7 @@ public class Server
 		sClient = null;
 		connections = new ClientThread[5];
 		in = new Scanner(System.in);
+		serverUp = false;
 		command = "";
 	}//End of Server constructor method
 
