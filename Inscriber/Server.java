@@ -126,7 +126,7 @@ public class Server
 	}//End of listenForConnection method
 
 	//Run the code in this method when the class is run
-	public static void main(String [] args)
+	public static void main(String [] args) throws InterruptedException
 	{
 		//Create a new Server object so we can call methods in the main method
 		Server server = new Server();
