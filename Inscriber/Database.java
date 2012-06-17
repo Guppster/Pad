@@ -122,8 +122,8 @@ public class Database
 				return false;//Login is not valid
 			}
         }*/
-        rs.close();
-        conn.close();
+        //rs.close();
+        //conn.close();
         return false;
     }//End of Check login method
 
