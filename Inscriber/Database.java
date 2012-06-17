@@ -38,7 +38,7 @@ public class Database
     {
         Connection conn = DriverManager.getConnection(url + "accounts", user, pass);
 		PreparedStatement prep = conn.prepareStatement(
-        	      "insert into accounts values (?, ?, ?, ?, ?);");
+        	      "INSERT accounts VALUES (?, ?, ?, ?, ?);");
 
         prep.setString(1, user.getFirstName());
         prep.setString(2, user.getLastName());
