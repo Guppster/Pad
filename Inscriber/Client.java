@@ -27,7 +27,10 @@ public class Client
         if(sClient != null)
         {
         	System.out.println("Connected to server.");
-			database.checkLogin(tempUser);
+			try
+			{
+				database.checkLogin(tempUser);
+			}catch(Exception e){System.out.println(e + " - An error occurred while contacting the database.");}
         }
 	}
 }//End of Client class
