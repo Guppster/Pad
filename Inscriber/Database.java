@@ -97,10 +97,10 @@ public class Database
 
         while(rs.next())
         {
-        	if(user.getUsername().equals(rs.getString("user")))
+        	if(user.getUsername().equals(rs.getString(1)))
         	{
         		//Username found
-        		if(user.getPassword().equals(rs.getString("pass")))
+        		if(user.getPassword().equals(rs.getString(2)))
         		{
         			//Password found and matches one passed in
         			rs.close();
