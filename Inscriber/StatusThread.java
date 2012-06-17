@@ -23,7 +23,7 @@ public class StatusThread extends Thread
     	stop = false;
     	connectionsAvailable = 5;
     	full = false;
-    	connections = new ClientThread[connectionsAvailable];
+    	connections = new ClientThread[5];
     	sClient = null;
     }//End of StatusThread constructor method
 
