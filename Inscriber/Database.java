@@ -36,7 +36,8 @@ public class Database
 
     public void addUser(User user) throws Exception
     {
-        Connection conn = DriverManager.getConnection("jdbc:sqlite:accounts.db");
+        Class.forName(driver);
+        Connection conn = DriverManager.getConnection(url, user, pass);
 		PreparedStatement prep = conn.prepareStatement(
         	      "insert into accounts values (?, ?, ?, ?, ?);");
 
