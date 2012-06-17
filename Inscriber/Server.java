@@ -22,7 +22,7 @@ public class Server
 	private static ServerSocket sServer;
 	private ServerSocket tempServer;
 	private Scanner in;
-	private boolean serverUp;
+	private static boolean serverUp;
 	private String command;
 	private String overRide;
 	private StatusThread statusThread;
