@@ -10,7 +10,7 @@ public class Client
 	//Declare class fields and objects
 	private Socket sClient;
 	private Database database;
-	//private User tempUser;
+	private User tempUser;
 	private ErrorHandler eHandler;
 	private int tries;
 	private String user;
