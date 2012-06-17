@@ -156,8 +156,6 @@ public class Database
 		PreparedStatement prep = conn.prepareStatement(
         	      "INSERT usergroups VALUES (?, ?, ?, ?, ?);");
 
-		conn.setAutoCommit(false);
-
         prep.setBoolean(1, permissions[0]);
         prep.setBoolean(2, permissions[1]);
         prep.setBoolean(3, permissions[2]);
@@ -165,9 +163,9 @@ public class Database
         prep.setBoolean(5, permissions[4]);
         prep.addBatch();
 
-        conn.commit();
-
+		conn.setAutoCommit(false);
         prep.executeBatch();
+        conn.setAutoCommit(true);
         conn.close();
     }//End of addNewGroup method
 
