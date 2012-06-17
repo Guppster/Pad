@@ -11,6 +11,7 @@ public class StatusThread
 	private volatile boolean stop;
 	private int connectionsAvailable;
 	private boolean full;
+	private ClientThread[] connections;
 
 	//Initializes class fields and objects
     public StatusThread()
@@ -19,6 +20,7 @@ public class StatusThread
     	stop = false;
     	connectionsAvailable = 5;
     	full = false;
+    	connections = new ClientThead[connectionsAvailable];
     }//End of StatusThread constructor method
 
     //When a user disconnects, this method is called, and a connection spot is freed
@@ -37,13 +39,13 @@ public class StatusThread
 			{
 				try
 				{
-					sClient = sServer.accept();//Accept the connection
+					server.acceptAConnection();
 
 					for(int x = 0; x < connections.length; x++)//Go through the connections array and search for an empty connection
 					{
 						if(connections[x] == null)
 						{
-							(connections[x] = new ClientThread(sClient, connections)).start();
+							(connections[x] = new ClientThread(server.getConnection(), connections)).start();
 							connectionsAvailable--;
 					    	break;
 						}

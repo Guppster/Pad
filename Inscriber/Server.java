@@ -12,7 +12,6 @@ public class Server
 	//Declare class fields and objects
 	private ServerSocket sServer;
 	private Socket sClient;
-	private ClientThread[] connections;
 	private Scanner in;
 	private boolean serverUp;
 	private String command;
@@ -24,7 +23,6 @@ public class Server
 		//Initialize class fields and objects
 		sServer = null;
 		sClient = null;
-		connections = new ClientThread[5];
 		in = new Scanner(System.in);
 		serverUp = false;
 		command = "";
@@ -42,6 +40,12 @@ public class Server
 		//Output a message informing the server owner that the port was bound sucessfully
 		System.out.println("Port was bound sucessfully!");
 	}//End of bindPort method
+
+	//Accept a connection to the server
+	public void acceptAConnection()
+	{
+		sClient = sServer.accept();//Accept the connection
+	}//End of acceptAConnection method
 
 	private void startServer()
 	{
@@ -132,6 +136,12 @@ public class Server
 			}
 		}
 	}//End of listenForConnection method
+
+	//Return the connection that was just made above
+	public Socket getConnection()
+	{
+		return sClient;
+	}//End of getConnection method
 
 	//Run the code in this method when the class is run
 	public static void main(String [] args) throws InterruptedException
