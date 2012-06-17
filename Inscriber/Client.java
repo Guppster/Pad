@@ -38,9 +38,10 @@ public class Client
 	        {
 				try
 				{
+					System.out.println(database.checkLogin(tempUser));
 				}catch(Exception e){e.printStackTrace();}
 
-				System.out.println(database.checkLogin(tempUser));
+
 
 				if(database.checkLogin(tempUser))
 					new Lobby();//Open the Lobby screen
