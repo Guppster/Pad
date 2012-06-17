@@ -5,7 +5,7 @@
  * @author Gurpreet Singh, Matt Ufimsef
  * @version 1.00 2012/6/15
  *
- * @Latest Update: Added constant variables for information regarding connection to the database, and converted code from sqlite to MySQL
+ * @Latest Updates: Added constant variables for information regarding connection to the database, and converted code from sqlite to MySQL
  */
 
 import java.net.*;
