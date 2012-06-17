@@ -7,7 +7,7 @@
  *
  * @Latest Updates: Added constant variables for information regarding connection to the database, and converted code from sqlite to MySQL
  *
- * @Status: Complete ~ accomodating for current methods
+ * @Status: Complete ~ accomodating for currently created methods
  */
 
 import java.net.*;
