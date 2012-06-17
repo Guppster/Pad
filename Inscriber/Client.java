@@ -27,14 +27,14 @@ public class Client
 		try
 		{
             sClient = new Socket("localhost", 22222);
-        }catch(IOException e){eHandler.displayError("CNC");}
+        }catch(IOException e){eHandler.displayError("CNC") eHandler.displayError(".");}
 
         if(sClient != null)
         {
 			try
 			{
 				database.checkLogin(tempUser);
-			}catch(Exception e){System.out.println(e + " - An error occurred while contacting the database.");}
+			}catch(Exception e){eHandler.displayError("CNAD") eHandler.displayError(".");}
         }
 	}
 }//End of Client class
