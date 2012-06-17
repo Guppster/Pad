@@ -7,7 +7,7 @@ import java.sql.*;
 import java.io.*;
 import java.util.*;
 
-public class Server
+public class Server implements Runnable
 {
 	//Declare class fields and objects
 	private ServerSocket sServer;
@@ -111,7 +111,7 @@ public class Server
 			{
 				System.out.println("Starting the server...");
 				Thread.sleep(2000);
-				statusThread.start();
+				run();
 				serverUp = true;
 				System.out.println("Server started sucessfully!");
 			}
@@ -132,6 +132,11 @@ public class Server
 			}
 		}
 	}//End of listenForConnection method
+
+	public void run()
+	{
+
+	}//End of run method
 
 	//Return the connection that was just made above
 	public ServerSocket getServerSocket()
