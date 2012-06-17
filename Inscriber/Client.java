@@ -44,7 +44,7 @@ public class Client
 					System.out.println(database.checkLogin(tempUser));
 				}catch(Exception e){System.out.println(e + " Java sucks");}
 
-				/*if(database.checkLogin(tempUser))
+				if(database.checkLogin(tempUser))
 					new Lobby();//Open the Lobby screen
 				else
 				{
@@ -53,7 +53,7 @@ public class Client
 					eHandler.displayError("WL");//Send an error code to the ErrorHandler class
 					eHandler.displayError(".");//Display the error sent over
 					sClient = null;//Disconnect them
-				}*/
+				}
 	        }
 		}
 	}//End of tryConnect method
