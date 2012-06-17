@@ -45,23 +45,7 @@ public class Server
 
 	private void startServer()
 	{
-		//Keep looping until the server is stopped by the server owner
-		while(true)
-		{
-			try
-			{
-				sClient = sServer.accept();//Accept the connection
 
-				for(int x = 0; x < connections.length; x++)//Go through the connections array and search for an empty connection
-				{
-					if(connections[x] == null)
-					{
-						(connections[x] = new ClientThread(sClient, connections)).start();
-				    	break;
-					}
-				}
-			}catch(IOException e){System.out.println(e);}
-		}
 	}//End of acceptConnections method
 
 	//Attempt to stop the server
