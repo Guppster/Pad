@@ -98,10 +98,6 @@ public class Database
 
         while(rs.next())
         {
-        	for(int x = 0; x < 3; x++)
-        	{
-        		System.out.println(rs.getString(x));
-        	}
         	if(user.getUsername().equals(rs.getString("user")))
         	{
         		//Username found
