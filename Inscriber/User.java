@@ -1,5 +1,13 @@
-//Matthew Ufimzeff
-//A class to create a User object 
+/**
+ * @(#)User.java
+ *
+ *
+ * @author Gurpreet Singh, Matt Ufimsef
+ * @version 1.00 2012/6/15
+ *
+ * @Latest Update: getEmail accessor was missing, added.
+ */
+ 
 import java.util.*;
 
 public class User
