@@ -41,6 +41,7 @@ public class Database
 
     public void addUser(User user) throws Exception
     {
+    	Class.forName(driver);
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
 		PreparedStatement prep = conn.prepareStatement(
         	      "INSERT accounts VALUES (?, ?, ?, ?, ?);");
@@ -61,6 +62,7 @@ public class Database
 
     public boolean [] findUserExists(User user) throws Exception
     {
+    	Class.forName(driver);
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
     	Statement stat = conn.createStatement();
 
@@ -89,6 +91,7 @@ public class Database
 
     public boolean checkLogin(User user) throws Exception
     {
+    	Class.forName(driver);
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
     	Statement stat = conn.createStatement();
 
