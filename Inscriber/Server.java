@@ -110,7 +110,10 @@ public class Server
 			}
 			else if(command.equals("/test"))
 			{
-				System.out.println("Tester12 " + sServer.toString());
+				if(sServer == null)
+					System.out.println("Tester12 is null");
+				else if(!(sServer == null))
+					System.out.println("Tester12 is not null");
 			}
 			else if(command.equals("/start"))
 			{
