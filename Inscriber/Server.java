@@ -122,7 +122,7 @@ public class Server
 			{
 				System.out.println("Stopping the server...");
 				Thread.sleep(2000);
-				//stopServer();
+				stopServer();
 				serverUp = false;
 			}
 			else if(command.equals("/status"))
