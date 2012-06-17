@@ -1,5 +1,14 @@
-//Matthew Ufimzeff and Gurpreet Singh
-//June 17
+/**
+ * @(#)Server.java
+ *
+ *
+ * @author Gurpreet Singh, Matt Ufimzeff
+ * @version 1.00 2012/6/15
+ *
+ * @Latest Updates: Added Quit Command
+ *
+ * @Status: Complete ~ accomodating for currently created classes
+ */
 
 //THIS IS MY BABY! Can't believe I actually got it working! :D
 
