@@ -17,14 +17,12 @@ public class Client
 	private String pass;
 
 	//Initializes class fields and objects
-	public Client(String user, String pass)
+	public Client(User tempUser)
 	{
 		//Initialize class fields and objects
-		//this.tempUser = tempUser;
+		this.tempUser = tempUser;
 		eHandler = new ErrorHandler();
 		tries = 0;
-		this.user = user;
-		this.pass = pass;
 		database = new Database();
 	}//End of Client constructor method
 
