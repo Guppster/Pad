@@ -91,14 +91,15 @@ public class Database
 
     public boolean checkLogin(User user) throws Exception
     {
-    	Class.forName(driver);
-    	System.out.println("Driver name: " + driver);
-        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
-        System.out.println("Connection: " + conn);
-    	Statement stat = conn.createStatement();
-    	System.out.println("Statment: " + stat);
+    	System.out.println("Why won't this work.");
+    	//Class.forName(driver);
+    	//System.out.println("Driver name: " + driver);
+        //Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
+        //System.out.println("Connection: " + conn);
+    	//Statement stat = conn.createStatement();
+    	//System.out.println("Statment: " + stat);
 
-		ResultSet rs = stat.executeQuery("SELECT * FROM accounts;");
+		//ResultSet rs = stat.executeQuery("SELECT * FROM accounts;");
 
         /*while(rs.next())
         {
