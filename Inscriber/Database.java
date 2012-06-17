@@ -162,8 +162,6 @@ public class Database
         conn.commit();
 
         prep.executeBatch();
-        conn.setAutoCommit(true);
-
         conn.close();
     }//End of addNewGroup method
 
