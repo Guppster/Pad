@@ -291,7 +291,7 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 	{
 		//if(admin clicks on ban user button)
 		//{
-			//target user.banFor(period);
+			//target user.ban(period);
 			//return true;
 		//}
 		//else
