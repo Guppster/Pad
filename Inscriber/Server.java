@@ -103,6 +103,7 @@ public class Server
 				System.out.println("/stop   -> Stops the server.");
 				System.out.println("/status -> Shows the status of the server.");
 				System.out.println("/users  -> Shows the users connected to the server.");
+				System.out.println("/quit   -> Exits the console");
 				System.out.println("/help   -> Displays this list of commands.");
 			}
 			else if(command.equals("/start"))
@@ -130,6 +131,17 @@ public class Server
 					Thread.sleep(2000);
 					stopServer();
 					serverUp = false;
+				}
+			}
+			else if(command.equals("/quit"))
+			{
+				if(serverUp)
+				{
+					System.out.println("You must stop the server before you may exit console")
+				}
+				else
+				{
+					System.exit(0);
 				}
 			}
 			else if(command.equals("/status"))
