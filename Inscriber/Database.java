@@ -62,7 +62,7 @@ public class Database
 
     public boolean [] findUserExists(User user) throws Exception
     {
-        Connection conn = DriverManager.getConnection(url + "accounts", dbUser, dbPass);
+        Connection conn = DriverManager.getConnection(url + "inscriber", dbUser, dbPass);
     	Statement stat = conn.createStatement();
 
     	boolean [] conditions = new boolean[2];
