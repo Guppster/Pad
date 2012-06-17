@@ -13,6 +13,7 @@ public class StatusThread extends Thread
 	private boolean full;
 	private ClientThread[] connections;
 	private Server server;
+	private Socket sClient;
 
 	//Initializes class fields and objects
     public StatusThread()
@@ -23,6 +24,7 @@ public class StatusThread extends Thread
     	full = false;
     	connections = new ClientThread[connectionsAvailable];
     	server = new Server();
+    	sClient = null;
     }//End of StatusThread constructor method
 
     //When a user disconnects, this method is called, and a connection spot is freed
@@ -39,7 +41,7 @@ public class StatusThread extends Thread
 		{
 			while(connectionsAvailable > 0)//Keep accepting connections if there are free connections
 			{
-				sClient = sServer.accept();//Accept the connection
+				sClient = server.getServerSocket().accept();//Accept the connection
 
 				for(int x = 0; x < connections.length; x++)//Go through the connections array and search for an empty connection
 				{
