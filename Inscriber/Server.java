@@ -74,13 +74,30 @@ public class Server
 	//Get the status of the server(is it up or down)
 	private String getServerStatus()
 	{
+		//Declare a field
+		String status = "";
 
+		if(serverUp)
+			status = "Up";
+		else
+			status = "Down";
+
+		return status;
 	}//End of getServerStatus method
 
 	//Get the connected users(Display the amount of people connected)
-	private String getConnectedUsers()
+	private int getConnectedUsers()
 	{
+		//Declare a field
+		int numConnUsers = 0;
 
+		for(int x = 0; x < connections.length; x++)
+		{
+			if(!(connections[x] == null))
+				numConnUsers++;
+		}
+
+		return numConnUsers;
 	}//End of getConnectedUsers method
 
 	//Start the console and accept commands from the server owner
