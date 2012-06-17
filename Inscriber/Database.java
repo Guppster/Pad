@@ -73,7 +73,7 @@ public class Database
 
         	if(user.getUsername().equals(rs.getString("user")))
         	{
-        		System.out.println("Username Already Exists In Database");
+        		//Username already exists in database
         		conditions[0] = true;
         	}
 
