@@ -17,6 +17,12 @@ public class Server
 	private String command;
 	private StatusThread statusThread;
 
+	//Default constructor
+	public Server()
+	{
+
+	}//End of default constructor
+
 	//Initializes class fields and objects
 	public Server()
 	{
