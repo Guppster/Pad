@@ -1,5 +1,15 @@
-//Matthew Ufimzeff and Gurpreet Singh
-//June 17
+/**
+ * @(#)Register.java
+ *
+ * @Description 
+ *
+ * @author Gurpreet Singh, Matt Ufimzeff
+ * @version 1.00 2012/6/15
+ *
+ * @Latest Updates: 
+ *
+ * @Status: Complete ~ accomodating for currently created classes
+ */
 
 //Import Java API packages
 import java.awt.*;
