@@ -267,7 +267,7 @@ public class Register extends JFrame implements ActionListener, KeyListener
 	}//End of confirmIndivusuality method
 
 	//Perform an action whenever a button is pressed
-    public void actionPerformed (ActionEvent evt)
+    public void actionPerformed (ActionEvent evt) throws Exception
     {
     	//Check which button was pressed
 		if("register".equals(evt.getActionCommand()))
