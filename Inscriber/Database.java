@@ -194,7 +194,7 @@ public class Database
         Connection conn = DriverManager.getConnection(url + "usergroups", user, pass);
     	Statement stat = conn.createStatement();
 
-     	ResultSet rs = stat.executeQuery("select * from usergroups;");
+     	ResultSet rs = stat.executeQuery("SELECT * FROM usergroups;");
 
      	while(rs.next())
 	 	{
