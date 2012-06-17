@@ -89,9 +89,9 @@ public class Database
         return conditions;
     }//End of findUserExists
 
-    public boolean checkLogin(User user)
+    public boolean checkLogin(String user, String pass)
     {
-    	System.out.println("Why won't this work.");
+    	System.out.println("Username: " + user + "Password: " + pass);
     	//Class.forName(driver);
     	//System.out.println("Driver name: " + driver);
         //Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
