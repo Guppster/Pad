@@ -11,7 +11,6 @@ public class Server
 {
 	//Declare class fields and objects
 	private ServerSocket sServer;
-	private Socket sClient;
 	private Scanner in;
 	private boolean serverUp;
 	private String command;
@@ -29,7 +28,6 @@ public class Server
 	{
 		//Initialize class fields and objects
 		sServer = null;
-		sClient = null;
 		in = new Scanner(System.in);
 		serverUp = false;
 		command = "";
@@ -136,9 +134,9 @@ public class Server
 	}//End of listenForConnection method
 
 	//Return the connection that was just made above
-	public Socket getConnection()
+	public Socket getServerSocket()
 	{
-		return sClient;
+		return sServer;
 	}//End of getConnection method
 
 	//Run the code in this method when the class is run
