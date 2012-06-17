@@ -40,7 +40,7 @@ public class Server
 	{
 		try
 		{
-			sServer = new ServerSocket(22222);//Bind the server to port 22222
+			sServer = new ServerSocket(port);//Bind the server to port 22222
 		}catch(IOException e){System.out.println(e + " - Could not bind to specified port.");}
 
 		//Output a message informing the server owner that the port was bound sucessfully
@@ -53,13 +53,13 @@ public class Server
 	}//End of acceptConnections method
 
 	//Attempt to stop the server
-	private void stopServer()
+	/*private void stopServer()
 	{
 		try
 		{
 			sServer.close();
 		}catch(IOException e){System.out.println(e + " - The server dropped the bass... WUB-WUB-WUB-WUB-WUB!");}
-	}//End of stopServer method
+	}//End of stopServer method*/
 
 	//Get the status of the server(is it up or down)
 	private String getServerStatus()
@@ -119,7 +119,7 @@ public class Server
 			{
 				System.out.println("Stopping the server...");
 				Thread.sleep(2000);
-				stopServer();
+				//stopServer();
 				serverUp = false;
 			}
 			else if(command.equals("/status"))
