@@ -37,7 +37,7 @@ public class StatusThread extends Thread
     public void run()
     {
 		//Keep looping until the server is stopped by the server owner
-		while(!stop)
+		while(stop == false)
 		{
 			/*while(connectionsAvailable > 0)//Keep accepting connections if there are free connections
 			{*/
