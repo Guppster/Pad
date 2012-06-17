@@ -191,7 +191,7 @@ public class Database
     public int getNumGroups() throws Exception
     {
     	int numRows = 0;
-        Connection conn = DriverManager.getConnection(url + "usergroups", user, pass);
+        Connection conn = DriverManager.getConnection(url + "usergroups", dbUser, dbPass);
     	Statement stat = conn.createStatement();
 
      	ResultSet rs = stat.executeQuery("SELECT * FROM usergroups;");
