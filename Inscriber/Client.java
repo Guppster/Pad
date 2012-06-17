@@ -24,28 +24,31 @@ public class Client
 	//Attempt to connect to the server
 	public void tryConnect()
 	{
-		try
+		if(tries < 6)
 		{
-            sClient = new Socket("localhost", 22222);
-        }catch(IOException e){eHandler.displayError("CNC") eHandler.displayError(".");}
-
-		//If it connects fine(The socket won't be null), check the users login information
-        if(sClient != null)
-        {
 			try
 			{
-				validLogin = database.checkLogin(tempUser);
-			}catch(Exception e){eHandler.displayError("CNAD") eHandler.displayError(".");}
+	            sClient = new Socket("localhost", 22222);
+	        }catch(IOException e){eHandler.displayError("CNC") eHandler.displayError(".");}
 
-			if(validLogin)
-				new Lobby();
-			else
-			{
-				tries++;
-				eHandler.displayError("WL");
-				eHandler.displayError(".");
-				sClient = null;
-			}
-        }
-	}
+			//If it connects fine(The socket won't be null), check the users login information
+	        if(sClient != null)
+	        {
+				try
+				{
+					validLogin = database.checkLogin(tempUser);
+				}catch(Exception e){eHandler.displayError("CNAD") eHandler.displayError(".");}
+
+				if(validLogin)
+					new Lobby();
+				else
+				{
+					tries++;
+					eHandler.displayError("WL");
+					eHandler.displayError(".");
+					sClient = null;
+				}
+	        }
+		}
+	}//End of tryConnect method
 }//End of Client class
