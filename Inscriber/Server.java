@@ -79,8 +79,6 @@ public class Server
 		//Declare a field
 		int numConnUsers = 0;
 
-
-
 		return numConnUsers;
 	}//End of getConnectedUsers method
 
