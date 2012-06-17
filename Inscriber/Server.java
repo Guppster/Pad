@@ -79,7 +79,7 @@ public class Server
 		while(true)
 		{
 			System.out.print("<Command>: ");
-			command = in.getNext();
+			command = in.next();
 			System.out.println();
 
 			if(command.equals("/help"))
