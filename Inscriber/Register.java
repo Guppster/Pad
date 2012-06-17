@@ -239,34 +239,33 @@ public class Register extends JFrame implements ActionListener, KeyListener
 		try
 		{
 			boolean [] conditionResults = database.findUserExists(user);
+
+			//Query the server to check if there is a username matching the one entered, then check if the password matches
+			//return true means the user field exists, false means it doesnt exist
+		   	if(conditionResults[0] == false && conditionResults[1] == false)
+		    {
+		    	return true;
+			}
+			else if(conditionResults[0] == true && conditionResults[1] == false)
+			{
+				handler.displayError("UE");
+				return false;
+			}
+			else if(conditionResults[0] == false && conditionResults[1] == true)
+			{
+				handler.displayError("EE");
+				return false;
+			}
+			else if(conditionResults[0] == true && conditionResults[1] == true)
+			{
+				handler.displayError("UAEE");
+				return false;
+			}
+			else
+			{
+				return false;
+			}
 		}catch(Exception e){System.out.println(e + " - An error occurred while try to access the database.");}
-
-		//Query the server to check if there is a username matching the one entered, then check if the password matches
-		//return true means the user field exists, false means it doesnt exist
-	   	if(conditionResults[0] == false && conditionResults[1] == false)
-	    {
-	    	return true;
-		}
-		else if(conditionResults[0] == true && conditionResults[1] == false)
-		{
-			handler.displayError("UE");
-			return false;
-		}
-		else if(conditionResults[0] == false && conditionResults[1] == true)
-		{
-			handler.displayError("EE");
-			return false;
-		}
-		else if(conditionResults[0] == true && conditionResults[1] == true)
-		{
-			handler.displayError("UAEE");
-			return false;
-		}
-		else
-		{
-			return false;
-		}
-
 	}//End of confirmIndivusuality method
 
 	//Perform an action whenever a button is pressed
