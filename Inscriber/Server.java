@@ -36,7 +36,7 @@ public class Server
 
 	private void startServer()
 	{
-		//Keep looping until the ma
+		//Keep looping until the server is stopped by the server owner
 		while(true)
 		{
 			try
