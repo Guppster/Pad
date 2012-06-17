@@ -27,6 +27,7 @@ public class Server
 	private String overRide;
 	private StatusThread statusThread;
 
+
 	//Initializes class fields and objects
 	public Server()
 	{
