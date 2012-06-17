@@ -89,19 +89,18 @@ public class Database
         return conditions;
     }//End of findUserExists
 
-    public boolean checkLogin(String user, String pass)
+    public boolean checkLogin(User user)
     {
-    	System.out.println("Username: " + user + "Password: " + pass);
-    	//Class.forName(driver);
-    	//System.out.println("Driver name: " + driver);
-        //Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
-        //System.out.println("Connection: " + conn);
-    	//Statement stat = conn.createStatement();
-    	//System.out.println("Statment: " + stat);
+    	Class.forName(driver);
+    	System.out.println("Driver name: " + driver);
+        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
+        System.out.println("Connection: " + conn);
+    	Statement stat = conn.createStatement();
+    	System.out.println("Statment: " + stat);
 
-		//ResultSet rs = stat.executeQuery("SELECT * FROM accounts;");
+		ResultSet rs = stat.executeQuery("SELECT * FROM accounts;");
 
-        /*while(rs.next())
+        while(rs.next())
         {
         	if(user.getUsername().equals(rs.getString("user")))
         	{
@@ -121,9 +120,9 @@ public class Database
        			conn.close();
 				return false;//Login is not valid
 			}
-        }*/
-        //rs.close();
-        //conn.close();
+        }
+        rs.close();
+        conn.close();
         return false;
     }//End of Check login method
 
