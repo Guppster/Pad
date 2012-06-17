@@ -11,12 +11,14 @@ public class Client
 	private Socket sClient;
 	private Database database;
 	private User tempUser;
+	private ErrorHandler eHandler;
 
 	//Initializes class fields and objects
 	public Client(User tempUser)
 	{
 		//Initialize class fields and objects
 		this.tempUser = tempUser;
+		eHandler = new ErrorHandler();
 	}//End of Client constructor method
 
 	//Attempt to connect to the server
