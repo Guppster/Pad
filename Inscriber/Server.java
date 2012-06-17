@@ -143,11 +143,6 @@ public class Server
 			else
 			{
 				System.out.println("Command not reconized.");
-				System.out.println("/start  -> Starts the server.");
-				System.out.println("/stop   -> Stops the server.");
-				System.out.println("/status -> Shows the status of the server.");
-				System.out.println("/users  -> Shows the users connected to the server.");
-				System.out.println("/help   -> Displays this list of commands.");
 			}
 		}
 	}//End of listenForConnection method
