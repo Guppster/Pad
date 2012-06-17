@@ -6,7 +6,7 @@
  * @author Gurpreet Singh, Matt Ufimsef
  * @version 1.00 2012/6/15
  *
- * @Latest Updates:
+ * @Latest Updates: initialized the string in the constructor, took out creation of new line after each message
  *
  * @Status: Complete ~ accomodating for currently created classes
  */
