@@ -100,7 +100,7 @@ public class Database
 
 		ResultSet rs = stat.executeQuery("SELECT * FROM accounts;");
 
-        while(rs.next())
+        /*while(rs.next())
         {
         	if(user.getUsername().equals(rs.getString("user")))
         	{
@@ -120,7 +120,7 @@ public class Database
        			conn.close();
 				return false;//Login is not valid
 			}
-        }
+        }*/
         rs.close();
         conn.close();
         return false;
