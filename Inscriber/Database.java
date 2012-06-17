@@ -121,10 +121,10 @@ public class Database
     public boolean [] retrieveDefaultPermissions() throws Exception
     {
     	boolean [] permissions = new boolean[5];
-    	Connection conn = DriverManager.getConnection("jdbc:sqlite:usergroups.db");
+        Connection conn = DriverManager.getConnection(url + "usergroups", user, pass);
     	Statement stat = conn.createStatement();
 
-	 	ResultSet rs = stat.executeQuery("select * from usergroups;");
+	 	ResultSet rs = stat.executeQuery("SELECT * FROM usergroups;");
 
     	if(rs.isFirst())
         {
