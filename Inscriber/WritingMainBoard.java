@@ -214,12 +214,6 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
     	this.setTitle("Inscriber Board");
     }//End of setGUI method
 
-    //Update the GUI frame
-	private void updateGUI()
-	{
-
-	}//End of updateGUI method
-
 	//Initialize the documentGrid array
 	private void initializeGrid()
 	{
