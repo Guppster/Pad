@@ -36,8 +36,6 @@ public class Client
 			{
 				database.checkLogin(tempUser);
 			}catch(Exception e){eHandler.displayError("CNAD") eHandler.displayError(".");}
-
-
         }
 	}
 }//End of Client class
