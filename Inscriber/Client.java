@@ -42,6 +42,7 @@ public class Client
 				{
 					System.out.println(tempUser.getPassword() + " " + tempUser.getUsername() + "Hmm...");
 					System.out.println(validLogin + " What does this return");
+					validLogin = database.checkLogin(tempUser);
 				}catch(Exception e){eHandler.displayError("CNAD"); eHandler.displayError(".");}
 
 				System.out.println(validLogin + " What does this return");
