@@ -1,12 +1,12 @@
 /**
  * @(#)Login.java
  *
- * @Description 
+ * @Description
  *
  * @author Gurpreet Singh, Matt Ufimsef
  * @version 1.00 2012/6/15
  *
- * @Latest Updates: 
+ * @Latest Updates:
  *
  * @Status: Complete
  */
@@ -109,13 +109,6 @@ public class Login extends JFrame implements ActionListener, KeyListener
 	{
 		//Try a connection with the server
 		client.tryConnect();
-
-		try
-		{
-			Thread.sleep(5000);
-		}catch(InterruptedException ie){System.out.println(ie + " - Sleeping pills did not work on thread.");}
-
-		this.dispose();
 	}//End of login method
 
     //Perform an action whenever a button is pressed
