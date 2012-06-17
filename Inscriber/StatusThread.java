@@ -12,6 +12,7 @@ public class StatusThread
 	private int connectionsAvailable;
 	private boolean full;
 	private ClientThread[] connections;
+	private Server server;
 
 	//Initializes class fields and objects
     public StatusThread()
@@ -21,6 +22,7 @@ public class StatusThread
     	connectionsAvailable = 5;
     	full = false;
     	connections = new ClientThead[connectionsAvailable];
+    	server = new Server();
     }//End of StatusThread constructor method
 
     //When a user disconnects, this method is called, and a connection spot is freed
