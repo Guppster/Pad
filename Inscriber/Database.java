@@ -14,8 +14,8 @@ public class Database
 {
 	//Constant variables storing database access information
 	private static String url = "jdbc:mysql://localhost:3306/";
-	private static String user = "root";
-	private static String pass = "root";
+	private static String dbUser = "root";
+	private static String dbPass = "root";
 	private static String driver = "com.mysql.jdbc.Driver";
 	
 	public Database()
@@ -26,7 +26,7 @@ public class Database
     private void createDB(String dbName) throws Exception
     {
         Class.forName(driver);
-        Connection conn = DriverManager.getConnection(url, user, pass);
+        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
         Statement stat = conn.createStatement();
         stat.executeUpdate("drop table if exists " + dbName + ";");
         stat.executeUpdate("create table " + dbName + ";");
