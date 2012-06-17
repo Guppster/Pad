@@ -43,7 +43,7 @@ public class Client
 					validLogin = database.checkLogin(tempUser);
 				}catch(Exception e){e.printStackTrace();}
 
-				System.out.println(validLogin + " What does this return");
+				System.out.println("validLogin returns: " + validLogin);
 
 				if(validLogin)
 					new Lobby();//Open the Lobby screen
