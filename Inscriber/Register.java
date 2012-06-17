@@ -292,8 +292,10 @@ public class Register extends JFrame implements ActionListener, KeyListener
 		{
 			if(!checkErrorsAndInitialize())
 			{
+				System.out.println("the user object has been created");
 				if(confirmIndividuality())
 				{
+					System.out.println("There are no other users with same credentials");
 					try
 					{
 						database.addUser(user);
