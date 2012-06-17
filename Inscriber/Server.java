@@ -84,7 +84,7 @@ public class Server
 	}//End of getConnectedUsers method
 
 	//Start the console and accept commands from the server owner
-	private void startConsole()
+	private void startConsole() throws InterruptedException
 	{
 		//Let the user know that they can enter in a command to view all the commands
 		System.out.println("Enter /help to display a list of commands.");
