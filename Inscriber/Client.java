@@ -10,17 +10,21 @@ public class Client
 	//Declare class fields and objects
 	private Socket sClient;
 	private Database database;
-	private User tempUser;
+	//private User tempUser;
 	private ErrorHandler eHandler;
 	private int tries;
+	private String user;
+	private String pass;
 
 	//Initializes class fields and objects
-	public Client(User tempUser)
+	public Client(String user, String pass)
 	{
 		//Initialize class fields and objects
-		this.tempUser = tempUser;
+		//this.tempUser = tempUser;
 		eHandler = new ErrorHandler();
 		tries = 0;
+		this.user = user;
+		this.pass = pass;
 	}//End of Client constructor method
 
 	//Attempt to connect to the server
@@ -36,7 +40,7 @@ public class Client
 			//If it connects fine(The socket won't be null), check the users login information
 	        if(sClient != null)
 	        {
-				System.out.println(database.checkLogin(tempUser));
+				System.out.println(database.checkLogin(user, pass));
 
 
 				/*if(database.checkLogin(tempUser))
