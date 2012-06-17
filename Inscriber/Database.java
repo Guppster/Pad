@@ -84,7 +84,7 @@ public class Database
 
     public boolean checkLogin(User user) throws Exception
     {
-    	Connection conn = DriverManager.getConnection("jdbc:sqlite:accounts.db");
+        Connection conn = DriverManager.getConnection(url + "accounts", user, pass);
     	Statement stat = conn.createStatement();
 
     	ResultSet rs = stat.executeQuery("select * from accounts;");
