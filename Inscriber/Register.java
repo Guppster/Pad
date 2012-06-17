@@ -6,7 +6,7 @@
  * @author Gurpreet Singh, Matt Ufimzeff
  * @version 1.00 2012/6/15
  *
- * @Latest Updates:
+ * @Latest Updates: fixed and re-checked methods involving validity of input
  *
  * @Status: Complete ~ accomodating for currently created classes
  */
