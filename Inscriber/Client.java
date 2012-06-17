@@ -13,7 +13,6 @@ public class Client
 	private User tempUser;
 	private ErrorHandler eHandler;
 	private int tries;
-	private boolean validLogin;
 
 	//Initializes class fields and objects
 	public Client(User tempUser)
@@ -22,7 +21,6 @@ public class Client
 		this.tempUser = tempUser;
 		eHandler = new ErrorHandler();
 		tries = 0;
-		validLogin = false;
 	}//End of Client constructor method
 
 	//Attempt to connect to the server
@@ -40,10 +38,9 @@ public class Client
 	        {
 				try
 				{
-					validLogin = database.checkLogin(tempUser);
 				}catch(Exception e){e.printStackTrace();}
 
-				System.out.println(validLogin);
+				System.out.println(database.checkLogin(tempUser));
 
 				if(validLogin)
 					new Lobby();//Open the Lobby screen
