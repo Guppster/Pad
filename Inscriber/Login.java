@@ -140,7 +140,7 @@ public class Login extends JFrame implements ActionListener, KeyListener
 		//Check if the 'Enter' key was pressed
      	if(key == KeyEvent.VK_ENTER)
      	{
-     		login();
+
      	}
     }//End of keyPressed method
 
