@@ -12,6 +12,12 @@ import java.io.*;
 
 public class Database
 {
+	//Constant variables storing database access information
+	private static url = "jdbc:mysql://localhost:3306/";
+	private static user = "root";
+	private static pass = "root";
+	private static driver = "com.mysql.jdbc.Driver";
+	
 	public Database()
     {
 
