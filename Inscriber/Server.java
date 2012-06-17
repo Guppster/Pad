@@ -15,7 +15,7 @@ public class Server
 	private Scanner in;
 	private boolean serverUp;
 	private String command;
-	private Thread statusThread;
+	private StatusThread statusThread;
 
 	//Initializes class fields and objects
 	public Server()
@@ -26,7 +26,6 @@ public class Server
 		in = new Scanner(System.in);
 		serverUp = false;
 		command = "";
-		statusThread = new Thread();
 	}//End of Server constructor method
 
 	//Bind the ServerSocket object to listen to a specified port
@@ -114,7 +113,7 @@ public class Server
 			{
 				System.out.println("Starting the server...");
 				Thread.sleep(2000);
-				(new StatusThread()).start();
+				(statusThread = new StatusThread()).start();
 				serverUp = true;
 				System.out.println("Server started sucessfully!");
 			}
