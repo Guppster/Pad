@@ -47,7 +47,7 @@ public class StatusThread extends Thread
 				{
 					if(connections[x] == null)
 					{
-						(connections[x] = new ClientThread(server.getConnection(), connections)).start();
+						(connections[x] = new ClientThread(sClient, connections)).start();
 						connectionsAvailable--;
 					   	break;
 					}
