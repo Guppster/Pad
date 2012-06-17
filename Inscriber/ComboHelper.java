@@ -1,9 +1,14 @@
 /**
  * @(#)ComboHelper.java
  *
+ * @Description 
  *
- * @author 
- * @version 1.00 2012/6/9
+ * @author Gurpreet Singh, Matt Ufimzeff
+ * @version 1.00 2012/6/15
+ *
+ * @Latest Updates: 
+ *
+ * @Status: IDK
  */
 
 
