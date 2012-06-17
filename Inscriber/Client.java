@@ -25,6 +25,7 @@ public class Client
 		tries = 0;
 		this.user = user;
 		this.pass = pass;
+		database = new Database();
 	}//End of Client constructor method
 
 	//Attempt to connect to the server
