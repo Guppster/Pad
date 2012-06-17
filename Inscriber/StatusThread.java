@@ -34,26 +34,23 @@ public class StatusThread extends Thread
     //When the thread is started(the StatusThread class is called) run this method
     public void run()
     {
-    	while(true)
-    	{
-    		//Keep looping until the server is stopped by the server owner
-			while(!stop)
+		//Keep looping until the server is stopped by the server owner
+		while(!stop)
+		{
+			while(connectionsAvailable > 0)//Keep accepting connections if there are free connections
 			{
-				while(connectionsAvailable > 0)//Keep accepting connections if there are free connections
-				{
-					server.acceptAConnection();
+				sClient = sServer.accept();//Accept the connection
 
-					for(int x = 0; x < connections.length; x++)//Go through the connections array and search for an empty connection
+				for(int x = 0; x < connections.length; x++)//Go through the connections array and search for an empty connection
+				{
+					if(connections[x] == null)
 					{
-						if(connections[x] == null)
-						{
-							(connections[x] = new ClientThread(server.getConnection(), connections)).start();
-							connectionsAvailable--;
-						   	break;
-						}
+						(connections[x] = new ClientThread(server.getConnection(), connections)).start();
+						connectionsAvailable--;
+					   	break;
 					}
-				}//End of inner while loop
-			}//End of outer while loop
-    	}
+				}
+			}//End of inner while loop
+		}//End of outer while loop
     }//End of run method
 }//End of StatusThread class

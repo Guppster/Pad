@@ -49,18 +49,6 @@ public class Server
 		System.out.println("Port was bound sucessfully!");
 	}//End of bindPort method
 
-	//Accept a connection to the server
-	public void acceptAConnection()
-	{
-		while(sClient == null)
-		{
-			try
-			{
-				sClient = sServer.accept();//Accept the connection
-			}catch(IOException e){System.out.println(e + " - A Connection was refused.");}
-		}
-	}//End of acceptAConnection method
-
 	private void startServer()
 	{
 
