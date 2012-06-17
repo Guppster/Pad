@@ -21,7 +21,7 @@ public class Database
 	private static String dbUser = "root";
 	private static String dbPass = "root";
 	private static String driver = "com.mysql.jdbc.Driver";
-	
+
 	public Database()
     {
 
@@ -97,22 +97,22 @@ public class Database
         {
         	if(user.getUsername().equals(rs.getString("user")))
         	{
-        		System.out.println("Username Found");
-
+        		//Username found
         		if(user.getPassword().equals(rs.getString("pass")))
         		{
-        			System.out.println("Password Found");
+        			//Password found and matches one passed in
         			rs.close();
         			conn.close();
-        			return true;
+        			return true;//Login is valid
         		}
         	}
 			else
 			{
-				System.out.println("Username not Found");
+				//Username not found
 				rs.close();
        			conn.close();
-				return false;
+       			eHandler.displayError(")
+				return false;//Login is not valid
 			}
         }
         rs.close();
@@ -153,16 +153,16 @@ public class Database
         Connection conn = DriverManager.getConnection(url + "usergroups", dbUser, dbPass);
 		PreparedStatement prep = conn.prepareStatement(
         	      "INSERT usergroups VALUES (?, ?, ?, ?, ?);");
-		
+
 		conn.setAutoCommit(false);
-		
+
         prep.setBoolean(1, permissions[0]);
         prep.setBoolean(2, permissions[1]);
         prep.setBoolean(3, permissions[2]);
         prep.setBoolean(4, permissions[3]);
         prep.setBoolean(5, permissions[4]);
         prep.addBatch();
-        
+
         conn.commit();
 
         prep.executeBatch();
@@ -225,7 +225,7 @@ public class Database
 				rs.deleteRow();
 			}
 	 	}
-	 	
+
 	 	rs.close();
 	 	conn.close();
     }//End of removeGroup method

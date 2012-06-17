@@ -29,12 +29,15 @@ public class Client
             sClient = new Socket("localhost", 22222);
         }catch(IOException e){eHandler.displayError("CNC") eHandler.displayError(".");}
 
+		//If it connects fine(The socket won't be null), check the users login information
         if(sClient != null)
         {
 			try
 			{
 				database.checkLogin(tempUser);
 			}catch(Exception e){eHandler.displayError("CNAD") eHandler.displayError(".");}
+
+
         }
 	}
 }//End of Client class

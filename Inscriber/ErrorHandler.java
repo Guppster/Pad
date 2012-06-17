@@ -47,6 +47,8 @@ public class ErrorHandler
 			errorToDisplay += "Could not connect to server.\n";
 		else if(errorCode.equals("CNAD"))
 			errorToDisplay += "Could not access database.\n";
+		else if(errorCode.equals("UNF"))
+			errorToDisplay += "Username does not exist.";
 
 		// the "." is the flag that triggers the error, this allows to add multiple errors to one message box
 		if(errorCode.equals("."))
