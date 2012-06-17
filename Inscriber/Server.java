@@ -53,13 +53,13 @@ public class Server implements Runnable
 	}//End of acceptConnections method
 
 	//Attempt to stop the server
-	/*private void stopServer()
+	private void stopServer()
 	{
 		try
 		{
 			sServer.close();
 		}catch(IOException e){System.out.println(e + " - The server dropped the bass... WUB-WUB-WUB-WUB-WUB!");}
-	}//End of stopServer method*/
+	}//End of stopServer method
 
 	//Get the status of the server(is it up or down)
 	private String getServerStatus()
