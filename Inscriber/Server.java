@@ -36,7 +36,7 @@ public class Server
 	}//End of Server constructor method
 
 	//Bind the ServerSocket object to listen to a specified port
-	private ServerSocket bindPort(int port)
+	private void bindPort(int port)
 	{
 		try
 		{
@@ -45,7 +45,6 @@ public class Server
 
 		//Output a message informing the server owner that the port was bound sucessfully
 		System.out.println("Port was bound sucessfully!");
-		return sServer;
 	}//End of bindPort method
 
 	private void startServer()
