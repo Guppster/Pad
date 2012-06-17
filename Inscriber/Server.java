@@ -43,9 +43,8 @@ public class Server
 			sServer = new ServerSocket(22222);//Bind the server to port 22222
 		}catch(IOException e){System.out.println(e + " - Could not bind to specified port.");}
 
-		System.out.println("Test " + sServer.toString());
 		//Output a message informing the server owner that the port was bound sucessfully
-		//System.out.println("Port was bound sucessfully!");
+		System.out.println("Port was bound sucessfully!");
 	}//End of bindPort method
 
 	private void startServer()
