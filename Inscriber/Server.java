@@ -10,19 +10,13 @@ import java.util.*;
 public class Server
 {
 	//Declare class fields and objects
-	private ServerSocket sServer;
+	private static ServerSocket sServer;
 	private ServerSocket tempServer;
 	private Scanner in;
 	private boolean serverUp;
 	private String command;
 	private String overRide;
 	private StatusThread statusThread;
-
-	//Default constructor
-	public Server()
-	{
-		tempServer = sServer;
-	}//End of default constructor
 
 	//Initializes class fields and objects
 	public Server(String overRide)
