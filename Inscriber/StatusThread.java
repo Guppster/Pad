@@ -24,7 +24,7 @@ public class StatusThread
     //When a user disconnects, this method is called, and a connection spot is freed
     public void freeAConnection()
     {
-    	connection++;
+    	connectionsAvailable++;
     }//End of freeConnection method
 
     //When the thread is started(the StatusThread class is called) run this method
@@ -44,7 +44,7 @@ public class StatusThread
 						if(connections[x] == null)
 						{
 							(connections[x] = new ClientThread(sClient, connections)).start();
-							connections--;
+							connectionsAvailable--;
 					    	break;
 						}
 					}
