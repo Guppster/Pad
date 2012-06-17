@@ -66,8 +66,6 @@ public class ErrorHandler
 			JOptionPane.showMessageDialog(null, errorToDisplay);
 			errorToDisplay = "";
 		}
-
-
 	}//End of displayError method
 
 }//End of ErrorHandler class
