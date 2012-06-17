@@ -191,7 +191,7 @@ public class Database
     public int getNumGroups() throws Exception
     {
     	int numRows = 0;
-    	Connection conn = DriverManager.getConnection("jdbc:sqlite:usergroups.db");
+        Connection conn = DriverManager.getConnection(url + "usergroups", user, pass);
     	Statement stat = conn.createStatement();
 
      	ResultSet rs = stat.executeQuery("select * from usergroups;");
