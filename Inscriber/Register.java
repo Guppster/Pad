@@ -234,9 +234,12 @@ public class Register extends JFrame implements ActionListener, KeyListener
     		return false;
 	}//end of checkErrors method
 
-	private boolean confirmIndividuality() throws Exception
+	private boolean confirmIndividuality()
 	{
-		boolean [] conditionResults = database.findUserExists(user);
+		try
+		{
+			boolean [] conditionResults = database.findUserExists(user);
+		}catch(Exception e){System.out.println(e + " - An error occurred while try to access the database.");}
 
 		//Query the server to check if there is a username matching the one entered, then check if the password matches
 		//return true means the user field exists, false means it doesnt exist
@@ -276,7 +279,10 @@ public class Register extends JFrame implements ActionListener, KeyListener
 			{
 				if(confirmIndividuality())
 				{
-					database.addUser(user);
+					try
+					{
+						database.addUser(user);
+					}catch(Exception e){System.out.println(e + " - An error occurred while try to add the user to the database.");}
 				}
 			}
 		}
@@ -303,7 +309,10 @@ public class Register extends JFrame implements ActionListener, KeyListener
 			{
 				if(confirmIndividuality())
 				{
-					database.addUser(user);
+					try
+					{
+						database.addUser(user);
+					}catch(Exception e){System.out.println(e + " - An error occurred while try to add the user to the database.");}
 				}
 			}
        	}
