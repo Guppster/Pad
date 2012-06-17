@@ -118,8 +118,11 @@ public class Login extends JFrame implements ActionListener, KeyListener
 
 			client = new Client(tempUser);
 
-			//Try a connection with the server
-			client.tryConnect();
+			try
+			{
+				//Try a connection with the server
+				client.tryConnect();
+			}catch(Exception e){System.out.println("Cannot connect.");}
 		}
 		else if ("new".equals(evt.getActionCommand()))
 		{
