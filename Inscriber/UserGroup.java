@@ -1,19 +1,18 @@
 /**
  * @(#)UserGroup.java
  *
- * @Description 
+ * @Description
  *
  * @author Gurpreet Singh, Matt Ufimsef
  * @version 1.00 2012/6/15
  *
- * @Latest Updates: 
+ * @Latest Updates:
  *
  * @Status: Complete ~ accomodating for currently created classes
  */
 
 public class UserGroup
 {
-
 	private String name;
 	private boolean [] permissions;
 
