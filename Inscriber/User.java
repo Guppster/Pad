@@ -68,7 +68,7 @@ public class User
 		return email;
 	}//End of getEmail method
 
-	public String getGroup();
+	public String getGroup()
 	{
 		return group.getName();
 	}//End of getGroup method
