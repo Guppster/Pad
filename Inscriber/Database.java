@@ -90,15 +90,11 @@ public class Database
 
     public boolean checkLogin(User user) throws Exception
     {
-    	System.out.println("This works: step 1");
 
         Connection conn = DriverManager.getConnection(url + "accounts", dbUser, dbPass);
-        System.out.println("This works: step 2");
     	Statement stat = conn.createStatement();
-    	System.out.println("This works: step 3");
 
     	ResultSet rs = stat.executeQuery("SELECT * FROM accounts;");
-    	System.out.println("This works: step 4");
 
         while(rs.next())
         {
@@ -106,10 +102,10 @@ public class Database
         	{
         		System.out.println(rs.getString(x));
         	}
-        	if(user.getUsername().equals(rs.getString(1)))
+        	if(user.getUsername().equals(rs.getString("user")))
         	{
         		//Username found
-        		if(user.getPassword().equals(rs.getString(2)))
+        		if(user.getPassword().equals(rs.getString("pass")))
         		{
         			//Password found and matches one passed in
         			rs.close();
