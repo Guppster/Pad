@@ -54,7 +54,7 @@ public class StatusThread extends Thread
 						   	break;
 						}
 					}
-				}catch(IOException e){System.out.println(e + " - A connection was refused.")}
+				}catch(IOException e){System.out.println(e + " - A connection was refused.");}
 			}//End of inner while loop
 		}//End of outer while loop
     }//End of run method
