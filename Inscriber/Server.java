@@ -21,7 +21,7 @@ public class Server
 	private StatusThread statusThread;
 
 	//Initializes class fields and objects
-	public Server(String overRide)
+	public Server()
 	{
 		//Initialize class fields and objects
 		sServer = null;
@@ -155,7 +155,7 @@ public class Server
 	public static void main(String [] args) throws InterruptedException
 	{
 		//Create a new Server object so we can call methods in the main method
-		Server server = new Server("overRide");
+		Server server = new Server();
 
 		//Inform the server owner of some actions being done
 		System.out.println("Attempting to bind port...");
