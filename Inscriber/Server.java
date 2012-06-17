@@ -123,8 +123,8 @@ public class Server
 				{
 					System.out.println("Starting the server...");
 					Thread.sleep(2000);
-					serverUp = true;
 					startServer();
+					serverUp = true;
 					System.out.println("Server started sucessfully!");
 				}
 			}
