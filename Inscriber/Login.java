@@ -113,7 +113,7 @@ public class Login extends JFrame implements ActionListener, KeyListener
 		{
 
 			String username = txtUser.getText();
-			Stirng password = "";
+			String password = "";
 			char [] tempA = pfPass.getPassword();
 
 			for(int x = 0; x < tempA; x++)
