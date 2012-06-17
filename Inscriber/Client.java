@@ -2,7 +2,7 @@
 import java.net.*;
 import java.io.*;
 
-public class Client implements Runnable
+public class Client
 {
 	static Socket sClient = null;
 	static BufferedReader in = null;
@@ -10,16 +10,27 @@ public class Client implements Runnable
 	static PrintWriter out = null;
 	static boolean closed = false;
 
-	public static void main(String [] args)
-    {
+
+	//Attempt to connect to the server
+	public void connect()
+	{
 		try
 		{
             sClient = new Socket("localhost", 22222);
-            in = new BufferedReader(new InputStreamReader(sClient.getInputStream()));
-            in2 = new BufferedReader(new InputStreamReader(System.in));
-            out = new PrintWriter(sClient.getOutputStream(), true);
-        }catch(Exception e){}
+        }catch(IOException e){System.out.println(e + " - Could not connect to the server.");}
 
+        if(sClient != null)
+        {
+        	System.out.println("Connected to server.");
+
+        }
+	}
+
+	public static void main(String [] args)
+    {
+		connect();
+
+		/*
         if (sClient != null && out != null && in != null)
         {
             try {
@@ -57,5 +68,5 @@ public class Client implements Runnable
     		}
     		closed = true;
     	}catch(IOException e){System.out.println(e);}
-    }
+    }*/
 }

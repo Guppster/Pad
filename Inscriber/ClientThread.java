@@ -1,5 +1,5 @@
 //Matthew Ufimzeff and Gurpreet Singh
-//June 13
+//June 17
 
 //Import Java API packages
 import java.net.*;
@@ -25,6 +25,36 @@ public class ClientThread extends Thread
 	//A method to perform actions to this particular connected users(kick, ban, etc)
 	public void run()
 	{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		//TESTING PURPOSES ONLY
 		String line;
         String name;
