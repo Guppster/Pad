@@ -119,7 +119,7 @@ public class Database
         rs.close();
         conn.close();
         return false;
-    }//End of Check login method/
+    }//End of Check login method
 
     public boolean [] retrieveDefaultPermissions() throws Exception
     {
