@@ -113,7 +113,6 @@ public class Database
 				//Username not found
 				rs.close();
        			conn.close();
-       			eHandler.displayError("UNF");
 				return false;//Login is not valid
 			}
         }
