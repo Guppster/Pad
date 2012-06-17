@@ -97,7 +97,9 @@ public class Database
         System.out.println("Hi this works.");
     	Statement stat = conn.createStatement();
 
-    	ResultSet rs = stat.executeQuery("SELECT * FROM accounts;");
+		ResultSet rs = stat.getResultSet();
+
+    	stat.executeQuery("SELECT * FROM accounts;");
 
         while(rs.next())
         {
