@@ -120,12 +120,12 @@ public class Server
 		System.out.println("Attempting to bind port...");
 
 		//Bind the ServerSocket object to listen to a specified port
-		bindPort(22222);
+		static bindPort(22222);
 
 		//Inform the server owner of some actions being done
 		System.out.println("Opening console...");
 
 		//Start the console and allow the server owner to enter console commands
-		startConsole();
+		static startConsole();
 	}//End of Server main method
 }//End of Server class
