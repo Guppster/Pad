@@ -43,7 +43,7 @@ public class Client
 				{
 					database.createTable("thisIsATest1234");
 					//System.out.println(database.checkLogin(tempUser));
-				}catch(Exception e){System.out.println("Java sucks");}
+				}catch(UnknownHostException e){System.out.println(e + " Java sucks");}
 
 				/*if(database.checkLogin(tempUser))
 					new Lobby();//Open the Lobby screen
