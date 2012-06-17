@@ -52,10 +52,13 @@ public class Server
 	//Accept a connection to the server
 	public void acceptAConnection()
 	{
-		try
+		while(true)
 		{
-			sClient = sServer.accept();//Accept the connection
-		}catch(IOException e){System.out.println(e + " - A Connection was refused.");}
+			try
+			{
+				sClient = sServer.accept();//Accept the connection
+			}catch(IOException e){System.out.println(e + " - A Connection was refused.");}
+		}
 	}//End of acceptAConnection method
 
 	private void startServer()
