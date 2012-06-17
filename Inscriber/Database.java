@@ -209,10 +209,10 @@ public class Database
 
     public void removeGroup(String columnLabel) throws Exception
     {
-		Connection conn = DriverManager.getConnection("jdbc:sqlite:usergroups.db");
+        Connection conn = DriverManager.getConnection(url + "usergroups", user, pass);
     	Statement stat = conn.createStatement();
 
-    	ResultSet rs = stat.executeQuery("select * from usergroups;");
+    	ResultSet rs = stat.executeQuery("SELECT * FROM usergroups;");
 
     	while(rs.next())
 	 	{
