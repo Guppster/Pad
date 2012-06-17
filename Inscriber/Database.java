@@ -26,7 +26,7 @@ public class Database
     private void createDB(String dbName) throws Exception
     {
         Class.forName("org.sqlite.JDBC");
-        Connection conn = DriverManager.getConnection("jdbc:MySQL:localhost:3306/" + dbName);
+        Connection conn = DriverManager.getConnection(url, user, pass);
         Statement stat = conn.createStatement();
         stat.executeUpdate("drop table if exists " + dbName + ";");
         stat.executeUpdate("create table " + dbName + ";");
