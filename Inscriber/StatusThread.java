@@ -41,25 +41,23 @@ public class StatusThread extends Thread
 		{
 			while(connectionsAvailable > 0)//Keep accepting connections if there are free connections
 			{
-				try
+				while(true)
 				{
-					while(true)
+					try
 					{
 						sClient = server.getServerSocket().accept();//Accept the connection
-						if(!(sClient == null))
-							break;
-					}
 
-					for(int x = 0; x < connections.length; x++)//Go through the connections array and search for an empty connection
-					{
-						if(connections[x] == null)
+						for(int x = 0; x < connections.length; x++)//Go through the connections array and search for an empty connection
 						{
-							(connections[x] = new ClientThread(sClient, connections)).start();
-							connectionsAvailable--;
-						   	break;
+							if(connections[x] == null)
+							{
+								(connections[x] = new ClientThread(sClient, connections)).start();
+								connectionsAvailable--;
+							   	break;
+							}
 						}
-					}
-				}catch(IOException e){System.out.println(e + " - A connection was refused.");}
+					}catch(IOException e){System.out.println(e + " - A connection was refused.");}
+				}
 			}//End of inner while loop
 		}//End of outer while loop
     }//End of run method
