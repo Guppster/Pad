@@ -146,9 +146,9 @@ public class Database
     	boolean [] permissions = new boolean[5];
     	permissions = group.getPermissions();
 
-	    Connection conn = DriverManager.getConnection("jdbc:sqlite:usergroups.db");
+        Connection conn = DriverManager.getConnection(url + "usergroups", user, pass);
 		PreparedStatement prep = conn.prepareStatement(
-        	      "insert into usergroups values (?, ?, ?, ?, ?);");
+        	      "INSERT usergroups VALUES (?, ?, ?, ?, ?);");
 
         prep.setBoolean(1, permissions[0]);
         prep.setBoolean(2, permissions[1]);
