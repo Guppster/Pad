@@ -81,11 +81,7 @@ public class Server
 		//Declare a field
 		int numConnUsers = 0;
 
-		for(int x = 0; x < connections.length; x++)
-		{
-			if(!(connections[x] == null))
-				numConnUsers++;
-		}
+
 
 		return numConnUsers;
 	}//End of getConnectedUsers method
