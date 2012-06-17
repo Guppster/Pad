@@ -21,7 +21,7 @@ public class StatusThread
     	stop = false;
     	connectionsAvailable = 5;
     	full = false;
-    	connections = new ClientThead[connectionsAvailable];
+    	connections = new ClientThread[connectionsAvailable];
     	server = new Server();
     }//End of StatusThread constructor method
 
