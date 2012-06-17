@@ -18,7 +18,7 @@ import java.io.*;
 public class Database
 {
 	//Constant variables storing database access information
-	private static String url = "jdbc:mysql://localhost/inscriber";
+	private static String url = "jdbc:mysql://localhost:3306/inscriber";
 	private static String dbUser = "test";
 	private static String dbPass = "test";
 	private static String driver = "com.mysql.jdbc.Driver";
