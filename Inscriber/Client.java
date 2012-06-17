@@ -39,8 +39,10 @@ public class Client
 			//If it connects fine(The socket won't be null), check the users login information
 	        if(sClient != null)
 	        {
-				System.out.println(database.checkLogin(tempUser));
-
+				try
+				{
+					System.out.println(database.checkLogin(tempUser));
+				}catch(Exception e){System.out.println("Java sucks");}
 
 				/*if(database.checkLogin(tempUser))
 					new Lobby();//Open the Lobby screen
