@@ -120,10 +120,15 @@ public class Server
 			}
 			else if(command.equals("/stop"))
 			{
-				System.out.println("Stopping the server...");
-				Thread.sleep(2000);
-				stopServer();
-				serverUp = false;
+				if(!serverUp)
+					System.out.println("You dun goofed... The server has to be up before you can stop it.");
+				else
+				{
+					System.out.println("Stopping the server...");
+					Thread.sleep(2000);
+					stopServer();
+					serverUp = false;
+				}
 			}
 			else if(command.equals("/status"))
 				System.out.println("Server Status: " + getServerStatus());
