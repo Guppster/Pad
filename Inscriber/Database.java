@@ -19,8 +19,8 @@ public class Database
 {
 	//Constant variables storing database access information
 	private static String url = "jdbc:mysql://localhost:3306/inscriber";
-	private static String dbUser = "root";
-	private static String dbPass = "root";
+	private static String dbUser = "test";
+	private static String dbPass = "test";
 	private static String driver = "com.mysql.jdbc.Driver";
 
 	//Default constructor
@@ -91,14 +91,8 @@ public class Database
 
     public boolean checkLogin(User user) throws Exception
     {
-    	System.out.println("Driver name: " + driver);
-    	System.out.println("URL name: " + url);
-    	System.out.println("Username: " + dbUser);
-    	System.out.println("Password: " + dbPass);
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
-        System.out.println("Connection: " + conn);
     	Statement stat = conn.createStatement();
-    	System.out.println("Statment: " + stat);
 
 		ResultSet rs = stat.executeQuery("SELECT * FROM accounts;");
 
