@@ -45,6 +45,8 @@ public class ErrorHandler
 			errorToDisplay += "A critical error has occured.\n";
 		else if(errorCode.equals("CNC"))
 			errorToDisplay += "Could not connect to server.\n";
+		else if(errorCode.equals("CNAD"))
+			errorToDisplay += "Could not access database.\n";
 
 		// the "." is the flag that triggers the error, this allows to add multiple errors to one message box
 		if(errorCode.equals("."))
