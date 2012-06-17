@@ -1,5 +1,15 @@
-//By Matthew Ufimzeff and Gurpreet Singh
-//June 6
+/**
+ * @(#)WritingMainBoard.java
+ *
+ * @Description 
+ *
+ * @author Gurpreet Singh, Matt Ufimsef
+ * @version 1.00 2012/6/15
+ *
+ * @Latest Updates: 
+ *
+ * @Status: GUI Complete. Functionality Pending.
+ */
 
 //Import API packages
 import java.awt.*;
