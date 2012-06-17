@@ -1,8 +1,15 @@
-//By Matthew Ufimzeff and Gurpreet Singh
-//Class to set the Look and Feel of all the GUI classes
-//June 9
-
-//CLASS FINISHED
+/**
+ * @(#)LookAndFeel.java
+ *
+ * @Description 
+ *
+ * @author Gurpreet Singh, Matt Ufimsef
+ * @version 1.00 2012/6/15
+ *
+ * @Latest Updates: 
+ *
+ * @Status: Complete ~ accomodating for currently created classes
+ */
 
 //Import API packages
 import java.awt.*;
