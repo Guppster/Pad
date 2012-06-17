@@ -10,8 +10,6 @@
  * @Status: Complete ~ accomodating for currently created classes
  */
 
-//THIS IS MY BABY! Can't believe I actually got it working! :D
-
 //Import Java API packages
 import java.net.*;
 import java.sql.*;
