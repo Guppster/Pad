@@ -6,6 +6,8 @@
  * @version 1.00 2012/6/15
  *
  * @Latest Updates: Added constant variables for information regarding connection to the database, and converted code from sqlite to MySQL
+ *
+ * @Status: Complete ~ accomodating for current methods
  */
 
 import java.net.*;
