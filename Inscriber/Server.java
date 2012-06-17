@@ -12,6 +12,8 @@ public class Server
 	private ServerSocket sServer;
 	private Socket sClient;
 	private ClientThread[] connections;
+	private Scanner in;
+	private String command;
 
 	//Initializes class fields and objects
 	public Server()
@@ -20,6 +22,8 @@ public class Server
 		sServer = null;
 		sClient = null;
 		connections = new ClientThread[5];
+		in = new Scanner(System.in);
+		command = "";
 	}//End of Server constructor method
 
 	//Bind the ServerSocket object to listen to a specified port
@@ -88,12 +92,14 @@ public class Server
 			else if(command.equals("/start"))
 			{
 				System.out.println("Starting the server...");
+				Thread.sleep(2000);
 				startServer();
 				serverUp = true;
 			}
 			else if(command.equals("/stop"))
 			{
 				System.out.println("Stopping the server...");
+				Thread.sleep(2000);
 				stopServer();
 				serverUp = false;
 			}
