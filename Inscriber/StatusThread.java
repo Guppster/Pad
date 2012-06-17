@@ -12,7 +12,6 @@ public class StatusThread extends Thread
 	private int connectionsAvailable;
 	private boolean full;
 	private ClientThread[] connections;
-	private Server server;
 	private Socket sClient;
 
 	//Initializes class fields and objects
@@ -23,7 +22,6 @@ public class StatusThread extends Thread
     	connectionsAvailable = 5;
     	full = false;
     	connections = new ClientThread[connectionsAvailable];
-    	server = new Server();
     	sClient = null;
     }//End of StatusThread constructor method
 
@@ -46,8 +44,8 @@ public class StatusThread extends Thread
 				{
 					try
 					{
-						System.out.println("Test " + server.getServerSocket());
-						sClient = server.getServerSocket().accept();//Accept the connection
+						System.out.println("Test " + Server.getServerSocket());
+						sClient = Server.getServerSocket().accept();//Accept the connection
 
 						for(int x = 0; x < connections.length; x++)//Go through the connections array and search for an empty connection
 						{
