@@ -40,13 +40,13 @@ public class Client
 				}catch(Exception e){eHandler.displayError("CNAD") eHandler.displayError(".");}
 
 				if(validLogin)
-					new Lobby();
+					new Lobby();//Open the Lobby screen
 				else
 				{
-					tries++;
-					eHandler.displayError("WL");
-					eHandler.displayError(".");
-					sClient = null;
+					tries++;//Increase their amount of tries left
+					eHandler.displayError("WL");//Send an error code to the ErrorHandler class
+					eHandler.displayError(".");//Display the error sent over
+					sClient = null;//Disconnect them
 				}
 	        }
 		}
