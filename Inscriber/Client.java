@@ -13,6 +13,7 @@ public class Client
 	private User tempUser;
 	private ErrorHandler eHandler;
 	private int tries;
+	private boolean validLogin;
 
 	//Initializes class fields and objects
 	public Client(User tempUser)
@@ -21,6 +22,7 @@ public class Client
 		this.tempUser = tempUser;
 		eHandler = new ErrorHandler();
 		tries = 0;
+		validLogin = false;
 	}//End of Client constructor method
 
 	//Attempt to connect to the server
