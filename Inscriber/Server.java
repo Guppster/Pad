@@ -114,7 +114,7 @@ public class Server
 			{
 				System.out.println("Starting the server...");
 				Thread.sleep(2000);
-
+				(new StatusThread()).start();
 				serverUp = true;
 				System.out.println("Server started sucessfully!");
 			}
