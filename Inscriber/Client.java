@@ -9,10 +9,11 @@ public class Client
 {
 	private Socket sClient;
 	private Database database;
+	private User tempUser;
 
-	public Client()
+	public Client(User tempUser)
 	{
-
+		this.tempUser = tempUser;
 	}
 
 	//Attempt to connect to the server
@@ -26,7 +27,7 @@ public class Client
         if(sClient != null)
         {
         	System.out.println("Connected to server.");
-			database.checkLogin()
+			database.checkLogin(tempUser);
         }
 	}
 }//End of Client class
