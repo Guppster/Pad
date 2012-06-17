@@ -234,7 +234,7 @@ public class Register extends JFrame implements ActionListener, KeyListener
 
 	private boolean confirmIndividuality() throws Exception
 	{
-		boolean [] conditionResults = server.findUserExists(user);
+		boolean [] conditionResults = database.findUserExists(user);
 
 		//Query the server to check if there is a username matching the one entered, then check if the password matches
 		//return true means the user field exists, false means it doesnt exist
