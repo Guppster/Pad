@@ -57,7 +57,7 @@ public class StatusThread extends Thread
 						   	break;
 						}
 					}
-				}catch(IOException e){System.out.println("Server was stopped."); stop = true; break;}
+				}catch(IOException e){System.out.println("Server was stopped.");}
 			//}//End of inner while loop
 		}//End of outer while loop
 
