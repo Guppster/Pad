@@ -33,7 +33,7 @@ public class Client
 		{
 			try
 			{
-	            sClient = new Socket("99.249.132.206", 25565);
+	            sClient = new Socket("99.249.132.206", 22222);
 	        }catch(IOException e){System.out.println("Error - " + e);}
 
 			System.out.println("Hi");
