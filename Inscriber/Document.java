@@ -29,8 +29,12 @@ public class Document
 		numOfCharacters = 0;
     }//End of default constructor
 
-    public Document()
-
-
+    public Document(String docName)
+	{
+		readInFromFile(docName);
+		countNumWords();
+		countNumSentences();
+		countNumCharacters();
+	}//End of Object Constructor
 
 }
