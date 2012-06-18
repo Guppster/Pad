@@ -14,6 +14,7 @@
 
 public class Document
 {
+	//Object Fields
 	private String docName;
 	private int numOfWords;
 	private int numOfSentences;
@@ -23,7 +24,13 @@ public class Document
     public Document()
     {
 		docName = "New Document";
+		numOfWords = 0;
+		numOfSentences = 0;
+		numOfCharacters = 0;
     }//End of default constructor
+
+    public Document()
+
 
 
 }
