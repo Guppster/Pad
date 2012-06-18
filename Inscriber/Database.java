@@ -63,6 +63,40 @@ public class Database
 
     public boolean [] findUserExists(User user) throws Exception
     {
+    	/*Class.forName(driver);
+        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
+    	Statement stat = conn.createStatement();
+    	boolean [] conditions = new boolean[2];
+    	ResultSet rsUser = stat.executeQuery("SELECT accounts.user FROM accounts;");
+    	ResultSet rsEmail = null;
+    	boolean userFound = false;
+
+        while(rs.next())
+        {
+        	if(user.getUsername().equals(rs.getString("user")))
+        	{
+        		//Username already exists in database
+        		userFound = true;
+        		conditions[0] = true;
+        		break;
+        	}
+        }
+
+        if(!userFound)
+        {
+        	ResultSet rsUser = stat.executeQuery("SELECT accounts.email FROM accounts;")
+
+        	if(user.getEmail().equals(rs.getString("email")))
+        	{
+        		//Email already exists in database
+        		conditions[1] = true;
+        	}
+        }
+
+        rs.close();
+        conn.close();
+        return conditions;*/
+
     	Class.forName(driver);
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
     	Statement stat = conn.createStatement();
@@ -111,7 +145,7 @@ public class Database
         	}
         }
 
-        if(userFound == false)
+        if(!userFound)
         {
         	//Username not found
 			rsUser.close();
@@ -119,7 +153,7 @@ public class Database
 			return false;//Login is not valid
         }
 
-        if(userFound == true)
+        if(userFound)
         {
 
         	rsPass = stat.executeQuery("SELECT accounts.pass FROM accounts;");
@@ -134,7 +168,7 @@ public class Database
 	        		return true;//Login is valid
 	        	}
 	        }
-	        if(passFound == false)
+	        if(!passFound)
 	        {
 	        	return false;//Login is valid
 	        }

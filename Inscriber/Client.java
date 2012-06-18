@@ -50,7 +50,7 @@ public class Client
 						System.out.println("Tries " + tries);
 						eHandler.displayError("WL");//Send an error code to the ErrorHandler class
 						eHandler.displayError(".");//Display the error sent over
-						sClient = null;//Disconnect them
+						sClient = null;//Disconnect the user
 					}
 				}catch(Exception e){e.printStackTrace();}
 	        }

@@ -36,6 +36,6 @@ public class ClientThread extends Thread
 	public void run()
 	{
 
-		System.out.println("THE CONNECTION LEADS HERE!");
+
 	}//End of run method
 }//End of ClientThread class
