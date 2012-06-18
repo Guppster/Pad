@@ -52,7 +52,7 @@ public class Document
 		//Declare class fields and objects
 		JFileChooser fileChooser = new JFileChooser();
 		TFileFilter fileFilter = new TFileFilter();
-		fileChooser.addChoosableFileFilter(filerFilter);
+		fileChooser.addChoosableFileFilter(fileFilter);
 		fileChooser.setAcceptAllFileFilterUsed(false);
 		Writer output = null;
 		int intVar = fileChooser.showSaveDialog(null);
