@@ -201,7 +201,7 @@ public class Server
 				sClient = sServer.accept();//Accept the connection
 				break;
 			}catch(UnknownHostException e){System.out.println("Umm.. " + e);}
-		}while(flag == true)
+		}while(flag == true);
 
 		System.out.println("A connection was succesful");
 
