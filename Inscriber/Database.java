@@ -150,6 +150,8 @@ public class Database
 	        conn.close();
 	        return false;
         }
+
+        return false;
     }//End of Check login method
 
     public boolean [] retrieveDefaultPermissions() throws Exception
