@@ -51,7 +51,7 @@ public class Document
 	{
 		//Declare class fields and objects
 		JFileChooser fileChooser = new JFileChooser();
-		TFileFilter fileFilter = new TFileFilter();
+		FileFilter fileFilter = new TFileFilter();
 		fileChooser.addChoosableFileFilter(fileFilter);
 		fileChooser.setAcceptAllFileFilterUsed(false);
 		Writer output = null;
