@@ -98,13 +98,16 @@ public class Database
 
 		ResultSet rsUser = stat.executeQuery("SELECT accounts.user FROM accounts;");
 		ResultSet rsPass = null;
+		boolean userFound = false;
 
         while(rsUser.next())
         {
         	if(user.getUsername().equals(rsUser.getString("user")))
         	{
+        		userFound = true;
         		rsUser.close();
-				rsPass = stat.executeQuery("SELECT accounts.pass FROM accounts;");
+        		break;
+				/*rsPass = stat.executeQuery("SELECT accounts.pass FROM accounts;");
         		//Username found
         		if(user.getPassword().equals(rsPass.getString("pass")))
         		{
@@ -112,7 +115,7 @@ public class Database
         			rsPass.close();
         			conn.close();
         			return true;//Login is valid
-        		}
+        		}*/
         	}
 			else
 			{
@@ -122,10 +125,31 @@ public class Database
 				return false;//Login is not valid
 			}
         }
-		System.out.print("Error - Cannot connect to database");
-        rsUser.close();
-        conn.close();
-        return false;
+
+        if(userFound == true)
+        {
+
+        	rsPass = stat.executeQuery("SELECT accounts.pass FROM accounts;");
+
+        	while(rsPass.next())
+	        {
+	        	//Username found
+	        	if(user.getPassword().equals(rsPass.getString("pass")))
+	        	{
+	        		//Password found and matches one passed in
+	        		rsPass.close();
+	        		conn.close();
+	        		return true;//Login is valid
+	        	}
+	        }
+        }
+        else
+        {
+			System.out.print("Error - Cannot connect to database");
+	        rsUser.close();
+	        conn.close();
+	        return false;
+        }
     }//End of Check login method
 
     public boolean [] retrieveDefaultPermissions() throws Exception
