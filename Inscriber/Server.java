@@ -55,7 +55,8 @@ public class Server
 	//Start the server and start listening for connections
 	private void startServer()
 	{
-
+		while(true)
+		{
 			try
 			{
 				sClient = sServer.accept();//Accept the connection
