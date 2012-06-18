@@ -36,7 +36,7 @@ public class Client
 	            sClient = new Socket("99.249.132.206", 22222);
 	        }catch(IOException e){System.out.println("Error - " + e);}
 
-			/*//If it connects fine(The socket won't be null), check the users login information
+			//If it connects fine(The socket won't be null), check the users login information
 	        if(sClient != null)
 	        {
 				try
@@ -52,7 +52,7 @@ public class Client
 						sClient = null;//Disconnect them
 					}
 				}catch(Exception e){eHandler.displayError("WL"); eHandler.displayError(".");}
-	        }*/
+	        }
 		}
 	}//End of tryConnect method
 }//End of Client class
