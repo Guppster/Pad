@@ -37,4 +37,4 @@ public class Document
 		countNumCharacters();
 	}//End of Object Constructor
 
-}
+}//End of Document Class
