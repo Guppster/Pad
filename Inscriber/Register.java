@@ -256,7 +256,6 @@ public class Register extends JFrame implements ActionListener, KeyListener
 			//Declare a field and initialize it
 			boolean [] conditionResults = database.findUserExists(user);
 
-			//Query the server to check if there is a username matching the one entered, then check if the password matches
 			//return true means the user field exists, false means it doesnt exist
 		   	if(conditionResults[0] == false && conditionResults[1] == false)
 		    {
