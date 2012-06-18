@@ -91,7 +91,7 @@ public class Server
 	}//End of getConnectedUsers method
 
 	//Start the console and accept commands from the server owner
-	private void startConsole()
+	private void startConsole() throws InterruptedException
 	{
 		//Let the user know that they can enter in a command to view all the commands
 		System.out.println("Enter /help to display a list of commands.");
@@ -171,7 +171,7 @@ public class Server
 	}//End of getConnection method
 
 	//Run the code in this method when the class is run
-	public static void main(String [] args) throws IOException
+	public static void main(String [] args) throws IOException, InterruptedException
 	{
 		//Create a new Server object so we can call methods in the main method
 		Server server = new Server();
