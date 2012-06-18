@@ -185,7 +185,7 @@ public class Server
 	{
 		ServerSocket sServer = null;
 		Socket sClient = null;
-		flag = true;
+		boolean flag = true;
 
 		System.out.println();
 		try
