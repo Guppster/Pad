@@ -2,9 +2,9 @@
 //June 17
 
 //Import Java API Objects
-import javax.swing.*;
+import javax.swing.filechooser.*;
 
-public class TFileFilter implements FileFilter
+public class TFileFilter extends FileFilter
 {
 	//Declare class fields and objects
 
