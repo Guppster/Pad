@@ -51,7 +51,7 @@ public class Client
 						eHandler.displayError(".");//Display the error sent over
 						sClient = null;//Disconnect them
 					}
-				}catch(Exception e){eHandler.displayError("WL"); eHandler.displayError(".");}
+				}catch(Exception e){System.out.println("Error - " + e);}
 	        }
 		}
 	}//End of tryConnect method
