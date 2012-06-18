@@ -64,7 +64,6 @@ public class Document
 			output = new BufferedWriter(new FileWriter(file));
 			output.write(text);
 			output.close();
-
 		}
 
 		/* if (doExport)
