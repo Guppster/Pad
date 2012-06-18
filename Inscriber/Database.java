@@ -97,7 +97,7 @@ public class Database
     	Statement stat = conn.createStatement();
 
 		ResultSet rsUser = stat.executeQuery("SELECT accounts.user FROM accounts;");
-
+		ResultSet rsPass = null;
         while(rsUser.next())
         {
         	if(user.getUsername().equals(rsUser.getString("user")))
