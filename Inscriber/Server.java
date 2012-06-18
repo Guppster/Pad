@@ -55,17 +55,7 @@ public class Server
 	//Start the server and start listening for connections
 	private void startServer()
 	{
-		while(true)
-		{
-			try
-			{
-				sClient = sServer.accept();//Accept the connection
-				break;
-			}catch(Exception e){System.out.println("Umm.. " + e);}
-		}
-
-		System.out.println("A connection was succesful");
-		//statusThread.start();
+		statusThread.start();
 	}//End of acceptConnections method
 
 	//Attempt to stop the server
@@ -195,9 +185,9 @@ public class Server
 		server.startServer();
 
 		//Inform the server owner of some actions being done
-		//System.out.println("Opening console...");
+		System.out.println("Opening console...");
 
 		//Start the console and allow the server owner to enter console commands
-		//server.startConsole();
+		server.startConsole();
 	}//End of Server main method
 }//End of Server class
