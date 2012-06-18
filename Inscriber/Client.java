@@ -36,8 +36,6 @@ public class Client
 	            sClient = new Socket("99.249.132.206", 22222);
 	        }catch(IOException e){System.out.println("Error - " + e);}
 
-			System.out.println("Hi");
-
 			/*//If it connects fine(The socket won't be null), check the users login information
 	        if(sClient != null)
 	        {
