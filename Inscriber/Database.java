@@ -97,7 +97,7 @@ public class Database
         System.out.print("Database loaded");
     	Statement stat = conn.createStatement();
 
-		ResultSet rs = stat.executeQuery("SELECT 3 FROM accounts;");
+		ResultSet rs = stat.executeQuery("SELECT accounts.user FROM accounts;");
 
         while(rs.next())
         {
