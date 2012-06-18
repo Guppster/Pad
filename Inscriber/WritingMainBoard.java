@@ -409,7 +409,10 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 			{
 				public void actionPerformed(ActionEvent e)
 				{
-					document.saveFile(taDocument.getText());
+					try
+					{
+						document.saveFile(taDocument.getText());
+					}catch(IOException e){}
 				}
 			});
 
