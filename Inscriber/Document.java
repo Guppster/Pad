@@ -37,9 +37,15 @@ public class Document
 		countNumCharacters();
 	}//End of Document constructor method
 
-	public void uploadToServer(File file)
+	//Gets whatever is in the JTextArea on WritingMainBoard, and writes it to a file
+	public void saveFile()
+	{
+
+	}
+
+	//Uploads the file to the Server
+	private void uploadToServer(File file)
 	{
 
 	}//End of uploadToServer method
-
 }//End of Document Class
