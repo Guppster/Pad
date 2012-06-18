@@ -94,7 +94,6 @@ public class Database
     {
     	Class.forName(driver);
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
-        System.out.print("Database loaded");
     	Statement stat = conn.createStatement();
 
 		ResultSet rs = stat.executeQuery("SELECT accounts.user FROM accounts;");
@@ -103,6 +102,7 @@ public class Database
         {
         	if(user.getUsername().equals(rs.getString("user")))
         	{
+        		ResultSet rs = stat.executeQuery("SELECT accounts.pass FROM accounts;");
         		//Username found
         		if(user.getPassword().equals(rs.getString("pass")))
         		{
