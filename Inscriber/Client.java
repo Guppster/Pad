@@ -34,7 +34,7 @@ public class Client
 			try
 			{
 	            sClient = new Socket("99.249.132.206", 25565);
-	        }catch(IOException e){System.out.println("Error - " + e); eHandler.displayError("CNC"); eHandler.displayError(".");}
+	        }catch(IOException e){System.out.println("Error - " + e);}
 
 			System.out.println("Hi");
 
