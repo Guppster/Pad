@@ -185,6 +185,7 @@ public class Server
 	{
 		ServerSocket sServer = null;
 		Socket sClient = null;
+		flag = true;
 
 		System.out.println();
 		try
@@ -192,7 +193,7 @@ public class Server
 			sServer = new ServerSocket(25565);//Bind the server to port 22222
 		}catch(UnknownHostException e){System.out.println(e + " - Could not bind to specified port.");}
 
-		while(true)
+		while(flag == true)
 		{
 			System.out.println("trying a connect");
 			try
