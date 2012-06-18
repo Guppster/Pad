@@ -116,13 +116,14 @@ public class Database
 			else
 			{
 				//Username not found
-				rs.close();
+				rsUser.close();
        			conn.close();
 				return false;//Login is not valid
 			}
         }
 		System.out.print("Error - Cannot connect to database");
-        rs.close();
+        rsUser.close();
+        rsPass.close();
         conn.close();
         return false;
     }//End of Check login method
