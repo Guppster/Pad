@@ -52,9 +52,10 @@ public class Document
 		//Declare class fields and objects
 		JFileChooser fileChooser = new JFileChooser();
 		Writer output = null;
+		int intVar = fileChooser.showSaveDialog(null);
 
 		// let the user choose the destination file
-		if (fileChooser.showSaveDialog(this) == JFileChooser.APPROVE_OPTION)
+		if (intVar == JFileChooser.APPROVE_OPTION)
 		{
 			File file = fileChooser.getSelectedFile();
 
