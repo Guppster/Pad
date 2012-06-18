@@ -193,15 +193,12 @@ public class Server
 			sServer = new ServerSocket(25565);//Bind the server to port 22222
 		}catch(UnknownHostException e){System.out.println(e + " - Could not bind to specified port.");}
 
-		while(flag == true)
+		System.out.println("trying a connect");
+		try
 		{
-			System.out.println("trying a connect");
-			try
-			{
-				sClient = sServer.accept();//Accept the connection
-				break;
-			}catch(UnknownHostException e){System.out.println("Umm.. " + e);}
-		}
+			sClient = sServer.accept();//Accept the connection
+		}catch(UnknownHostException e){System.out.println("Umm.. " + e);}
+
 		System.out.println("A connection was succesful");
 
 		sServer.close();
