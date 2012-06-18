@@ -2,8 +2,8 @@
 //June 17
 
 //Import Java API Objects
-import java.io.File;
-import javax.swing.filechooser.*;
+import java.io.*;
+import javax.swing.filechooser.FileFilter;
 
 public class TFileFilter extends FileFilter
 {
