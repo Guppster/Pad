@@ -117,13 +117,14 @@ public class Database
         			return true;//Login is valid
         		}*/
         	}
-			else
-			{
-				//Username not found
-				rsUser.close();
-       			conn.close();
-				return false;//Login is not valid
-			}
+        }
+
+        if(userFound == false)
+        {
+        	//Username not found
+			rsUser.close();
+       		conn.close();
+			return false;//Login is not valid
         }
 
         if(userFound == true)
@@ -137,15 +138,20 @@ public class Database
 	        	if(user.getPassword().equals(rsPass.getString("pass")))
 	        	{
 	        		//Password found and matches one passed in
-	        		rsPass.close();
-	        		conn.close();
+	        		passFound = true;
 	        		return true;//Login is valid
 	        	}
 	        }
+	        if(passFound == false)
+	        {
+	        	return false;//Login is valid
+	        }
+
+	        rsPass.close();
+	        conn.close();
         }
         else
         {
-			System.out.print("Error - Cannot connect to database");
 	        rsUser.close();
 	        conn.close();
 	        return false;
