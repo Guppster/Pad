@@ -31,7 +31,7 @@ public class Document
 	//Default constructor
     public Document()
     {
-		docName = "NewDocument.txt";
+		//docName = "NewDocument.txt";
 		numOfWords = 0;
 		numOfSentences = 0;
 		numOfCharacters = 0;
@@ -40,10 +40,10 @@ public class Document
 	//Initializes class fields and objects
     public Document(String docName)
 	{
-		readInFromFile(docName);
-		countNumWords();
-		countNumSentences();
-		countNumCharacters();
+		//readInFromFile(docName);
+		//countNumWords();
+		//countNumSentences();
+		//countNumCharacters();
 	}//End of Document constructor method
 
 	//Gets whatever is in the JTextArea on WritingMainBoard, and writes it to a file
