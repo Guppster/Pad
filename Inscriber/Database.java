@@ -44,7 +44,7 @@ public class Database
     	Class.forName(driver);
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
 		PreparedStatement prep = conn.prepareStatement(
-        	      "INSERT accounts VALUES (?, ?, ?, ?, ?);");
+        	      "INSERT accounts VALUES (?, ?, ?, ?, ?, ?);");
 
 		conn.setAutoCommit(false);
         prep.setString(1, user.getFirstName());
