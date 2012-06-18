@@ -101,7 +101,7 @@ public class Database
 
         while(rsUser.next())
         {
-        	if(user.getUsername().equals(rsUser.getString("user")))
+        	if(user.getUsername().equals(rsUser.getString()))
         	{
 
         		//Username found
