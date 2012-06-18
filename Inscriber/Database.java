@@ -96,6 +96,7 @@ public class Database
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
     	Statement stat = conn.createStatement();
 
+		//what your doing here wont work matt......
 		ResultSet rsUser = stat.executeQuery("SELECT accounts.user FROM accounts;");
 		ResultSet rsPass = null;
         while(rsUser.next())
