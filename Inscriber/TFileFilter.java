@@ -2,7 +2,6 @@
 //June 17
 
 //Import Java API Objects
-import java.io.*;
 import javax.swing.*;
 
 public class TFileFilter implements FileFilter
