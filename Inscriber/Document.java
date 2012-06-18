@@ -14,11 +14,16 @@
 
 public class Document
 {
+	private String docName;
+	private int numOfWords;
+	private int numOfSentences;
+	private int numOfCharacters;
 
+	//Default Constructor
     public Document()
     {
-
-    }
+		docName = "New Document";
+    }//End of default constructor
 
 
 }
