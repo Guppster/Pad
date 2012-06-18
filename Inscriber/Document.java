@@ -22,7 +22,7 @@ public class Document
 	//Default constructor
     public Document()
     {
-		docName = "New Document";
+		docName = "NewDocument.txt";
 		numOfWords = 0;
 		numOfSentences = 0;
 		numOfCharacters = 0;
