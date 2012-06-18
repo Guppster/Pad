@@ -47,7 +47,7 @@ public class Document
 	}//End of Document constructor method
 
 	//Gets whatever is in the JTextArea on WritingMainBoard, and writes it to a file
-	public void saveFile(String text, String filename) throws IOException
+	public void saveFile(String text) throws IOException
 	{
 		//Declare class fields and objects
 		JFileChooser fileChooser = new JFileChooser();

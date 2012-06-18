@@ -1,12 +1,12 @@
 /**
  * @(#)WritingMainBoard.java
  *
- * @Description 
+ * @Description
  *
  * @author Gurpreet Singh, Matt Ufimsef
  * @version 1.00 2012/6/15
  *
- * @Latest Updates: 
+ * @Latest Updates:
  *
  * @Status: GUI Complete. Functionality Pending.
  */
@@ -407,7 +407,7 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 			{
 				public void actionPerformed(ActionEvent e)
 				{
-					System.out.println("Save");
+					document.saveFile(taDocument.getText());
 				}
 			});
 
