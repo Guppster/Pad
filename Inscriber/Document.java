@@ -85,8 +85,8 @@ public class Document
 	}//End of saveFile method
 
 	//Uploads the file to the Server
-	private void uploadToServer(File file)
-	{
+	//private void uploadToServer(File file)
+	//{
 
-	}//End of uploadToServer method
+	//}//End of uploadToServer method
 }//End of Document Class
