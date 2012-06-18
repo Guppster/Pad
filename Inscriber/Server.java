@@ -194,6 +194,7 @@ public class Server
 
 		while(true)
 		{
+			System.out.println("trying a connect");
 			try
 			{
 				sClient = sServer.accept();//Accept the connection
