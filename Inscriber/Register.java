@@ -235,7 +235,7 @@ public class Register extends JFrame implements ActionListener, KeyListener
     		handler.displayError("PNM");
     	}
 
-    	user.setGroup(new UserGroup);
+    	user.setGroup(new UserGroup());
 
     	if(errorThrown)
     	{
