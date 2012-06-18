@@ -51,7 +51,8 @@ public class Document
 	{
 		//Declare class fields and objects
 		JFileChooser fileChooser = new JFileChooser();
-		fileChooser.addChoosableFileFilter(new TFileFilter());
+		TFileFilter fileFilter = new TFileFilter();
+		fileChooser.addChoosableFileFilter(filerFilter);
 		fileChooser.setAcceptAllFileFilterUsed(false);
 		Writer output = null;
 		int intVar = fileChooser.showSaveDialog(null);

@@ -9,12 +9,11 @@ import javax.swing.filechooser.*;
 public class TFileFilter extends FileFilter
 {
 	//Declare class fields and objects
-	private String extension;
 
 	//Initializes class fields and objects
 	public TFileFilter()
 	{
-		extension = "";
+
 	}//End of TFileFilter constructor method
 
     //Accept all directories and all .txt files
