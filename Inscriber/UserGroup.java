@@ -18,7 +18,7 @@ public class UserGroup
 
     public UserGroup()
     {
-    	name = "";
+    	name = "Default";
     	permissions = new boolean[5];
     }//End of default constructor
 
