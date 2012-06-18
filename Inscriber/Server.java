@@ -189,7 +189,7 @@ public class Server
 		System.out.println();
 		try
 		{
-			sServer = new ServerSocket(22222);//Bind the server to port 22222
+			sServer = new ServerSocket(25565);//Bind the server to port 22222
 		}catch(IOException e){System.out.println(e + " - Could not bind to specified port.");}
 
 		while(true)
