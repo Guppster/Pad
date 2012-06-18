@@ -108,15 +108,6 @@ public class Database
         		userFound = true;
         		rsUser.close();
         		break;
-				/*rsPass = stat.executeQuery("SELECT accounts.pass FROM accounts;");
-        		//Username found
-        		if(user.getPassword().equals(rsPass.getString("pass")))
-        		{
-        			//Password found and matches one passed in
-        			rsPass.close();
-        			conn.close();
-        			return true;//Login is valid
-        		}*/
         	}
         }
 
