@@ -96,13 +96,14 @@ public class Database
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
     	Statement stat = conn.createStatement();
 
-		//what your doing here wont work matt......
 		ResultSet rsUser = stat.executeQuery("SELECT accounts.user FROM accounts;");
 		ResultSet rsPass = null;
+
         while(rsUser.next())
         {
         	if(user.getUsername().equals(rsUser.getString("user")))
         	{
+        		rsUser.close();
 				rsPass = stat.executeQuery("SELECT accounts.pass FROM accounts;");
         		//Username found
         		if(user.getPassword().equals(rsPass.getString("pass")))
@@ -123,7 +124,6 @@ public class Database
         }
 		System.out.print("Error - Cannot connect to database");
         rsUser.close();
-        rsPass.close();
         conn.close();
         return false;
     }//End of Check login method
