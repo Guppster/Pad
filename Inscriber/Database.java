@@ -46,7 +46,6 @@ public class Database
 		PreparedStatement prep = conn.prepareStatement(
         	      "INSERT accounts VALUES (?, ?, ?, ?, ?, ?);");
 
-		conn.setAutoCommit(false);
         prep.setString(1, user.getFirstName());
         prep.setString(2, user.getLastName());
         prep.setString(3, user.getUsername());
@@ -55,8 +54,9 @@ public class Database
         prep.setString(6, user.getGroup());
         prep.addBatch();
 
-        conn.commit();
+		conn.setAutoCommit(false);
         prep.executeBatch();
+		conn.setAutoCommit(true);
 
         conn.close();
     }//End of addUser method
