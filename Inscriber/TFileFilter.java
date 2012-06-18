@@ -21,27 +21,17 @@ public class TFileFilter extends FileFilter
     public boolean accept(File file)
     {
         if (file.isDirectory())
-        {
             return true;
-        }
 
- 		//Initialize a class field
-        extension = Utils.getExtension(file);
-
-        if(extension != null)
-        {
-            if(extension.equals(Utils.txt))
-            	return true;
-            else
-                return false;
-        }
-
-        return false;
+        if(file.getName().toLowerCase().endsWith(".txt")
+        	return true;
+		else
+			return false;
     }//End of accept method
 
     //The description of this filter
     public String getDescription()
     {
-        return "All text files";
+        return "All *.txt files";
     }
 }
