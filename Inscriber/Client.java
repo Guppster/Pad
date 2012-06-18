@@ -27,14 +27,14 @@ public class Client
 	}//End of Client constructor method
 
 	//Attempt to connect to the server
-	public void tryConnect() throws IOException
+	public void tryConnect() throws UnknownHostException
 	{
 		if(tries < 6)
 		{
 			try
 			{
 	            sClient = new Socket("99.249.132.206", 25565);
-	        }catch(UnknownHostException e){System.out.println("Error - " + e); eHandler.displayError("CNC"); eHandler.displayError(".");}
+	        }catch(IOException e){System.out.println("Error - " + e); eHandler.displayError("CNC"); eHandler.displayError(".");}
 
 			System.out.println("Hi");
 
