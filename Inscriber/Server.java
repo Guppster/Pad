@@ -32,12 +32,12 @@ public class Server
 	public Server()
 	{
 		//Initialize class fields and objects
-		//sServer = null;
-	//	sClient = null;
-		//in = new Scanner(System.in);
-		//serverUp = false;
-		//command = "";
-		//statusThread = new StatusThread();
+		sServer = null;
+		sClient = null;
+		in = new Scanner(System.in);
+		serverUp = false;
+		command = "";
+		statusThread = new StatusThread();
 	}//End of Server constructor method
 
 	//Bind the ServerSocket object to listen to a specified port
@@ -55,8 +55,7 @@ public class Server
 	//Start the server and start listening for connections
 	private void startServer()
 	{
-		while(true)
-		{
+
 			try
 			{
 				sClient = sServer.accept();//Accept the connection
@@ -183,30 +182,16 @@ public class Server
 	//Run the code in this method when the class is run
 	public static void main(String [] args) throws IOException
 	{
-		ServerSocket sServer = null;
-		Socket sClient = null;
-		boolean flag = true;
-
-		System.out.println();
-		try
-		{
-			sServer = new ServerSocket(22222);//Bind the server to port 22222
-			sClient = sServer.accept();//Accept the connection
-		}catch(UnknownHostException e){System.out.println("Umm.. " + e);}
-
-		System.out.println("A connection was succesful");
-
-		sServer.close();
-
-		System.out.println("Connection closed");
 		//Create a new Server object so we can call methods in the main method
-		//Server server = new Server();
+		Server server = new Server();
 
 		//Inform the server owner of some actions being done
-		//System.out.println("Attempting to bind port...");
+		System.out.println("Attempting to bind port...");
 
 		//Bind the ServerSocket object to listen to a specified port
-		//server.bindPort(22222);
+		server.bindPort(22222);
+
+		server.startServer();
 
 		//Inform the server owner of some actions being done
 		//System.out.println("Opening console...");
