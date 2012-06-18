@@ -108,7 +108,7 @@ public class Database
         		if(user.getPassword().equals(rsPass.getString("pass")))
         		{
         			//Password found and matches one passed in
-        			rs.close();
+        			rsPass.close();
         			conn.close();
         			return true;//Login is valid
         		}
