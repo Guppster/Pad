@@ -52,45 +52,24 @@ public class Document
 		//Declare class fields and objects
 		JFileChooser fileChooser = new JFileChooser();
 		Writer output = null;
-		File file = new File("write.txt");
 
 		// let the user choose the destination file
 		if (fileChooser.showSaveDialog(this) == JFileChooser.APPROVE_OPTION)
 		{
-		    // indicates whether the user still wants to export the settings
-		    boolean doExport = true;
+			File file = fileChooser.getSelectedFile();
 
-		    // indicates whether to override an already existing file
-		    boolean overrideExistingFile = false;
+			output = new BufferedWriter(new FileWriter(file));
+			output.write(text);
+			output.close();
 
-		    // get destination file
-		    File destinationFile = new File(fileChooser.getSelectedFile().getAbsolutePath());
+		}
 
-		    // check if file already exists
-		    while (doExport && destinationFile.exists() && !overrideExistingFile) {
-		        // let the user decide whether to override the existing file
-		        overrideExistingFile = (JOptionPane.showConfirmDialog(this, "Replace file?", "Export Settings", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION);
-
-		        // let the user choose another file if the existing file shall not be overridden
-		        if (!overrideExistingFile) {
-		            if (fileChooser.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
-		                // get new destination file
-		                destinationFile = new File(fileChooser.getSelectedFile().getAbsolutePath());
-		            } else {
-		                // seems like the user does not want to export the settings any longer
-		                doExport = false;
-		            }
-		        }
-		    }
-
-		    // perform the actual export
-		    if (doExport)
+		/* if (doExport)
 		    {
 		        output = new BufferedWriter(new FileWriter(file));
 				output.write(text);
 				output.close();
-		    }
-		}
+		    }*/
 	}//End of saveFile method
 
 	//Uploads the file to the Server
