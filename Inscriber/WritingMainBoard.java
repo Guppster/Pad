@@ -413,7 +413,7 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 					try
 					{
 						document.saveFile(taDocument.getText());
-					}catch(IOException e){}
+					}catch(IOException exc){}
 				}
 			});
 
