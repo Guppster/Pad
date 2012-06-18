@@ -11,30 +11,30 @@
  * @Status: In-Complete
  */
 
-
 public class Document
 {
-	//Object Fields
+	//Declare class fields and objects
 	private String docName;
 	private int numOfWords;
 	private int numOfSentences;
 	private int numOfCharacters;
 
-	//Default Constructor
+	//Default constructor
     public Document()
     {
 		docName = "New Document";
 		numOfWords = 0;
 		numOfSentences = 0;
 		numOfCharacters = 0;
-    }//End of default constructor
+    }//End of Document default constructor
 
+	//Initializes class fields and objects
     public Document(String docName)
 	{
 		readInFromFile(docName);
 		countNumWords();
 		countNumSentences();
 		countNumCharacters();
-	}//End of Object Constructor
+	}//End of Document constructor method
 
 }//End of Document Class
