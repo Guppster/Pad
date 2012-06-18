@@ -96,15 +96,16 @@ public class Database
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
     	Statement stat = conn.createStatement();
 
-		ResultSet rs = stat.executeQuery("SELECT accounts.user FROM accounts;");
+		ResultSet rsUser = stat.executeQuery("SELECT accounts.user FROM accounts;");
+		ResultSet rsPass = stat.executeQuery("SELECT accounts.pass FROM accounts;");
 
-        while(rs.next())
+        while(rsUser.next())
         {
-        	if(user.getUsername().equals(rs.getString("user")))
+        	if(user.getUsername().equals(rsUser.getString("user")))
         	{
-        		ResultSet rs = stat.executeQuery("SELECT accounts.pass FROM accounts;");
+
         		//Username found
-        		if(user.getPassword().equals(rs.getString("pass")))
+        		if(user.getPassword().equals(rsPass.getString("pass")))
         		{
         			//Password found and matches one passed in
         			rs.close();
