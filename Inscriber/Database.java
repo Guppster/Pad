@@ -94,9 +94,9 @@ public class Database
     {
     	Class.forName(driver);
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
+        System.out.print("Database loaded");
     	Statement stat = conn.createStatement();
 
-		System.out.print("test");
 		ResultSet rs = stat.executeQuery("SELECT user FROM accounts;");
 
         while(rs.next())
@@ -120,7 +120,7 @@ public class Database
 				return false;//Login is not valid
 			}
         }
-
+		System.out.print("Error - Cannot connect to database");
         rs.close();
         conn.close();
         return false;
