@@ -39,14 +39,23 @@ public class StatusThread extends Thread
 		//Keep looping until the server is stopped by the server owner
 		while(Server.getServerStatus().equals("Server up"))
 		{
-			/*while(connectionsAvailable > 0)//Keep accepting connections if there are free connections
-			{*/
+			while(connectionsAvailable > 0)//Keep accepting connections if there are free connections
+			{
 				try
 				{
-					System.out.println("Socket: " + Server.getServerSocket());
 					sClient = (Server.getServerSocket()).accept();//Accept the connection
+
+					for(int x = 0; x < connections.length; x++)//Go through the connections array and search for an empty connection
+						{
+							if(connections[x] == null)
+							{
+								(connections[x] = new ClientThread(sClient, connections)).start();
+								connectionsAvailable--;
+							   	break;
+							}
+						}
 				}catch(IOException e){System.out.println("Server was stopped.");}
-			//}//End of inner while loop
+			}//End of inner while loop
 		}//End of outer while loop
 
 		//Reset all the fields for server restart
