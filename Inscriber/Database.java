@@ -99,6 +99,7 @@ public class Database
 		ResultSet rsUser = stat.executeQuery("SELECT accounts.user FROM accounts;");
 		ResultSet rsPass = null;
 		boolean userFound = false;
+		boolean passFound = false;
 
         while(rsUser.next())
         {
