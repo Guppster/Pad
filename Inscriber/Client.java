@@ -10,7 +10,7 @@ public class Client
 	//Declare class fields and objects
 	private Socket sClient;
 	private Database database;
-	private User tempUser;
+	private User tempUser2;
 	private ErrorHandler eHandler;
 	private int tries;
 	private String user;
@@ -20,7 +20,7 @@ public class Client
 	public Client(User tempUser)
 	{
 		//Initialize class fields and objects
-		this.tempUser = tempUser;
+		tempUser2 = tempUser;
 		eHandler = new ErrorHandler();
 		tries = 0;
 		//database = new Database();
@@ -41,7 +41,7 @@ public class Client
 	        {
 				try
 				{
-					if(database.checkLogin(tempUser))//Check if the login credentials match
+					if(database.checkLogin(tempUser2))//Check if the login credentials match
 						new Lobby();//Open the Lobby screen
 					else
 					{
