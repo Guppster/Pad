@@ -118,8 +118,11 @@ public class Login extends JFrame implements ActionListener, KeyListener
     	//Check which button was pressed
 		if("login".equals(evt.getActionCommand()))
 		{
+			try
+			{
 			//Try a connection with the server
 			client.tryConnect();
+			}catch{IOException e}
 		}
 		else if ("new".equals(evt.getActionCommand()))
 		{
