@@ -116,6 +116,7 @@ public class Database
 				//Username not found
 				rs.close();
        			conn.close();
+       			System.out.println("TESTE");
 				return false;//Login is not valid
 			}
         }
