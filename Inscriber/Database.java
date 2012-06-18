@@ -102,7 +102,7 @@ public class Database
         {
         	if(user.getUsername().equals(rsUser.getString("user")))
         	{
-				ResultSet rsPass = stat.executeQuery("SELECT accounts.pass FROM accounts;");
+				rsPass = stat.executeQuery("SELECT accounts.pass FROM accounts;");
         		//Username found
         		if(user.getPassword().equals(rsPass.getString("pass")))
         		{
