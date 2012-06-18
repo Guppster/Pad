@@ -127,7 +127,7 @@ public class User
 		output += "\nUsername:  " + username;
 		output += "\nPassword:  " + password;
 		output += "\nEmail:     " + email;
-		output += "\nUser Group:" + group;
+		output += "\nUser Group:" + getGroup();
 
 		return output;
 	}//End of toString method
