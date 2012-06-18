@@ -96,6 +96,7 @@ public class Database
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
     	Statement stat = conn.createStatement();
 
+		System.out.print("test");
 		ResultSet rs = stat.executeQuery("SELECT user FROM accounts;");
 
         while(rs.next())
@@ -116,7 +117,6 @@ public class Database
 				//Username not found
 				rs.close();
        			conn.close();
-       			System.out.println("TESTE");
 				return false;//Login is not valid
 			}
         }
