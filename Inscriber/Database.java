@@ -92,17 +92,12 @@ public class Database
 
     public boolean checkLogin(User user) throws Exception
     {
-    	System.out.println("Hi");
     	Class.forName(driver);
-    	System.out.println("Hi2");
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
-        System.out.println("Hi3");
     	Statement stat = conn.createStatement();
-    	System.out.println("Hi4");
-
 
 		ResultSet rs = stat.executeQuery("SELECT * FROM accounts;");
-		System.out.println("Hi5");
+
         while(rs.next())
         {
         	if(user.getUsername().equals(rs.getString("user")))
