@@ -32,12 +32,12 @@ public class Server
 	public Server()
 	{
 		//Initialize class fields and objects
-		sServer = null;
-		sClient = null;
-		in = new Scanner(System.in);
-		serverUp = false;
-		command = "";
-		statusThread = new StatusThread();
+		//sServer = null;
+	//	sClient = null;
+		//in = new Scanner(System.in);
+		//serverUp = false;
+		//command = "";
+		//statusThread = new StatusThread();
 	}//End of Server constructor method
 
 	//Bind the ServerSocket object to listen to a specified port
