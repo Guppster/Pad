@@ -181,21 +181,44 @@ public class Server
 	}//End of getConnection method
 
 	//Run the code in this method when the class is run
-	public static void main(String [] args) throws InterruptedException
+	public static void main(String [] args) throws IOException
 	{
+		ServerSocket sServer = null;
+		Socket sClient = null;
+
+
+		try
+		{
+			sServer = new ServerSocket(22222);//Bind the server to port 22222
+		}catch(IOException e){System.out.println(e + " - Could not bind to specified port.");}
+
+		while(true)
+		{
+			try
+			{
+				sClient = sServer.accept();//Accept the connection
+				break;
+			}catch(Exception e){System.out.println("Umm.. " + e);}
+		}
+
+		System.out.println("A connection was succesful");
+
+		sServer.close();
+
+		System.out.println("Connection closed");
 		//Create a new Server object so we can call methods in the main method
-		Server server = new Server();
+		//Server server = new Server();
 
 		//Inform the server owner of some actions being done
-		System.out.println("Attempting to bind port...");
+		//System.out.println("Attempting to bind port...");
 
 		//Bind the ServerSocket object to listen to a specified port
-		server.bindPort(22222);
+		//server.bindPort(22222);
 
 		//Inform the server owner of some actions being done
-		System.out.println("Opening console...");
+		//System.out.println("Opening console...");
 
 		//Start the console and allow the server owner to enter console commands
-		server.startConsole();
+		//server.startConsole();
 	}//End of Server main method
 }//End of Server class
