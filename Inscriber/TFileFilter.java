@@ -22,7 +22,7 @@ public class TFileFilter extends FileFilter
         if (file.isDirectory())
             return true;
 
-        if(file.getName().toLowerCase().endsWith(".txt")
+        if(file.getName().toLowerCase().endsWith(".txt"))
         	return true;
 		else
 			return false;
