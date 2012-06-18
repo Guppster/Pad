@@ -182,8 +182,6 @@ public class Server
 		//Bind the ServerSocket object to listen to a specified port
 		server.bindPort(22222);
 
-		server.startServer();
-
 		//Inform the server owner of some actions being done
 		System.out.println("Opening console...");
 
