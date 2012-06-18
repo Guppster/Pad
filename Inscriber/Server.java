@@ -186,7 +186,7 @@ public class Server
 		ServerSocket sServer = null;
 		Socket sClient = null;
 
-
+		System.out.println();
 		try
 		{
 			sServer = new ServerSocket(22222);//Bind the server to port 22222
