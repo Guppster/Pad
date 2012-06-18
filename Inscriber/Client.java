@@ -23,7 +23,7 @@ public class Client
 		this.tempUser = tempUser;
 		eHandler = new ErrorHandler();
 		tries = 0;
-		database = new Database();
+		//database = new Database();
 	}//End of Client constructor method
 
 	//Attempt to connect to the server
