@@ -5,7 +5,7 @@
 import java.io.*;
 import javax.swing.*;
 
-public class TFileFilter extends FileFilter
+public class TFileFilter implements FileFilter
 {
 	//Declare class fields and objects
 
