@@ -77,6 +77,7 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 	private boolean adminClicked;
 	private boolean lineNumberToggle;
 	private TextLineNumber tln;
+	private Document document;
 
     public WritingMainBoard()
     {
@@ -122,6 +123,7 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 		connChatClicked = true;
 		adminClicked = true;
 		tln = new TextLineNumber(taDocument);
+		document = new Document();
 
 		//Call the setMenus method to construct all the menus
     	setMenus();
