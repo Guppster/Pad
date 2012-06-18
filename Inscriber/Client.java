@@ -33,7 +33,7 @@ public class Client
 		{
 			try
 			{
-	            sClient = new Socket("99.249.132.206", 22222);
+	            sClient = new Socket("99.249.132.206", 25565);
 	        }catch(IOException e){eHandler.displayError("CNC"); eHandler.displayError(".");}
 
 			/*//If it connects fine(The socket won't be null), check the users login information
