@@ -31,7 +31,7 @@ public class Document
 		eHandler = new ErrorHandler();
     }//End of Document default constructor
 
-	//Gets whatever is in the JTextArea on WritingMainBoard, and sends it to the server
+	//Sends the passed in filename and text from the passed in connection, to the server
 	public void saveFileToServer(String filename, String text, Socket socket)
 	{
 		//Initialize a class object
@@ -56,7 +56,7 @@ public class Document
     		out.close();
     		sClient.close();
     	}catch(IOException exc2){eHandler.displayError("CNCC");}
-	}//End of saveFile method
+	}//End of saveFileToServer method
 
 	//Retrieves a text file from the server and 'opens it'
 	public void getFileFromServer(Socket socket)throws IOException
