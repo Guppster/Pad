@@ -61,22 +61,6 @@ public class Document
 	//Retrieves a text file from the server and 'opens it'
 	public void getFileFromServer(Socket socket)throws IOException
 	{
-		/*sClient = socket;
 
-	    //Create a read object
-		PrintStream ps = new PrintStream(sClient.getOutputStream());
-
-		//Initialize read object
-		input = new BufferedReader(new FileReader(fileToGet.getFileName()));
-
-		//Read in the text and count the number of lines
-		while (input.readLine() != null)
-		{
-			stringToSend += input.readLine() + "\n";
-		}
-
-		ps.out(stringToSend);
-
-		input.close();*/
 	}//End of countLines method
 }//End of Document Class
