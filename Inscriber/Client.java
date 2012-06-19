@@ -13,8 +13,6 @@ public class Client
 	private User tempUser;
 	private ErrorHandler eHandler;
 	private int tries;
-	private String user;
-	private String pass;
 
 	//Initializes class fields and objects
 	public Client(User tempUser)
