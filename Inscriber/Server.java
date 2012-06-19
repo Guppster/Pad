@@ -203,7 +203,7 @@ public class Server
 	public static void main(String [] args) throws IOException, InterruptedException
 	{
 		//Create a new Server object so we can call methods in the main method
-		Server server = new Server();
+		Server server = new Server("lol");
 
 		//Inform the server owner of some actions being done
 		System.out.println("Attempting to bind port...");
