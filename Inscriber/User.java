@@ -20,6 +20,7 @@ public class User
 	private String username;
 	private String password;
 	private UserGroup group;
+	private boolean loggedIn;
 
 	//Construct a default person object
 	public User()
