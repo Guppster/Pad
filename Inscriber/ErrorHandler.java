@@ -56,6 +56,10 @@ public class ErrorHandler
 			errorToDisplay += "A critical error has occured.";
 		else if(errorCode.equals("CNC"))
 			errorToDisplay += "Could not connect to server.";
+		else if(errorCode.equals("CNSTTS"))
+			errorToDisplay += "Could not send text to server.";
+		else if(errorCode.equals("CNCC"))
+			errorToDisplay += "Could not close the connection.";
 		else if(errorCode.equals("CNAD"))
 			errorToDisplay += "Could not access database.";
 		else if(errorCode.equals("UNF"))
@@ -68,5 +72,4 @@ public class ErrorHandler
 			errorToDisplay = "";
 		}
 	}//End of displayError method
-
 }//End of ErrorHandler class
