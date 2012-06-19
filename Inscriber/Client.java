@@ -21,7 +21,7 @@ public class Client
 	{
 		//Initialize class fields and objects
 		this.tempUser = tempUser;
-		System.out.println(tempUser2);
+		System.out.println(this.tempUser);
 		eHandler = new ErrorHandler();
 		tries = 0;
 		database = new Database();
