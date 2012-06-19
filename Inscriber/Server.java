@@ -29,7 +29,7 @@ public class Server
 	private StatusThread statusThread;
 
 	//Initializes class fields and objects
-	public Server()
+	public Server(String ts)
 	{
 		//Initialize class fields and objects
 		sServer = null;
@@ -39,6 +39,11 @@ public class Server
 		command = "";
 		statusThread = new StatusThread();
 	}//End of Server constructor method
+
+	public Server()
+	{
+
+	}
 
 	//Bind the ServerSocket object to listen to a specified port
 	private void bindPort(int port)
