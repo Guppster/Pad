@@ -64,6 +64,8 @@ public class ErrorHandler
 			errorToDisplay += "Could not access database.";
 		else if(errorCode.equals("UNF"))
 			errorToDisplay += "Username does not exist.";
+		else if(errorCode.equals("EALI"))
+			errorToDisplay += "User is already logged in elsewhere.";
 
 		// the "." is the flag that triggers the error, this allows to add multiple errors to one message box
 		if(errorCode.equals("."))
