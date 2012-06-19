@@ -41,7 +41,10 @@ public class Client
 				try
 				{
 					if(database.checkLogin(tempUser))//Check if the login credentials match
+					{
+						database.loginUser(tempUser);//Set the users status, passing in tempuser to carry the credentials
 						new Lobby();//Open the Lobby screen
+					}
 					else
 					{
 						tries++;//Increase their amount of tries left
