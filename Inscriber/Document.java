@@ -22,9 +22,21 @@ public class Document
     private PrintWriter out;
     private ErrorHandler eHandler;
 
+	private String docName;
+	private int numOfWords;
+	private int numOfSentences;
+	private int numOfCharacters;
+	private User documentOwner;
+
 	//Initializes class fields and objects
-    public Document()
+    public Document(User owner)
     {
+    	docName = "NewDocument.txt";
+		numOfWords = 0;
+		numOfSentences = 0;
+		numOfCharacters = 0;
+		documentOwner = owner;
+
     	//Initialize class fields and objects
 		sClient = null;
 		out = null;
