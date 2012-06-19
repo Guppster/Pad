@@ -13,6 +13,7 @@
 
  //Import Jsva API packages
 import java.net.*;
+import java.io.*;
 
 public class Document
 {
