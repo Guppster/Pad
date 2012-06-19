@@ -186,10 +186,26 @@ public class Database
         return false;
     }//End of Check login method
 
-    public void loginUser(User user)
+	//Finds the user according to the login credentials and sets its loggedIn varaiable to true;
+    public void changeLoginStatus(User user) throws Exception
     {
+		Class.forName(driver);
+        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
+    	Statement stat = conn.createStatement();
 
-    }
+    	ResultSet rs = stat.executeQuery("SELECT * FROM accounts;");
+
+		while(rs.next())
+        {
+        	if(user.getUsername().equals(rsUser.getString("user")))
+        	{
+        		 if(rs.getInt(6) == 0)
+        		 	//once matt's db is up, use navicat and change the loggedIn value and hit save, look at bottom of screen it shows the code that should be going here in executeStatement() or w/e
+        		 else
+        		 	//once matt's db is up, use navicat and change the loggedIn value and hit save, look at bottom of screen it shows the code that should be going here in executeStatement() or w/e
+        	}
+        }
+    }//End of loginUser method
 
     public boolean [] retrieveDefaultPermissions() throws Exception
     {
