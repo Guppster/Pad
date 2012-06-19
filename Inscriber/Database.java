@@ -200,9 +200,9 @@ public class Database
         	if(user.getUsername().equals(rsUser.getString("user")))
         	{
         		 if(rs.getInt(6) == 0)
-        		 	//once matt's db is up, use navicat and change the loggedIn value and hit save, look at bottom of screen it shows the code that should be going here in executeStatement() or w/e
+        		 	stat.executeQuery("UPDATE `accounts` SET `loggedIn`='1' WHERE (`user`='" + user.getUsername() + "') AND (`pass`='" + user.getPassword() + "') AND (`loggedIn`='0') LIMIT 1;");
         		 else
-        		 	//once matt's db is up, use navicat and change the loggedIn value and hit save, look at bottom of screen it shows the code that should be going here in executeStatement() or w/e
+        			stat.executeQuery("UPDATE `accounts` SET `loggedIn`='1' WHERE (`user`='" + user.getUsername() + "') AND (`pass`='" + user.getPassword() + "') AND (`loggedIn`='0') LIMIT 1;");
         	}
         }
     }//End of loginUser method
