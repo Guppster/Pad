@@ -118,10 +118,10 @@ public class Lobby extends JFrame
     	this.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }//End of setGUI method;
 
+/*
     //Perform an action whenever a button is pressed
     public void actionPerformed (ActionEvent evt)
     {
-
     	//Check which button was pressed
 		if("logout".equals(evt.getActionCommand()))
 		{
@@ -141,6 +141,7 @@ public class Lobby extends JFrame
 		}
     }//End of actionPerformed method
 
+*/
     //Method is called when logout button is pressed by user in lobby, disconnects the user and closes lobby, reopens the login screen.
     private void logout()
     {
