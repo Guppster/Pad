@@ -227,6 +227,7 @@ public class Database
         	}
     	}
 
+		return false;
     }//End of getLoginStatus
 
     public boolean [] retrieveDefaultPermissions() throws Exception
