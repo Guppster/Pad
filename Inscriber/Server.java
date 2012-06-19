@@ -170,6 +170,27 @@ public class Server
 		return sServer;
 	}//End of getConnection method
 
+	public void test(Socket socket)
+	{
+		Socket sock = null;
+		sock = socket;
+
+		BufferedReader in = new BufferedReader(new InputStreamReader(sock.getInputStream()));
+    	PrintWriter out = new PrintWriter(sock.getOutputStream(), true);
+    	BufferedWriter writer = new BufferedWriter(new FileWriter("test.txt"));
+		String text;
+
+		while ((text = in.readLine()) != null)
+		{
+ 			writer.write(text);
+	    }
+
+		writer.close();
+	    out.close();
+	    in.close();
+	    socket.close();
+	}
+
 	//Run the code in this method when the class is run
 	public static void main(String [] args) throws IOException, InterruptedException
 	{
