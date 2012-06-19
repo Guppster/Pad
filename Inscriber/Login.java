@@ -135,9 +135,6 @@ public class Login extends JFrame implements ActionListener, KeyListener
 		{
 			//Create a Register object, thus displaying the Register frame
 			new Register();
-
-			//Get rid of the Login frame to conserve resources
-			this.dispose();
 		}
     }//End of actionPerformed method
 
