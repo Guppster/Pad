@@ -137,7 +137,7 @@ public class Lobby extends JFrame
 		}
 		else if ("update".equals(evt.getActionCommand()))
 		{
-			new Splash();
+			//new Splash();
 		}
     }//End of actionPerformed method
 
