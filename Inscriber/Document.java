@@ -55,7 +55,7 @@ public class Document
 	//Retrieves a text file from the server and 'opens it'
 	public void getFileFromServer(Socket socket)throws IOException
 	{
-		sClient = socket;
+		/*sClient = socket;
 
 	    //Create a read object
 		PrintStream ps = new PrintStream(sClient.getOutputStream());
@@ -71,6 +71,6 @@ public class Document
 
 		ps.out(stringToSend);
 
-		input.close();
+		input.close();*/
 	}//End of countLines method
 }//End of Document Class
