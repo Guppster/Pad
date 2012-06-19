@@ -76,6 +76,11 @@ public class User
 		return group.getName();
 	}//End of getGroup method
 
+	public boolean getLoggedIn()
+	{
+		return loggedIn;
+	}//End of getLoggedIn method
+
 	//Mutator methods
 	public void setFirstName(String firstName)
 	{
@@ -106,6 +111,11 @@ public class User
 	{
 		this.group = group;
 	}//End of setGroup method
+
+	public void setLoggedIn(boolean isLoggedIn)
+	{
+		this.loggedIn = isLoggedIn;
+	}//End of setLoggedIn method
 
 	//A method used to transfer the password from a char array to a string object
 	public String convertPassword(char [] tempPass)
