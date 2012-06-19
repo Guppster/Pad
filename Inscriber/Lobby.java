@@ -153,6 +153,11 @@ public class Lobby extends JFrame
 
     }//End of create method
 
+    private void update()
+    {
+
+    }
+
     //Test harness
 	public static void main(String [] args)
 	{
