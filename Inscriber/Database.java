@@ -186,6 +186,11 @@ public class Database
         return false;
     }//End of Check login method
 
+    public void loginUser(User user)
+    {
+
+    }
+
     public boolean [] retrieveDefaultPermissions() throws Exception
     {
     	boolean [] permissions = new boolean[5];
