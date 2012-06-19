@@ -207,6 +207,28 @@ public class Database
         }
     }//End of loginUser method
 
+    //returns a boolean indicating weather the user is logged in or not
+    public boolean getLoginStatus(User user) throws Exception
+    {
+    	Class.forName(driver);
+        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
+    	Statement stat = conn.createStatement();
+
+    	ResultSet rs = stat.executeQuery("SELECT * FROM accounts;");
+
+    	while(rs.next())
+    	{
+    		if(user.getUsername().equals(rsUser.getString("user")))
+        	{
+        		if(rs.getInt(6) == 1)
+        			return true;
+        		else
+        			return false;
+        	}
+    	}
+
+    }//End of getLoginStatus
+
     public boolean [] retrieveDefaultPermissions() throws Exception
     {
     	boolean [] permissions = new boolean[5];
