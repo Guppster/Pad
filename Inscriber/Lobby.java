@@ -153,10 +153,11 @@ public class Lobby extends JFrame
 
     }//End of create method
 
-    private void update()
+	//Method is called when the browse button is pressed, closes lobby and opens the browseDocuments screen
+    private void browse()
     {
 
-    }
+    }//End of browse method
 
     //Test harness
 	public static void main(String [] args)
