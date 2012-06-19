@@ -182,8 +182,8 @@ public class Server
 			Socket sock = null;
 			sock = socket;
 
-			BufferedReader in = new BufferedReader(new InputStreamReader(sock.getInputStream()));
-	    	PrintWriter out = new PrintWriter(sock.getOutputStream(), true);
+			//BufferedReader in = new BufferedReader(new InputStreamReader(sock.getInputStream()));
+	    	//PrintWriter out = new PrintWriter(sock.getOutputStream(), true);
 	    	BufferedWriter writer = new BufferedWriter(new FileWriter("test.txt"));
 			String text;
 
