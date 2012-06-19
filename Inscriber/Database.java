@@ -197,7 +197,7 @@ public class Database
 
 		while(rs.next())
         {
-        	if(user.getUsername().equals(rsUser.getString("user")))
+        	if(user.getUsername().equals(rs.getString("user")))
         	{
         		 if(rs.getInt(6) == 0)
         		 	stat.executeQuery("UPDATE `accounts` SET `loggedIn`='1' WHERE (`user`='" + user.getUsername() + "') AND (`pass`='" + user.getPassword() + "') AND (`loggedIn`='0') LIMIT 1;");
@@ -218,7 +218,7 @@ public class Database
 
     	while(rs.next())
     	{
-    		if(user.getUsername().equals(rsUser.getString("user")))
+    		if(user.getUsername().equals(rs.getString("user")))
         	{
         		if(rs.getInt(6) == 1)
         			return true;
