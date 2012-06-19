@@ -149,7 +149,7 @@ public class User
 		output += "\nPassword:  " + password;
 		output += "\nEmail:     " + email;
 		output += "\nUser Group:" + getGroup();
-		output += "\nLogged In?:" + getLoggedIn();
+		output += "\nLogged In?:" + getLoggedInBool();
 
 		return output;
 	}//End of toString method
