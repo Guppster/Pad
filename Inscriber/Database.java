@@ -187,7 +187,7 @@ public class Database
     }//End of Check login method
 
 	//Finds the user according to the login credentials and sets its loggedIn varaiable to true;
-    public void changeLoginStatus(User user) throws Exception
+    public void switchLoginStatus(User user) throws Exception
     {
 		Class.forName(driver);
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
