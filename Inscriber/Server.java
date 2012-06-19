@@ -172,23 +172,26 @@ public class Server
 
 	public void test(Socket socket)
 	{
-		Socket sock = null;
-		sock = socket;
-
-		BufferedReader in = new BufferedReader(new InputStreamReader(sock.getInputStream()));
-    	PrintWriter out = new PrintWriter(sock.getOutputStream(), true);
-    	BufferedWriter writer = new BufferedWriter(new FileWriter("test.txt"));
-		String text;
-
-		while ((text = in.readLine()) != null)
+		try
 		{
- 			writer.write(text);
-	    }
+			Socket sock = null;
+			sock = socket;
 
-		writer.close();
-	    out.close();
-	    in.close();
-	    socket.close();
+			BufferedReader in = new BufferedReader(new InputStreamReader(sock.getInputStream()));
+	    	PrintWriter out = new PrintWriter(sock.getOutputStream(), true);
+	    	BufferedWriter writer = new BufferedWriter(new FileWriter("test.txt"));
+			String text;
+
+			while ((text = in.readLine()) != null)
+			{
+	 			writer.write(text);
+		    }
+
+			writer.close();
+		    out.close();
+		    in.close();
+		    socket.close();
+		}catch(IOException e){System.out.println("Something went wrong.");}
 	}
 
 	//Run the code in this method when the class is run
