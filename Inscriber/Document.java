@@ -59,24 +59,19 @@ public class Document
 		fis = null;
 	}//End of Document constructor method
 
-	//Gets whatever is in the JTextArea on WritingMainBoard, and writes it to a file
-	public void saveFile(String text) throws IOException
+	//Gets whatever is in the JTextArea on WritingMainBoard, and sends it to the server
+	public void saveFileToServer(String text, Socket socket)
 	{
-		//Declare class fields and objects
-		JFileChooser fileChooser = new JFileChooser();
-		fileChooser.addChoosableFileFilter(new TFileFilter());
-		fileChooser.setAcceptAllFileFilterUsed(false);
-		int code = fileChooser.showSaveDialog(null);
+		//Initialize a class object
+		sClient = socket;
 
-		// let the user choose the destination file
-		if (code == JFileChooser.APPROVE_OPTION)
-		{
-			File file = fileChooser.getSelectedFile();
-			saveToServer(file);
-		}
+		out = new BufferedWriter(new FileWriter())
+		PrintStream ps = new PrintStream(sClient.getOutputStream());
+
+
 	}//End of saveFile method
 
-	public void getFileFromServer(File fileToGet, Socket socket)throws IOException
+	public void getFileFromServer(Socket socket)throws IOException
 	{
 		sClient = socket;
 
@@ -96,70 +91,4 @@ public class Document
 
 		input.close();
 	}//End of countLines method
-
-	    //Read in some data
-	    do
-	    {
-	       	numBytesRead = is.read(dataArray, 0, dataArray.length);
-	    } while(numBytesRead > -1);
-
-	    bos.write(dataArray, 0 , dataArray.length);
-	    bos.flush();
-	    bos.close();
-	    sClient.close();
-	}
-
-	//Uploads the file to the Server
-	private void saveToServer(File fileToSave, Socket socket)throws Exception
-	{
-		sClient = socket;
-		in = new DataInputStream(new BufferedInputStream(sClient.getInputStream()));
-        out = new DataOutputStream(new BufferedOutputStream(socket.getOutputStream()));
-
-        try
-        {
-            File file = fileToSave;
-
-            byte[] buf=new byte[512];
-            int len;
-
-            String action = in.readUTF().trim();
-
-            Long fileLong = new Long(files[i].length());
-            out.writeUTF("get");
-            out.writeLong(fileLong.longValue());
-            out.flush();
-
-            // send the filename
-            out.writeUTF(files[i].getName());
-
-            out.writeLong(files[i].length());
-            fis=new FileInputStream(files[i]);
-
-            while((len=fis.read(buf))!=-1)
-            {
-                out.write(buf,0,len);
-            }
-
-            out.flush();
-        }catch (IOException e){e.printStackTrace();}
-        sClient = null;
-	}//End of uploadToServer method
-
-    protected void finalize()
-    {
-        //Clean up
-        try
-        {
-            fis.close();
-            out.close();
-            in.close();
-            socket.close();
-        }
-        catch (IOException e)
-        {
-            System.out.println("Could not close.");
-            System.exit(-1);
-        }
-    }
 }//End of Document Class
