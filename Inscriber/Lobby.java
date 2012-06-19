@@ -141,6 +141,18 @@ public class Lobby extends JFrame
 		}
     }//End of actionPerformed method
 
+    //Method is called when logout button is pressed by user in lobby, disconnects the user and closes lobby, reopens the login screen.
+    private void logout()
+    {
+
+    }//End of logout method
+
+    //Method is called when create new document button is pressed, closes lobby and opens a new writingmainboard using the info entered in the text fields
+    private void create()
+    {
+
+    }//End of create method
+
     //Test harness
 	public static void main(String [] args)
 	{
