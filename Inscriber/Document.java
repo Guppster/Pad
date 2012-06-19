@@ -12,7 +12,6 @@
  */
 
  //Import Jsva API packages
-import java.awt.*;
 import java.net.*;
 import java.io.*;
 
