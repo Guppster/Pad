@@ -187,14 +187,14 @@ public class Server
 	    	BufferedWriter writer = new BufferedWriter(new FileWriter("test.txt"));
 			String text;
 
-			while ((text = in.readLine()) != null)
-			{
-	 			writer.write(text);
-		    }
+			//while ((text = in.readLine()) != null)
+			//{
+	 			//writer.write(text);
+		   // }
 
 			writer.close();
-		    out.close();
-		    in.close();
+		    //out.close();
+		   // in.close();
 		    socket.close();
 		}catch(IOException e){System.out.println("Something went wrong.");}
 	}
