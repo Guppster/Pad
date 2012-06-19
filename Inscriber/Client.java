@@ -42,8 +42,11 @@ public class Client
 				{
 					if(database.checkLogin(tempUser))//Check if the login credentials match
 					{
-						database.changeLoginStatus(tempUser);//Set the users status, passing in tempuser to carry the credentials
-						new Lobby();//Open the Lobby screen
+						if(!database.getLoginStatus(tempUser))
+						{
+							database.switchLoginStatus(tempUser);//Set the users status, passing in tempuser to carry the credentials
+							new Lobby();//Open the Lobby screen
+						}
 					}
 					else
 					{
