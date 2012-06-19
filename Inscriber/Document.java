@@ -23,49 +23,24 @@ import java.util.*;
 public class Document
 {
 	//Declare class fields and objects
-	private String docName;
 	private Socket sClient;
-	private int numOfWords;
-	private int numOfSentences;
-	private int numOfCharacters;
-	private DataInputStream in;
-    private DataOutputStream out;
-    private FileInputStream fis;
-    private BufferedReader reader;
-
-	//Default constructor
-    public Document()
-    {
-		numOfWords = 0;
-		numOfSentences = 0;
-		numOfCharacters = 0;
-		sClient = null;
-		in = null;
-		out = null;
-		fis = null;
-    }//End of Document default constructor
+    private PrintWriter out;
 
 	//Initializes class fields and objects
-    public Document(String docName) throws IOException
-	{
-		//readInFromFile(docName);
-		//countNumWords();
-		//countNumSentences();
-		//countNumCharacters();
-		//saveFile(docName);
+    public Document()
+    {
+    	//Initialize class fields and objects
 		sClient = null;
-		in = null;
 		out = null;
-		fis = null;
-	}//End of Document constructor method
+    }//End of Document default constructor
 
 	//Gets whatever is in the JTextArea on WritingMainBoard, and sends it to the server
-	public void saveFileToServer(String text, Socket socket)
+	public void saveFileToServer(String filename, String text, Socket socket)
 	{
-		//Initialize a class object
+		//Initialize class objects
 		sClient = socket;
+		out = new PrintWriter(new BufferedWriter(new FileWriter(filename)));
 
-		out = new BufferedWriter(new FileWriter())
 		PrintStream ps = new PrintStream(sClient.getOutputStream());
 
 
