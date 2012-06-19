@@ -37,26 +37,29 @@ public class Client
 	            sClient = new Socket("99.249.132.206", 22222);
 	        }catch(IOException e){System.out.println("Error - blah " + e);}
 
-			server.test(sClient);
-			BufferedReader in = new BufferedReader(new InputStreamReader(sClient.getInputStream()));
-	    	PrintWriter out = new PrintWriter(sClient.getOutputStream(), true);
-	    	Scanner scan = new Scanner(System.in);
-	    	String text = "";
+			try
+			{
+				server.test(sClient);
+				BufferedReader in = new BufferedReader(new InputStreamReader(sClient.getInputStream()));
+		    	PrintWriter out = new PrintWriter(sClient.getOutputStream(), true);
+		    	Scanner scan = new Scanner(System.in);
+		    	String text = "";
 
-    		while(!(text.equals("bye")))
-	    	{
-	    		//User enters text
-	    		System.out.println("Enter some text: ");
-	    		text = scan.nextLine();
+	    		while(!(text.equals("bye")))
+		    	{
+		    		//User enters text
+		    		System.out.println("Enter some text: ");
+		    		text = scan.nextLine();
 
-	    		//Sends the text to server
-	    		out.println(text);
-	    	}
+		    		//Sends the text to server
+		    		out.println(text);
+		    	}
 
-	    	sClient.close();
-	    	in.close();
-	    	out.close();
-	    	scan.close();
+		    	sClient.close();
+		    	in.close();
+		    	out.close();
+		    	scan.close();
+			}catch(IOException er){System.out.println("Error in tester.");}
 
 			/*//If it connects fine(The socket won't be null), check the users login information
 	        if(sClient != null)
