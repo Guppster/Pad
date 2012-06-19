@@ -144,7 +144,7 @@ public class Lobby extends JFrame implements ActionListener
     //Method is called when logout button is pressed by user in lobby, disconnects the user and closes lobby, reopens the login screen.
     private void logout()
     {
-		//remember to set the users loggedIn field to 0, via changeLoggedInStatus method in database
+		//remember to set the users loggedIn field to 0, via changeLoginStatus method in database
 
     }//End of logout method
 
