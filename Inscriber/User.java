@@ -83,7 +83,7 @@ public class User
 
 	public int getLoggedInInt()
 	{
-		if(LoggedIn == true)
+		if(loggedIn == true)
 			return 1;
 		else
 			return 0;
