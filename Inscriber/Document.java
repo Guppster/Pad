@@ -40,9 +40,19 @@ public class Document
 		//Initialize class objects
 		sClient = socket;
     	out = new PrintWriter(socket.getOutputStream(), true);
-    	out.println(filename, text);
+
+    	//Send the server the filename
+    	out.println(filename);
+
+    	//Send the server one line of text from the WritingMainBoard JTextArea
+    	out.println(text);
+
+    	//Close the writer and the socket conenction
+    	out.close();
+    	sClient.close();
 	}//End of saveFile method
 
+	//Retrieves a text file from the server and 'opens it'
 	public void getFileFromServer(Socket socket)throws IOException
 	{
 		sClient = socket;
