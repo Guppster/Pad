@@ -1,12 +1,12 @@
 /**
  * @(#)Lobby.java
  *
- * @Description 
+ * @Description
  *
  * @author Gurpreet Singh, Matt Ufimsef
  * @version 1.00 2012/6/15
  *
- * @Latest Updates: 
+ * @Latest Updates:
  *
  * @Status: Complete ~ accomodating for currently created classes
  */
@@ -25,6 +25,7 @@ public class Lobby extends JFrame
 	private JButton cmdCreate;
 	private JButton cmdBrowse;
 	private JButton cmdCheckForUpdates;
+	private JButton cmdLogout;
 	private JTable tRecentlyCreated;
 	private SpringLayout layout;
 
@@ -40,6 +41,7 @@ public class Lobby extends JFrame
 		cmdBrowse = new JButton("Browse Public Documents");
 		cmdCheckForUpdates = new JButton("Check for Updates");
 		cmdCreate = new JButton("Create New Document");
+		cmdLogout = new JButton("Logout");
 		tRecentlyCreated = new JTable(7, 3); //col's author name, document name, date of creation.
 		layout = new SpringLayout();
 
@@ -80,18 +82,27 @@ public class Lobby extends JFrame
 
     	//Add the object to the frame, and set the coordinates of the object
 		this.add(cmdBrowse);
+		cmdBrowse.setActionCommand("browse");
 		layout.putConstraint(SpringLayout.NORTH, cmdBrowse, 140, SpringLayout.NORTH, this.getContentPane());
 		layout.putConstraint(SpringLayout.WEST, cmdBrowse, 320, SpringLayout.WEST, this.getContentPane());
 
     	//Add the object to the frame, and set the coordinates of the object
 		this.add(cmdCheckForUpdates);
+		cmdCheckForUpdates.setActionCommand("update");
 		layout.putConstraint(SpringLayout.NORTH, cmdCheckForUpdates, 180, SpringLayout.NORTH, this.getContentPane());
 		layout.putConstraint(SpringLayout.WEST, cmdCheckForUpdates, 320, SpringLayout.WEST, this.getContentPane());
 
     	//Add the object to the frame, and set the coordinates of the object
 		this.add(cmdCreate);
+		cmdCreate.setActionCommand("create");
 		layout.putConstraint(SpringLayout.NORTH, cmdCreate, 220, SpringLayout.NORTH, this.getContentPane());
 		layout.putConstraint(SpringLayout.WEST, cmdCreate, 320, SpringLayout.WEST, this.getContentPane());
+
+		//Add the object to the frame, and set the coordinates of the object
+		this.add(cmdLogout);
+		cmdLogout.setActionCommand("logout");
+		layout.putConstraint(SpringLayout.NORTH, cmdLogout, 260, SpringLayout.NORTH, this.getContentPane());
+		layout.putConstraint(SpringLayout.WEST, cmdLogout, 320, SpringLayout.WEST, this.getContentPane());
 
 		//Add the object to the frame, and set the coordinates of the object
 		this.add(tRecentlyCreated);
@@ -106,6 +117,29 @@ public class Lobby extends JFrame
     	this.setVisible(true);
     	this.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }//End of setGUI method;
+
+    //Perform an action whenever a button is pressed
+    public void actionPerformed (ActionEvent evt)
+    {
+
+    	//Check which button was pressed
+		if("logout".equals(evt.getActionCommand()))
+		{
+			logout();
+		}
+		else if ("browse".equals(evt.getActionCommand()))
+		{
+			browse();
+		}
+		else if ("create".equals(evt.getActionCommand()))
+		{
+			create();
+		}
+		else if ("update".equals(evt.getActionCommand()))
+		{
+			new Splash();
+		}
+    }//End of actionPerformed method
 
     //Test harness
 	public static void main(String [] args)
