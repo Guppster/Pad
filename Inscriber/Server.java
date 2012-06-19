@@ -195,7 +195,7 @@ public class Server
 			writer.close();
 		    //out.close();
 		   // in.close();
-		    socket.close();
+		    sock.close();
 		}catch(IOException e){System.out.println("Something went wrong.");}
 	}
 
