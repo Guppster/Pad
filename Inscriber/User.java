@@ -76,9 +76,17 @@ public class User
 		return group.getName();
 	}//End of getGroup method
 
-	public boolean getLoggedIn()
+	public boolean getLoggedInBool()
 	{
 		return loggedIn;
+	}//End of getLoggedIn method
+
+	public int getLoggedInInt()
+	{
+		if(LoggedIn == true)
+			return 1;
+		else
+			return 0;
 	}//End of getLoggedIn method
 
 	//Mutator methods
