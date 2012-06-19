@@ -15,10 +15,22 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class DocumentBrowser
+public class DocumentBrowser extends JFrame implements ActionListener
 {
+	//Declare class fields and objects
+	private JTable tDocuments;
+	private JButton cmdSortByName;
+	private JButton cmdSortByWords;
+	private JButton cmdSortByCharacters;
+	private JButton cmdSortBySentences;
+
+	//Default Constructor
     public DocumentBrowser()
     {
+		tDocuments = new JTable();
+		cmdSortByName = new JButton("Sort by Name");
+		cmdSortByCharacters = new JButton("Sort by Character");
+		cmdSortBySentences = new JButton("Sort by Sentences");
 
     }//End of default constructor
 
