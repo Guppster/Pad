@@ -30,6 +30,7 @@ public class User
 		username = "";
 		password = "";
 		group = new UserGroup();
+		loggedIn = false;
 	}//End of default constructor
 
 	//Construct person object with parameters passed in
@@ -41,6 +42,7 @@ public class User
 		this.password = password;
 		this.email = email;
 		this.group = group;
+		loggedIn = false;
 	}//End of constructor
 
 	//Accessor methods
