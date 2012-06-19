@@ -28,6 +28,7 @@ public class Client
 	//Attempt to connect to the server
 	public void tryConnect() throws UnknownHostException
 	{
+		Server server = new Server();
 		if(tries < 6)
 		{
 			try
@@ -35,6 +36,7 @@ public class Client
 	            sClient = new Socket("99.249.132.206", 22222);
 	        }catch(IOException e){System.out.println("Error - blah " + e);}
 
+			server.test(sClient);
 			BufferedReader in = new BufferedReader(new InputStreamReader(sClient.getInputStream()));
 	    	PrintWriter out = new PrintWriter(sClient.getOutputStream(), true);
 	    	Scanner scan = new Scanner(System.in);
