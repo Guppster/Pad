@@ -25,6 +25,7 @@ public class Document
 	//Declare class fields and objects
 	private Socket sClient;
     private PrintWriter out;
+    private ErrorHandler eHandler;
 
 	//Initializes class fields and objects
     public Document()
@@ -32,24 +33,34 @@ public class Document
     	//Initialize class fields and objects
 		sClient = null;
 		out = null;
+		eHandler = new ErrorHandler();
     }//End of Document default constructor
 
 	//Gets whatever is in the JTextArea on WritingMainBoard, and sends it to the server
 	public void saveFileToServer(String filename, String text, Socket socket)
 	{
-		//Initialize class objects
+		//Initialize a class object
 		sClient = socket;
-    	out = new PrintWriter(socket.getOutputStream(), true);
 
-    	//Send the server the filename
-    	out.println(filename);
+		//Try writing a line of text to the server
+    	try
+    	{
+    		//Initialize a class object
+    		out = new PrintWriter(socket.getOutputStream(), true);
 
-    	//Send the server one line of text from the WritingMainBoard JTextArea
-    	out.println(text);
+	    	//Send the server the filename
+	    	out.println(filename);
 
-    	//Close the writer and the socket conenction
-    	out.close();
-    	sClient.close();
+	    	//Send the server one line of text from the WritingMainBoard JTextArea
+	    	out.println(text);
+    	}catch(IOException exc1){eHandler.displayError("CNSTTS");}
+
+    	//Try closing the writer and the socket conenction
+    	try
+    	{
+    		out.close();
+    		sClient.close();
+    	}catch(IOException exc2){eHandler.displayError("CNCC");}
 	}//End of saveFile method
 
 	//Retrieves a text file from the server and 'opens it'
