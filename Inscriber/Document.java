@@ -39,11 +39,8 @@ public class Document
 	{
 		//Initialize class objects
 		sClient = socket;
-		out = new PrintWriter(new BufferedWriter(new FileWriter(filename)));
-
-		PrintStream ps = new PrintStream(sClient.getOutputStream());
-
-
+    	out = new PrintWriter(socket.getOutputStream(), true);
+    	out.println(filename, text);
 	}//End of saveFile method
 
 	public void getFileFromServer(Socket socket)throws IOException
