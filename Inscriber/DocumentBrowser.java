@@ -31,7 +31,6 @@ public class DocumentBrowser extends JFrame implements ActionListener
 		cmdSortByName = new JButton("Sort by Name");
 		cmdSortByCharacters = new JButton("Sort by Character");
 		cmdSortBySentences = new JButton("Sort by Sentences");
-
     }//End of default constructor
 
 
