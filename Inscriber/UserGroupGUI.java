@@ -30,6 +30,7 @@ public class UserGroupGUI extends JFrame implements ActionListener
     private SpringLayout layout;
     private TableHelper helper;
     private Database database;
+    private ErrorHandler eHandler;
 
     public UserGroupGUI()
     {
@@ -43,6 +44,7 @@ public class UserGroupGUI extends JFrame implements ActionListener
 		layout = new SpringLayout();
 		helper = new TableHelper();
 		database = new Database();
+		eHandler = new ErrorHandler();
 
 		//Constructs the GUI components and displays them on the screen
 		setGUI();
@@ -127,7 +129,9 @@ public class UserGroupGUI extends JFrame implements ActionListener
 	//Open the EditUserGroup GUI class
 	private void editGroup()
 	{
-		new EditUserGroup();
+		//new EditUserGroup();
+		eHandler.displayError("NS");
+		eHandler.displayError(".");
 	}//End of editGroup method
 
 	//Load a list of user groups from the database
