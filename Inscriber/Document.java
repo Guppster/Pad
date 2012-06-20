@@ -92,6 +92,10 @@ public class Document
     	try
     	{
     		in = new BufferedReader(new InputStreamReader(sClient.getInputStream()));
+			out = new PrintWriter(sClient.getOutputStream(), true);
+
+			//Send the requested filename to the server
+			out.println(fileName);
 
     		//While there is text coming in
 	    	while(!((text = in.readLine()).equals("")))
