@@ -50,15 +50,19 @@ public class Document
 		sClient = socket;
 		text = fromWMB;
 
-		//Try writing a line of text to the server
+		//Initialize a class object
+    	in = new BufferedReader(new InputStreamReader(sClient.getInputStream()));
+    	out = new PrintWriter(sClient.getOutputStream(), true);
+
+		//Send the text we are recieving from WritingMainBoard to the server to be saved
     	try
     	{
-    		//Initialize a class object
-    		in = new BufferedReader(new InputStreamReader(sClient.getInputStream()));
-    		out = new PrintWriter(sClient.getOutputStream(), true);
-
-	    	//Send the server the filename
+    		//Send the server the filename
 	    	out.println(filename);
+
+
+
+
 
 	    	//Send the server one line of text from the WritingMainBoard JTextArea
 	    	out.println(text);
@@ -81,7 +85,8 @@ public class Document
 		sClient = socket;
     	BufferedReader in = new BufferedReader(new InputStreamReader(sClient.getInputStream()));
 
-    	while ((text = in.readLine()) != null)
+		//While there is text coming in
+    	while((text = in.readLine()) != null)
     	{
      		writer.write(text);
 		}
