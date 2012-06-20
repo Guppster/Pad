@@ -195,7 +195,6 @@ public class Server
 			writer.close();
 		    ha.close();
 		   	lol.close();
-		    sock.close();
 		}catch(IOException e){System.out.println("Something went wrong.");}
 	}
 
