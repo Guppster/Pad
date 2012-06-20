@@ -187,6 +187,7 @@ public class Database
         	}
         }
 
+		//Close the ResultSet and Connection
         rs.close();
         conn.close();
     }//End of loginUser method
