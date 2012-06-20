@@ -177,6 +177,7 @@ public class Lobby extends JFrame implements ActionListener
     private void create()
     {
 		new WritingMainBoard(user, client);
+		database.createNewDocument();
 		this.dispose();
     }//End of create method
 
