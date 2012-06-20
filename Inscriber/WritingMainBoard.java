@@ -227,12 +227,6 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
     	this.setTitle("Inscriber Board");
     }//End of setGUI method
 
-	//Initialize the documentGrid array
-	private void initializeGrid()
-	{
-
-	}//End of initializeGrid method
-
 	//Save the current document to the server
 	private void saveDocument()
 	{
@@ -244,24 +238,6 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 	{
 
 	}//End of openDocument method
-
-	//Copy some text
-	private void copy()
-	{
-
-	}//End of copy method
-
-	//Paste some text
-	private void paste()
-	{
-
-	}//End of paste method
-
-	//Cut some text
-	private void cut()
-	{
-
-	}//End of cut method
 
 	//Finds the entered text in the document
 	private String findText()
@@ -281,46 +257,11 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 
 	}//End of loadAbout method
 
-	//Bans a selected user from the document room
-	private void ban(int period)
-	{
-
-	}//End of ban method
-
-	//Kicks a selected user from the document room
-	private void kick()
-	{
-
-	}//End of kick method
-
-	//Times a selected user out, disallowing them to do anything but logout
-	private void timeout(int period)
-	{
-
-	}//End of timeout method
-
-	//Locks the entire document from being edited for a timed period
-	private boolean lock(int period)//Returns whether or not the document has been unlocked
-	{
-		//if(admin clicks on ban user button)
-		//{
-			//target user.ban(period);
-			//return true;
-		//}
-		//else
-			return false;
-	}//End of lock method
-
-	//Opens the EditUserGroups page
-	private void editGroups()
-	{
-		//EditUserGroups eug = new EditUserGroups();
-	}//End of editGroups method
-
 	//Opens the Lobby page
 	private void logout()
 	{
-		//Lobby lobby = new Lobby();
+		Lobby lobby = new Lobby(this.user);
+		this.dispose();
 	}//End of logout method
 
 	private void toggleConnChatToolbar()
