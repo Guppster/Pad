@@ -152,9 +152,8 @@ public class DocumentBrowser extends JFrame implements ActionListener
 
     private void sortByName()
     {
-
 		boolean sorted = false;
-    	string temp = ``;
+    	string temp = "";
     	do
     	{
     		for(int x = 0; x < tDocuments.getRowCount(); x++)
@@ -173,7 +172,22 @@ public class DocumentBrowser extends JFrame implements ActionListener
 
     private void sortByCharacters()
     {
+		boolean sorted = false;
+    	string temp = "";
+    	do
+    	{
+    		for(int x = 0; x < tDocuments.getRowCount(); x++)
+    		{
+	    		if(tDocuments.getValueAt(0,x) > tDocuments.getValueAt(0,x+1))
+	    		{
+	    			temp = tDocuments.getValueAt(0,x);
+	    			tDocuments.setValueAt(tDocuments.getValueAt(0,x+1), 0, x);
+					tDocuments.setValueAt(temp), 0, x+1);
 
+	    			sorted = false;
+	    		}
+    		}
+   		}while(sorted != true);
     }
 
     private void sortByWords()
