@@ -45,7 +45,7 @@ public class ErrorHandler
 		else if(errorCode.equals("MP"))
 			errorToDisplay = "Please enter a valid password.";
 		else if(errorCode.equals("PNM"))
-			errorToDisplay = "Entered passwords do not match!.";
+			errorToDisplay = "Entered passwords do not match!";
 		else if(errorCode.equals("UE"))
 			errorToDisplay = "The username already exists, choose another.";
 		else if(errorCode.equals("EE"))
