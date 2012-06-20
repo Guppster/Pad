@@ -1,12 +1,12 @@
 /**
  * @(#)DocumentOptions.java
  *
- * @Description 
+ * @Description
  *
  * @author Gurpreet Singh, Matt Ufimsef
  * @version 1.00 2012/6/15
  *
- * @Latest Updates: 
+ * @Latest Updates:
  *
  * @Status: Complete ~ accomodating for currently created classes
  */
@@ -89,6 +89,12 @@ public class DocumentOptions extends JFrame implements ActionListener
 		cmdAddSize.setActionCommand("addFontSize");
 		cmdRemoveSize.setActionCommand("removeFontSize");
 		cmdFilter.setActionCommand("filter");
+
+		cmdFilter.addActionListener(this);
+		cmdAddFont.addActionListener(this);
+		cmdRemoveFont.addActionListener(this);
+		cmdAddSize.addActionListener(this);
+		cmdRemoveSize.addActionListener(this);
 
     	//Set some properties for the JTable objects
     	tFonts.setTableHeader(null);
