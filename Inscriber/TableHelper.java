@@ -124,9 +124,12 @@ public class TableHelper
 
 	public void addArrayList(JTable table, DefaultTableModel model, ArrayList<String> data)
 	{
+		String[] test;
+
 		for(int x = 0; x < data.length; x++)
 		{
-			table.addRowOfData(data[x], table, model);
+			test[] = data[x];
+			table.addRowOfData(test, table, model);
 		}
 	}
 
