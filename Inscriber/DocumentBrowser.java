@@ -145,4 +145,9 @@ public class DocumentBrowser extends JFrame implements ActionListener
 
     }
 
+    public static void main(String [] args)
+    {
+		new DocumentBrowser();
+    }
+
 }//End of class
