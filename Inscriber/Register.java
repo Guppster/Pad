@@ -267,26 +267,26 @@ public class Register extends JFrame implements ActionListener, KeyListener
 			else if(conditionResults[0] == true && conditionResults[1] == false)
 			{
 				handler.displayError("UE");
+				handler.displayError(".");
 				confirmed = false;
 			}
 			else if(conditionResults[0] == false && conditionResults[1] == true)
 			{
 				handler.displayError("EE");
+				handler.displayError(".");
 				confirmed = false;
 			}
 			else if(conditionResults[0] == true && conditionResults[1] == true)
 			{
 				handler.displayError("UAEE");
+				handler.displayError(".");
 				confirmed = false;
 			}
 			else
 			{
 				confirmed = false;
 			}
-		}catch(Exception ex){System.out.println(ex + " - An error occurred while try to access the database.");}
-
-		if(confirmed == false)
-			handler.displayError(".");
+		}catch(Exception ex){handler.displayError("CNAD"); handler.displayError(".");}
 
 		return confirmed;
 	}//End of confirmIndivusuality method
