@@ -117,7 +117,7 @@ public class DocumentBrowser extends JFrame implements ActionListener
 	private void InitializeTableData()
 	{
 
-	}
+	}//End of InitializeTableData method
 
 	//Perform an action whenever a button is pressed
     public void actionPerformed (ActionEvent evt)
