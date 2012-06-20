@@ -189,6 +189,8 @@ public class Register extends JFrame implements ActionListener, KeyListener
     	{
     		errorThrown = true;
     		handler.displayError("MF");
+    		handler.displayError(".");
+
     	}
 
     	if(txtLast.getText() != null)
@@ -197,6 +199,7 @@ public class Register extends JFrame implements ActionListener, KeyListener
     	{
     		errorThrown = true;
     		handler.displayError("ML");
+    		handler.displayError(".");
     	}
 
     	if(txtEmail.getText() != null)
@@ -205,12 +208,14 @@ public class Register extends JFrame implements ActionListener, KeyListener
     	{
     		errorThrown = true;
     		handler.displayError("ME");
+    		handler.displayError(".");
     	}
 
     	if(!(txtEmail.getText().equals(txtEConfirm.getText())))
     	{
     		errorThrown = true;
     		handler.displayError("ENM");
+    		handler.displayError(".");
     	}
 
     	if(txtNewUser.getText() != null)
@@ -219,6 +224,7 @@ public class Register extends JFrame implements ActionListener, KeyListener
     	{
     		errorThrown = true;
     		handler.displayError("MU");
+    		handler.displayError(".");
     	}
 
     	if(pfNewPass.getText() != null)
@@ -227,19 +233,18 @@ public class Register extends JFrame implements ActionListener, KeyListener
     	{
     		errorThrown = true;
     		handler.displayError("MP");
+    		handler.displayError(".");
     	}
 
     	if(!(pfNewPass.getText().equals(pfPConfirm.getText())))
     	{
     		errorThrown = true;
     		handler.displayError("PNM");
+    		handler.displayError(".");
     	}
 
     	if(errorThrown)
-    	{
-    		handler.displayError(".");
     		return true;
-    	}
     	else
     		return false;
 	}//end of checkErrors method
