@@ -477,7 +477,7 @@ public class Database
 			}
 
 			//Add the array to the array list
-			list.add(data);
+//			list.add(data);
     	}
 
     	//No more non null rows found
