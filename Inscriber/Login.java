@@ -24,8 +24,6 @@ import java.util.*;
 public class Login extends JFrame implements ActionListener, KeyListener
 {
 	//Declare class fields and objects
-	private Server server;
-	private Image image;
 	private JTextField txtUser;
 	private JPasswordField pfPass;
 	private JButton cmdLogin;
@@ -35,8 +33,6 @@ public class Login extends JFrame implements ActionListener, KeyListener
 	private SpringLayout layout;
 	private User tempUser;
 	private Client client;
-	private Database database;
-	private int tries;
 
 	public Login()
 	{
@@ -49,7 +45,6 @@ public class Login extends JFrame implements ActionListener, KeyListener
 		lblUser = new JLabel("Username");
 		lblPass = new JLabel("Password:");
 		layout = new SpringLayout();
-		database = new Database();
 
 		//Call the setGUI method
 		setGUI();
