@@ -94,7 +94,7 @@ public class Login extends JFrame implements ActionListener, KeyListener
 		layout.putConstraint(SpringLayout.NORTH, lblPass, 60, SpringLayout.NORTH, this.getContentPane());
 
 		//Set the properties for the GUI frame
-	    this.setSize(525, 125);
+	    this.setSize(525, 126);
 	    this.setResizable(false);
 	    this.setLocationRelativeTo(null);
 	    this.setTitle("Inscriber Login: Welcome to Inscriber!");
