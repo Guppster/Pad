@@ -76,6 +76,8 @@ public class ErrorHandler
 			errorToDisplay = "Could not remove group.";
 		else if(errorCode.equals("NGS"))
 			errorToDisplay = "No group selected!";
+		else if(errorCode.equals("CNL"))
+			errorToDisplay = "Could not logout. GOOD GAME SONNN!";
 
 		// the "." is the flag that triggers the error, this allows to add multiple errors to one message box
 		if(errorCode.equals("."))

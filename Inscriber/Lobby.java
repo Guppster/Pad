@@ -30,6 +30,7 @@ public class Lobby extends JFrame implements ActionListener
 	private JTable tRecentlyCreated;
 	private SpringLayout layout;
 	private Database database;
+	private ErrorHandler eHandler;
 	private User user;
 
 	//Constructor
@@ -47,6 +48,8 @@ public class Lobby extends JFrame implements ActionListener
 		cmdLogout = new JButton("Logout");
 		tRecentlyCreated = new JTable(7, 3); //col's author name, document name, date of creation.
 		layout = new SpringLayout();
+		database = new Database();
+		eHandler = new ErrorHandler();
 		this.user = user;
 
 		//Initialize the user object
