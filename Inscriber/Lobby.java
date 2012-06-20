@@ -161,8 +161,8 @@ public class Lobby extends JFrame implements ActionListener
 		}
 		else if("update".equals(evt.getActionCommand()))
 		{
-			handler.displayError("NS");
-			handler.displayError(".");
+			eHandler.displayError("NS");
+			eHandler.displayError(".");
 		}
     }//End of actionPerformed method
 
