@@ -2,10 +2,10 @@
  * @(#)Database.java
  *
  *
- * @author Gurpreet Singh, Matt Ufimzeff
- * @version 1.00 2012/6/15
+ * @author Gurpreet Singh, Matthew Ufimzeff
+ * @version 1.00 2012/6/20
  *
- * @Latest Updates: Added constant variables for information regarding connection to the database, and converted code from sqlite to MySQL
+ * @Latest Updates: Database can now sucessfully add a new user, add a new document
  *
  * @Status: Complete ~ accomodating for currently created classes
  */
@@ -24,30 +24,31 @@ public class Database
 	private static String dbPass = "derp";
 	private static String driver = "com.mysql.jdbc.Driver";
 
-	//Default constructor
-	public Database()
-    {
-    }//End of default constructor
+	//Database default constructor
+	public Database(){}//End of Database default constructor
 
     public void createTable(String tableName) throws Exception
     {
-        Class.forName(driver);
-        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
+    	//Declare and initialize some fields
+        Class.forName(driver);//Access' the MYSQL driver folder so we can use methods from it(Same as beckerrobot.jar)
+        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);//Create a new connection with the specified hostname, port, and database username/password
         Statement stat = conn.createStatement();
-        stat.executeUpdate("DROP TABLE if EXISTS " + tableName + ";");
-        stat.executeUpdate("CREATE table " + tableName + ";");
+
+        //Execute some commands to the MYSQL database
+        statement.executeUpdate("DROP TABLE if EXISTS " + tableName + ";");
+        statement.executeUpdate("CREATE table " + tableName + ";");
 
 		//Close the connection
         conn.close();
-    }//End of createDB method
+    }//End of createTable method
 
 	//Adds a new user record to the database
     public void addUser(User user) throws Exception
     {
     	//Declare and initialize some fields
-    	Class.forName(driver);
-        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
-		Statement statement = (Statement)conn.createStatement();
+    	Class.forName(driver);//Access' the MYSQL driver folder so we can use methods from it(Same as beckerrobot.jar)
+        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);//Create a new connection with the specified hostname, port, and database username/password
+		Statement statement = conn.createStatement();//Create a new statement under the new connection
 
 		//Compile a command into a string so we can execute it
 		String state = "INSERT INTO accounts VALUES ('" + user.getFirstName() + "', '" + user.getLastName() + "', '" + user.getUsername() + "', '" + user.getPassword()
@@ -62,11 +63,11 @@ public class Database
     }//End of addUser method
 
 	//Adds a new file name and author name to the database
-    public void createNewDocument(String fileName, int numChars, int numSentences, int numWords) throws Exception
+    public void addDocument(String fileName, int numChars, int numSentences, int numWords) throws Exception
     {
     	//Declare and initialize some fields
-    	Class.forName(driver);
-        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
+    	Class.forName(driver);//Access' the MYSQL driver folder so we can use methods from it(Same as beckerrobot.jar)
+        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);//Create a new connection with the specified hostname, port, and database username/password
 		Statement statement = conn.createStatement();
 
 		//Compile a command into a string so we can execute it
@@ -77,20 +78,21 @@ public class Database
 
 		//Close the connection
         conn.close();
-  	}//End of createNewDocument method
+  	}//End of addDocument method
 
+	//A method to check the database to see if a username or email already exists
     public boolean [] findUserExists(User user) throws Exception
     {
-    	Class.forName(driver);
-        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
-    	Statement stat = conn.createStatement();
-
+    	//Declare and initialize some fields
+    	Class.forName(driver);//Access' the MYSQL driver folder so we can use methods from it(Same as beckerrobot.jar)
+        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);//Create a new connection with the specified hostname, port, and database username/password
+    	Statement statement = conn.createStatement();//Create a new statement under the new connection
     	boolean [] conditions = new boolean[2];
+    	ResultSet rs = statement.executeQuery("SELECT * FROM accounts;");
 
-    	ResultSet rs = stat.executeQuery("SELECT * FROM accounts;");
+    	//While there is a 'non-null' column to select
         while (rs.next())
         {
-
         	if(user.getUsername().equals(rs.getString("user")))
         	{
         		//Username already exists in database
@@ -104,52 +106,58 @@ public class Database
         	}
         }
 
-        //Close the ResultSet and Connection
+        //Close the ResultSet and connection
         rs.close();
         conn.close();
-        return conditions;
-    }//End of findUserExists
 
+        //Return which conditions were triggered
+        return conditions;
+    }//End of findUserExists method
+
+	//A method to check the username and password entered by the user, against the ones in the database
     public boolean checkLogin(User user) throws Exception
     {
-    	Class.forName(driver);
-        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
-    	Statement stat = conn.createStatement();
-
+    	//Declare and initialize some fields
+    	Class.forName(driver);//Access' the MYSQL driver folder so we can use methods from it(Same as beckerrobot.jar)
+        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);//Create a new connection with the specified hostname, port, and database username/password
+    	Statement stat = conn.createStatement();//Create a new statement under the new connection
 		ResultSet rsUser = stat.executeQuery("SELECT accounts.user FROM accounts;");
 		ResultSet rsPass = null;
 		boolean userFound = false;
 		boolean passFound = false;
 
+		//While there is a 'non-null' column to select
         while(rsUser.next())
         {
         	if(user.getUsername().equals(rsUser.getString("user")))
         	{
+        		//Username entered, was found in the database
         		userFound = true;
 
-        		//Close the current ResultSet
+        		//Close the current ResultSet and break out of the while
         		rsUser.close();
         		break;
         	}
         }
 
+		//If the entered username wasn't found in the database, close the ResultSet object, close the connection, and return that the login is not valid
         if(!userFound)
         {
-        	//Username not found
-        	//Close the ResultSet and Connection
+        	//Reset the boolean flags
+        	userFound = false;
+			passFound = false;
 			rsUser.close();
        		conn.close();
-			return false;//Login is not valid
+			return false;
         }
 
+		//If the entered username is found in the database, check the entered pass against the password in the database
         if(userFound)
         {
-
         	rsPass = stat.executeQuery("SELECT accounts.pass FROM accounts;");
 
         	while(rsPass.next())
 	        {
-	        	//Username found
 	        	if(user.getPassword().equals(rsPass.getString("pass")))
 	        	{
 	        		//Password found and matches one passed in
@@ -159,33 +167,33 @@ public class Database
 	        }
 	        if(!passFound)
 	        {
-	        	return false;//Login is valid
+	        	//Reset the boolean flags
+	        	userFound = false;
+	        	passFound = false;
+	        	return false;//Login is invalid
 	        }
 
-			//Close the ResultSet and Connection
+			//Close the ResultSet and connection and reset the boolean flags
+			userFound = false;
+			passFound = false;
 	        rsPass.close();
 	        conn.close();
         }
-        else
-        {
-        	//Close the ResultSet and Connection
-	        rsUser.close();
-	        conn.close();
-	        return false;
-        }
 
+		//If the program manages to break - just return false and don't allow the user to login
         return false;
     }//End of Check login method
 
 	//Finds the user according to the login credentials and sets its loggedIn varaiable to true;
     public void switchLoginStatus(User user) throws Exception
     {
-		Class.forName(driver);
-        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
-    	Statement stat = conn.createStatement();
-
+    	//Declare and initialize some fields
+		Class.forName(driver);//Access' the MYSQL driver folder so we can use methods from it(Same as beckerrobot.jar)
+        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);//Create a new connection with the specified hostname, port, and database username/password
+    	Statement stat = conn.createStatement();//Create a new statement under the new connection
     	ResultSet rs = stat.executeQuery("SELECT * FROM accounts;");
 
+		//While the selected column is not null
 		while(rs.next())
         {
         	if(user.getUsername().equals(rs.getString("user")))
@@ -203,34 +211,35 @@ public class Database
         	}
         }
 
-		//Close the ResultSet and Connection
+		//Close the ResultSet and connection
         rs.close();
         conn.close();
-    }//End of loginUser method
+    }//End of switchLoginStatus method
 
-    //returns a boolean indicating weather the user is logged in or not
+    //Returns the login status of the user from the server - Used to avoid dual login under the same username
     public boolean getLoginStatus(User user) throws Exception
     {
-    	Class.forName(driver);
-        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
-    	Statement stat = conn.createStatement();
-
+    	//Declare and initialize some fields
+    	Class.forName(driver);//Access' the MYSQL driver folder so we can use methods from it(Same as beckerrobot.jar)
+        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);//Create a new connection with the specified hostname, port, and database username/password
+    	Statement stat = conn.createStatement();//Create a new statement under the new connection
     	ResultSet rs = stat.executeQuery("SELECT * FROM accounts;");
 
+		//While the selected column is not null
     	while(rs.next())
     	{
     		if(user.getUsername().equals(rs.getString("user")))
         	{
         		if(rs.getInt(7) == 1)
         		{
-        			//Closes the resultSet and connection
+        			//Close the ResultSet and connection and return that the user is logged in
         			rs.close();
         			conn.close();
         			return true;
         		}
         		else
         		{
-        			//Closes the resultSet and connection
+        			//Close the ResultSet and connection and return that the user is not logged in
         			rs.close();
         			conn.close();
         			return false;
@@ -238,19 +247,21 @@ public class Database
         	}
     	}
 
-    	//Closes the resultSet and connection
+    	//If the program breaks, and all else fails, close the ResultSet and connection and return that the user is not currently logged in
 		rs.close();
         conn.close();
 		return false;
     }//End of getLoginStatus
 
+	//A method to retrieve the default permissions for the default user group from the database
     public boolean [] retrieveDefaultPermissions() throws Exception
     {
-    	boolean [] permissions = new boolean[5];
-        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
-    	Statement stat = conn.createStatement();
-
-	 	ResultSet rs = stat.executeQuery("SELECT * FROM usergroups;");
+    	//Declare and initialize some fields
+ 		Class.forName(driver);//Access' the MYSQL driver folder so we can use methods from it(Same as beckerrobot.jar)
+        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);//Create a new connection with the specified hostname, port, and database username/password
+    	Statement stat = conn.createStatement();//Create a new statement under the new connection
+	 	ResultSet rs = stat.executeQuery("SELECT * FROM usergroups;");//Creates a result set object so we can query the database
+	 	boolean [] permissions = new boolean[5];//Used to store the values for the permissions
 
     	if(rs.isFirst())
         {
@@ -261,10 +272,11 @@ public class Database
 			permissions[4] = rs.getBoolean("canAccess");
         }
 
-	    //Closes the resultSet and connection
+	    //Closes the ResultSet and connection
         rs.close();
         conn.close();
 
+		//Return the values for the permissions we just retrieved from the server
         return permissions;
     }//End of retrieveDefaultPermissions method
 
