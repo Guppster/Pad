@@ -149,6 +149,9 @@ public class UserGroupGUI extends JFrame implements ActionListener
 	//Remove a group from the JTable object and attempt to remove it from the database
 	private void removeGroup()
 	{
+		int rowIndex = 0;
+		int columnIndex = 0;
+
 		if((rowIndex = tGroups.getSelectedRow()) != 0 && (columnIndex = tGroups.getSelectedColumn())!= 0)
 		{
 			int rowIndex = tGroups.getSelectedRow();
