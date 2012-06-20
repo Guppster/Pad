@@ -70,6 +70,8 @@ public class ErrorHandler
 			errorToDisplay += "You have tried logging in too frequently, please take a break and try later.";
 		else if(errorCode.equals("NS"))
 			errorToDisplay += "This functionality has not been implemented in this release of Inscriber.";
+		else if(errorCode.equals("CNLG"))
+			errorToDisplay += "The groups could not be loaded.";
 
 		// the "." is the flag that triggers the error, this allows to add multiple errors to one message box
 		if(errorCode.equals("."))
