@@ -31,8 +31,56 @@ public class DocumentBrowser extends JFrame implements ActionListener
 		cmdSortByName = new JButton("Sort by Name");
 		cmdSortByCharacters = new JButton("Sort by Character");
 		cmdSortBySentences = new JButton("Sort by Sentences");
-		cmdSortBySentences = new JButton("Sort by Sentences");
+		cmdSortByWords = new JButton("Sort by Words");
+
+		//Call method to create GUI
+		setGUI();
     }//End of default constructor
+
+    private void setGUI()
+    {
+    	//Add the layout manager to the GUI frame
+		this.getContentPane().setLayout(layout);
+
+		//Add the object to the frame, and set the coordinates of the object
+		this.add(tDocuments);
+		layout.putConstraint(SpringLayout.NORTH, tDocuments, 25, SpringLayout.NORTH, this.getContentPane());
+		layout.putConstraint(SpringLayout.WEST, tDocuments, 50, SpringLayout.WEST, this.getContentPane());
+
+		//Add the object to the frame, and set the coordinates of the object
+		this.add(cmdSortByName);
+		cmdSortByName.setActionCommand("sortname");
+		layout.putConstraint(SpringLayout.NORTH, cmdSortByName, 25, SpringLayout.NORTH, this.getContentPane());
+		layout.putConstraint(SpringLayout.WEST, cmdSortByName, 50, SpringLayout.WEST, this.getContentPane());
+
+		//Add the object to the frame, and set the coordinates of the object
+		this.add(cmdSortByCharacters);
+		cmdSortByCharacters.setActionCommand("sortchars");
+		layout.putConstraint(SpringLayout.NORTH, cmdSortByCharacters, 25, SpringLayout.NORTH, this.getContentPane());
+		layout.putConstraint(SpringLayout.WEST, cmdSortByCharacters, 50, SpringLayout.WEST, this.getContentPane());
+
+		//Add the object to the frame, and set the coordinates of the object
+		this.add(cmdSortByWords);
+		cmdSortByWords.setActionCommand("sortwords");
+		layout.putConstraint(SpringLayout.NORTH, cmdSortByWords, 25, SpringLayout.NORTH, this.getContentPane());
+		layout.putConstraint(SpringLayout.WEST, cmdSortByWords, 50, SpringLayout.WEST, this.getContentPane());
+
+		//Add the object to the frame, and set the coordinates of the object
+		this.add(cmdSortBySentences);
+		cmdSortBySentences.setActionCommand("sortsentences");
+		layout.putConstraint(SpringLayout.NORTH, cmdSortBySentences, 25, SpringLayout.NORTH, this.getContentPane());
+		layout.putConstraint(SpringLayout.WEST, cmdSortBySentences, 50, SpringLayout.WEST, this.getContentPane());
+    }//End of setGUI method
+
+	//Set the properties of the frame/pane
+	this.setSize(510,295);
+	this.setResizable(false);
+	this.setLocationRelativeTo(null);
+	this.setTitle("Inscriber Lobby");
+	this.setVisible(true);
+	this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+
 
 
 }//End of class
