@@ -403,7 +403,7 @@ public class Database
     	return group;
     }//End of initializeGroup method
 
-    /*public String [] getAllDocumentsData()
+    public String [] getDocumentsData()
    	{
    		String [] data = new String[4];
 
@@ -414,10 +414,7 @@ public class Database
 
     	while(rs.next())
     	{
-    		if(rs.getString("name").equals(groupName))
-    		{
 
-    		}
     	}
-   	}*/
+   	}
 }//End of class class
