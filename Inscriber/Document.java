@@ -53,7 +53,8 @@ public class Document
     	try
     	{
     		//Initialize a class object
-    		out = new PrintWriter(socket.getOutputStream(), true);
+    		in = new BufferedReader(new InputStreamReader(sClient.getInputStream()));
+    		out = new PrintWriter(sClient.getOutputStream(), true);
 
 	    	//Send the server the filename
 	    	out.println(filename);
