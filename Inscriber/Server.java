@@ -182,19 +182,19 @@ public class Server
 			Socket sock = null;
 			sock = socket;
 
-			//BufferedReader in = new BufferedReader(new InputStreamReader(sock.getInputStream()));
-	    	//PrintWriter out = new PrintWriter(sock.getOutputStream(), true);
+			BufferedReader lol = new BufferedReader(new InputStreamReader(sock.getInputStream()));
+	    	PrintWriter ha = new PrintWriter(sock.getOutputStream(), true);
 	    	BufferedWriter writer = new BufferedWriter(new FileWriter("test.txt"));
 			String text;
 
-			//while ((text = in.readLine()) != null)
-			//{
-	 			//writer.write(text);
-		   // }
+			while ((text = lol.readLine()) != null)
+			{
+	 			writer.write(text);
+		    }
 
 			writer.close();
-		    //out.close();
-		   // in.close();
+		    ha.close();
+		   	lol.close();
 		    sock.close();
 		}catch(IOException e){System.out.println("Something went wrong.");}
 	}
