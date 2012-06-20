@@ -74,7 +74,7 @@ public class Client
 						eHandler.displayError(".");//Display the error sent over
 						//new Login();//Login is reopened because program is suspeciously closed
 					}
-				}catch(Exception e){eHandler.displayError(""); eHandler.displayError}
+				}catch(Exception e){eHandler.displayError("CNCTD"); eHandler.displayError(".");}
 	        }
 		}
 		else
