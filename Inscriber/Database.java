@@ -54,6 +54,7 @@ public class Database
         prep.setString(4, user.getPassword());
         prep.setString(5, user.getEmail());
         prep.setString(6, user.getGroup());
+        prep.addBatch();
 
 		conn.setAutoCommit(false);
         prep.executeBatch();
