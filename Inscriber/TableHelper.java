@@ -92,8 +92,9 @@ public class TableHelper
 
 	public void addRowOfData(String [] data, JTable table)
 	{
-		Object[] test = data;
-		table.getModel().insertRow(new test[]);
+		data = new Object[data.length];
+
+		table.getModel().insertRow(0, data);
 	}//End of addRowOfData method
 
 	/*//A method to fill an array with the data from the JTable so we can send it to the server
