@@ -1,16 +1,19 @@
-/**
- * @(#)Runner.java
- *
- *
- * @author 
- * @version 1.00 2012/6/20
- */
+//Matthew Ufimzeff and Gurpreet Singh
+//June 20
 
+public class Runner
+{
+    public static void main(String [] args)
+    {
+    	//Create a LookAndFeel object so we can set the look and fell of the GUI
+	    new LookAndFeel();
 
-public class Runner {
-
-    public Runner() {
+	    SwingUtilities.invokeLater(new Runnable()
+	    {
+	    	public void run()
+	        {
+	        	new Login();
+	      	}
+	    });
     }
-    
-    
 }
