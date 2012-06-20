@@ -153,10 +153,6 @@ public class Lobby extends JFrame implements ActionListener
 		{
 			create();
 		}
-		else if ("update".equals(evt.getActionCommand()))
-		{
-			//new Splash();
-		}
     }//End of actionPerformed method
 
     //Method is called when logout button is pressed by user in lobby, disconnects the user and closes lobby, reopens the login screen.
@@ -174,13 +170,14 @@ public class Lobby extends JFrame implements ActionListener
     //Method is called when create new document button is pressed, closes lobby and opens a new writingmainboard using the info entered in the text fields
     private void create()
     {
-
-
+		new WritingMainBoard(user);
+		this.dispose();
     }//End of create method
 
 	//Method is called when the browse button is pressed, closes lobby and opens the browseDocuments screen
     private void browse()
     {
-
+		new BrowseDocuments();
+		this.dispose();
     }//End of browse method
 }//End of Main class
