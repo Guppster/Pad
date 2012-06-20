@@ -239,7 +239,7 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 	private void openDocument()
 	{
 		String fileName = JOptionPane.showInputDialog(null, "", "Enter in a filename.", 1);
-		String text = document.getFileFromServer(fileName, sClient,);
+		String text = document.getFileFromServer(fileName, sClient);
 		taDocument.setText(text);
 		fileName = "";
 		text = "";
