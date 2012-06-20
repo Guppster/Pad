@@ -1,5 +1,13 @@
-//Matthew Ufimzeff and Gurpreet Singh
-//June 20
+/**
+ * @(#)Runner.java
+ *
+ * @author Matthew Ufimzeff, Gurpreet Singh
+ * @version 1.00 2012/6/20
+ *
+ * @Class Description: This class is used to start the actual project, and run everything.
+ *
+ * @Status: Finished - Completely commented - No errors.
+ */
 
 //Import Java API Packages
 import java.awt.*;
@@ -10,9 +18,10 @@ public class Runner
 {
     public static void main(String [] args)
     {
-    	//Create a LookAndFeel object so we can set the look and fell of the GUI
+    	//Create a new LookAndFeel object so we can set the look and feel of ALL the GUI screens
 	    new LookAndFeel();
 
+		//Run the Login screen(Open it)
 	    SwingUtilities.invokeLater(new Runnable()
 	    {
 	    	public void run()
@@ -20,5 +29,5 @@ public class Runner
 	        	new Login();
 	      	}
 	    });
-    }
-}
+    }//End of Runner main method
+}//End of Runner class
