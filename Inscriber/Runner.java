@@ -7,6 +7,8 @@
  * @Class Description: This class is used to start the actual project, and run everything.
  *
  * @Status: Finished - Completely commented - No errors.
+ *
+ *@Note: The 2 LookAndFeel libaries MUST be imported into the JDK profile for the LookAndFeel to work. See Software Manual for further help.
  */
 
 //Import Java API Packages
