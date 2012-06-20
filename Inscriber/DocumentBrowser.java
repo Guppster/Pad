@@ -122,10 +122,10 @@ public class DocumentBrowser extends JFrame implements ActionListener
 	//Sets the initial data of the table
 	private void InitializeTableData()
 	{
-		for(int x = 0; x <= tDocuments.getRowCount(); x++)
-			{
-				tHelper.addElement(tDocuments, model, database.getDocumentsData(x))
-			}
+		//	for(int x = 0; x <= tDocuments.getRowCount(); x++)
+			//	{
+				//	tHelper.addElement(tDocuments, model, database.getDocumentsData(x))
+			//	}
 	}//End of InitializeTableData method
 
 	//Perform an action whenever a button is pressed
@@ -153,7 +153,7 @@ public class DocumentBrowser extends JFrame implements ActionListener
     private void sortByName()
     {
 		boolean sorted = false;
-    	string temp = "";
+    	String temp = "";
     	do
     	{
     		for(int x = 0; x < tDocuments.getRowCount(); x++)
@@ -162,7 +162,7 @@ public class DocumentBrowser extends JFrame implements ActionListener
 	    		{
 	    			temp = tDocuments.getValueAt(0,x);
 	    			tDocuments.setValueAt(tDocuments.getValueAt(0,x+1), 0, x);
-					tDocuments.setValueAt(temp), 0, x+1);
+					tDocuments.setValueAt(temp, 0, x+1);
 
 	    			sorted = false;
 	    		}
@@ -173,7 +173,7 @@ public class DocumentBrowser extends JFrame implements ActionListener
     private void sortByCharacters()
     {
 		boolean sorted = false;
-    	string temp = "";
+    	String temp = "";
     	do
     	{
     		for(int x = 0; x < tDocuments.getRowCount(); x++)
@@ -182,7 +182,7 @@ public class DocumentBrowser extends JFrame implements ActionListener
 	    		{
 	    			temp = tDocuments.getValueAt(1,x);
 	    			tDocuments.setValueAt(tDocuments.getValueAt(1,x+1), 1, x);
-					tDocuments.setValueAt(temp), 1, x+1);
+					tDocuments.setValueAt(temp, 1, x+1);
 
 	    			sorted = false;
 	    		}
@@ -193,7 +193,7 @@ public class DocumentBrowser extends JFrame implements ActionListener
     private void sortByWords()
     {
 		boolean sorted = false;
-    	string temp = "";
+    	String temp = "";
     	do
     	{
     		for(int x = 0; x < tDocuments.getRowCount(); x++)
@@ -202,7 +202,7 @@ public class DocumentBrowser extends JFrame implements ActionListener
 	    		{
 	    			temp = tDocuments.getValueAt(2,x);
 	    			tDocuments.setValueAt(tDocuments.getValueAt(1,x+1), 2, x);
-					tDocuments.setValueAt(temp), 2, x+1);
+					tDocuments.setValueAt(temp, 2, x+1);
 
 	    			sorted = false;
 	    		}
@@ -213,7 +213,7 @@ public class DocumentBrowser extends JFrame implements ActionListener
     private void sortBySentences()
     {
 		boolean sorted = false;
-    	string temp = "";
+    	String temp = "";
     	do
     	{
     		for(int x = 0; x < tDocuments.getRowCount(); x++)
@@ -222,7 +222,7 @@ public class DocumentBrowser extends JFrame implements ActionListener
 	    		{
 	    			temp = tDocuments.getValueAt(3,x);
 	    			tDocuments.setValueAt(tDocuments.getValueAt(1,x+1), 3, x);
-					tDocuments.setValueAt(temp), 3, x+1);
+					tDocuments.setValueAt(temp, 3, x+1);
 
 	    			sorted = false;
 	    		}
