@@ -403,9 +403,9 @@ public class Database
     	return group;
     }//End of initializeGroup method
 
-    public String [] getDocumentsData()
+    public String getDocumentsData(int rowIndex)
    	{
-   		String [] data = new String[4];
+   		String data = "";
 
    		Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
     	Statement stat = conn.createStatement();
@@ -414,7 +414,7 @@ public class Database
 
     	while(rs.next())
     	{
-
+			if()
     	}
    	}
 }//End of class class
