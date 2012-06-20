@@ -73,7 +73,7 @@ public class Database
 		String state = "INSERT documents VALUES ('" + fileName + "', " + numChars + ", " + numSentences + ", " + numWords + ")";
 
 		//Execute the command
-        state.executeUpdate(state);
+        statement.executeUpdate(state);
 
 		//Close the connection
         conn.close();
