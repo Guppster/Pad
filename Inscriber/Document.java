@@ -44,7 +44,7 @@ public class Document
     }//End of Document default constructor
 
 	//Sends the passed in filename and text from the passed in connection, to the server
-	public void saveFileToServer(String filename, String fromWMB, Socket socket)
+	public void saveFileToServer(String author, String filename, String fromWMB, Socket socket)
 	{
 		//Initialize class fields
 		sClient = socket;
