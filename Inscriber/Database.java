@@ -7,7 +7,7 @@
  * @Class Description: This class is used to do everything database related, such as add, delete, search, edit, the database - This class also allows
  *						the connection to the database to be made.
  *
- * @Status: Finished - Completely commented
+ * @Status: Finished - Completely commented - No errors.
  */
 
 //Import Java API Packages
