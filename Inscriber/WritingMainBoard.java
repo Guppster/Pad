@@ -266,7 +266,7 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 	//Opens the Lobby page
 	private void logout()
 	{
-		Lobby lobby = new Lobby(this.user);
+		Lobby lobby = new Lobby(this.user, this.client);
 		this.dispose();
 	}//End of logout method
 
