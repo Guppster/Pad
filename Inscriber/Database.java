@@ -321,7 +321,7 @@ public class Database
 	 	conn.close();
     }//End of removeGroup method
 
-    public User initializeUser(User user)
+    public User initializeUser(User user) throws SQLException
     {
     	User iniUser = new User();
 
@@ -351,7 +351,7 @@ public class Database
     }//End of initializeUser method
 
     //This method looks in the usergroup table and finds the group name and then initializes the rest of the fields(permissions) for the usergroup object it will return
-    public UserGroup initializeGroup(String groupName)
+    public UserGroup initializeGroup(String groupName) throws SQLException
     {
     	UserGroup group = new UserGroup();
     	Boolean [] permissions = new Boolean[5];
