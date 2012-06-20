@@ -28,7 +28,7 @@ public class DocumentBrowser extends JFrame implements ActionListener
 	private JButton cmdSortBySentences;
 	private JButton cmdSearch;
 	private SpringLayout layout;
-	private TableHelper thelper;
+	private TableHelper tHelper;
 
 	//Default Constructor, Initializes the declared fields
     public DocumentBrowser()
