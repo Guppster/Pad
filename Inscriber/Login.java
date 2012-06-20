@@ -41,7 +41,7 @@ public class Login extends JFrame implements ActionListener, KeyListener
 	public Login()
 	{
 		//Initialize class fields and objects
-		server = new Server();
+		//server = new Server();
 		image = new Image();
 		tempUser = new User();
 		txtUser = new JTextField(15);
