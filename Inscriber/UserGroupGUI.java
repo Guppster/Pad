@@ -137,10 +137,13 @@ public class UserGroupGUI extends JFrame implements ActionListener
 	//Load a list of user groups from the database
 	private void loadGroups()
 	{
-		for(int x = 0; x < database.getNumGroups(); x++)
+		try
 		{
-			helper.addElement(tGroups, model, database.getGroupName(x));
-		}
+			for(int x = 0; x < database.getNumGroups(); x++)
+			{
+				helper.addElement(tGroups, model, database.getGroupName(x));
+			}
+		}catch(SQLException e){eHandler.displayError("CNLG"); eHandler.displayError(".");}
 	}//End of loadGroups method
 
 	//Remove a group from the JTable object and attempt to remove it from the database
