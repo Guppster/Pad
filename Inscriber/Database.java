@@ -443,7 +443,7 @@ public class Database
     	return group;
     }//End of initializeGroup method
 
-    public ArrayList<String> getDocumentsData()
+    public ArrayList<String> getDocumentsData() throws Exception
    	{
    		//PUT ALL THE "data[0]... data[1]... etc" INTO A LOOP TO LOOP THROUGH UNTIL IT REACHES A NULL ROW(while rs.next())
 
