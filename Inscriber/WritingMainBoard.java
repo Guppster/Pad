@@ -26,6 +26,7 @@ import java.awt.font.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.*;
+import java.net.*;
 
 public class WritingMainBoard extends JFrame implements PropertyChangeListener
 {
