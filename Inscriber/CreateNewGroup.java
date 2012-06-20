@@ -204,7 +204,7 @@ public class CreateNewGroup extends JFrame implements ActionListener
 				loadGroup();
 				setGroupName();
 				saveGroup();
-			}catch(Exception e){handler.displayError("CNAG");}
+			}catch(Exception e){handler.displayError("CNAG"); handler.displayError(".");}
 		}
 		else if(evt.getActionCommand().equals("preset"))
 		{
