@@ -324,7 +324,6 @@ public class Database
     public User initializeUser(User user)
     {
     	User iniUser = new User();
-    	UserGroup group = new UserGroup();
 
     	Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
     	Statement stat = conn.createStatement();
@@ -342,7 +341,7 @@ public class Database
 				iniUser.setUsername(rs.getString("user"));
 				iniUser.setPassword(rs.getString("pass").toCharArray());
 				iniUser.setEmail(rs.getString("email"));
-				iniUser.setGroup(rs.getString("group"));
+				iniUser.setGroup(initializeGroup(rs.getString("group")));
 			}
     	}
 
@@ -350,4 +349,30 @@ public class Database
     	conn.close();
     	return iniUser;
     }//End of initializeUser method
+
+    //This method looks in the usergroup table and finds the group name and then initializes the rest of the fields(permissions) for the usergroup object it will return
+    public UserGroup initializeGroup(String groupName)
+    {
+    	UserGroup group = new UserGroup();
+    	Boolean [] permissions = new Boolean();
+
+    	Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
+    	Statement stat = conn.createStatement();
+
+    	ResultSet rs = stat.executeQuery("SELECT * FROM usergroups;");
+
+    	while(rs.next())
+    	{
+    		if(rs.getString("name").equals(groupName))
+    		{
+    			group.setName(rs.getString("name"));
+    			if(rs.getInt("canEdit") == 1){permissions[0] = true}else{permissions[0] = false}
+    			if(rs.getInt("canChat") == 1){permissions[0] = true}else{permissions[0] = false}
+    			if(rs.getInt("canExport") == 1){permissions[0] = true}else{permissions[0] = false}
+    			if(rs.getInt("canFormat") == 1){permissions[0] = true}else{permissions[0] = false}
+    			if(rs.getInt("canAccess") == 1){permissions[0] = true}else{permissions[0] = false}
+    		}
+    	}
+
+    }//End of initializeGroup method
 }//End of class class
