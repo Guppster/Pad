@@ -84,7 +84,7 @@ public class Document
 	}//End of saveFileToServer method
 
 	//Retrieves a text file from the server and 'opens it'
-	public String getFileFromServer(Socket socket)
+	public String getFileFromServer(String fileName, Socket socket)
 	{
 		//Initialize class fields
 		sClient = socket;
