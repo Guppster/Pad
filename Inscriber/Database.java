@@ -36,6 +36,7 @@ public class Database
         stat.executeUpdate("DROP TABLE if EXISTS " + tableName + ";");
         stat.executeUpdate("CREATE table " + tableName + ";");
 
+		//Close the connection
         conn.close();
     }//End of createDB method
 
@@ -58,6 +59,7 @@ public class Database
         prep.executeBatch();
 		conn.setAutoCommit(true);
 
+		//Close the connection
         conn.close();
     }//End of addUser method
 
@@ -85,6 +87,8 @@ public class Database
         		conditions[1] = true;
         	}
         }
+
+        //Close the ResultSet and Connection
         rs.close();
         conn.close();
         return conditions;
@@ -106,6 +110,8 @@ public class Database
         	if(user.getUsername().equals(rsUser.getString("user")))
         	{
         		userFound = true;
+
+        		//Close the current ResultSet
         		rsUser.close();
         		break;
         	}
@@ -114,6 +120,7 @@ public class Database
         if(!userFound)
         {
         	//Username not found
+        	//Close the ResultSet and Connection
 			rsUser.close();
        		conn.close();
 			return false;//Login is not valid
