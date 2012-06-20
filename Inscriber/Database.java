@@ -205,6 +205,9 @@ public class Database
         			stat.execute("UPDATE `accounts` SET `loggedIn`='1' WHERE (`user`='" + user.getUsername() + "') AND (`pass`='" + user.getPassword() + "') AND (`loggedIn`='0') LIMIT 1;");
         	}
         }
+
+        rs.close();
+        conn.close();
     }//End of loginUser method
 
     //returns a boolean indicating weather the user is logged in or not
