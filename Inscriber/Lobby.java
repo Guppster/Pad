@@ -29,9 +29,10 @@ public class Lobby extends JFrame implements ActionListener
 	private JButton cmdLogout;
 	private JTable tRecentlyCreated;
 	private SpringLayout layout;
+	private Database database;
 
 	//Constructor
-    public Lobby()
+    public Lobby(User user)
     {
 		//Initialize class fields and objects
 		lblDocument = new JLabel("Document ID:");
@@ -46,9 +47,17 @@ public class Lobby extends JFrame implements ActionListener
 		tRecentlyCreated = new JTable(7, 3); //col's author name, document name, date of creation.
 		layout = new SpringLayout();
 
+		initializeUser();
+
 		//Call method to create GUI
 		setGUI();
     }//End of Lobby constructor method
+
+    //This helper method initializes the user object from the database (The tempUser passed in from client only contains the username and password from login, so the database class finds the rest of the fields and inputs them into their according user fields)
+    private void initializeUser()
+    {
+    	user = database.initializeUser(user);
+    }//End of initializeUser
 
 	//Adds and positions the GUI objects on the screen
     private void setGUI()
@@ -151,6 +160,8 @@ public class Lobby extends JFrame implements ActionListener
     //Method is called when create new document button is pressed, closes lobby and opens a new writingmainboard using the info entered in the text fields
     private void create()
     {
+		//create document object passing in current user
+		//create new writingmainboard passing in document object
 
     }//End of create method
 
