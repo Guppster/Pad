@@ -92,17 +92,21 @@ public class Document
     	try
     	{
     		in = new BufferedReader(new InputStreamReader(sClient.getInputStream()));
+
+    		//While there is text coming in
+	    	while(!((text = in.readLine()).equals("")))
+	    	{
+				textFromServer += text;
+			}
     	}catch(IOException e){System.out.println("Error 2 - " + e);}
 
-		//While there is text coming in
-    	while(!((text = in.readLine()).equals("")))
+    	try
     	{
-			textFromServer += text;
-		}
+    		in.close();
+			sClient.close();
+    	}catch(IOException e2){eHandler.displayError("CNCC");}
 
-		in.close();
-		sClient.close();
-
+    	//Return the compiled text from the server
 		return textFromServer;
 	}//End of countLines method
 }//End of Document Class
