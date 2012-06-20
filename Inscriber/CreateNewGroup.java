@@ -203,7 +203,7 @@ public class CreateNewGroup extends JFrame implements ActionListener
 				loadGroup();
 				setGroupName();
 				saveGroup();
-			}catch(Exception e){System.out.println("Error 3 - " + e);}
+			}catch(Exception e){System.out.println(eHandler.displayError(""));}
 		}
 		else if(evt.getActionCommand().equals("preset"))
 		{

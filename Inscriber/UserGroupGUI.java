@@ -157,7 +157,7 @@ public class UserGroupGUI extends JFrame implements ActionListener
 		try
 		{
 			database.removeGroup(tGroups.getValueAt(rowIndex, columnIndex).toString());
-		}catch(Exception e){eHandler.displayError("CNRG"); eHandler.displayError(".");}
+		}catch(Exception e){System.out.println(e);}
 	}//End of removeGroup method
 
 	//Test Harness

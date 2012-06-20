@@ -74,6 +74,8 @@ public class ErrorHandler
 			errorToDisplay = "Could not load groups.";
 		else if(errorCode.equals("CNRG"))
 			errorToDisplay = "Could not remove group.";
+		else if(errorCode.equals("CNAG"))
+			errorToDisplay = "Could not remove group.";
 
 		// the "." is the flag that triggers the error, this allows to add multiple errors to one message box
 		if(errorCode.equals("."))
