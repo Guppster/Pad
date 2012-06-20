@@ -30,7 +30,7 @@ public class DocumentBrowser extends JFrame implements ActionListener
 	private SpringLayout layout;
 	private TableHelper thelper;
 
-	//Default Constructor
+	//Default Constructor, Initializes the declared fields
     public DocumentBrowser()
     {
     	model = new DefaultTableModel();
