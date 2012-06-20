@@ -15,6 +15,8 @@
 import java.net.*;
 import java.io.*;
 
+new WritingMainBoard(User user);
+
 public class Document
 {
 	//Declare class fields and objects
@@ -29,7 +31,7 @@ public class Document
 	private User documentOwner;
 
 	//Initializes class fields and objects
-    public Document(User owner)
+    public Document()
     {
     	docName = "NewDocument.txt";
 		numOfWords = 0;
