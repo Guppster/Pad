@@ -97,8 +97,8 @@ public class DocumentBrowser extends JFrame implements ActionListener
 		//Add the object to the frame, and set the coordinates of the object
 		this.add(cmdSearch);
 		cmdSortBySentences.setActionCommand("search");
-		layout.putConstraint(SpringLayout.NORTH, cmdSortBySentences, 225, SpringLayout.NORTH, this.getContentPane());
-		layout.putConstraint(SpringLayout.WEST, cmdSortBySentences, 450, SpringLayout.WEST, this.getContentPane());
+		layout.putConstraint(SpringLayout.NORTH, cmdSearch, 225, SpringLayout.NORTH, this.getContentPane());
+		layout.putConstraint(SpringLayout.WEST, cmdSearch, 450, SpringLayout.WEST, this.getContentPane());
 
 		//Set the properties of the frame/pane
 		this.setSize(600,400);
