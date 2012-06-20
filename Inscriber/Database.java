@@ -366,11 +366,11 @@ public class Database
     		if(rs.getString("name").equals(groupName))
     		{
     			group.setName(rs.getString("name"));
-    			if(rs.getInt("canEdit") == 1){permissions[0] = true}else{permissions[0] = false}
-    			if(rs.getInt("canChat") == 1){permissions[0] = true}else{permissions[0] = false}
-    			if(rs.getInt("canExport") == 1){permissions[0] = true}else{permissions[0] = false}
-    			if(rs.getInt("canFormat") == 1){permissions[0] = true}else{permissions[0] = false}
-    			if(rs.getInt("canAccess") == 1){permissions[0] = true}else{permissions[0] = false}
+    			if(rs.getInt("canEdit") == 1){permissions[0] = true;}else{permissions[0] = false;}
+    			if(rs.getInt("canChat") == 1){permissions[1] = true;}else{permissions[1] = false;}
+    			if(rs.getInt("canExport") == 1){permissions[2] = true;}else{permissions[2] = false;}
+    			if(rs.getInt("canFormat") == 1){permissions[3] = true;}else{permissions[3] = false;}
+    			if(rs.getInt("canAccess") == 1){permissions[4] = true;}else{permissions[4] = false;}
     		}
     	}
 

@@ -32,6 +32,7 @@ public class DocumentBrowser extends JFrame implements ActionListener
 		cmdSortByCharacters = new JButton("Sort by Character");
 		cmdSortBySentences = new JButton("Sort by Sentences");
 		cmdSortByWords = new JButton("Sort by Words");
+		cmdSearch = new JButton("Search for Document");
 
 		//Call method to create GUI
 		setGUI();
@@ -80,4 +81,26 @@ public class DocumentBrowser extends JFrame implements ActionListener
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 	}//End of setGUI method
+
+	   //Perform an action whenever a button is pressed
+    public void actionPerformed (ActionEvent evt)
+    {
+    	//Check which button was pressed
+		if("sortname".equals(evt.getActionCommand()))
+		{
+			sortByName();
+		}
+		else if ("sortchars".equals(evt.getActionCommand()))
+		{
+			sortByCharacters();
+		}
+		else if ("sortwords".equals(evt.getActionCommand()))
+		{
+			sortByWords();
+		}
+		else if ("sortsentences".equals(evt.getActionCommand()))
+		{
+			sortBySentences();
+		}
+    }//End of actionPerformed method
 }//End of class
