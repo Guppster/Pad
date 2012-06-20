@@ -52,7 +52,7 @@ public class Client
 				{
 					if(!(database.getLoginStatus(tempUser))) // Check if the user is already logged in
 					{
-						new Lobby(tempUser);//Open the Lobby screen
+						new Lobby(tempUser, this);//Open the Lobby screen
 						database.switchLoginStatus(tempUser);//Set the users status to logged in, so another client may not login with identical credentials
 					}
 					else
