@@ -57,7 +57,6 @@ public class Client
 						if(!database.getLoginStatus(tempUser)) // Check if the user is already logged in
 						{
 							database.switchLoginStatus(tempUser);//Set the users status to logged in, so another client may not login with identical credentials
-							new Lobby();//Open the Lobby screen
 						}
 						else
 							eHandler.displayError("ALI");
