@@ -91,7 +91,7 @@ public class Document
 		//While there is text coming in
     	while((text = in.readLine()) != null)
     	{
-     		writer.write(text);
+
 		}
 
 		in.close();
