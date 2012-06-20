@@ -70,7 +70,7 @@ public class Client
 		    	in.close();
 		    	out.close();
 		    	scan.close();
-			}catch(IOException er){System.out.println("Error in tester.");}
+			}catch(IOException er){System.out.println("Error in tester. " + er);}
 
 			/*//If it connects fine(The socket won't be null), check the users login information
 	        if(sClient != null)
