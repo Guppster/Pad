@@ -76,6 +76,8 @@ public class ErrorHandler
 			errorToDisplay = "Could not remove group.";
 		else if(errorCode.equals("CNAG"))
 			errorToDisplay = "Could not add group.";
+		else if(errorCode.equals("NGS"))
+			errorToDisplay = "No group selected!";
 
 		// the "." is the flag that triggers the error, this allows to add multiple errors to one message box
 		if(errorCode.equals("."))

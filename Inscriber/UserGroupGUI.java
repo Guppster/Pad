@@ -159,7 +159,7 @@ public class UserGroupGUI extends JFrame implements ActionListener
 			try
 			{
 				database.removeGroup(tGroups.getValueAt(rowIndex, columnIndex).toString());
-			}catch(Exception e){System.out.println(e);}
+			}catch(Exception e){eHandler.displayError("NGS"); eHandler.displayError(".");}
 		}
 		else
 		{
