@@ -54,7 +54,11 @@ public class Database
         prep.setString(4, user.getPassword());
         prep.setString(5, user.getEmail());
         prep.setString(6, user.getGroup());
-		System.out.println("tester123456");
+
+		conn.setAutoCommit(false);
+        prep.executeBatch();
+		conn.setAutoCommit(true);
+
 		//Close the connection
 		prep.close();
         conn.close();
