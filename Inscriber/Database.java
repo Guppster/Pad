@@ -48,7 +48,7 @@ public class Database
 		Statement st = (Statement)conn.createStatement();
 
 		String state = "INSERT INTO accounts VALUES ('" + user.getFirstName() + "', '" + user.getLastName() + "', '" + user.getUsername() + "', '" + user.getPassword()
-			+ "', '" + user.getEmail() + "', '" + user.getGroup() + "')";
+			+ "', '" + user.getEmail() + "', '" + user.getGroup() + "', " + 0 + ")";
 
         /*prep.setString(1, user.getFirstName());
         prep.setString(2, user.getLastName());
