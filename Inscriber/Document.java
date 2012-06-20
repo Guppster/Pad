@@ -15,40 +15,38 @@
 import java.net.*;
 import java.io.*;
 
-new WritingMainBoard(User user);
-
 public class Document
 {
 	//Declare class fields and objects
 	private Socket sClient;
     private PrintWriter out;
     private ErrorHandler eHandler;
-
-	private String docName;
+    private String fileName;
 	private int numOfWords;
 	private int numOfSentences;
 	private int numOfCharacters;
-	private User documentOwner;
 
 	//Initializes class fields and objects
     public Document()
     {
+    	//Initialize class fields and objects
+    	fileName = "";
 		numOfWords = 0;
 		numOfSentences = 0;
 		numOfCharacters = 0;
-
-    	//Initialize class fields and objects
 		sClient = null;
 		out = null;
 		eHandler = new ErrorHandler();
     }//End of Document default constructor
 
 	//Sends the passed in filename and text from the passed in connection, to the server
-	public void saveFileToServer(String author, String filename, String fromWMB, Socket socket)
+	public void saveFileToServer(String author, String fileName, String textFromWritingMain, Socket socket)
 	{
 		//Initialize class fields
 		sClient = socket;
-		text = fromWMB;
+		this.fileName = fileName;
+		this.author = author;
+		text = textFromWritingMain;
 		in = new BufferedReader(new InputStreamReader(sClient.getInputStream()));
     	out = new PrintWriter(sClient.getOutputStream(), true);
 
@@ -56,6 +54,7 @@ public class Document
     	try
     	{
     		//Send the server the filename
+    		out.println(author)
 	    	out.println(filename);
 
 	    	//Send the server one line of text from the WritingMainBoard JTextArea
