@@ -43,7 +43,7 @@ public class Client
 		{
 			try
 			{
-	            sClient = new Socket("99.249.132.206", 22222);
+	            sClient = new Socket("192.168.0.22", 22222);
 	        }catch(IOException e){eHandler.displayError("CNC"); eHandler.displayError(".");}
 
 			try
