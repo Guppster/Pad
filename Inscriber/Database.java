@@ -224,12 +224,23 @@ public class Database
     		if(user.getUsername().equals(rs.getString("user")))
         	{
         		if(rs.getInt(7) == 1)
+        		{
+        			rs.close();
+        			conn.close();
         			return true;
+        		}
         		else
+        		{
+        			rs.close();
+        			conn.close();
         			return false;
+        		}
+
         	}
     	}
 
+		rs.close();
+        conn.close();
 		return false;
     }//End of getLoginStatus
 
