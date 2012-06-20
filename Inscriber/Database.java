@@ -62,26 +62,22 @@ public class Database
     }//End of addUser method
 
 	//Adds a new file name and author name to the database
-    public void createNewDocument() throws Exception
+    public void createNewDocument(String fileName, int numChars, int numSentences, int numWords) throws Exception
     {
+    	//Declare and initialize some fields
     	Class.forName(driver);
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
-		Statement prep = conn.prepareStatement(
-        	      "INSERT documents VALUES (?, ?, ?, ?);");
+		Statement statement = conn.prepareStatement();
 
-        prep.setString(1, "NewDocument.txt");
-        prep.setInt(2, 0);
-        prep.setInt(3, 0);
-        prep.setInt(4, 0);
-        prep.addBatch();
+		//Compile a command into a string so we can execute it
+		String state = "INSERT documents VALUES ('" + fileName + "', " + numChars + ", " + numSentences + ", " + numWords + ")";
 
-		conn.setAutoCommit(false);
-        prep.executeBatch();
-		conn.setAutoCommit(true);
+		//Execute the command
+        state.executeUpdate(state);
 
 		//Close the connection
         conn.close();
-  	}//End of create new document method
+  	}//End of createNewDocument method
 
     public boolean [] findUserExists(User user) throws Exception
     {
