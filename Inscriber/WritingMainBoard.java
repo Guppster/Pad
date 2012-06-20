@@ -739,19 +739,4 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 				}
 			});
     }//End of setMenus method
-
-    //TEST HARNESS
-    public static void main (String [] args)
-    {
-    	//Create a LookAndFeel object so we can set the look and fell of the GUI
-	    new LookAndFeel();
-
-	    SwingUtilities.invokeLater(new Runnable()
-	    {
-	    	public void run()
-	        {
-	        	WritingMainBoard board = new WritingMainBoard();
-	      	}
-	    });
-    }//End of main method
 }//End of WritingMainBoard class
