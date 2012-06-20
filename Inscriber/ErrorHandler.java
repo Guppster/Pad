@@ -66,6 +66,8 @@ public class ErrorHandler
 			errorToDisplay += "Username does not exist.";
 		else if(errorCode.equals("ALI"))
 			errorToDisplay += "User is already logged in elsewhere.";
+		else if(errorCode.equals("TMT"))
+			errorToDisplay += "You have tried logging in too frequently, please take a break and try later.";
 
 		// the "." is the flag that triggers the error, this allows to add multiple errors to one message box
 		if(errorCode.equals("."))
