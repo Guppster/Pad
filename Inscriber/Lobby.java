@@ -159,6 +159,11 @@ public class Lobby extends JFrame implements ActionListener
 		{
 			create();
 		}
+		else if("update".equals(evt.getActionCommand()))
+		{
+			handler.displayError("NS");
+			handler.displayError(".");
+		}
     }//End of actionPerformed method
 
     //Method is called when logout button is pressed by user in lobby, disconnects the user and closes lobby, reopens the login screen.
