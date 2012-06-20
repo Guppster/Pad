@@ -72,6 +72,8 @@ public class ErrorHandler
 			errorToDisplay += "This functionality has not been implemented in this release of Inscriber.";
 		else if(errorCode.equals("CNLG"))
 			errorToDisplay += "Could not load groups.";
+		else if(errorCode.equals("CNRG"))
+			errorToDisplay += "Could not remove group.";
 
 		// the "." is the flag that triggers the error, this allows to add multiple errors to one message box
 		if(errorCode.equals("."))
