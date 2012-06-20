@@ -162,7 +162,7 @@ public class Lobby extends JFrame implements ActionListener
 		try
 		{
 			database.switchLoginStatus(user);
-		}catch(Exception e){eHandler.displayError("CNL"); eHandler.displayError(".");}
+		}catch(Exception e){eHandler.displayError("CNAD"); eHandler.displayError(".");}
 
 		new Login();
 		this.dispose();
