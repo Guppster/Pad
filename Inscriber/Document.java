@@ -53,8 +53,11 @@ public class Document
 		this.fileName = fileName;
 		this.author = author;
 		text = textFromWritingMain;
-    	out = new PrintWriter(sClient.getOutputStream(), true);
 
+    	try
+    	{
+    		out = new PrintWriter(sClient.getOutputStream(), true);
+    	}catch(IOException e){System.out.println("Error - " + e);}
 
 		//Send the server the author of the file, and the filename
 		out.println(author);
@@ -75,7 +78,7 @@ public class Document
     		sClient = null;
     		out.close();
     		sClient.close();
-    	}catch(IOException exc2){eHandler.displayError("CNCC");}
+    	}catch(IOException e2){eHandler.displayError("CNCC");}
 	}//End of saveFileToServer method
 
 	//Retrieves a text file from the server and 'opens it'
