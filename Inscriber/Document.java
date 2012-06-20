@@ -22,6 +22,8 @@ public class Document
     private PrintWriter out;
     private ErrorHandler eHandler;
     private String fileName;
+    private String author;
+    private String text;
 	private int numOfWords;
 	private int numOfSentences;
 	private int numOfCharacters;
@@ -30,13 +32,15 @@ public class Document
     public Document()
     {
     	//Initialize class fields and objects
+    	sClient = null;
+    	out = null;
+    	eHandler = new ErrorHandler();
     	fileName = "";
+    	author = "";
+    	text = "";
 		numOfWords = 0;
 		numOfSentences = 0;
 		numOfCharacters = 0;
-		sClient = null;
-		out = null;
-		eHandler = new ErrorHandler();
     }//End of Document default constructor
 
 	//Sends text to the server to be compiled and saved
