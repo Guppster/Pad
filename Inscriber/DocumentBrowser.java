@@ -106,4 +106,25 @@ public class DocumentBrowser extends JFrame implements ActionListener
 			sortBySentences();
 		}
     }//End of actionPerformed method
+
+    private void sortByName()
+    {
+
+    }
+
+    private void sortByCharacters()
+    {
+
+    }
+
+    private void sortByWords()
+    {
+
+    }
+
+    private void sortBySentences()
+    {
+
+    }
+
 }//End of class
