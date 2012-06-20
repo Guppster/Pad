@@ -123,7 +123,10 @@ public class TableHelper
 
 	public void addArrayList(JTable table, DefaultTableModel model, ArrayList<String> data)
 	{
-		//model.addRow(data);
+		for(int x = 0; x < data.length; x++)
+		{
+			table.addRowOfData(data[x], table, model);
+		}
 	}
 
 	/*//A method to fill an array with the data from the JTable so we can send it to the server
