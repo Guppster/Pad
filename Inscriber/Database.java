@@ -45,22 +45,21 @@ public class Database
     {
     	Class.forName(driver);
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
-		PreparedStatement prep = conn.prepareStatement(
-        	      "INSERT accounts VALUES (?, ?, ?, ?, ?, ?);");
+		Statement st = (Statement)conn.createStatement();
 
-        prep.setString(1, user.getFirstName());
+		String state = "INSERT INTO accounts VALUES ('" + user.getFirstName() + "', '" + user.getLastName() + "', '" + user.getUsername() + "', '" + user.getPassword()
+			+ "', '" + user.getEmail() + "', '" + user.getGroup() + "')";
+
+        /*prep.setString(1, user.getFirstName());
         prep.setString(2, user.getLastName());
         prep.setString(3, user.getUsername());
         prep.setString(4, user.getPassword());
         prep.setString(5, user.getEmail());
-        prep.setString(6, user.getGroup());
-        prep.addBatch();
-
-		conn.setAutoCommit(false);
-        prep.executeBatch();
-		conn.setAutoCommit(true);
-
+        prep.setString(6, user.getGroup());*/
+        state.executeUpdate(state);
+		System.out.println("tester123456");
 		//Close the connection
+		st.close();
         conn.close();
     }//End of addUser method
 
