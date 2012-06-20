@@ -304,7 +304,7 @@ public class Register extends JFrame implements ActionListener, KeyListener
 					try
 					{
 						database.addUser(user);
-					}catch(Exception e){System.out.println(e + " - An error occurred while try to add the user to the database.");}
+					}catch(Exception e){handler.displayError("CNAD"); handler.displayError(".");}
 				}
 			}
 		}
@@ -334,7 +334,7 @@ public class Register extends JFrame implements ActionListener, KeyListener
 					try
 					{
 						database.addUser(user);
-					}catch(Exception exc){System.out.println(exc + " - An error occurred while try to add the user to the database.");}
+					}catch(Exception exc){handler.displayError("CNAD"); handler.displayError(".");}
 				}
 			}
        	}
@@ -343,19 +343,4 @@ public class Register extends JFrame implements ActionListener, KeyListener
     //Not needed but required
     public void keyTyped(KeyEvent e){}
     public void keyReleased(KeyEvent e){}
-
-	//Test harness
-	public static void main(String [] args)
-	{
-		//Create a LookAndFeel object so we can set the look and fell of the GUI
-	    new LookAndFeel();
-
-	    SwingUtilities.invokeLater(new Runnable()
-	    {
-	    	public void run()
-	        {
-	        	new Register();
-	      	}
-	    });
-	}//End of test harness
 }//End of Register class
