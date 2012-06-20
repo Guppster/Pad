@@ -416,7 +416,7 @@ public class Database
     	{
 			if(rs.getRow() == rowIndex)
 			{
-				rs.getString("")
+
 			}
     	}
    	}
