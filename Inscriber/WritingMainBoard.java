@@ -392,7 +392,7 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 			{
 				public void actionPerformed(ActionEvent e)
 				{
-					System.out.println("New");
+					taDocument.setText("");
 				}
 			});
 
@@ -415,24 +415,6 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 				}
 			});
 
-    	menu.createMenuItem("Save as");
-    	menu.getMenuItem().addActionListener(new ActionListener()
-			{
-				public void actionPerformed(ActionEvent e)
-				{
-					System.out.println("Save as");
-				}
-			});
-
-    	menu.createMenuItem("Print");
-    	menu.getMenuItem().addActionListener(new ActionListener()
-			{
-				public void actionPerformed(ActionEvent e)
-				{
-					System.out.println("Print");
-				}
-			});
-
     	menu.createMenuItem("Exit");
     	menu.getMenuItem().addActionListener(new ActionListener()
 			{
@@ -444,60 +426,6 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 
 		//Create the 'Edit' menus
 		menu.createMainMenu("Edit");
-		menu.createMenuItem("Undo");
-		menu.getMenuItem().addActionListener(new ActionListener()
-			{
-				public void actionPerformed(ActionEvent e)
-				{
-					System.out.println("Undo");
-				}
-			});
-
-		menu.createMenuItem("Redo");
-		menu.getMenuItem().addActionListener(new ActionListener()
-			{
-				public void actionPerformed(ActionEvent e)
-				{
-					System.out.println("Redo");
-				}
-			});
-
-		menu.createMenuItem("Cut");
-		menu.getMenuItem().addActionListener(new ActionListener()
-			{
-				public void actionPerformed(ActionEvent e)
-				{
-					System.out.println("Cut");
-				}
-			});
-
-		menu.createMenuItem("Copy");
-		menu.getMenuItem().addActionListener(new ActionListener()
-			{
-				public void actionPerformed(ActionEvent e)
-				{
-					System.out.println("Copy");
-				}
-			});
-
-		menu.createMenuItem("Paste");
-		menu.getMenuItem().addActionListener(new ActionListener()
-			{
-				public void actionPerformed(ActionEvent e)
-				{
-					System.out.println("Paste");
-				}
-			});
-
-		menu.createMenuItem("Select All");
-		menu.getMenuItem().addActionListener(new ActionListener()
-			{
-				public void actionPerformed(ActionEvent e)
-				{
-					System.out.println("Select All");
-				}
-			});
-
 		menu.createMenuItem("Find/Replace");
 		menu.getMenuItem().addActionListener(new ActionListener()
 			{
@@ -518,43 +446,6 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 				}
 			});
 
-		menu.createSubMenu("Zoom");
-		menu.createSubMenuItem("25%");
-		menu.getSubMenuItem().addActionListener(new ActionListener()
-			{
-				public void actionPerformed(ActionEvent e)
-				{
-					System.out.println("25%");
-				}
-			});
-
-		menu.createSubMenuItem("50%");
-		menu.getSubMenuItem().addActionListener(new ActionListener()
-			{
-				public void actionPerformed(ActionEvent e)
-				{
-					System.out.println("50%");
-				}
-			});
-
-		menu.createSubMenuItem("75%");
-		menu.getSubMenuItem().addActionListener(new ActionListener()
-			{
-				public void actionPerformed(ActionEvent e)
-				{
-					System.out.println("75%");
-				}
-			});
-
-		menu.createSubMenuItem("100%");
-		menu.getSubMenuItem().addActionListener(new ActionListener()
-			{
-				public void actionPerformed(ActionEvent e)
-				{
-					System.out.println("100%");
-				}
-			});
-
 		menu.createSubMenu("Toolbars");
 		menu.createSubCheckMenuItem("Hide Admin Toolbar");
 		menu.getSubCheckMenuItem().addActionListener(new ActionListener()
@@ -571,141 +462,6 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 				public void actionPerformed(ActionEvent e)
 				{
 					toggleConnChatToolbar();
-				}
-			});
-
-		//Create the 'Admin Panel' menus
-		menu.createMainMenu("Admin Panel");
-		menu.createMenuItem("User Options");
-		menu.getMenuItem().addActionListener(new ActionListener()
-			{
-				public void actionPerformed(ActionEvent e)
-				{
-					System.out.println("User Options");
-				}
-			});
-
-		menu.createMenuItem("Kick");
-		menu.getMenuItem().addActionListener(new ActionListener()
-			{
-				public void actionPerformed(ActionEvent e)
-				{
-					kick();
-				}
-			});
-
-		menu.createMenuItem("Ban");
-		menu.getMenuItem().addActionListener(new ActionListener()
-			{
-				public void actionPerformed(ActionEvent e)
-				{
-					ban(0);//0 means permanent
-				}
-			});
-
-		menu.createSubMenu("Timeout User");
-		menu.createSubMenuItem("1 Minute");
-		menu.getSubMenuItem().addActionListener(new ActionListener()
-			{
-				public void actionPerformed(ActionEvent e)
-				{
-					timeout(1);//1 means 1 minute
-				}
-			});
-
-		menu.createSubMenuItem("5 Minutes");
-		menu.getSubMenuItem().addActionListener(new ActionListener()
-			{
-				public void actionPerformed(ActionEvent e)
-				{
-					timeout(5);//1 means 5 minutes
-				}
-			});
-
-		menu.createSubMenuItem("10 Minutes");
-		menu.getSubMenuItem().addActionListener(new ActionListener()
-			{
-				public void actionPerformed(ActionEvent e)
-				{
-					timeout(10);//1 means 10 minutes
-				}
-			});
-
-		menu.createSubMenuItem("30 Minutes");
-		menu.getSubMenuItem().addActionListener(new ActionListener()
-			{
-				public void actionPerformed(ActionEvent e)
-				{
-					timeout(30);//1 means 30 minutes
-				}
-			});
-
-		menu.createMenuItem("Lock Document Screen");
-		menu.getMenuItem().addActionListener(new ActionListener()
-			{
-				public void actionPerformed(ActionEvent e)
-				{
-					System.out.println("Lock Document Screen");
-				}
-			});
-
-
-		//Create the 'Options' menus
-		menu.createMainMenu("Options");
-
-		//Create all the 'Options' menu, menu items
-		menu.createMenuItem("Bold");
-		menu.getMenuItem().addActionListener(new ActionListener()
-			{
-				public void actionPerformed(ActionEvent e)
-				{
-					//text.setBold(spDocument);
-				}
-			});
-
-		menu.createMenuItem("Italics");
-		menu.getMenuItem().addActionListener(new ActionListener()
-			{
-				public void actionPerformed(ActionEvent e)
-				{
-					//text.setItalics(spDocument);
-				}
-			});
-
-		menu.createMenuItem("Underline");
-		menu.getMenuItem().addActionListener(new ActionListener()
-			{
-				public void actionPerformed(ActionEvent e)
-				{
-					//text.setUnderline(spDocument);
-				}
-			});
-
-		menu.createMenuItem("Edit Text Colour");
-		menu.getMenuItem().addActionListener(new ActionListener()
-			{
-				public void actionPerformed(ActionEvent e)
-				{
-					//text.setTextColour(spDocument);
-				}
-			});
-
-
-		menu.createMenuItem("Edit Font Type");
-		menu.getMenuItem().addActionListener(new ActionListener()
-			{
-				public void actionPerformed(ActionEvent e)
-				{
-					System.out.println("Edit Font Type");
-				}
-			});
-
-		menu.createMenuItem("Edit Font Size");
-		menu.getMenuItem().addActionListener(new ActionListener()
-			{
-				public void actionPerformed(ActionEvent e)
-				{
-					System.out.println("Edit Font Size");
 				}
 			});
 
