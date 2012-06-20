@@ -19,7 +19,7 @@ public class UserGroup
     public UserGroup()
     {
     	name = "Default";
-    	permissions = new boolean[5];
+    	permissions = new boolean[5]; //canEdit, canChat, canExport, canFormat, canAccess
     }//End of default constructor
 
     public UserGroup(String name, boolean [] permissions)
