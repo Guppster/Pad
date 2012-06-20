@@ -61,9 +61,10 @@ public class Client
 						}
 						else
 						{
+							//Indicates to the user that that account is already logged in elsewhere
 							eHandler.displayError("ALI");
 							eHandler.displayError(".");
-							new Login();
+							new Login(); //Login is reopened because program is suspeciously closed after the message box
 						}
 					}
 					else
