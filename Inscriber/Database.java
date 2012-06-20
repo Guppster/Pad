@@ -169,6 +169,7 @@ public class Database
         		 if(rs.getInt(7) == 0)
         		 {
         		 	stat.executeUpdate("UPDATE `accounts` SET `loggedIn`='1' WHERE (`user`='" + user.getUsername() + "') AND (`pass`='" + user.getPassword() + "') AND (`loggedIn`='0') LIMIT 1;");
+        		 	break;
         		 }
         		 else
         			stat.executeUpdate("UPDATE `accounts` SET `loggedIn`='0' WHERE (`user`='" + user.getUsername() + "') AND (`pass`='" + user.getPassword() + "') AND (`loggedIn`='0') LIMIT 1;");
