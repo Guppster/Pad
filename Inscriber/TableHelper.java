@@ -16,6 +16,7 @@ import java.awt.event.*;
 import java.text.*;
 import java.awt.*;
 import javax.swing.table.*;
+import java.util.*;
 
 public class TableHelper
 {
