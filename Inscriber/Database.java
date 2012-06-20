@@ -327,35 +327,42 @@ public class Database
 
 		//Group name was not found in the database, return nothing
 		return "";
-    }//End of getGroupName
+    }//End of getGroupName method
 
+	//A method to get the number of groups in the database
     public int getNumGroups() throws Exception
     {
-    	int numRows = 0;
-        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
-    	Statement stat = conn.createStatement();
+    	//Declare and initialize some fields
+    	Class.forName(driver);//Access' the MYSQL driver folder so we can use methods from it(Same as beckerrobot.jar)
+        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);//Create a new connection with the specified hostname, port, and database username/password
+    	Statement stat = conn.createStatement();//Create a new statement under the new connection
+     	ResultSet rs = stat.executeQuery("SELECT * FROM usergroups;");//Creates a result set object so we can query the database
+     	int numRows = 0;//Used to hold the number of rows(groups)
 
-     	ResultSet rs = stat.executeQuery("SELECT * FROM usergroups;");
-
+		//While the next selected column is not null
      	while(rs.next())
 	 	{
 			numRows++;
 	 	}
 
-		//Closes the resultSet and connection
+		//Closes the ResultSet and connection
 	 	rs.close();
 	 	conn.close();
 
+		//Return the number of rows that was calculated
 	 	return numRows;
-    }//End og getNumGroups
+    }//End of getNumGroups method
 
+	//A method to remove a group from the database(Database searches for passed in group name, if it exists, it deletes the entire group from the database)
     public void removeGroup(String groupName) throws Exception
     {
-        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
-    	Statement stat = conn.createStatement();
+    	//Declare and initialize some fields
+    	Class.forName(driver);//Access' the MYSQL driver folder so we can use methods from it(Same as beckerrobot.jar)
+        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);//Create a new connection with the specified hostname, port, and database username/password
+    	Statement stat = conn.createStatement();//Create a new statement under the new connection
+    	ResultSet rs = stat.executeQuery("SELECT * FROM usergroups;");//Creates a result set object so we can query the database
 
-    	ResultSet rs = stat.executeQuery("SELECT * FROM usergroups;");
-
+		//While the next selected column is not null
     	while(rs.next())
 	 	{
 			if(groupName.equals(rs.getString("name")))
@@ -364,24 +371,25 @@ public class Database
 			}
 	 	}
 
-    	//Closes the resultSet and connection
+    	//Closes the ResultSet and connection
 	 	rs.close();
 	 	conn.close();
-
     }//End of removeGroup method
 
+	//A method to initialize a new user object from the registered users on the database
     public User initializeUser(User user) throws Exception
     {
-    	User iniUser = new User();
+    	//Declare and initialize some fields
+		Class.forName(driver);//Access' the MYSQL driver folder so we can use methods from it(Same as beckerrobot.jar)
+    	Connection conn = DriverManager.getConnection(url, dbUser, dbPass);//Create a new connection with the specified hostname, port, and database username/password
+    	Statement stat = conn.createStatement();//Create a new statement under the new connection
+    	ResultSet rs = stat.executeQuery("SELECT * FROM accounts;");//Creates a result set object so we can query the database
+    	User iniUser = new User();//Creates a new empty User object
 
-    	Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
-    	Statement stat = conn.createStatement();
-
-    	ResultSet rs = stat.executeQuery("SELECT * FROM accounts;");
-
+		//While the next selected column is not null
     	while(rs.next())
     	{
-    		//find the user in database which matches login credentials
+    		//Find the user in database which matches login credentials
     		if(user.getUsername().equals(rs.getString("user")) && user.getPassword().equals(rs.getString("pass")))
 			{
 				//Initialize all fields of new user object based on the selected entry
@@ -394,23 +402,24 @@ public class Database
 			}
     	}
 
-	    //Closes the resultSet and connection
+	    //Close the ResultSet and connection
     	rs.close();
     	conn.close();
 
+		//Return the new full User object
     	return iniUser;
     }//End of initializeUser method
 
     //This method looks in the usergroup table and finds the group name and then initializes the rest of the fields(permissions) for the usergroup object it will return
     public UserGroup initializeGroup(String groupName) throws Exception
     {
-    	UserGroup group = new UserGroup();
-    	Boolean [] permissions = new Boolean[5];
-
-    	Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
-    	Statement stat = conn.createStatement();
-
-    	ResultSet rs = stat.executeQuery("SELECT * FROM usergroups;");
+    	//Declare and initialize some fields
+		Class.forName(driver);//Access' the MYSQL driver folder so we can use methods from it(Same as beckerrobot.jar)
+    	Connection conn = DriverManager.getConnection(url, dbUser, dbPass);//Create a new connection with the specified hostname, port, and database username/password
+    	Statement stat = conn.createStatement();//Create a new statement under the new connection
+    	ResultSet rs = stat.executeQuery("SELECT * FROM usergroups;");//Creates a result set object so we can query the database
+    	UserGroup group = new UserGroup();//Creates a new empty UserGroup object
+    	boolean [] permissions = new boolean[5];//Used to store the permissions from the database
 
     	while(rs.next())
     	{
