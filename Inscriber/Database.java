@@ -1,13 +1,13 @@
 /**
  * @(#)Database.java
  *
- *
  * @author Gurpreet Singh, Matthew Ufimzeff
  * @version 1.00 2012/6/20
  *
- * @Latest Updates: Database can now sucessfully add a new user, add a new document
+ * @Class Description: This class is used to do everything database related, such as add, delete, search, edit, the database - This class also allows
+ *						the connection to the database to be made.
  *
- * @Status: Complete ~ accomodating for currently created classes
+ * @Status: Finished - Completely commented
  */
 
 //Import Java API Packages
@@ -19,14 +19,15 @@ import java.util.*;
 public class Database
 {
 	//Constant variables storing database access information
-	private static String url = "jdbc:mysql://192.168.0.22/inscriber";
-	private static String dbUser = "project";
-	private static String dbPass = "derp";
-	private static String driver = "com.mysql.jdbc.Driver";
+	private static String url = "jdbc:mysql://192.168.0.22/inscriber";//Used to store the IP, port, and database name for the database(Used to connect to the database)
+	private static String dbUser = "project";//Used to hold the database username
+	private static String dbPass = "derp";//Used to hold the database password
+	private static String driver = "com.mysql.jdbc.Driver";//Used to hold the MYSQL driver package(Similar to BeckerRobot.jar - except this is a package path
 
 	//Database default constructor
 	public Database(){}//End of Database default constructor
 
+	//A method used to create a new table in the database
     public void createTable(String tableName) throws Exception
     {
     	//Declare and initialize some fields
@@ -499,10 +500,10 @@ public class Database
 			}
 
 			//Add the array to the array list
-			list.add(data);
+			//list.add(data);
     	}
 
-    	//No more non null rows found
+    	//No more non null rows found, return the filled ArrayList object
 		return list;
 	}//End of getDocumentsData method
-}//End of class class
+}//End of Databae class
