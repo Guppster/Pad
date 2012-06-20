@@ -354,7 +354,7 @@ public class Database
     public UserGroup initializeGroup(String groupName)
     {
     	UserGroup group = new UserGroup();
-    	Boolean [] permissions = new Boolean();
+    	Boolean [] permissions = new Boolean;
 
     	Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
     	Statement stat = conn.createStatement();
