@@ -39,7 +39,7 @@ public class Database
         conn.close();
     }//End of createDB method
 
-    public void addUser(User user) throws SQLException
+    public void addUser(User user) throws Exception
     {
     	Class.forName(driver);
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
