@@ -44,6 +44,9 @@ public class DocumentBrowser extends JFrame implements ActionListener
 
 		//Call method to create GUI
 		setGUI();
+
+		//initializes the data in table
+		InitializeTableData();
     }//End of default constructor
 
     private void setGUI()
@@ -110,7 +113,13 @@ public class DocumentBrowser extends JFrame implements ActionListener
 
 	}//End of setGUI method
 
-	   //Perform an action whenever a button is pressed
+	//Sets the initial data of the table
+	private void InitializeTableData()
+	{
+
+	}
+
+	//Perform an action whenever a button is pressed
     public void actionPerformed (ActionEvent evt)
     {
     	//Check which button was pressed
