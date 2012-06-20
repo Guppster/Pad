@@ -56,11 +56,13 @@ public class DocumentBrowser extends JFrame implements ActionListener
     	//Add the layout manager to the GUI frame
 		this.getContentPane().setLayout(layout);
 
+		//Adds 30 rows to the table
 		for(int y = 0; y <= 30; y++)
 		{
 			model.addRow(new Object[]{});
 		}
 
+		//Adds 5 columns to the table
 		for(int y = 0; y < 5; y++)
 		{
 			model.addColumn(new Object[]{});
