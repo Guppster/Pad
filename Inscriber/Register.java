@@ -1,14 +1,13 @@
 /**
  * @(#)Register.java
  *
- * @Description
+ * @author Gurpreet Singh, Matthew Ufimzeff
+ * @version 1.00 2012/6/20
  *
- * @author Gurpreet Singh, Matt Ufimzeff
- * @version 1.00 2012/6/15
+ * @Description: This class is used to allow the user to create a new account for the program. It will also allow them the ability to login to use
+ *					the program.
  *
- * @Latest Updates: fixed and re-checked methods involving validity of input
- *
- * @Status: Complete ~ accomodating for currently created classes
+ * @Status: Finished - Completely commented - No errors.
  */
 
 //Import Java API packages
@@ -18,35 +17,36 @@ import javax.swing.*;
 
 public class Register extends JFrame implements ActionListener, KeyListener
 {
-	//Declare class fields and objects
-	private JLabel lblFirst;
-	private JLabel lblLast;
-	private JLabel lblEmail;
-	private JLabel lblEConfirm;
-	private JLabel lblNewUser;
-	private JLabel lblNewPass;
-	private JLabel lblPConfirm;
-	private JTextField txtFirst;
-	private JTextField txtLast;
-	private JTextField txtEmail;
-	private JTextField txtEConfirm;
-	private JTextField txtNewUser;
-	private JPasswordField pfNewPass;
-	private JPasswordField pfPConfirm;
-	private JButton cmdRegister;
-	private JButton cmdBack;
-	private ErrorHandler handler;
-	private SpringLayout layout;
-	private String eConfirm;
-	private char[] tempPConfirm;
-	private String pConfirm;
-	private User user;
-	private Database database;
+	//Declare class objects and fields
+	private JLabel lblFirst;//Creates a new JLabel object
+	private JLabel lblLast;//Creates a new JLabel object
+	private JLabel lblEmail;//Creates a new JLabel object
+	private JLabel lblEConfirm;//Creates a new JLabel object
+	private JLabel lblNewUser;//Creates a new JLabel object
+	private JLabel lblNewPass;//Creates a new JLabel object
+	private JLabel lblPConfirm;//Creates a new JLabel object
+	private JTextField txtFirst;//Creates a new JTextField object
+	private JTextField txtLast;//Creates a new JTextField object
+	private JTextField txtEmail;//Creates a new JTextField object
+	private JTextField txtEConfirm;//Creates a new JTextField object
+	private JTextField txtNewUser;//Creates a new JTextField object
+	private JPasswordField pfNewPass;//Creates a new JPasswordField object
+	private JPasswordField pfPConfirm;//Creates a new JPasswordField object
+	private JButton cmdRegister;//Creates a new JButton object
+	private JButton cmdBack;//Creates a new JButton object
+	private ErrorHandler handler;//Creates a new ErrorHandler object
+	private SpringLayout layout;//Creates a new SpringLayout object
+	private User user;//Creates a new User object
+	private Database database;//Creates a new Database object
+	private String eConfirm;//Used to hold whether or not the email entered matches the confirm email field
+	private char[] tempPConfirm;//Used to hold the raw password from the JPasswordField
+	private String pConfirm;//Used to hold the converted password
+	private boolean errorThrown;
 
-	//Initialize class fields and objects
+	//Initializes class objects and fields
     public Register()
     {
-    	//Initialize class fields and objects
+    	//Initialize class objects and fields
 		lblFirst = new JLabel("First Name:");
 		lblLast = new JLabel("Last Name:");
 		lblEmail = new JLabel("Email Address:");
@@ -67,6 +67,7 @@ public class Register extends JFrame implements ActionListener, KeyListener
 		user = new User();
 		handler = new ErrorHandler();
 		database = new Database();
+		errorThrown = false;
 
 		//Call the setGUI method to construct all the GUI components
 		setGUI();
@@ -178,10 +179,9 @@ public class Register extends JFrame implements ActionListener, KeyListener
     	this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}//End of setGUI method
 
+	//A method to check the input from the user for errors - and displaying an error message to the user if an error exists
 	private boolean checkErrorsAndInitialize()
 	{
-		boolean errorThrown = false;
-
     	//Initialize class fields
     	if(txtFirst.getText() != null)
     		user.setFirstName(txtFirst.getText());
