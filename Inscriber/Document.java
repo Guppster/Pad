@@ -25,6 +25,7 @@ public class Document
     private String fileName;
     private String author;
     private String text;
+    private String textFromServer;
 	private int numOfWords;
 	private int numOfSentences;
 	private int numOfCharacters;
@@ -40,6 +41,7 @@ public class Document
     	fileName = "";
     	author = "";
     	text = "";
+    	textFromServer = "";
 		numOfWords = 0;
 		numOfSentences = 0;
 		numOfCharacters = 0;
