@@ -443,18 +443,18 @@ public class Database
     	return group;
     }//End of initializeGroup method
 
+	//This class was used to get all the document properties from the database, store them in an arrayList and then return the ArrayList - DOES NOT WORK
     public ArrayList<String> getDocumentsData() throws Exception
    	{
-   		//PUT ALL THE "data[0]... data[1]... etc" INTO A LOOP TO LOOP THROUGH UNTIL IT REACHES A NULL ROW(while rs.next())
+   		//Declare and initialize some fields
+   		Class.forName(driver);//Access' the MYSQL driver folder so we can use methods from it(Same as beckerrobot.jar)
+   		Connection conn = DriverManager.getConnection(url, dbUser, dbPass);//Create a new connection with the specified hostname, port, and database username/password
+    	Statement stat = conn.createStatement();//Create a new statement under the new connection
+    	ResultSet rs = stat.executeQuery("SELECT * FROM documents;");//Creates a result set object so we can query the database
+    	ArrayList<String> list = new ArrayList<String>();//Used to hold all the arrays full of document properties retrieved from the database
+    	String[] data = new String[3];//Used to hold all the properties we take in from the database
 
-   		ArrayList<String> list = new ArrayList<String>();
-   		String[] data = new String[3];
-
-   		Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
-    	Statement stat = conn.createStatement();
-
-    	ResultSet rs = stat.executeQuery("SELECT * FROM documents;");
-
+		//While the next selected column is not null
     	while(rs.next())
     	{
     		//Get the name for that particular document and store it in an index in our array
@@ -499,7 +499,7 @@ public class Database
 			}
 
 			//Add the array to the array list
-			//list.add(data);
+			list.add(data);
     	}
 
     	//No more non null rows found
