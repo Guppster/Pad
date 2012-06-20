@@ -301,10 +301,10 @@ public class Register extends JFrame implements ActionListener, KeyListener
 			{
 				if(confirmIndividuality())
 				{
-				//	try
-			//		{
+					try
+					{
 						database.addUser(user);
-				//	}catch(Exception e){System.out.println("Test"); handler.displayError("CNAD"); handler.displayError(".");}
+					}catch(Exception e){System.out.println("Test"); handler.displayError("CNAD"); handler.displayError(".");}
 				}
 			}
 		}
