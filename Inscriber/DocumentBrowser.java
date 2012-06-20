@@ -32,6 +32,7 @@ public class DocumentBrowser extends JFrame implements ActionListener
 	//Default Constructor
     public DocumentBrowser()
     {
+    	model = new DefaultTableModel();
 		tDocuments = new JTable(model);
 		spDocuments = new JScrollPane(tDocuments);
 		cmdSortByName = new JButton("Sort by Name");
