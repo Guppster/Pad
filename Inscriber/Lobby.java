@@ -105,28 +105,28 @@ public class Lobby extends JFrame implements ActionListener
     	cmdBrowse.addActionListener(this);
 		this.add(cmdBrowse);
 		cmdBrowse.setActionCommand("browse");
-		layout.putConstraint(SpringLayout.NORTH, cmdBrowse, 140, SpringLayout.NORTH, this.getContentPane());
+		layout.putConstraint(SpringLayout.NORTH, cmdBrowse, 130, SpringLayout.NORTH, this.getContentPane());
 		layout.putConstraint(SpringLayout.WEST, cmdBrowse, 320, SpringLayout.WEST, this.getContentPane());
 
     	//Add the object to the frame, and set the coordinates of the object
     	cmdCheckForUpdates.addActionListener(this);
 		this.add(cmdCheckForUpdates);
 		cmdCheckForUpdates.setActionCommand("update");
-		layout.putConstraint(SpringLayout.NORTH, cmdCheckForUpdates, 180, SpringLayout.NORTH, this.getContentPane());
+		layout.putConstraint(SpringLayout.NORTH, cmdCheckForUpdates, 170, SpringLayout.NORTH, this.getContentPane());
 		layout.putConstraint(SpringLayout.WEST, cmdCheckForUpdates, 320, SpringLayout.WEST, this.getContentPane());
 
     	//Add the object to the frame, and set the coordinates of the object
     	cmdCreate.addActionListener(this);
 		this.add(cmdCreate);
 		cmdCreate.setActionCommand("create");
-		layout.putConstraint(SpringLayout.NORTH, cmdCreate, 220, SpringLayout.NORTH, this.getContentPane());
+		layout.putConstraint(SpringLayout.NORTH, cmdCreate, 210, SpringLayout.NORTH, this.getContentPane());
 		layout.putConstraint(SpringLayout.WEST, cmdCreate, 320, SpringLayout.WEST, this.getContentPane());
 
 		//Add the object to the frame, and set the coordinates of the object
 		cmdLogout.addActionListener(this);
 		this.add(cmdLogout);
 		cmdLogout.setActionCommand("logout");
-		layout.putConstraint(SpringLayout.NORTH, cmdLogout, 250, SpringLayout.NORTH, this.getContentPane());
+		layout.putConstraint(SpringLayout.NORTH, cmdLogout, 240, SpringLayout.NORTH, this.getContentPane());
 		layout.putConstraint(SpringLayout.WEST, cmdLogout, 320, SpringLayout.WEST, this.getContentPane());
 
 		//Add the object to the frame, and set the coordinates of the object
