@@ -51,7 +51,6 @@ public class Login extends JFrame implements ActionListener, KeyListener
 		lblPass = new JLabel("Password:");
 		layout = new SpringLayout();
 		database = new Database();
-		tries = 0;
 
 		//Call the setGUI method
 		setGUI();
