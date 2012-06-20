@@ -33,6 +33,7 @@ public class Login extends JFrame implements ActionListener, KeyListener
 	private SpringLayout layout;
 	private User tempUser;
 	private Client client;
+	private ErrorHandler eHandler;
 
 	public Login()
 	{
@@ -121,7 +122,7 @@ public class Login extends JFrame implements ActionListener, KeyListener
 
 				//Get rid of the Login frame to conserve resources
 				this.dispose();
-			}catch(IOException e){}
+			}catch(IOException e){eHandler.displayError("CNC"); eHandler.displayError(".");}
 		}
 		else if ("new".equals(evt.getActionCommand()))
 		{
@@ -146,7 +147,7 @@ public class Login extends JFrame implements ActionListener, KeyListener
 
 				//Get rid of the Login frame to conserve resources
 				this.dispose();
-			}catch(IOException exc){eHandler.displayError("CNC"); eHandler.displayError(".");}
+			}catch(IOException e2){eHandler.displayError("CNC"); eHandler.displayError(".");}
      	}
     }//End of keyPressed method
 
