@@ -407,6 +407,7 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 				{
 					try
 					{
+						String str = JOptionPane.showInputDialog(null, "Enter some text : ", "Enter in a filename.", 1);
 						document.saveFileToServer(user.getUsername(), , taDocument.getText());
 					}catch(IOException exc){}
 				}
