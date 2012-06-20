@@ -181,7 +181,7 @@ public class Database
         		 }
         		 else
         		 {
-        		 	stat.executeUpdate("UPDATE `accounts` SET `loggedIn`='0' WHERE (`user`='" + user.getUsername() + "') AND (`pass`='" + user.getPassword() + "') AND (`loggedIn`='0') LIMIT 1;");
+        		 	stat.executeUpdate("UPDATE `accounts` SET `loggedIn`='0' WHERE (`user`='" + user.getUsername() + "') AND (`pass`='" + user.getPassword() + "') AND (`loggedIn`='1') LIMIT 1;");
         			break;
         		 }
         	}
