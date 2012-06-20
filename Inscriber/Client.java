@@ -73,7 +73,7 @@ public class Client
 						System.out.println("Tries " + tries);
 						eHandler.displayError("WL");//Send an error code to the ErrorHandler class
 						eHandler.displayError(".");//Display the error sent over
-						new Login();//Login is reopened because program is suspeciously closed
+						//new Login();//Login is reopened because program is suspeciously closed
 						sClient = null;//Disconnect the user
 					}
 				}catch(Exception e){e.printStackTrace();}
