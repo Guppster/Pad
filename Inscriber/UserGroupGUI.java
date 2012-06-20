@@ -155,12 +155,12 @@ public class UserGroupGUI extends JFrame implements ActionListener
 		if(rowIndex != 0 && columnIndex != 0)
 		{
 			helper.removeSelectedElement(tGroups);
-		}
 
-		try
-		{
-			database.removeGroup(tGroups.getValueAt(rowIndex, columnIndex).toString());
-		}catch(Exception e){eHandler.displayError("CNRG"); eHandler.displayError(".");}
+			try
+			{
+				database.removeGroup(tGroups.getValueAt(rowIndex, columnIndex).toString());
+			}catch(Exception e){eHandler.displayError("CNRG"); eHandler.displayError(".");}
+		}
 	}//End of removeGroup method
 
 	//Test Harness
