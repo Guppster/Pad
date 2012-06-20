@@ -52,6 +52,7 @@ public class CreateNewGroup extends JFrame implements ActionListener
 		database = new Database();
 		layout = new SpringLayout();
 		group = new UserGroup();
+		handler = new ErrorHandler();
 		permissions = new boolean[5];
 		defaultPermissions = new boolean[5];
 
