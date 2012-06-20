@@ -40,7 +40,6 @@ public class Client
 	//Attempt to connect to the server
 	public void tryConnect() throws UnknownHostException
 	{
-		Server server = new Server();
 		if(tries < 6)
 		{
 			try
