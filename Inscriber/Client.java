@@ -1,14 +1,12 @@
 /**
  * @(#)Client.java
  *
- * @Description
- *
  * @author Gurpreet Singh, Matt Ufimsef
  * @version 1.00 2012/6/15
  *
- * @Latest Updates:
+ * @Description: This class is used to connect to the server.
  *
- * @Status: Complete ~ accomodating for currently created classes
+ * @Status: Finished - Fully commeneted - No Errors.
  */
 
 //Import Java API Packages
@@ -19,11 +17,11 @@ import java.util.*;
 public class Client
 {
 	//Declare class fields and objects
-	private Socket sClient;
-	private Database database;
-	private User tempUser;
-	private ErrorHandler eHandler;
-	private int tries;
+	private Socket sClient;//Create a new connection object
+	private Database database;//Create a new Database object
+	private User tempUser;//Create a new User object
+	private ErrorHandler eHandler;//Create a new ErrorHandler object
+	private int tries;//Used to hold the number of login attempts by the user
 
 	//Initializes class fields and objects
 	public Client(User tempUser)
