@@ -73,9 +73,8 @@ public class Client
 						eHandler.displayError("WL");//Send an error code to the ErrorHandler class
 						eHandler.displayError(".");//Display the error sent over
 						//new Login();//Login is reopened because program is suspeciously closed
-						sClient = null;//Disconnect the user
 					}
-				}catch(Exception e){e.printStackTrace();}
+				}catch(Exception e){eHandler.displayError(""); eHandler.displayError}
 	        }
 		}
 		else
