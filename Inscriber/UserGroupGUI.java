@@ -152,7 +152,10 @@ public class UserGroupGUI extends JFrame implements ActionListener
 		int rowIndex = tGroups.getSelectedRow();
 		int columnIndex = tGroups.getSelectedColumn();
 
-		helper.removeSelectedElement(tGroups);
+		if(rowIndex != 0 && columnIndex != 0)
+		{
+			helper.removeSelectedElement(tGroups);
+		}
 
 		try
 		{
