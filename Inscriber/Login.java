@@ -121,14 +121,12 @@ public class Login extends JFrame implements ActionListener, KeyListener
 
 				//Get rid of the Login frame to conserve resources
 				this.dispose();
-
 			}catch(IOException e){}
 		}
 		else if ("new".equals(evt.getActionCommand()))
 		{
 			//Create a Register object, thus displaying the Register frame
 			new Register();
-
 		}
     }//End of actionPerformed method
 
@@ -141,7 +139,14 @@ public class Login extends JFrame implements ActionListener, KeyListener
 		//Check if the 'Enter' key was pressed
      	if(key == KeyEvent.VK_ENTER)
      	{
+			try
+			{
+				//Try a connection with the server
+				client.tryConnect();
 
+				//Get rid of the Login frame to conserve resources
+				this.dispose();
+			}catch(IOException e){eHandler.displayError("CNC"); eHandler.displayError(".");}
      	}
     }//End of keyPressed method
 
