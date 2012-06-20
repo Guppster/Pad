@@ -286,7 +286,7 @@ public class Register extends JFrame implements ActionListener, KeyListener
 			{
 				confirmed = false;
 			}
-		}catch(Exception ex){handler.displayError("CNAD"); handler.displayError(".");}
+		}catch(Exception ex){System.out.println("Test"); handler.displayError("CNAD"); handler.displayError(".");}
 
 		return confirmed;
 	}//End of confirmIndivusuality method
