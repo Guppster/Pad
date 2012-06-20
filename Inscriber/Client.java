@@ -54,10 +54,9 @@ public class Client
 				{
 					if(database.checkLogin(tempUser))//Check if the login credentials match
 					{
-						new Lobby();//Open the Lobby screen
-
 						if(!(database.getLoginStatus(tempUser))) // Check if the user is already logged in
 						{
+							new Lobby();//Open the Lobby screen
 							database.switchLoginStatus(tempUser);//Set the users status to logged in, so another client may not login with identical credentials
 						}
 						else
