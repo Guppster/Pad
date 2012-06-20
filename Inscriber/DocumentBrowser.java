@@ -14,11 +14,14 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.table.DefaultTableModel;
 
 public class DocumentBrowser extends JFrame implements ActionListener
 {
 	//Declare class fields and objects
 	private JTable tDocuments;
+	private DefaultTableModel model;
+	private JScrollPane spDocuments;
 	private JButton cmdSortByName;
 	private JButton cmdSortByWords;
 	private JButton cmdSortByCharacters;
@@ -29,7 +32,8 @@ public class DocumentBrowser extends JFrame implements ActionListener
 	//Default Constructor
     public DocumentBrowser()
     {
-		tDocuments = new JTable();
+		tDocuments = new JTable(model);
+		spDocuments = new JScrollPane(tDocuments);
 		cmdSortByName = new JButton("Sort by Name");
 		cmdSortByCharacters = new JButton("Sort by Character");
 		cmdSortBySentences = new JButton("Sort by Sentences");
@@ -45,6 +49,20 @@ public class DocumentBrowser extends JFrame implements ActionListener
     {
     	//Add the layout manager to the GUI frame
 		this.getContentPane().setLayout(layout);
+
+		for(int y = 0; y <= 30; y++)
+		{
+			model.addRow(new Object[]{});
+		}
+
+		for(int y = 0; y < 4; y++)
+		{
+			model.addColumn(new Object[]{});
+		}
+
+		//Set some properties for the JTable object
+		tDocuments.setTableHeader(null);
+		spDocuments.setPreferredSize(new Dimension(255, 82));
 
 		//Add the object to the frame, and set the coordinates of the object
 		this.add(tDocuments);
