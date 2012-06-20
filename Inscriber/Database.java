@@ -46,10 +46,10 @@ public class Database
     	Class.forName(driver);
     	System.out.println("tester");
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
-        System.out.println("tester");
+        System.out.println("tester2");
 		PreparedStatement prep = conn.prepareStatement(
         	      "INSERT accounts VALUES (?, ?, ?, ?, ?, ?);");
-        	      System.out.println("tester");
+        	      System.out.println("tester3");
 
         prep.setString(1, user.getFirstName());
         prep.setString(2, user.getLastName());
