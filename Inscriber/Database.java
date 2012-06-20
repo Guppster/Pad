@@ -44,9 +44,12 @@ public class Database
     public void addUser(User user) throws Exception
     {
     	Class.forName(driver);
+    	System.out.println("tester");
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
+        System.out.println("tester");
 		PreparedStatement prep = conn.prepareStatement(
         	      "INSERT accounts VALUES (?, ?, ?, ?, ?, ?);");
+        	      System.out.println("tester");
 
         prep.setString(1, user.getFirstName());
         prep.setString(2, user.getLastName());
