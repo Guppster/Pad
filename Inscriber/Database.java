@@ -60,7 +60,6 @@ public class Database
 		conn.setAutoCommit(true);
 
 		//Close the connection
-		prep.close();
         conn.close();
     }//End of addUser method
 
