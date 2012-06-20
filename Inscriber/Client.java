@@ -63,6 +63,7 @@ public class Client
 						{
 							eHandler.displayError("ALI");
 							eHandler.displayError(".");
+							new Login();
 						}
 					}
 					else
