@@ -44,12 +44,9 @@ public class Database
     public void addUser(User user) throws Exception
     {
     	Class.forName(driver);
-    	System.out.println("tester");
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
-        System.out.println("tester2");
 		PreparedStatement prep = conn.prepareStatement(
-        	      "INSERT accounts VALUES (?, ?, ?, ?, ?, ?);");
-        	      System.out.println("tester3");
+        	      "INSERT INTO accounts (first, last, user, pass, email, group) VALUES (?, ?, ?, ?, ?, ?);");
 
         prep.setString(1, user.getFirstName());
         prep.setString(2, user.getLastName());
@@ -57,13 +54,9 @@ public class Database
         prep.setString(4, user.getPassword());
         prep.setString(5, user.getEmail());
         prep.setString(6, user.getGroup());
-        prep.addBatch();
-
-		conn.setAutoCommit(false);
-        prep.executeBatch();
-		conn.setAutoCommit(true);
-
+		System.out.println("tester123456");
 		//Close the connection
+		prep.close();
         conn.close();
     }//End of addUser method
 
