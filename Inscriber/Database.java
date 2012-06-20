@@ -41,33 +41,32 @@ public class Database
         conn.close();
     }//End of createDB method
 
+	//Adds a new user record to the database
     public void addUser(User user) throws Exception
     {
+    	//Declare and initialize some fields
     	Class.forName(driver);
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
-		Statement st = (Statement)conn.createStatement();
+		Statement statement = (Statement)conn.createStatement();
 
+		//Compile a command into a string so we can execute it
 		String state = "INSERT INTO accounts VALUES ('" + user.getFirstName() + "', '" + user.getLastName() + "', '" + user.getUsername() + "', '" + user.getPassword()
 			+ "', '" + user.getEmail() + "', '" + user.getGroup() + "', " + 0 + ")";
 
-        /*prep.setString(1, user.getFirstName());
-        prep.setString(2, user.getLastName());
-        prep.setString(3, user.getUsername());
-        prep.setString(4, user.getPassword());
-        prep.setString(5, user.getEmail());
-        prep.setString(6, user.getGroup());*/
-        st.executeUpdate(state);
-		System.out.println("tester123456");
+		//Execute the command
+        statement.executeUpdate(state);
+
 		//Close the connection
-		st.close();
+		statement.close();
         conn.close();
     }//End of addUser method
 
+	//Adds a new file name and author name to the database
     public void createNewDocument() throws Exception
     {
     	Class.forName(driver);
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
-		PreparedStatement prep = conn.prepareStatement(
+		Statement prep = conn.prepareStatement(
         	      "INSERT documents VALUES (?, ?, ?, ?);");
 
         prep.setString(1, "NewDocument.txt");
