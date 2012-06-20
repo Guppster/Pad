@@ -414,7 +414,10 @@ public class Database
 
     	while(rs.next())
     	{
-			if()
+			if(rs.getRow() == rowIndex)
+			{
+				rs.getString("")
+			}
     	}
    	}
 }//End of class class

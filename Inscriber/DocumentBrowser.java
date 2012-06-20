@@ -122,7 +122,10 @@ public class DocumentBrowser extends JFrame implements ActionListener
 	//Sets the initial data of the table
 	private void InitializeTableData()
 	{
-
+		for(int x = 0; x <= tDocuments.getRowCount(); x++)
+			{
+				tHelper.addElement(tDocuments, model, database.getDocumentsData(x))
+			}
 	}//End of InitializeTableData method
 
 	//Perform an action whenever a button is pressed
