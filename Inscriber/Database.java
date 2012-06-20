@@ -60,6 +60,27 @@ public class Database
         conn.close();
     }//End of addUser method
 
+    public void createNewDocument() throws Exception
+    {
+    	Class.forName(driver);
+        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
+		PreparedStatement prep = conn.prepareStatement(
+        	      "INSERT documents VALUES (?, ?, ?, ?);");
+
+        prep.setString(1, "NewDocument.txt");
+        prep.setInt(2, 0);
+        prep.setInt(3, 0);
+        prep.setInt(4, 0);
+        prep.addBatch();
+
+		conn.setAutoCommit(false);
+        prep.executeBatch();
+		conn.setAutoCommit(true);
+
+		//Close the connection
+        conn.close();
+  	}//End of create new document method
+
     public boolean [] findUserExists(User user) throws Exception
     {
     	Class.forName(driver);
