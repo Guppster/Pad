@@ -74,8 +74,6 @@ public class ErrorHandler
 			errorToDisplay = "Could not load groups.";
 		else if(errorCode.equals("CNRG"))
 			errorToDisplay = "Could not remove group.";
-		else if(errorCode.equals("CNAG"))
-			errorToDisplay = "Could not add group.";
 		else if(errorCode.equals("NGS"))
 			errorToDisplay = "No group selected!";
 
