@@ -70,17 +70,14 @@ public class DocumentBrowser extends JFrame implements ActionListener
 		cmdSortBySentences.setActionCommand("sortsentences");
 		layout.putConstraint(SpringLayout.NORTH, cmdSortBySentences, 25, SpringLayout.NORTH, this.getContentPane());
 		layout.putConstraint(SpringLayout.WEST, cmdSortBySentences, 50, SpringLayout.WEST, this.getContentPane());
-    }//End of setGUI method
 
-	//Set the properties of the frame/pane
-	this.setSize(510,295);
-	this.setResizable(false);
-	this.setLocationRelativeTo(null);
-	this.setTitle("Inscriber Lobby");
-	this.setVisible(true);
-	this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		//Set the properties of the frame/pane
+		this.setSize(510,295);
+		this.setResizable(false);
+		this.setLocationRelativeTo(null);
+		this.setTitle("Document Browser");
+		this.setVisible(true);
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-
-
-
+	}//End of setGUI method
 }//End of class
