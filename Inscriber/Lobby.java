@@ -62,7 +62,10 @@ public class Lobby extends JFrame implements ActionListener
     //This helper method initializes the user object from the database (The tempUser passed in from client only contains the username and password from login, so the database class finds the rest of the fields and inputs them into their according user fields)
     private void initializeUser()
     {
-    	user = database.initializeUser(user);
+    	try
+    	{
+    		user = database.initializeUser(user);
+    	}catch(Exception e){eHandler.displayError("CNAD"); eHandler.displayError(".");}
     }//End of initializeUser
 
 	//Adds and positions the GUI objects on the screen
