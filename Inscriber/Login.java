@@ -41,7 +41,6 @@ public class Login extends JFrame implements ActionListener, KeyListener
 	public Login()
 	{
 		//Initialize class fields and objects
-		//server = new Server();
 		image = new Image();
 		tempUser = new User();
 		txtUser = new JTextField(15);
@@ -51,7 +50,6 @@ public class Login extends JFrame implements ActionListener, KeyListener
 		lblUser = new JLabel("Username");
 		lblPass = new JLabel("Password:");
 		layout = new SpringLayout();
-		tempUser = new User();
 		database = new Database();
 		tries = 0;
 
