@@ -199,7 +199,7 @@ public class Database
         {
         	if(user.getUsername().equals(rs.getString("user")))
         	{
-        		 if(rs.getInt(6) == 0)
+        		 if(rs.getInt(7) == 0)
         		 	stat.executeQuery("UPDATE `accounts` SET `loggedIn`='1' WHERE (`user`='" + user.getUsername() + "') AND (`pass`='" + user.getPassword() + "') AND (`loggedIn`='0') LIMIT 1;");
         		 else
         			stat.executeQuery("UPDATE `accounts` SET `loggedIn`='1' WHERE (`user`='" + user.getUsername() + "') AND (`pass`='" + user.getPassword() + "') AND (`loggedIn`='0') LIMIT 1;");
