@@ -45,24 +45,6 @@ public class StatusThread extends Thread
 				{
 					sClient = (Server.getServerSocket()).accept();//Accept the connection
 
-					//ADDED THIS
-					try
-					{
-						BufferedReader lol = new BufferedReader(new InputStreamReader(sClient.getInputStream()));
-				    	PrintWriter ha = new PrintWriter(sClient.getOutputStream(), true);
-				    	BufferedWriter writer = new BufferedWriter(new FileWriter("test.txt"));
-						String text;
-
-						while ((text = lol.readLine()) != null)
-						{
-				 			writer.write(text);
-					    }
-
-						writer.close();
-					    ha.close();
-					   	lol.close();
-					}catch(IOException e){System.out.println("Something went wrong.");}
-
 					for(int x = 0; x < connections.length; x++)//Go through the connections array and search for an empty connection
 						{
 							if(connections[x] == null)
