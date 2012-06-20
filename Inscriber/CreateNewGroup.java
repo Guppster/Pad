@@ -118,7 +118,7 @@ public class CreateNewGroup extends JFrame implements ActionListener
 	}//End of setGUI method
 
 	//Loads the preset options for the group
-	private void loadDefaults()
+	private void loadDefaults() throws Exception
 	{
 		defaultPermissions = database.retrieveDefaultPermissions();
 	}//End of loadDefaults method
