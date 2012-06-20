@@ -79,4 +79,9 @@ public class Client
 			eHandler.displayError(".");
 		}
 	}//End of tryConnect method
+
+	public Socket getConnection()
+	{
+		return sClient;
+	}//End of getConnection method
 }//End of Client class
