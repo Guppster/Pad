@@ -182,6 +182,12 @@ public class Lobby extends JFrame implements ActionListener
     private void create()
     {
 		new WritingMainBoard(user, client);
+
+		try
+		{
+			database.switchLoginStatus(user);
+		}catch(Exception e){eHandler.displayError("CNSD"); eHandler.displayError(".");}
+
 		database.createNewDocument();
 		this.dispose();
     }//End of create method
