@@ -320,4 +320,34 @@ public class Database
 	 	rs.close();
 	 	conn.close();
     }//End of removeGroup method
+
+    public User initializeUser(User user)
+    {
+    	User iniUser = new User();
+    	UserGroup group = new UserGroup();
+
+    	Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
+    	Statement stat = conn.createStatement();
+
+    	ResultSet rs = stat.executeQuery("SELECT * FROM accounts;");
+
+    	while(rs.next())
+    	{
+    		//find the user in database which matches login credentials
+    		if(user.getUsername().equals(rs.getString("user")) && user.getPassword().equals(rs.getString("pass")))
+			{
+				//Initialize all fields of new user object based on the selected entry
+				iniUser.setFirstName(rs.getString("first"));
+				iniUser.setLastName(rs.getString("last"));
+				iniUser.setUsername(rs.getString("user"));
+				iniUser.setPassword(rs.getString("pass").toCharArray());
+				iniUser.setEmail(rs.getString("email"));
+				iniUser.setGroup(rs.getString("group"));
+			}
+    	}
+
+    	rs.close();
+    	conn.close();
+    	return iniUser;
+    }//End of initializeUser method
 }//End of class class
