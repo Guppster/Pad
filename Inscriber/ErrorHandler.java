@@ -68,6 +68,8 @@ public class ErrorHandler
 			errorToDisplay += "User is already logged in elsewhere.";
 		else if(errorCode.equals("TMT"))
 			errorToDisplay += "You have tried logging in too frequently, please take a break and try later.";
+		else if(errorCode.equals("NS"))
+			errorToDisplay += "This functionality has not been implemented in this release of Inscriber.";
 
 		// the "." is the flag that triggers the error, this allows to add multiple errors to one message box
 		if(errorCode.equals("."))
