@@ -28,7 +28,7 @@ public class Database
     {
     }//End of default constructor
 
-    public void createTable(String tableName) throws Exception
+    public void createTable(String tableName) throws SQLException
     {
         Class.forName(driver);
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
@@ -39,7 +39,7 @@ public class Database
         conn.close();
     }//End of createDB method
 
-    public void addUser(User user) throws Exception
+    public void addUser(User user) throws SQLException
     {
     	Class.forName(driver);
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
@@ -61,7 +61,7 @@ public class Database
         conn.close();
     }//End of addUser method
 
-    public boolean [] findUserExists(User user) throws Exception
+    public boolean [] findUserExists(User user) throws SQLException
     {
     	Class.forName(driver);
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
@@ -90,7 +90,7 @@ public class Database
         return conditions;
     }//End of findUserExists
 
-    public boolean checkLogin(User user) throws Exception
+    public boolean checkLogin(User user) throws SQLException
     {
     	Class.forName(driver);
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
@@ -153,7 +153,7 @@ public class Database
     }//End of Check login method
 
 	//Finds the user according to the login credentials and sets its loggedIn varaiable to true;
-    public void switchLoginStatus(User user) throws Exception
+    public void switchLoginStatus(User user) throws SQLException
     {
 		Class.forName(driver);
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
@@ -183,7 +183,7 @@ public class Database
     }//End of loginUser method
 
     //returns a boolean indicating weather the user is logged in or not
-    public boolean getLoginStatus(User user) throws Exception
+    public boolean getLoginStatus(User user) throws SQLException
     {
     	Class.forName(driver);
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
@@ -215,7 +215,7 @@ public class Database
 		return false;
     }//End of getLoginStatus
 
-    public boolean [] retrieveDefaultPermissions() throws Exception
+    public boolean [] retrieveDefaultPermissions() throws SQLException
     {
     	boolean [] permissions = new boolean[5];
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
@@ -232,13 +232,14 @@ public class Database
 			permissions[4] = rs.getBoolean("canAccess");
         }
 
+	    //Closes the resultSet and connection
         rs.close();
         conn.close();
 
         return permissions;
     }//End of retrieveDefaultPermissions method
 
-    public void addNewGroup(UserGroup group) throws Exception
+    public void addNewGroup(UserGroup group) throws SQLException
     {
     	boolean [] permissions = new boolean[5];
     	permissions = group.getPermissions();
@@ -260,7 +261,7 @@ public class Database
         conn.close();
     }//End of addNewGroup method
 
-    public String getGroupName(int index) throws Exception
+    public String getGroupName(int index) throws SQLException
     {
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
     	Statement stat = conn.createStatement();
@@ -283,7 +284,7 @@ public class Database
 		return null;
     }//End of getGroupName
 
-    public int getNumGroups() throws Exception
+    public int getNumGroups() throws SQLException
     {
     	int numRows = 0;
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
@@ -302,7 +303,7 @@ public class Database
 	 	return numRows;
     }//End og getNumGroups
 
-    public void removeGroup(String groupName) throws Exception
+    public void removeGroup(String groupName) throws SQLException
     {
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
     	Statement stat = conn.createStatement();
@@ -317,8 +318,10 @@ public class Database
 			}
 	 	}
 
+    	//Closes the resultSet and connection
 	 	rs.close();
 	 	conn.close();
+
     }//End of removeGroup method
 
     public User initializeUser(User user) throws SQLException
@@ -345,8 +348,10 @@ public class Database
 			}
     	}
 
+	    //Closes the resultSet and connection
     	rs.close();
     	conn.close();
+
     	return iniUser;
     }//End of initializeUser method
 
@@ -373,5 +378,11 @@ public class Database
     			if(rs.getInt("canAccess") == 1){permissions[4] = true;}else{permissions[4] = false;}
     		}
     	}
+
+    	//Closes the resultSet and connection
+    	rs.close();
+    	conn.close();
+
+    	return group;
     }//End of initializeGroup method
 }//End of class class
