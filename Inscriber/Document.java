@@ -58,10 +58,6 @@ public class Document
     		//Send the server the filename
 	    	out.println(filename);
 
-
-
-
-
 	    	//Send the server one line of text from the WritingMainBoard JTextArea
 	    	out.println(text);
     	}catch(IOException exc1){eHandler.displayError("CNSTTS");}
@@ -81,7 +77,7 @@ public class Document
 	{
 		//Initialize class fields
 		sClient = socket;
-    	BufferedReader in = new BufferedReader(new InputStreamReader(sClient.getInputStream()));
+    	in = new BufferedReader(new InputStreamReader(sClient.getInputStream()));
 
 		//While there is text coming in
     	while((text = in.readLine()) != null)

@@ -36,6 +36,5 @@ public class ClientThread extends Thread
 	public void run()
 	{
 
-
 	}//End of run method
 }//End of ClientThread class
