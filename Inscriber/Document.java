@@ -33,11 +33,9 @@ public class Document
 	//Initializes class fields and objects
     public Document()
     {
-    	docName = "NewDocument.txt";
 		numOfWords = 0;
 		numOfSentences = 0;
 		numOfCharacters = 0;
-		documentOwner = owner;
 
     	//Initialize class fields and objects
 		sClient = null;
