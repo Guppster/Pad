@@ -81,13 +81,9 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 
     public WritingMainBoard()
     {
-    	//Initialize the documentGrid array
-    	initializeGrid();
-
     	//Initialize the class objects and fields
     	menu = new MenuCreator(this);
     	options = new DocumentOptions();
-    	text = new Text();
     	taDocument = new JTextArea();
     	taChat = new JTextArea();
     	cmdLogout = new JButton("Logout");
