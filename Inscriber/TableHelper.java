@@ -85,16 +85,47 @@ public class TableHelper
 		//If there is no empty spot found, there must be no more room to put data, so insert a new row at the end of the JTable object, and recheck for an empty spot
 		if(!empty)
 		{
-			model.insertRow(table.getRowCount(), new Object[]{});
+			model.insertRow(table.getRowCount(),new Object[]{});
 			nextEmpty(table, model);
 		}
 	}//End of nextEmpty method
 
-	public void addRowOfData(String [] data, JTable table)
+	private void nextEmptyRow(JTable table, DefaultTableModel model)
 	{
-		Object [] test = data;
+		//Reset the boolean test variable
+		empty = false;
 
-		table.getModel().insertRow(0, data);
+		//Loop through the JTable object and search for an empty row
+		for(int x = 0; x < table.getRowCount(); x++)
+		{
+			if(table.getValueAt(x, 0) == null)
+			{
+				rowIndex = x;
+				empty = true;
+				break;
+			}
+		}
+
+		//If there are no more rows available - make a new one
+		if(!empty)
+		{
+			model.insertRow(table.getRowCount(), new Object []{});
+			nextEmptyRow(table, model)
+		}
+	}//End of nextEmptyRow method
+
+	public void addRowOfData(String [] data, JTable table, DefaultTableModel table)
+	{
+		//Initialize fields
+		row = 0;
+
+		for(int x = -1; x < row; x++)
+		{
+			for(int y = 0; y < data.length; y++)
+			{
+				table.setValueAt(data[y], row, y);
+			}
+		}
 	}//End of addRowOfData method
 
 	/*//A method to fill an array with the data from the JTable so we can send it to the server
