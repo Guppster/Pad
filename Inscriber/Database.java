@@ -43,7 +43,6 @@ public class Database
 
     public void addUser(User user) throws Exception
     {
-    	//INSERT INTO `accounts` (`first`, `last`, `user`, `pass`, `email`, `group`, `loggedIn`) VALUES ('j', 'j', 'j', 'j', 'j', '', '0')
     	Class.forName(driver);
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
 		PreparedStatement prep = conn.prepareStatement(
