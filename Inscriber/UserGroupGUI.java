@@ -1,12 +1,12 @@
 /**
  * @(#)UserGroups.java
  *
- * @Description 
+ * @Description
  *
  * @author Gurpreet Singh, Matt Ufimsef
  * @version 1.00 2012/6/15
  *
- * @Latest Updates: 
+ * @Latest Updates:
  *
  * @Status: Complete ~ accomodating for currently created classes
  */
@@ -17,7 +17,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.text.*;
 
-public class UserGroups extends JFrame implements ActionListener
+public class UserGroupGUI extends JFrame implements ActionListener
 {
 	//Declare class objects and fields
 	private JButton cmdNew;
@@ -30,7 +30,7 @@ public class UserGroups extends JFrame implements ActionListener
     private TableHelper helper;
     private Database database;
 
-    public UserGroups()
+    public UserGroupGUI()
     {
     	//Initialize class objects and fields
 		cmdNew = new JButton("Create new User group");
