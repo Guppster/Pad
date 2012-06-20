@@ -48,11 +48,8 @@ public class StatusThread extends Thread
 					//ADDED THIS
 					try
 					{
-						Socket sock = null;
-						sock = socket;
-
-						BufferedReader lol = new BufferedReader(new InputStreamReader(sock.getInputStream()));
-				    	PrintWriter ha = new PrintWriter(sock.getOutputStream(), true);
+						BufferedReader lol = new BufferedReader(new InputStreamReader(sClient.getInputStream()));
+				    	PrintWriter ha = new PrintWriter(sClient.getOutputStream(), true);
 				    	BufferedWriter writer = new BufferedWriter(new FileWriter("test.txt"));
 						String text;
 
