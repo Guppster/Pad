@@ -403,11 +403,21 @@ public class Database
     	return group;
     }//End of initializeGroup method
 
-    /*public idk getAllDocumentsData()
+    /*public String [] getAllDocumentsData()
    	{
+   		String [] data = new String[4];
+
    		Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
-    	Statement stat = conn.createStatement()¸;
+    	Statement stat = conn.createStatement();
 
     	ResultSet rs = stat.executeQuery("SELECT * FROM documents;");
+
+    	while(rs.next())
+    	{
+    		if(rs.getString("name").equals(groupName))
+    		{
+
+    		}
+    	}
    	}*/
 }//End of class class
