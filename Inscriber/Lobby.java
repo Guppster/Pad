@@ -32,9 +32,10 @@ public class Lobby extends JFrame implements ActionListener
 	private Database database;
 	private ErrorHandler eHandler;
 	private User user;
+	private Socket sClient;
 
 	//Constructor
-    public Lobby(User user)
+    public Lobby(User user, Socket socket)
     {
 		//Initialize class fields and objects
 		lblDocument = new JLabel("Document ID:");
@@ -51,6 +52,7 @@ public class Lobby extends JFrame implements ActionListener
 		database = new Database();
 		eHandler = new ErrorHandler();
 		this.user = user;
+		sClient = socket;
 
 		//Initialize the user object
 		initializeUser();
@@ -170,7 +172,7 @@ public class Lobby extends JFrame implements ActionListener
     //Method is called when create new document button is pressed, closes lobby and opens a new writingmainboard using the info entered in the text fields
     private void create()
     {
-		new WritingMainBoard(user);
+		new WritingMainBoard(user, sClient);
 		this.dispose();
     }//End of create method
 
