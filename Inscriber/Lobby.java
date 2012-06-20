@@ -183,7 +183,7 @@ public class Lobby extends JFrame implements ActionListener
 	    {
 	    	public void run()
 	        {
-	        	new Lobby(new User);
+	        	new Lobby(new User());
 	      	}
 	    });
 	}//End of test harness
