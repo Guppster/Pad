@@ -5,11 +5,11 @@
  * @author Gurpreet Singh, Matt Ufimsef
  * @version 1.00 2012/6/15
  *
- * @Latest Updates: 
+ * @Latest Updates:
  *
  * @Status: Complete ~ accomodating for currently created classes
  */
- 
+
 //Import API packages
 import javax.swing.*;
 import java.awt.event.*;
@@ -89,6 +89,11 @@ public class TableHelper
 			nextEmpty(table, model);
 		}
 	}//End of nextEmpty method
+
+	public void addRowOfData(String [] data, JTable table)
+	{
+		table.getModel().insertRow(table.getRowCount(), data);
+	}//End of addRowOfData method
 
 	/*//A method to fill an array with the data from the JTable so we can send it to the server
 	private void loadArray(JTable table)
