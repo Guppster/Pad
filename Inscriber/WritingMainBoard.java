@@ -78,8 +78,10 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 	private boolean lineNumberToggle;
 	private TextLineNumber tln;
 	private Document document;
+	private User user;
+	private Socket sClient;
 
-    public WritingMainBoard()
+    public WritingMainBoard(User user, Socket socket)
     {
     	//Initialize the class objects and fields
     	menu = new MenuCreator(this);
@@ -120,6 +122,8 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 		adminClicked = true;
 		tln = new TextLineNumber(taDocument);
 		document = new Document();
+		this.user = user;
+		sClient = socket;
 
 		//Call the setMenus method to construct all the menus
     	setMenus();
@@ -407,8 +411,8 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 				{
 					try
 					{
-						String str = JOptionPane.showInputDialog(null, "Enter some text : ", "Enter in a filename.", 1);
-						document.saveFileToServer(user.getUsername(), , taDocument.getText());
+						String fileName = JOptionPane.showInputDialog(null, "", "Enter in a filename.", 1);
+						document.saveFileToServer(user.getUsername(), fileName, taDocument.getText(), sClient);
 					}catch(IOException exc){}
 				}
 			});
