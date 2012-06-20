@@ -44,10 +44,11 @@ public class Document
     }//End of Document default constructor
 
 	//Sends the passed in filename and text from the passed in connection, to the server
-	public void saveFileToServer(String filename, String text, Socket socket)
+	public void saveFileToServer(String filename, String fromWMB, Socket socket)
 	{
-		//Initialize a class object
+		//Initialize class fields
 		sClient = socket;
+		text = fromWMB;
 
 		//Try writing a line of text to the server
     	try
@@ -63,17 +64,29 @@ public class Document
 	    	out.println(text);
     	}catch(IOException exc1){eHandler.displayError("CNSTTS");}
 
-    	//Try closing the writer and the socket conenction
+    	//Try closing the writer and the socket conenction and reset class fields
     	try
     	{
     		out.close();
     		sClient.close();
+    		text = "";
+    		sClient = null;
     	}catch(IOException exc2){eHandler.displayError("CNCC");}
 	}//End of saveFileToServer method
 
 	//Retrieves a text file from the server and 'opens it'
 	public void getFileFromServer(Socket socket)throws IOException
 	{
+		//Initialize class fields
+		sClient = socket;
+    	BufferedReader in = new BufferedReader(new InputStreamReader(sClient.getInputStream()));
 
+    	while ((text = in.readLine()) != null)
+    	{
+     		writer.write(text);
+		}
+
+		in.close();
+		sClient.close();
 	}//End of countLines method
 }//End of Document Class
