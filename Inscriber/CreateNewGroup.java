@@ -204,7 +204,7 @@ public class CreateNewGroup extends JFrame implements ActionListener
 				loadGroup();
 				setGroupName();
 				saveGroup();
-			}catch(Exception e){handler.displayError("CNAG"); handler.displayError(".");}
+			}catch(Exception e){handler.displayError("CNAD"); handler.displayError(".");}
 		}
 		else if(evt.getActionCommand().equals("preset"))
 		{
@@ -213,7 +213,7 @@ public class CreateNewGroup extends JFrame implements ActionListener
 				loadDefaults();
 				setState();
 				txtGroupName.setText("Default");
-			}catch(Exception e){System.out.println("Error 3 - " + e);}
+			}catch(Exception e){handler.displayError("CNAD"); handler.displayError(".");}
 		}
 	}//End of actionPerformed method
 
