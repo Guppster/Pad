@@ -62,7 +62,7 @@ public class DocumentBrowser extends JFrame implements ActionListener
 		}
 
 		//Set some properties for the JTable object
-		tDocuments.setTableHeader(null);
+		tDocuments.setTableHeader();
 		spDocuments.setPreferredSize(new Dimension(255, 82));
 
 		//Add the object to the frame, and set the coordinates of the object
@@ -95,7 +95,7 @@ public class DocumentBrowser extends JFrame implements ActionListener
 		layout.putConstraint(SpringLayout.WEST, cmdSortBySentences, 50, SpringLayout.WEST, this.getContentPane());
 
 		//Set the properties of the frame/pane
-		this.setSize(510,295);
+		this.setSize(510,400);
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
 		this.setTitle("Document Browser");
