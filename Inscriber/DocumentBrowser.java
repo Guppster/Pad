@@ -65,7 +65,7 @@ public class DocumentBrowser extends JFrame implements ActionListener
 		spDocuments.setPreferredSize(new Dimension(255, 82));
 
 		//Add the object to the frame, and set the coordinates of the object
-		this.add(tDocuments);
+		this.add(spDocuments);
 		layout.putConstraint(SpringLayout.NORTH, tDocuments, 25, SpringLayout.NORTH, this.getContentPane());
 		layout.putConstraint(SpringLayout.WEST, tDocuments, 50, SpringLayout.WEST, this.getContentPane());
 
