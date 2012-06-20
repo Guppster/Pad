@@ -20,7 +20,7 @@ public class Database
 {
 	//Constant variables storing database access information
 	private static String url = "jdbc:mysql://99.249.132.206:3306/inscriber";
-	private static String dbUser = "project";
+	private static String dbUser = "gurp";
 	private static String dbPass = "derp";
 	private static String driver = "com.mysql.jdbc.Driver";
 
