@@ -146,7 +146,7 @@ public class Login extends JFrame implements ActionListener, KeyListener
 
 				//Get rid of the Login frame to conserve resources
 				this.dispose();
-			}catch(IOException e){eHandler.displayError("CNC"); eHandler.displayError(".");}
+			}catch(IOException exc){eHandler.displayError("CNC"); eHandler.displayError(".");}
      	}
     }//End of keyPressed method
 
