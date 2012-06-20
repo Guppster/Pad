@@ -108,8 +108,5 @@ public class Document
 
     	//Return the compiled text from the server
 		return textFromServer;
-
-		//IF TIME - ADD AUTHOR CHECKER SO THAT A RANDOM PERSON CAN'T OPEN YOUR PRIVATE DOCUMENTS
-
 	}//End of countLines method
 }//End of Document Class
