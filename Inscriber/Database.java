@@ -32,7 +32,7 @@ public class Database
     	//Declare and initialize some fields
         Class.forName(driver);//Access' the MYSQL driver folder so we can use methods from it(Same as beckerrobot.jar)
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);//Create a new connection with the specified hostname, port, and database username/password
-        Statement stat = conn.createStatement();
+        Statement statement = conn.createStatement();//Create a new statement under the new connection
 
         //Execute some commands to the MYSQL database
         statement.executeUpdate("DROP TABLE if EXISTS " + tableName + ";");
