@@ -49,9 +49,7 @@ public class Document
 		//Initialize class fields
 		sClient = socket;
 		text = fromWMB;
-
-		//Initialize a class object
-    	in = new BufferedReader(new InputStreamReader(sClient.getInputStream()));
+		in = new BufferedReader(new InputStreamReader(sClient.getInputStream()));
     	out = new PrintWriter(sClient.getOutputStream(), true);
 
 		//Send the text we are recieving from WritingMainBoard to the server to be saved
