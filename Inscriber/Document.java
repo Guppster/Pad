@@ -29,6 +29,7 @@ public class Document
 	private int numOfWords;
 	private int numOfSentences;
 	private int numOfCharacters;
+	private Database database;
 
 	//Initializes class fields and objects
     public Document()
@@ -45,6 +46,7 @@ public class Document
 		numOfWords = 0;
 		numOfSentences = 0;
 		numOfCharacters = 0;
+		database = new Database();
     }//End of Document constructor
 
 	//Sends text to the server to be compiled and saved
