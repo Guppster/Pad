@@ -85,14 +85,16 @@ public class TableHelper
 		//If there is no empty spot found, there must be no more room to put data, so insert a new row at the end of the JTable object, and recheck for an empty spot
 		if(!empty)
 		{
-			model.insertRow(table.getRowCount(),new Object[]{});
+			model.insertRow(table.getRowCount(), new Object[]{});
 			nextEmpty(table, model);
 		}
 	}//End of nextEmpty method
 
 	public void addRowOfData(String [] data, JTable table)
 	{
-		table.getModel().insertRow(table.getRowCount(), new Object[]{data[]});
+		Object[] test = data;
+
+		table.getModel().insertRow(table.getRowCount(), test);
 	}//End of addRowOfData method
 
 	/*//A method to fill an array with the data from the JTable so we can send it to the server
