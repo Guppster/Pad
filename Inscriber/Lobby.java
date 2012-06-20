@@ -179,7 +179,7 @@ public class Lobby extends JFrame implements ActionListener
 	//Method is called when the browse button is pressed, closes lobby and opens the browseDocuments screen
     private void browse()
     {
-		new BrowseDocuments();
+		new DocumentBrowser();
 		this.dispose();
     }//End of browse method
 }//End of Main class
