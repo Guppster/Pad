@@ -159,11 +159,11 @@ public class UserGroupGUI extends JFrame implements ActionListener
 			try
 			{
 				database.removeGroup(tGroups.getValueAt(rowIndex, columnIndex).toString());
-			}catch(Exception e){eHandler.displayError("NGS"); eHandler.displayError(".");}
+			}catch(Exception e){eHandler.displayError("CNRG"); eHandler.displayError(".");}
 		}
 		else
 		{
-			eHandler.displayError("CNRG");
+			eHandler.displayError("NGS");
 			eHandler.displayError(".");
 		}
 	}//End of removeGroup method
