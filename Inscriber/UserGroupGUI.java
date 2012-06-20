@@ -16,6 +16,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.text.*;
+import javax.swing.table.DefaultTableModel;
 
 public class UserGroupGUI extends JFrame implements ActionListener
 {
