@@ -197,12 +197,14 @@ public class Database
         	{
         		if(rs.getInt(7) == 1)
         		{
+        			//Closes the resultSet and connection
         			rs.close();
         			conn.close();
         			return true;
         		}
         		else
         		{
+        			//Closes the resultSet and connection
         			rs.close();
         			conn.close();
         			return false;
@@ -210,6 +212,7 @@ public class Database
         	}
     	}
 
+    	//Closes the resultSet and connection
 		rs.close();
         conn.close();
 		return false;
@@ -258,6 +261,8 @@ public class Database
 		conn.setAutoCommit(false);
         prep.executeBatch();
         conn.setAutoCommit(true);
+
+        //Closes the connection
         conn.close();
     }//End of addNewGroup method
 
@@ -278,6 +283,7 @@ public class Database
 			}
 	 	}
 
+		//Closes the resultSet and connection
 	    rs.close();
         conn.close();
 
@@ -297,6 +303,7 @@ public class Database
 			numRows++;
 	 	}
 
+		//Closes the resultSet and connection
 	 	rs.close();
 	 	conn.close();
 
