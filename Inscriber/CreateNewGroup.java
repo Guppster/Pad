@@ -1,12 +1,12 @@
 /**
  * @(#)CreateNewGroup.java
  *
- * @Description 
+ * @Description
  *
  * @author Gurpreet Singh, Matt Ufimsef
  * @version 1.00 2012/6/15
  *
- * @Latest Updates: 
+ * @Latest Updates:
  *
  * @Status: Complete ~ accomodating for currently created classes
  */
@@ -169,7 +169,7 @@ public class CreateNewGroup extends JFrame implements ActionListener
 	}//End of setState method
 
 	//Saves the group and permissions to the database
-	private void saveGroup()
+	private void saveGroup()throws Exception
 	{
 		if(!(setGroupName().equals("")))
 		{
