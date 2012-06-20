@@ -220,7 +220,7 @@ public class Database
     	{
     		if(user.getUsername().equals(rs.getString("user")))
         	{
-        		if(rs.getInt(6) == 1)
+        		if(rs.getInt(7) == 1)
         			return true;
         		else
         			return false;
