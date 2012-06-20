@@ -73,25 +73,31 @@ public class DocumentBrowser extends JFrame implements ActionListener
 		//Add the object to the frame, and set the coordinates of the object
 		this.add(cmdSortByName);
 		cmdSortByName.setActionCommand("sortname");
-		layout.putConstraint(SpringLayout.NORTH, cmdSortByName, 80, SpringLayout.NORTH, this.getContentPane());
+		layout.putConstraint(SpringLayout.NORTH, cmdSortByName, 45, SpringLayout.NORTH, this.getContentPane());
 		layout.putConstraint(SpringLayout.WEST, cmdSortByName, 450, SpringLayout.WEST, this.getContentPane());
 
 		//Add the object to the frame, and set the coordinates of the object
 		this.add(cmdSortByCharacters);
 		cmdSortByCharacters.setActionCommand("sortchars");
-		layout.putConstraint(SpringLayout.NORTH, cmdSortByCharacters, 160, SpringLayout.NORTH, this.getContentPane());
+		layout.putConstraint(SpringLayout.NORTH, cmdSortByCharacters, 90, SpringLayout.NORTH, this.getContentPane());
 		layout.putConstraint(SpringLayout.WEST, cmdSortByCharacters, 450, SpringLayout.WEST, this.getContentPane());
 
 		//Add the object to the frame, and set the coordinates of the object
 		this.add(cmdSortByWords);
 		cmdSortByWords.setActionCommand("sortwords");
-		layout.putConstraint(SpringLayout.NORTH, cmdSortByWords, 240, SpringLayout.NORTH, this.getContentPane());
+		layout.putConstraint(SpringLayout.NORTH, cmdSortByWords, 135, SpringLayout.NORTH, this.getContentPane());
 		layout.putConstraint(SpringLayout.WEST, cmdSortByWords, 450, SpringLayout.WEST, this.getContentPane());
 
 		//Add the object to the frame, and set the coordinates of the object
 		this.add(cmdSortBySentences);
 		cmdSortBySentences.setActionCommand("sortsentences");
-		layout.putConstraint(SpringLayout.NORTH, cmdSortBySentences, 320, SpringLayout.NORTH, this.getContentPane());
+		layout.putConstraint(SpringLayout.NORTH, cmdSortBySentences, 180, SpringLayout.NORTH, this.getContentPane());
+		layout.putConstraint(SpringLayout.WEST, cmdSortBySentences, 450, SpringLayout.WEST, this.getContentPane());
+
+		//Add the object to the frame, and set the coordinates of the object
+		this.add(cmdSearch);
+		cmdSortBySentences.setActionCommand("search");
+		layout.putConstraint(SpringLayout.NORTH, cmdSortBySentences, 225, SpringLayout.NORTH, this.getContentPane());
 		layout.putConstraint(SpringLayout.WEST, cmdSortBySentences, 450, SpringLayout.WEST, this.getContentPane());
 
 		//Set the properties of the frame/pane
