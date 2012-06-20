@@ -59,6 +59,8 @@ public class Client
 							database.switchLoginStatus(tempUser);//Set the users status to logged in, so another client may not login with identical credentials
 							new Lobby();//Open the Lobby screen
 						}
+						else
+							eHandler.displayError("ALI");
 					}
 					else
 					{
