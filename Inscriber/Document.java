@@ -19,6 +19,7 @@ public class Document
 {
 	//Declare class fields and objects
 	private Socket sClient;
+	private BufferedReader in;
     private PrintWriter out;
     private ErrorHandler eHandler;
     private String fileName;
@@ -33,6 +34,7 @@ public class Document
     {
     	//Initialize class fields and objects
     	sClient = null;
+    	in = null;
     	out = null;
     	eHandler = new ErrorHandler();
     	fileName = "";
@@ -41,7 +43,7 @@ public class Document
 		numOfWords = 0;
 		numOfSentences = 0;
 		numOfCharacters = 0;
-    }//End of Document default constructor
+    }//End of Document constructor
 
 	//Sends text to the server to be compiled and saved
 	public void saveFileToServer(String author, String fileName, String textFromWritingMain, Socket socket)
