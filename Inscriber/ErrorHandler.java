@@ -71,7 +71,7 @@ public class ErrorHandler
 		else if(errorCode.equals("NS"))
 			errorToDisplay += "This functionality has not been implemented in this release of Inscriber.";
 		else if(errorCode.equals("CNLG"))
-			errorToDisplay += "The groups could not be loaded.";
+			errorToDisplay += "Could not load groups.";
 
 		// the "." is the flag that triggers the error, this allows to add multiple errors to one message box
 		if(errorCode.equals("."))
