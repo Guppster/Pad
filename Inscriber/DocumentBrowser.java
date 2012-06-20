@@ -28,6 +28,7 @@ public class DocumentBrowser extends JFrame implements ActionListener
 	private JButton cmdSortBySentences;
 	private JButton cmdSearch;
 	private SpringLayout layout;
+	private TableHelper thelper;
 
 	//Default Constructor
     public DocumentBrowser()
@@ -35,6 +36,7 @@ public class DocumentBrowser extends JFrame implements ActionListener
     	model = new DefaultTableModel();
 		tDocuments = new JTable(model);
 		spDocuments = new JScrollPane(tDocuments);
+		tHelper = new TableHelper();
 		cmdSortByName = new JButton("Sort by Name");
 		cmdSortByCharacters = new JButton("Sort by Character");
 		cmdSortBySentences = new JButton("Sort by Sentences");
