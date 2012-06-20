@@ -58,7 +58,7 @@ public class Document
     	{
     		//Send the server the author of the file, and the filename
     		out.println(author);
-	    	out.println(filename);
+	    	out.println(fileName);
 
 	    	//Send the server the text we got from WritingMainBoard
 	    	while(!(textFromWritingMain.equals("")))
