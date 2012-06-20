@@ -87,8 +87,8 @@ public class Database
     	Class.forName(driver);//Access' the MYSQL driver folder so we can use methods from it(Same as beckerrobot.jar)
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);//Create a new connection with the specified hostname, port, and database username/password
     	Statement statement = conn.createStatement();//Create a new statement under the new connection
-    	boolean [] conditions = new boolean[2];
-    	ResultSet rs = statement.executeQuery("SELECT * FROM accounts;");
+    	ResultSet rs = statement.executeQuery("SELECT * FROM accounts;");//Creates a result set object so we can query the database
+    	boolean [] conditions = new boolean[2];//Used to hold the conditions of whether the user already exists, or the email already exists, both, or neither
 
     	//While there is a 'non-null' column to select
         while (rs.next())
@@ -121,10 +121,10 @@ public class Database
     	Class.forName(driver);//Access' the MYSQL driver folder so we can use methods from it(Same as beckerrobot.jar)
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);//Create a new connection with the specified hostname, port, and database username/password
     	Statement stat = conn.createStatement();//Create a new statement under the new connection
-		ResultSet rsUser = stat.executeQuery("SELECT accounts.user FROM accounts;");
-		ResultSet rsPass = null;
-		boolean userFound = false;
-		boolean passFound = false;
+		ResultSet rsUser = stat.executeQuery("SELECT accounts.user FROM accounts;");//Creates a result set object so we can query the database
+		ResultSet rsPass = null;//Creates a result set object so we can query the database
+		boolean userFound = false;//Stores the boolean flag for if the username was found
+		boolean passFound = false;//Stores the boolean flag for if the password was found/matched
 
 		//While there is a 'non-null' column to select
         while(rsUser.next())
@@ -191,7 +191,7 @@ public class Database
 		Class.forName(driver);//Access' the MYSQL driver folder so we can use methods from it(Same as beckerrobot.jar)
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);//Create a new connection with the specified hostname, port, and database username/password
     	Statement stat = conn.createStatement();//Create a new statement under the new connection
-    	ResultSet rs = stat.executeQuery("SELECT * FROM accounts;");
+    	ResultSet rs = stat.executeQuery("SELECT * FROM accounts;");//Creates a result set object so we can query the database
 
 		//While the selected column is not null
 		while(rs.next())
@@ -223,7 +223,7 @@ public class Database
     	Class.forName(driver);//Access' the MYSQL driver folder so we can use methods from it(Same as beckerrobot.jar)
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);//Create a new connection with the specified hostname, port, and database username/password
     	Statement stat = conn.createStatement();//Create a new statement under the new connection
-    	ResultSet rs = stat.executeQuery("SELECT * FROM accounts;");
+    	ResultSet rs = stat.executeQuery("SELECT * FROM accounts;");//Creates a result set object so we can query the database
 
 		//While the selected column is not null
     	while(rs.next())
@@ -280,32 +280,32 @@ public class Database
         return permissions;
     }//End of retrieveDefaultPermissions method
 
+	//A method to add a new group to the database
     public void addNewGroup(UserGroup group) throws Exception
     {
-    	boolean [] permissions = new boolean[5];
-    	permissions = group.getPermissions();
+    	//Declare and initialize some fields
+		Class.forName(driver);//Access' the MYSQL driver folder so we can use methods from it(Same as beckerrobot.jar)
+        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);//Create a new connection with the specified hostname, port, and database username/password
+		Statement statement = conn.createStatement();//Create a new statement under the new connection
+        boolean [] permissions = new boolean[5];//Used to store the permissions for the passined in UserGroup object
+    	permissions = group.getPermissions();//Initialize the permissions array
 
-        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
-		PreparedStatement prep = conn.prepareStatement(
-        	      "INSERT usergroups VALUES (?, ?, ?, ?, ?);");
+    	//Compile a command into a string so we can execute it
+    	String state = "INSERT usergroups VALUES ("+ permissions[0] + ", " + permissions[1] + ", " + permissions[2] + ", "
+    		+ permissions[3] + ", " + permissions[4] + ")";
 
-        prep.setBoolean(1, permissions[0]);
-        prep.setBoolean(2, permissions[1]);
-        prep.setBoolean(3, permissions[2]);
-        prep.setBoolean(4, permissions[3]);
-        prep.setBoolean(5, permissions[4]);
-        prep.addBatch();
-
-		conn.setAutoCommit(false);
-        prep.executeBatch();
-        conn.setAutoCommit(true);
+		//Execute a command
+		statement.executeUpdate(state);
 
         //Closes the connection
         conn.close();
     }//End of addNewGroup method
 
+	//A method to retrieve the name of a group at a specified index in the database
     public String getGroupName(int index) throws Exception
     {
+    	//Declare and initialize some fields
+    	Class.forName(driver);//Access' the MYSQL driver folder so we can use methods from it(Same as beckerrobot.jar)
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
     	Statement stat = conn.createStatement();
 
