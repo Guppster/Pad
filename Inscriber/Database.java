@@ -172,10 +172,10 @@ public class Database
         	}
         }
 
+		new Lobby();//Open the Lobby screen
+
         rs.close();
         conn.close();
-
-        new Lobby();//Open the Lobby screen
     }//End of loginUser method
 
     //returns a boolean indicating weather the user is logged in or not
