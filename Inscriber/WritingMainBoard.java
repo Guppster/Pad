@@ -420,14 +420,6 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 					System.out.println("About");
 				}
 			});
-		menu.createMenuItem("Help");
-		menu.getMenuItem().addActionListener(new ActionListener()
-			{
-				public void actionPerformed(ActionEvent e)
-				{
-					System.out.println("Help");
-				}
-			});
 
 		menu.createMenuItem("Credits");
 		menu.getMenuItem().addActionListener(new ActionListener()
