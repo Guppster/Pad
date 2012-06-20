@@ -163,7 +163,7 @@ public class UserGroupGUI extends JFrame implements ActionListener
 	    {
 	    	public void run()
 	        {
-	        	new UserGroups();
+	        	new UserGroupGUI();
 	      	}
 	    });
 	}//End of Test Harness main method
