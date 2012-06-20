@@ -207,9 +207,12 @@ public class CreateNewGroup extends JFrame implements ActionListener
 		}
 		else if(evt.getActionCommand().equals("preset"))
 		{
-			loadDefaults();
-			setState();
-			txtGroupName.setText("Default");
+			try
+			{
+				loadDefaults();
+				setState();
+				txtGroupName.setText("Default");
+			}catch(Exception e){System.out.println("Error 3 - " + e);}
 		}
 	}//End of actionPerformed method
 
