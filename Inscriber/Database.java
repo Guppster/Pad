@@ -421,6 +421,7 @@ public class Database
     	UserGroup group = new UserGroup();//Creates a new empty UserGroup object
     	boolean [] permissions = new boolean[5];//Used to store the permissions from the database
 
+		//While the next selected column is not null
     	while(rs.next())
     	{
     		if(rs.getString("name").equals(groupName))
@@ -434,13 +435,14 @@ public class Database
     		}
     	}
 
-    	//Closes the resultSet and connection
+    	//Close the ResultSet and connection
     	rs.close();
     	conn.close();
 
+		//Return the new full UserGroup object
     	return group;
     }//End of initializeGroup method
-/*
+
     public ArrayList<String> getDocumentsData()
    	{
    		//PUT ALL THE "data[0]... data[1]... etc" INTO A LOOP TO LOOP THROUGH UNTIL IT REACHES A NULL ROW(while rs.next())
@@ -497,11 +499,10 @@ public class Database
 			}
 
 			//Add the array to the array list
-//			list.add(data);
+			//list.add(data);
     	}
 
     	//No more non null rows found
 		return list;
 	}//End of getDocumentsData method
-	*/
 }//End of class class
