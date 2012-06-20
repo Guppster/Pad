@@ -39,7 +39,7 @@ public class Document
 		eHandler = new ErrorHandler();
     }//End of Document default constructor
 
-	//Sends the passed in filename and text from the passed in connection, to the server
+	//Sends text to the server to be compiled and saved
 	public void saveFileToServer(String author, String fileName, String textFromWritingMain, Socket socket)
 	{
 		//Initialize class fields
@@ -47,27 +47,31 @@ public class Document
 		this.fileName = fileName;
 		this.author = author;
 		text = textFromWritingMain;
-		in = new BufferedReader(new InputStreamReader(sClient.getInputStream()));
     	out = new PrintWriter(sClient.getOutputStream(), true);
 
 		//Send the text we are recieving from WritingMainBoard to the server to be saved
     	try
     	{
-    		//Send the server the filename
-    		out.println(author)
+    		//Send the server the author of the file, and the filename
+    		out.println(author);
 	    	out.println(filename);
 
-	    	//Send the server one line of text from the WritingMainBoard JTextArea
-	    	out.println(text);
+	    	//Send the server the text we got from WritingMainBoard
+	    	while(!(textFromWritingMain.equals("")))
+	    	{
+	    		out.println(text);
+	    	}
     	}catch(IOException exc1){eHandler.displayError("CNSTTS");}
 
     	//Try closing the writer and the socket conenction and reset class fields
     	try
     	{
+    		text = "";
+    		this.author = "";
+    		this.fileName = "";
+    		sClient = null;
     		out.close();
     		sClient.close();
-    		text = "";
-    		sClient = null;
     	}catch(IOException exc2){eHandler.displayError("CNCC");}
 	}//End of saveFileToServer method
 
