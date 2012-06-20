@@ -50,7 +50,7 @@ public class Client
 
 			try
 			{
-				server.test(sClient);
+				Server.test(sClient);
 				BufferedReader in = new BufferedReader(new InputStreamReader(sClient.getInputStream()));
 		    	PrintWriter out = new PrintWriter(sClient.getOutputStream(), true);
 		    	Scanner scan = new Scanner(System.in);
