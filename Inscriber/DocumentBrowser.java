@@ -178,11 +178,11 @@ public class DocumentBrowser extends JFrame implements ActionListener
     	{
     		for(int x = 0; x < tDocuments.getRowCount(); x++)
     		{
-	    		if(tDocuments.getValueAt(0,x) > tDocuments.getValueAt(0,x+1))
+	    		if(tDocuments.getValueAt(1,x) > tDocuments.getValueAt(1,x+1))
 	    		{
-	    			temp = tDocuments.getValueAt(0,x);
-	    			tDocuments.setValueAt(tDocuments.getValueAt(0,x+1), 0, x);
-					tDocuments.setValueAt(temp), 0, x+1);
+	    			temp = tDocuments.getValueAt(1,x);
+	    			tDocuments.setValueAt(tDocuments.getValueAt(1,x+1), 1, x);
+					tDocuments.setValueAt(temp), 1, x+1);
 
 	    			sorted = false;
 	    		}
@@ -192,12 +192,42 @@ public class DocumentBrowser extends JFrame implements ActionListener
 
     private void sortByWords()
     {
+		boolean sorted = false;
+    	string temp = "";
+    	do
+    	{
+    		for(int x = 0; x < tDocuments.getRowCount(); x++)
+    		{
+	    		if(tDocuments.getValueAt(2,x) > tDocuments.getValueAt(2,x+1))
+	    		{
+	    			temp = tDocuments.getValueAt(2,x);
+	    			tDocuments.setValueAt(tDocuments.getValueAt(1,x+1), 2, x);
+					tDocuments.setValueAt(temp), 2, x+1);
 
+	    			sorted = false;
+	    		}
+    		}
+   		}while(sorted != true);
     }
 
     private void sortBySentences()
     {
+		boolean sorted = false;
+    	string temp = "";
+    	do
+    	{
+    		for(int x = 0; x < tDocuments.getRowCount(); x++)
+    		{
+	    		if(tDocuments.getValueAt(3,x) > tDocuments.getValueAt(3,x+1))
+	    		{
+	    			temp = tDocuments.getValueAt(3,x);
+	    			tDocuments.setValueAt(tDocuments.getValueAt(1,x+1), 3, x);
+					tDocuments.setValueAt(temp), 3, x+1);
 
+	    			sorted = false;
+	    		}
+    		}
+   		}while(sorted != true);
     }
 
     public static void main(String [] args)
