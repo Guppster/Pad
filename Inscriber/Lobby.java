@@ -30,6 +30,7 @@ public class Lobby extends JFrame implements ActionListener
 	private JTable tRecentlyCreated;
 	private SpringLayout layout;
 	private Database database;
+	private User user;
 
 	//Constructor
     public Lobby(User user)
@@ -47,6 +48,7 @@ public class Lobby extends JFrame implements ActionListener
 		tRecentlyCreated = new JTable(7, 3); //col's author name, document name, date of creation.
 		layout = new SpringLayout();
 
+		//Initialize the user object
 		initializeUser();
 
 		//Call method to create GUI
@@ -153,15 +155,15 @@ public class Lobby extends JFrame implements ActionListener
     //Method is called when logout button is pressed by user in lobby, disconnects the user and closes lobby, reopens the login screen.
     private void logout()
     {
-		//remember to set the users loggedIn field to 0, via switchLoginStatus method in database
-
+		database.switchLoginStatus(user);
+		new Login();
+		this.dispose();
     }//End of logout method
 
     //Method is called when create new document button is pressed, closes lobby and opens a new writingmainboard using the info entered in the text fields
     private void create()
     {
-		//create document object passing in current user
-		//create new writingmainboard passing in document object
+
 
     }//End of create method
 
