@@ -150,7 +150,7 @@ public class UserGroupGUI extends JFrame implements ActionListener
 		int columnIndex = tGroups.getSelectedColumn();
 
 		helper.removeSelectedElement(tGroups);
-		socket.database.removeGroup(tGroups.getValueAt(rowIndex, columnIndex).toString());
+		database.removeGroup(tGroups.getValueAt(rowIndex, columnIndex).toString());
 	}//End of removeGroup method
 
 	//Test Harness
