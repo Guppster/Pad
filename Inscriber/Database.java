@@ -306,11 +306,11 @@ public class Database
     {
     	//Declare and initialize some fields
     	Class.forName(driver);//Access' the MYSQL driver folder so we can use methods from it(Same as beckerrobot.jar)
-        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
-    	Statement stat = conn.createStatement();
+        Connection conn = DriverManager.getConnection(url, dbUser, dbPass);//Create a new connection with the specified hostname, port, and database username/password
+    	Statement stat = conn.createStatement();//Create a new statement under the new connection
+	 	ResultSet rs = stat.executeQuery("SELECT * FROM usergroups;");//Creates a result set object so we can query the database
 
-	 	ResultSet rs = stat.executeQuery("SELECT * FROM usergroups;");
-
+		//While the next column selected is not null
 	 	while(rs.next())
 	 	{
 			if(rs.getRow() == index)
@@ -321,11 +321,12 @@ public class Database
 			}
 	 	}
 
-		//Closes the resultSet and connection
+		//Closes the ResultSet and connection
 	    rs.close();
         conn.close();
 
-		return null;
+		//Group name was not found in the database, return nothing
+		return "";
     }//End of getGroupName
 
     public int getNumGroups() throws Exception
