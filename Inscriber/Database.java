@@ -14,12 +14,13 @@
 import java.net.*;
 import java.sql.*;
 import java.io.*;
+import java.util.*;
 
 public class Database
 {
 	//Constant variables storing database access information
-	private static String url = "jdbc:mysql://99.249.132.206:3306/inscriber";
-	private static String dbUser = "gurp";
+	private static String url = "jdbc:mysql://localhost:3306/inscriber";
+	private static String dbUser = "project";
 	private static String dbPass = "derp";
 	private static String driver = "com.mysql.jdbc.Driver";
 
@@ -403,9 +404,12 @@ public class Database
     	return group;
     }//End of initializeGroup method
 
-    public String getDocumentsData(int rowIndex)
+    public ArrayList<String> getDocumentsData()
    	{
-   		String data = "";
+   		//PUT ALL THE "data[0]... data[1]... etc" INTO A LOOP TO LOOP THROUGH UNTIL IT REACHES A NULL ROW(while rs.next())
+
+   		ArrayList<String> list = new ArrayList<String>();
+   		String[] data = new String[3];
 
    		Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
     	Statement stat = conn.createStatement();
@@ -414,10 +418,52 @@ public class Database
 
     	while(rs.next())
     	{
-			if(rs.getRow() == rowIndex)
+    		//Get the name for that particular document and store it in an index in our array
+			ResultSet rsName = stat.executeQuery("SELECT documents.name FROM documents;");
+
+			while(rsName.next())
 			{
+				data[0] = rsName.getString("name");
+				rsName.close();
+				break;
+			}
+
+			//Get the number of characters for that particular document and store it in an index in our array
+			ResultSet rsNumChars = stat.executeQuery("SELECT documents.numCharacters FROM documents;");
+
+			while(rsNumChars.next())
+			{
+				data[1] = rsNumChars.getString("numChars");
+				rsNumChars.close();
+				break;
+			}
+
+			//Get the number of sentences for that particular document and store it in an index in our array
+			ResultSet rsNumSentences = stat.executeQuery("SELECT documents.numSentences FROM documents;");
+
+			while(rsNumSentences.next())
+			{
+				data[2] = rsNumSentences.getString("numSentences");
+				rsNumSentences.close();
+				break;
 
 			}
+
+			//Get the number of words for that particular document and store it in an index in our array
+			ResultSet rsNumWords = stat.executeQuery("SELECT documents.numWords FROM documents;");
+
+			while(rsNumWords.next())
+			{
+				data[3] = rsNumWords.getString("numWords");
+				rsNumWords.close();
+				break;
+			}
+
+			//Add the array to the array list
+			list.add(data);
     	}
-   	}
+
+    	//No more non null rows found
+		return list;
+	}//End of getDocumentsData method
 }//End of class class

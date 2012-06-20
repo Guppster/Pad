@@ -81,30 +81,35 @@ public class DocumentBrowser extends JFrame implements ActionListener
 
 		//Add the object to the frame, and set the coordinates of the object
 		this.add(cmdSortByName);
+		cmdSortByName.addActionListener(this);
 		cmdSortByName.setActionCommand("sortname");
 		layout.putConstraint(SpringLayout.NORTH, cmdSortByName, 45, SpringLayout.NORTH, this.getContentPane());
 		layout.putConstraint(SpringLayout.WEST, cmdSortByName, 438, SpringLayout.WEST, this.getContentPane());
 
 		//Add the object to the frame, and set the coordinates of the object
 		this.add(cmdSortByCharacters);
+		cmdSortByCharacters.addActionListener(this);
 		cmdSortByCharacters.setActionCommand("sortchars");
 		layout.putConstraint(SpringLayout.NORTH, cmdSortByCharacters, 90, SpringLayout.NORTH, this.getContentPane());
 		layout.putConstraint(SpringLayout.WEST, cmdSortByCharacters, 438, SpringLayout.WEST, this.getContentPane());
 
 		//Add the object to the frame, and set the coordinates of the object
 		this.add(cmdSortByWords);
+		cmdSortByWords.addActionListener(this);
 		cmdSortByWords.setActionCommand("sortwords");
 		layout.putConstraint(SpringLayout.NORTH, cmdSortByWords, 135, SpringLayout.NORTH, this.getContentPane());
 		layout.putConstraint(SpringLayout.WEST, cmdSortByWords, 438, SpringLayout.WEST, this.getContentPane());
 
 		//Add the object to the frame, and set the coordinates of the object
 		this.add(cmdSortBySentences);
+		cmdSortBySentences.addActionListener(this);
 		cmdSortBySentences.setActionCommand("sortsentences");
 		layout.putConstraint(SpringLayout.NORTH, cmdSortBySentences, 180, SpringLayout.NORTH, this.getContentPane());
 		layout.putConstraint(SpringLayout.WEST, cmdSortBySentences, 438, SpringLayout.WEST, this.getContentPane());
 
 		//Add the object to the frame, and set the coordinates of the object
 		this.add(cmdSearch);
+		cmdSearch.addActionListener(this);
 		cmdSortBySentences.setActionCommand("search");
 		layout.putConstraint(SpringLayout.NORTH, cmdSearch, 225, SpringLayout.NORTH, this.getContentPane());
 		layout.putConstraint(SpringLayout.WEST, cmdSearch, 438, SpringLayout.WEST, this.getContentPane());
@@ -122,10 +127,10 @@ public class DocumentBrowser extends JFrame implements ActionListener
 	//Sets the initial data of the table
 	private void InitializeTableData()
 	{
-		//	for(int x = 0; x <= tDocuments.getRowCount(); x++)
-			//	{
-				//	tHelper.addElement(tDocuments, model, database.getDocumentsData(x))
-			//	}
+		for(int x = 0; x <= tDocuments.getRowCount(); x++)
+			{
+				tHelper.addArrayList(tDocuments, model, database.getDocumentsData());
+			}
 	}//End of InitializeTableData method
 
 	//Perform an action whenever a button is pressed

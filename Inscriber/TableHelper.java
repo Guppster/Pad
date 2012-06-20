@@ -90,7 +90,8 @@ public class TableHelper
 		}
 	}//End of nextEmpty method
 
-	private void nextEmptyRow(JTable table, DefaultTableModel model)
+	//A helper method which finds the next empty row in the JTable object
+	private int nextEmptyRow(JTable table, DefaultTableModel model)
 	{
 		//Reset the boolean test variable
 		empty = false;
@@ -99,34 +100,31 @@ public class TableHelper
 		for(int x = 0; x < table.getRowCount(); x++)
 		{
 			if(table.getValueAt(x, 0) == null)
-			{
-				rowIndex = x;
-				empty = true;
-				break;
-			}
+				return x;
 		}
 
 		//If there are no more rows available - make a new one
-		if(!empty)
-		{
-			model.insertRow(table.getRowCount(), new Object []{});
-			nextEmptyRow(table, model)
-		}
+		model.insertRow(table.getRowCount(), new Object []{});
+		nextEmptyRow(table, model);
+		return -1;
 	}//End of nextEmptyRow method
 
-	public void addRowOfData(String [] data, JTable table, DefaultTableModel table)
+	public void addRowOfData(String [] data, JTable table, DefaultTableModel model)
 	{
-		//Initialize fields
-		row = 0;
+		//Find an empty row in the JTable so we can
+		int row = nextEmptyRow(table, model);
 
-		for(int x = -1; x < row; x++)
+		//Loop through the row and fill it with data that we passed in
+		for(int x = 0; x < table.getRowCount(); x++)
 		{
-			for(int y = 0; y < data.length; y++)
-			{
-				table.setValueAt(data[y], row, y);
-			}
+			table.setValueAt(data[x], row, x);
 		}
 	}//End of addRowOfData method
+
+	public void addArrayList(JTable table, DefaultTableModel model, ArrayList<String> data)
+	{
+		//model.addRow(data);
+	}
 
 	/*//A method to fill an array with the data from the JTable so we can send it to the server
 	private void loadArray(JTable table)
