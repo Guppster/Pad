@@ -56,7 +56,7 @@ public class DocumentBrowser extends JFrame implements ActionListener
 			model.addRow(new Object[]{});
 		}
 
-		for(int y = 0; y < 4; y++)
+		for(int y = 0; y < 5; y++)
 		{
 			model.addColumn(new Object[]{});
 		}
