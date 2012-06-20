@@ -46,7 +46,7 @@ public class Database
     	Class.forName(driver);
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
 		PreparedStatement prep = conn.prepareStatement(
-        	      "INSERT INTO accounts (first, last, user, pass, email, group) VALUES (?, ?, ?, ?, ?, ?);");
+        	      "INSERT accounts VALUES (?, ?, ?, ?, ?, ?);");
 
         prep.setString(1, user.getFirstName());
         prep.setString(2, user.getLastName());
