@@ -47,6 +47,7 @@ public class Lobby extends JFrame implements ActionListener
 		cmdLogout = new JButton("Logout");
 		tRecentlyCreated = new JTable(7, 3); //col's author name, document name, date of creation.
 		layout = new SpringLayout();
+		this.user = user;
 
 		//Initialize the user object
 		initializeUser();
@@ -155,7 +156,11 @@ public class Lobby extends JFrame implements ActionListener
     //Method is called when logout button is pressed by user in lobby, disconnects the user and closes lobby, reopens the login screen.
     private void logout()
     {
-		database.switchLoginStatus(user);
+		try
+		{
+			database.switchLoginStatus(user);
+		}catch(Exception e){eHandler.displayError("CNL"); eHandler.displayError(".");}
+
 		new Login();
 		this.dispose();
     }//End of logout method
@@ -172,19 +177,4 @@ public class Lobby extends JFrame implements ActionListener
     {
 
     }//End of browse method
-
-    //Test harness
-	public static void main(String [] args)
-	{
-		//Create a LookAndFeel object so we can set the look and fell of the GUI
-	    new LookAndFeel();
-
-	    SwingUtilities.invokeLater(new Runnable()
-	    {
-	    	public void run()
-	        {
-	        	new Lobby(new User());
-	      	}
-	    });
-	}//End of test harness
 }//End of Main class
