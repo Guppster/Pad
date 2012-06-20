@@ -40,7 +40,7 @@ public class Client
 	//Attempt to connect to the server
 	public void tryConnect() throws UnknownHostException
 	{
-		if(tries < 6)
+		if(tries <= 5)
 		{
 			try
 			{
@@ -77,6 +77,10 @@ public class Client
 					}
 				}catch(Exception e){e.printStackTrace();}
 	        }
+		}
+		else
+		{
+			eHandler.displayError("TMT");
 		}
 	}//End of tryConnect method
 }//End of Client class
