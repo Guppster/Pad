@@ -143,7 +143,7 @@ public class UserGroupGUI extends JFrame implements ActionListener
 			{
 				helper.addElement(tGroups, model, database.getGroupName(x));
 			}
-		}catch(SQLException e){eHandler.displayError("CNLG"); eHandler.displayError(".");}
+		}catch(Exception e){eHandler.displayError("CNLG"); eHandler.displayError(".");}
 	}//End of loadGroups method
 
 	//Remove a group from the JTable object and attempt to remove it from the database
