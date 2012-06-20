@@ -28,7 +28,7 @@ public class Database
     {
     }//End of default constructor
 
-    public void createTable(String tableName) throws SQLException
+    public void createTable(String tableName) throws Exception
     {
         Class.forName(driver);
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
@@ -61,7 +61,7 @@ public class Database
         conn.close();
     }//End of addUser method
 
-    public boolean [] findUserExists(User user) throws SQLException
+    public boolean [] findUserExists(User user) throws Exception
     {
     	Class.forName(driver);
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
@@ -90,7 +90,7 @@ public class Database
         return conditions;
     }//End of findUserExists
 
-    public boolean checkLogin(User user) throws SQLException
+    public boolean checkLogin(User user) throws Exception
     {
     	Class.forName(driver);
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
@@ -153,7 +153,7 @@ public class Database
     }//End of Check login method
 
 	//Finds the user according to the login credentials and sets its loggedIn varaiable to true;
-    public void switchLoginStatus(User user) throws SQLException
+    public void switchLoginStatus(User user) throws Exception
     {
 		Class.forName(driver);
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
@@ -183,7 +183,7 @@ public class Database
     }//End of loginUser method
 
     //returns a boolean indicating weather the user is logged in or not
-    public boolean getLoginStatus(User user) throws SQLException
+    public boolean getLoginStatus(User user) throws Exception
     {
     	Class.forName(driver);
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
@@ -218,7 +218,7 @@ public class Database
 		return false;
     }//End of getLoginStatus
 
-    public boolean [] retrieveDefaultPermissions() throws SQLException
+    public boolean [] retrieveDefaultPermissions() throws Exception
     {
     	boolean [] permissions = new boolean[5];
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
@@ -242,7 +242,7 @@ public class Database
         return permissions;
     }//End of retrieveDefaultPermissions method
 
-    public void addNewGroup(UserGroup group) throws SQLException
+    public void addNewGroup(UserGroup group) throws Exception
     {
     	boolean [] permissions = new boolean[5];
     	permissions = group.getPermissions();
@@ -266,7 +266,7 @@ public class Database
         conn.close();
     }//End of addNewGroup method
 
-    public String getGroupName(int index) throws SQLException
+    public String getGroupName(int index) throws Exception
     {
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
     	Statement stat = conn.createStatement();
@@ -290,7 +290,7 @@ public class Database
 		return null;
     }//End of getGroupName
 
-    public int getNumGroups() throws SQLException
+    public int getNumGroups() throws Exception
     {
     	int numRows = 0;
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
@@ -310,7 +310,7 @@ public class Database
 	 	return numRows;
     }//End og getNumGroups
 
-    public void removeGroup(String groupName) throws SQLException
+    public void removeGroup(String groupName) throws Exception
     {
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
     	Statement stat = conn.createStatement();
@@ -331,7 +331,7 @@ public class Database
 
     }//End of removeGroup method
 
-    public User initializeUser(User user) throws SQLException
+    public User initializeUser(User user) throws Exception
     {
     	User iniUser = new User();
 
@@ -363,7 +363,7 @@ public class Database
     }//End of initializeUser method
 
     //This method looks in the usergroup table and finds the group name and then initializes the rest of the fields(permissions) for the usergroup object it will return
-    public UserGroup initializeGroup(String groupName) throws SQLException
+    public UserGroup initializeGroup(String groupName) throws Exception
     {
     	UserGroup group = new UserGroup();
     	Boolean [] permissions = new Boolean[5];
