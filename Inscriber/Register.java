@@ -182,8 +182,7 @@ public class Register extends JFrame implements ActionListener, KeyListener
 	//A method to check the input from the user for errors - and displaying an error message to the user if an error exists
 	private boolean checkErrorsAndInitialize()
 	{
-    	//Initialize class fields
-    	if(txtFirst.getText() != null)
+    	if(txtFirst.getText() != null)//Missing first name
     		user.setFirstName(txtFirst.getText());
     	else
     	{
@@ -193,7 +192,7 @@ public class Register extends JFrame implements ActionListener, KeyListener
 
     	}
 
-    	if(txtLast.getText() != null)
+    	if(txtLast.getText() != null)//Missing last name
     		user.setLastName(txtLast.getText());
     	else
     	{
@@ -202,7 +201,7 @@ public class Register extends JFrame implements ActionListener, KeyListener
     		handler.displayError(".");
     	}
 
-    	if(txtEmail.getText() != null)
+    	if(txtEmail.getText() != null)//Missing email
     		user.setEmail(txtEmail.getText());
     	else
     	{
@@ -211,14 +210,14 @@ public class Register extends JFrame implements ActionListener, KeyListener
     		handler.displayError(".");
     	}
 
-    	if(!(txtEmail.getText().equals(txtEConfirm.getText())))
+    	if(!(txtEmail.getText().equals(txtEConfirm.getText())))//Email does not match email confirm
     	{
     		errorThrown = true;
     		handler.displayError("ENM");
     		handler.displayError(".");
     	}
 
-    	if(txtNewUser.getText() != null)
+    	if(txtNewUser.getText() != null)//Missing username
     		user.setUsername(txtNewUser.getText());
     	else
     	{
@@ -227,7 +226,7 @@ public class Register extends JFrame implements ActionListener, KeyListener
     		handler.displayError(".");
     	}
 
-    	if(pfNewPass.getText() != null)
+    	if(pfNewPass.getText() != null)//Missing password
     		user.setPassword(pfNewPass.getPassword());
     	else
     	{
@@ -236,7 +235,7 @@ public class Register extends JFrame implements ActionListener, KeyListener
     		handler.displayError(".");
     	}
 
-    	if(!(pfNewPass.getText().equals(pfPConfirm.getText())))
+    	if(!(pfNewPass.getText().equals(pfPConfirm.getText())))//Password doesn't match password confirm
     	{
     		errorThrown = true;
     		handler.displayError("PNM");
@@ -249,9 +248,10 @@ public class Register extends JFrame implements ActionListener, KeyListener
     		return false;
 	}//end of checkErrors method
 
+	//Confirm if the desired username has already been taken, or if the entered email is already registered
 	private boolean confirmIndividuality()
 	{
-		//Declare a field
+		//Declare and initialize a field
 		boolean confirmed = false;
 
 		try
@@ -288,6 +288,7 @@ public class Register extends JFrame implements ActionListener, KeyListener
 			}
 		}catch(Exception ex){handler.displayError("CNAD"); handler.displayError(".");}
 
+		//Return the 'individuality'
 		return confirmed;
 	}//End of confirmIndivusuality method
 
@@ -303,8 +304,8 @@ public class Register extends JFrame implements ActionListener, KeyListener
 				{
 					try
 					{
-						database.addUser(user);
-					}catch(Exception e){System.out.println("Test " + e); handler.displayError("CNAD"); handler.displayError(".");}
+						database.addUser(user);//Try adding the new user to the database
+					}catch(Exception e){handler.displayError("CNAD"); handler.displayError(".");}
 				}
 			}
 		}
@@ -333,7 +334,7 @@ public class Register extends JFrame implements ActionListener, KeyListener
 				{
 					try
 					{
-						database.addUser(user);
+						database.addUser(user);//Try adding a new user to the database
 					}catch(Exception exc){handler.displayError("CNAD"); handler.displayError(".");}
 				}
 			}
