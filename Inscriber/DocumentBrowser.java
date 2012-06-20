@@ -24,6 +24,7 @@ public class DocumentBrowser extends JFrame implements ActionListener
 	private JButton cmdSortByCharacters;
 	private JButton cmdSortBySentences;
 	private JButton cmdSearch;
+	private SpringLayout layout;
 
 	//Default Constructor
     public DocumentBrowser()
@@ -34,6 +35,7 @@ public class DocumentBrowser extends JFrame implements ActionListener
 		cmdSortBySentences = new JButton("Sort by Sentences");
 		cmdSortByWords = new JButton("Sort by Words");
 		cmdSearch = new JButton("Search for Document");
+		layout = new SpringLayout();
 
 		//Call method to create GUI
 		setGUI();
