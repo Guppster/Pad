@@ -82,19 +82,25 @@ public class Document
 	}//End of saveFileToServer method
 
 	//Retrieves a text file from the server and 'opens it'
-	public void getFileFromServer(Socket socket)throws IOException
+	public String getFileFromServer(Socket socket)
 	{
 		//Initialize class fields
 		sClient = socket;
-    	in = new BufferedReader(new InputStreamReader(sClient.getInputStream()));
+
+    	try
+    	{
+    		in = new BufferedReader(new InputStreamReader(sClient.getInputStream()));
+    	}catch(IOException e){System.out.println("Error 2 - " + e);}
 
 		//While there is text coming in
-    	while((text = in.readLine()) != null)
+    	while(!((text = in.readLine()).equals("")))
     	{
-
+			textFromServer += text;
 		}
 
 		in.close();
 		sClient.close();
+
+		return textFromServer;
 	}//End of countLines method
 }//End of Document Class
