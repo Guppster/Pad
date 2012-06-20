@@ -420,7 +420,7 @@ public class Database
 
     	return group;
     }//End of initializeGroup method
-
+/*
     public ArrayList<String> getDocumentsData()
    	{
    		//PUT ALL THE "data[0]... data[1]... etc" INTO A LOOP TO LOOP THROUGH UNTIL IT REACHES A NULL ROW(while rs.next())
@@ -483,4 +483,5 @@ public class Database
     	//No more non null rows found
 		return list;
 	}//End of getDocumentsData method
+	*/
 }//End of class class
