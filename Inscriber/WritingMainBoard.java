@@ -36,7 +36,6 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 	private SpringLayout frameLayout;
 	private MenuCreator menu;
 	private DocumentOptions options;
-	private Text text;
 	private JTextArea taDocument;
 	private JTextArea taChat;
 	private JButton cmdChat;
