@@ -82,6 +82,7 @@ public class Client
 		else
 		{
 			eHandler.displayError("TMT");
+			eHandler.displayError(".");
 		}
 	}//End of tryConnect method
 }//End of Client class
