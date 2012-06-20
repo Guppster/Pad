@@ -80,9 +80,9 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 	private TextLineNumber tln;
 	private Document document;
 	private User user;
-	private Socket sClient;
+	private Client client;
 
-    public WritingMainBoard(User user, Socket socket)
+    public WritingMainBoard(User user, Client client)
     {
     	//Initialize the class objects and fields
     	menu = new MenuCreator(this);
@@ -124,7 +124,7 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 		tln = new TextLineNumber(taDocument);
 		document = new Document();
 		this.user = user;
-		sClient = socket;
+		this.client = client;
 
 		//Call the setMenus method to construct all the menus
     	setMenus();
@@ -231,7 +231,7 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 	private void saveDocument()
 	{
 		String fileName = JOptionPane.showInputDialog(null, "", "Enter in a filename.", 1);
-		document.saveFileToServer(user.getUsername(), fileName, taDocument.getText(), sClient);
+		document.saveFileToServer(user.getUsername(), fileName, taDocument.getText(), client.getConnection());
 		fileName = "";
 	}//End of saveDocument method
 
@@ -239,7 +239,7 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 	private void openDocument()
 	{
 		String fileName = JOptionPane.showInputDialog(null, "", "Enter in a filename.", 1);
-		String text = document.getFileFromServer(fileName, sClient);
+		String text = document.getFileFromServer(fileName, client.getConnection());
 		taDocument.setText(text);
 		fileName = "";
 		text = "";
