@@ -148,8 +148,6 @@ public class Database
 	        conn.close();
 	        return false;
         }
-
-        return false;
     }//End of Check login method
 
 	//Finds the user according to the login credentials and sets its loggedIn varaiable to true;
