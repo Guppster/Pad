@@ -122,7 +122,7 @@ public class Lobby extends JFrame implements ActionListener
 		//Add the object to the frame, and set the coordinates of the object
 		this.add(cmdLogout);
 		cmdLogout.setActionCommand("logout");
-		layout.putConstraint(SpringLayout.NORTH, cmdLogout, 260, SpringLayout.NORTH, this.getContentPane());
+		layout.putConstraint(SpringLayout.NORTH, cmdLogout, 250, SpringLayout.NORTH, this.getContentPane());
 		layout.putConstraint(SpringLayout.WEST, cmdLogout, 320, SpringLayout.WEST, this.getContentPane());
 
 		//Add the object to the frame, and set the coordinates of the object
