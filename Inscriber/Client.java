@@ -46,36 +46,32 @@ public class Client
 	            sClient = new Socket("99.249.132.206", 22222);
 	        }catch(IOException e){eHandler.displayError("CNC"); eHandler.displayError(".");}
 
-			//If it connects fine(The socket won't be null), check the users login information
-	        if(sClient != null)
-	        {
-				try
+			try
+			{
+				if(database.checkLogin(tempUser))//Check if the login credentials match
 				{
-					if(database.checkLogin(tempUser))//Check if the login credentials match
+					if(!(database.getLoginStatus(tempUser))) // Check if the user is already logged in
 					{
-						if(!(database.getLoginStatus(tempUser))) // Check if the user is already logged in
-						{
-							new Lobby();//Open the Lobby screen
-							database.switchLoginStatus(tempUser);//Set the users status to logged in, so another client may not login with identical credentials
-						}
-						else
-						{
-							//Indicates to the user that that account is already logged in elsewhere
-							eHandler.displayError("ALI");
-							eHandler.displayError(".");
-							new Login(); //Login is reopened because program is suspeciously closed
-						}
+						new Lobby();//Open the Lobby screen
+						database.switchLoginStatus(tempUser);//Set the users status to logged in, so another client may not login with identical credentials
 					}
 					else
 					{
-						tries++;//Increase their amount of tries left
-						System.out.println("Tries " + tries);
-						eHandler.displayError("WL");//Send an error code to the ErrorHandler class
-						eHandler.displayError(".");//Display the error sent over
-						//new Login();//Login is reopened because program is suspeciously closed
+						//Indicates to the user that that account is already logged in elsewhere
+						eHandler.displayError("ALI");
+						eHandler.displayError(".");
+						new Login(); //Login is reopened because program is suspeciously closed
 					}
-				}catch(Exception e){eHandler.displayError("CNAD"); eHandler.displayError(".");}
-	        }
+				}
+				else
+				{
+					tries++;//Increase their amount of tries left
+					System.out.println("Tries " + tries);
+					eHandler.displayError("WL");//Send an error code to the ErrorHandler class
+					eHandler.displayError(".");//Display the error sent over
+					//new Login();//Login is reopened because program is suspeciously closed
+				}
+			}catch(Exception e){eHandler.displayError("CNAD"); eHandler.displayError(".");}
 		}
 		else
 		{
