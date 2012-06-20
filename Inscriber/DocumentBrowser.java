@@ -95,7 +95,7 @@ public class DocumentBrowser extends JFrame implements ActionListener
 		layout.putConstraint(SpringLayout.WEST, cmdSortBySentences, 50, SpringLayout.WEST, this.getContentPane());
 
 		//Set the properties of the frame/pane
-		this.setSize(510,400);
+		this.setSize(600,400);
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
 		this.setTitle("Document Browser");
