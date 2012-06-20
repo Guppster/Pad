@@ -55,19 +55,16 @@ public class Document
 		text = textFromWritingMain;
     	out = new PrintWriter(sClient.getOutputStream(), true);
 
-		//Send the text we are recieving from WritingMainBoard to the server to be saved
-    	try
-    	{
-    		//Send the server the author of the file, and the filename
-    		out.println(author);
-	    	out.println(fileName);
 
-	    	//Send the server the text we got from WritingMainBoard
-	    	while(!(textFromWritingMain.equals("")))
-	    	{
-	    		out.println(text);
-	    	}
-    	}catch(IOException exc1){eHandler.displayError("CNSTTS");}
+		//Send the server the author of the file, and the filename
+		out.println(author);
+    	out.println(fileName);
+
+    	//Send the server the text we got from WritingMainBoard
+    	while(!(textFromWritingMain.equals("")))
+    	{
+    		out.println(text);
+    	}
 
     	//Try closing the writer and the socket conenction and reset class fields
     	try
