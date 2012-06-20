@@ -198,9 +198,12 @@ public class CreateNewGroup extends JFrame implements ActionListener
 	{
 		if(evt.getActionCommand().equals("create"))//Loads the states of the JRadioButton objects into an array, then save the group to the database
 		{
-			loadGroup();
-			setGroupName();
-			saveGroup();
+			try
+			{
+				loadGroup();
+				setGroupName();
+				saveGroup();
+			}catch(Exception e){System.out.println("Error 3 - " + e);}
 		}
 		else if(evt.getActionCommand().equals("preset"))
 		{
