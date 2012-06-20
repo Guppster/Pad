@@ -146,11 +146,13 @@ public class Database
 	        	return false;//Login is valid
 	        }
 
+			//Close the ResultSet and Connection
 	        rsPass.close();
 	        conn.close();
         }
         else
         {
+        	//Close the ResultSet and Connection
 	        rsUser.close();
 	        conn.close();
 	        return false;
