@@ -410,11 +410,8 @@ public class WritingMainBoard extends JFrame implements PropertyChangeListener
 			{
 				public void actionPerformed(ActionEvent e)
 				{
-					try
-					{
-						String fileName = JOptionPane.showInputDialog(null, "", "Enter in a filename.", 1);
-						document.saveFileToServer(user.getUsername(), fileName, taDocument.getText(), sClient);
-					}catch(IOException exc){}
+					String fileName = JOptionPane.showInputDialog(null, "", "Enter in a filename.", 1);
+					document.saveFileToServer(user.getUsername(), fileName, taDocument.getText(), sClient);
 				}
 			});
 
