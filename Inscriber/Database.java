@@ -67,7 +67,7 @@ public class Database
     	//Declare and initialize some fields
     	Class.forName(driver);
         Connection conn = DriverManager.getConnection(url, dbUser, dbPass);
-		Statement statement = conn.prepareStatement();
+		Statement statement = conn.createStatement();
 
 		//Compile a command into a string so we can execute it
 		String state = "INSERT documents VALUES ('" + fileName + "', " + numChars + ", " + numSentences + ", " + numWords + ")";
