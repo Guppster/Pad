@@ -68,7 +68,6 @@ public class DocumentOptions extends JFrame implements ActionListener
     	setGUI();
     }//End of DocumentOptions constructor method
 
-
 	private void setGUI()
     {
     	//Add 4 columns to the JTable objects
@@ -91,7 +90,9 @@ public class DocumentOptions extends JFrame implements ActionListener
 		cmdAddSize.setActionCommand("addFontSize");
 		cmdRemoveSize.setActionCommand("removeFontSize");
 		cmdFilter.setActionCommand("filter");
+		cmdSave.setActionCommand("save");
 
+		cmdSave.addActionListener(this);
 		cmdFilter.addActionListener(this);
 		cmdAddFont.addActionListener(this);
 		cmdRemoveFont.addActionListener(this);
