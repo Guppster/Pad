@@ -511,4 +511,5 @@ public class Database
 	{
 		//To be implemented in later release, method will save options to document database fields (currently not created)
 	}//End of saveDocOptions method
+
 }//End of Databae class
