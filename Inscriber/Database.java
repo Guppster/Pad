@@ -506,4 +506,9 @@ public class Database
     	//No more non null rows found, return the filled ArrayList object
 		return list;
 	}//End of getDocumentsData method
+
+	public void saveDocOptions()
+	{
+		//To be implemented in later release, method will save options to document database fields (currently not created)
+	}//End of saveDocOptions method
 }//End of Databae class
