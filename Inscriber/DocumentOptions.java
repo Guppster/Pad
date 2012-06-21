@@ -39,6 +39,7 @@ public class DocumentOptions extends JFrame implements ActionListener
 	private JButton cmdRemoveFont;
 	private JButton cmdAddSize;
 	private JButton cmdRemoveSize;
+	private JButton cmdSave;
 	private JButton cmdFilter;
 	private SpringLayout layout;
 	private TableHelper tHelper;
@@ -59,6 +60,7 @@ public class DocumentOptions extends JFrame implements ActionListener
     	cmdAddSize = new JButton("Add font size");
     	cmdRemoveSize = new JButton("Remove font size");
     	cmdFilter = new JButton("Word Filter");
+    	cmdSave = new JButton("Save");
 
     	layout = new SpringLayout();
 
