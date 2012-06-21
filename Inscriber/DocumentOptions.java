@@ -40,6 +40,7 @@ public class DocumentOptions extends JFrame implements ActionListener
 	private JButton cmdAddSize;
 	private JButton cmdRemoveSize;
 	private JButton cmdSave;
+	private JButton cmdUserGroups;
 	private JButton cmdFilter;
 	private SpringLayout layout;
 	private TableHelper tHelper;
@@ -61,6 +62,7 @@ public class DocumentOptions extends JFrame implements ActionListener
     	cmdRemoveSize = new JButton("Remove font size");
     	cmdFilter = new JButton("Word Filter");
     	cmdSave = new JButton("Save");
+    	cmdUserGroups = new JButton("User Groups");
 
     	layout = new SpringLayout();
 
@@ -206,6 +208,10 @@ public class DocumentOptions extends JFrame implements ActionListener
 		else if("filter".equals(evt.getActionCommand()))
 		{
 			new WordFilter();
+		}
+		else if("save".equals(evt.getActionCommand()))
+		{
+			database.saveOptions();
 		}
    	}//End of action performed method
 
