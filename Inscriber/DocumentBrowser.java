@@ -193,7 +193,7 @@ public class DocumentBrowser extends JFrame implements ActionListener
     			int obj1 = Integer.getInteger((tDocuments.getValueAt(x,1).toString()));
     			int obj2 = Integer.getInteger(tDocuments.getValueAt(x+1, 1).toString());
     			
-	    		if(obj1 > obj2)
+	    		if(obj1 < obj2)
 	    		{
 	    			temp = Integer.getInteger(tDocuments.getValueAt(x,1).toString());
 	    			tDocuments.setValueAt(tDocuments.getValueAt(x+1, 1), 1, x);
