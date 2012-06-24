@@ -186,6 +186,8 @@ public class DocumentBrowser extends JFrame implements ActionListener
     	
     	while(!sorted);
     	{
+    		sorted = true;
+    		
     		for(int x = 0; x < tDocuments.getRowCount() - 1; x++)
     		{
 	    		if((tDocuments.getValueAt(x,1).toString()).compareTo(tDocuments.getValueAt(x+1, 1).toString()) > 0)
