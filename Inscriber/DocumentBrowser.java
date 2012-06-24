@@ -190,7 +190,7 @@ public class DocumentBrowser extends JFrame implements ActionListener
     		{
 	    		if((tDocuments.getValueAt(x,1).toString()).compareTo(tDocuments.getValueAt(x+1, 1).toString()) > 0)
 	    		{
-	    			temp = (Integer)tDocuments.getValueAt(x,1).intValue();
+	    			temp = (Integer)tDocuments.getValueAt(x,1);
 	    			tDocuments.setValueAt(tDocuments.getValueAt(x+1, 1), 1, x);
 					tDocuments.setValueAt(temp, x+1, 1);
 
