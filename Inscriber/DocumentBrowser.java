@@ -31,8 +31,7 @@ public class DocumentBrowser extends JFrame implements ActionListener
 	private TableHelper tHelper;
 	private Database database;
 	private boolean sorted = false;
-	private String temp = "";
-
+	
 	//Default Constructor, Initializes the declared fields
     public DocumentBrowser()
     {
@@ -159,6 +158,7 @@ public class DocumentBrowser extends JFrame implements ActionListener
 	//A helper method to sort the data in the JTable object by the name of each document
     private void sortByName()
     {
+    	String temp = "";
     	while(!sorted)
     	{
     		sorted = true;
@@ -182,13 +182,15 @@ public class DocumentBrowser extends JFrame implements ActionListener
 	//A helper method to sort the data in the JTable object by the number of characters each document has
     private void sortByCharacters()
     {
+    	int temp = 0;
+    	
     	while(!sorted);
     	{
     		for(int x = 0; x < tDocuments.getRowCount() - 1; x++)
     		{
 	    		if((tDocuments.getValueAt(x,1).toString()).compareTo(tDocuments.getValueAt(x+1, 1).toString()) > 0)
 	    		{
-	    			int tempNum = (Integer)tDocuments.getValueAt(x,1).intValue();
+	    			temp = (Integer)tDocuments.getValueAt(x,1).intValue();
 	    			tDocuments.setValueAt(tDocuments.getValueAt(x+1, 1), 1, x);
 					tDocuments.setValueAt(temp, x+1, 1);
 
