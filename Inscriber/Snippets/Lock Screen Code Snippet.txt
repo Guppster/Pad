@@ -1,0 +1,52 @@
+//Make the timer tick after 1 minute has passed
+    	timer = new Timer(60000, new ActionListener(){
+    		public void actionPerformed(ActionEvent evt) 
+    		{
+				//Change the textPane editable, and the background colour to white
+				textPane.setEnabled(true);
+				textPane.setBackground(Color.white);
+				//Set the timeout menu option to enabled after the time has passed(so you dont start the timer, and then start the timer again)
+				menuTimeout.setEnabled(true);
+				timer.stop();
+    		}    
+		});
+		
+		//Make the timer tick after 1 minute has passed
+    	timer2 = new Timer(300000, new ActionListener(){
+    		public void actionPerformed(ActionEvent evt) 
+    		{
+				//Change the textPane editable, and the background colour to white
+				textPane.setEnabled(true);
+				textPane.setBackground(Color.white);
+				//Set the timeout menu option to enabled after the time has passed(so you dont start the timer, and then start the timer again)
+				menuTimeout.setEnabled(true);
+				timer2.stop();
+    		}    
+		});
+		
+		//Make the timer tick after 1 minute has passed
+    	timer3 = new Timer(600000, new ActionListener(){
+    		public void actionPerformed(ActionEvent evt) 
+    		{
+				//Change the textPane editable, and the background colour to white
+				textPane.setEnabled(true);
+				textPane.setBackground(Color.white);
+				//Set the timeout menu option to enabled after the time has passed(so you dont start the timer, and then start the timer again)
+				menuTimeout.setEnabled(true);
+				timer3.stop();
+    		}    
+		});
+		
+		//Make the timer tick after 1 minute has passed
+    	timer4 = new Timer(1800000, new ActionListener(){
+    		public void actionPerformed(ActionEvent evt) 
+    		{
+				//Change the textPane editable, and the background colour to white
+				textPane.setEnabled(true);
+				textPane.setBackground(Color.white);
+				//Set the timeout menu option to enabled after the time has passed(so you dont start the timer, and then start the timer again)
+				menuTimeout.setEnabled(true);
+				timer4.stop();
+    		}    
+		});
+	}
