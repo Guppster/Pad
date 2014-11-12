@@ -1,0 +1,22 @@
+String usersText = "";
+	//Default name until I get the file system working
+	String documentName = "Untitled Document";
+	JLabel timeStamp = new JLabel();
+	JLabel currentDoc = new JLabel("<html>" + "Current Document: " + "<font color=\"red\">" + documentName + "</font></html>");
+	Color colour;
+	JTextPane textPane = new JTextPane();
+	StyledDocument doc = textPane.getStyledDocument();
+	SimpleAttributeSet styleForSelected = new SimpleAttributeSet();
+	SimpleAttributeSet styleForTyping = new SimpleAttributeSet();
+	int startOfSelect = 0;
+	int selectNum = 0; 
+	String selectedText; 
+	boolean display = true; 
+	int caretPosition;
+	boolean enabled = false;
+	JMenuItem menuLock;
+	Timer timer;
+	Timer timer2;
+	Timer timer3;
+	Timer timer4;
+	Timer timer5;
