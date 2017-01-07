@@ -1,4 +1,6 @@
 #Pad - Inscriber
+Multi-User Collaboration Text Editor
 
-####This is an attempt in java to have a multi user collaboration text editor. 
+In essence, google docs... before google docs existed :)
+
 #####Project made for grade 12 final assignment. 
